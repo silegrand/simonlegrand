@@ -3,657 +3,525 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simon Legrand CV</title>
-<!-- Nunito Sans (closest web-safe Avenir substitute) as fallback -->
+<title>S.LEGRAND // COMMAND_CENTER</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:        #0a0a0a;
+  --bg-low:    #111111;
+  --bg-mid:    #161616;
+  --bg-high:   #1e1e1e;
+  --bg-card:   #141414;
+  --border:    #262626;
+  --border-dim:#1c1c1c;
+  --border-hot:#b8c3ff;
+  --primary:   #b8c3ff;
+  --primary-dim:rgba(184,195,255,0.12);
+  --amber:     #ffdb9d;
+  --t0:#e5e2e1; --t1:#c4c5d9; --t2:#8e90a2; --t3:#434656;
+  --mono:'JetBrains Mono','Courier New',monospace;
+  --sans:'Inter',system-ui,sans-serif;
+  --glow:0 0 24px rgba(184,195,255,0.12);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--t0);font-size:14px;line-height:1.6;font-weight:400;-webkit-font-smoothing:antialiased;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(to right,rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
+*{position:relative;z-index:1}
+a{text-decoration:none;transition:color .2s}
 
-  :root {
-    --black:    #0A0A0A;
-    --ink:      #1A1A1A;
-    --dark:     #2C2C2C;
-    --mid:      #555555;
-    --steel:    #888888;
-    --rule:     #DDDDDD;
-    --light:    #F2F2F2;
-    --offwhite: #F8F8F8;
-    --white:    #FFFFFF;
-    --accent:   #1A1A1A;   /* black accent — crisp, no colour */
+/* MODULE */
+.module{background:var(--bg-card);border:1px solid var(--border);box-shadow:inset 0 1px 0 rgba(255,255,255,0.05);transition:border-color .25s,box-shadow .25s}
+.module:hover{border-color:#333}
+.module.glow:hover{border-color:var(--border-hot);box-shadow:var(--glow)}
 
-    --display: 'Avenir Next', 'Avenir', 'Nunito Sans', 'Century Gothic', sans-serif;
-    --body:    'Avenir Next', 'Avenir', 'Nunito Sans', 'Century Gothic', sans-serif;
-    --weight-display: 700;
-    --weight-body: 300;
-  }
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:200;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,5vw,64px);background:rgba(10,10,10,0.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.header-brand{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--t0)}
+.header-brand span{color:var(--primary)}
+.header-nav{display:flex;gap:28px;list-style:none}
+.header-nav a{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--t2);transition:color .2s}
+.header-nav a:hover,.header-nav a.active{color:var(--primary);border-bottom:1px solid var(--primary);padding-bottom:2px}
+.header-icons{display:flex;gap:16px;color:var(--t3);font-size:15px}
+.header-icons i{cursor:pointer;transition:color .2s}
+.header-icons i:hover{color:var(--primary)}
 
-  html { scroll-behavior: smooth; }
+/* LAYOUT */
+main{max-width:1200px;margin:0 auto;padding:80px clamp(16px,5vw,64px) 120px;display:flex;flex-direction:column;gap:48px}
 
-  body {
-    font-family: var(--body);
-    background: var(--white);
-    color: var(--ink);
-    font-size: 15px;
-    line-height: 1.6;
-    font-weight: 300;
-    -webkit-font-smoothing: antialiased;
-  }
+/* SECTION HEAD */
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.section-head::before{content:'';width:28px;height:1px;background:var(--primary);flex-shrink:0}
+.section-head::after{content:'';flex:1;height:1px;background:var(--border)}
+.section-head h2{font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--primary);white-space:nowrap}
 
-  /* ── HERO ─────────────────────────────────────────────────────── */
-  .hero {
-    background: var(--black);
-    padding: 52px 52px 44px;
-    position: relative;
-    overflow: hidden;
-  }
+/* HERO */
+.hero-module{padding:clamp(28px,5vw,48px);overflow:hidden}
+.hero-id{position:absolute;top:12px;right:16px;font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--t3)}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,56px);align-items:center}
+.hero-name{font-family:var(--sans);font-size:clamp(36px,6vw,56px);font-weight:700;color:var(--t0);line-height:1.05;letter-spacing:-.02em;margin-bottom:12px}
+.hero-sub{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);margin-bottom:20px}
+.hero-tagline{font-size:15px;color:var(--t1);line-height:1.75;max-width:480px;margin-bottom:32px;font-weight:300}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;transition:all .2s;cursor:pointer;border:none}
+.btn-primary{background:var(--primary);color:#001356}
+.btn-primary:hover{background:#d0d9ff}
+.btn-outline{background:transparent;color:var(--t0);border:1px solid var(--border)}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary)}
 
-  /* Subtle geometric background pattern */
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0;
-    width: 40%;
-    height: 100%;
-    background: repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 28px,
-      rgba(255,255,255,0.018) 28px,
-      rgba(255,255,255,0.018) 30px
-    );
-    pointer-events: none;
-  }
+/* HERO VISUAL */
+.hero-visual{height:280px;background:var(--bg-mid);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(184,195,255,0.07) 0%,transparent 70%)}
+.radar-ring{position:absolute;border-radius:50%;border:1px solid}
+.radar-ring:nth-child(1){width:80px;height:80px;border-color:rgba(184,195,255,0.4);animation:ping 3s ease-out infinite}
+.radar-ring:nth-child(2){width:140px;height:140px;border-color:rgba(184,195,255,0.2);animation:ping 3s ease-out infinite .5s}
+.radar-ring:nth-child(3){width:200px;height:200px;border-color:rgba(184,195,255,0.1);animation:ping 3s ease-out infinite 1s}
+.radar-ring:nth-child(4){width:260px;height:260px;border-color:rgba(184,195,255,0.05)}
+@keyframes ping{0%{transform:scale(.8);opacity:1}80%{transform:scale(1.1);opacity:.2}100%{transform:scale(1.1);opacity:0}}
+.radar-dot{width:8px;height:8px;background:var(--primary);border-radius:50%;box-shadow:0 0 12px var(--primary);z-index:1}
+.visual-label{position:absolute;bottom:12px;left:14px;font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--t3)}
+.visual-status{position:absolute;top:12px;right:12px;display:flex;align-items:center;gap:6px}
+.status-dot{width:6px;height:6px;background:#4caf50;border-radius:50%;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.status-txt{font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:#4caf50}
 
-  .hero-inner {
-    display: flex;
-    align-items: flex-start;
-    gap: 36px;
-    position: relative;
-    z-index: 1;
-  }
+/* TICKER */
+.ticker-module{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg-low);padding:10px 0;overflow:hidden}
+.ticker-track{display:inline-flex;white-space:nowrap;animation:marquee 40s linear infinite}
+.ticker-track:hover{animation-play-state:paused}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-item{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--t3);padding:0 32px;display:inline-flex;align-items:center;gap:8px}
+.ticker-item i{color:var(--primary);font-size:7px}
 
-  .logo-block {
-    flex-shrink: 0;
-    width: 72px;
-    height: 72px;
-    background: var(--white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-  }
+/* STATS */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.stat-cell{background:var(--bg-card);padding:20px 24px;transition:background .2s}
+.stat-cell:hover{background:var(--bg-mid)}
+.stat-val{font-family:var(--sans);font-size:28px;font-weight:700;color:var(--primary);line-height:1;margin-bottom:6px;letter-spacing:-.02em}
+.stat-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--t3)}
 
-  .logo-block img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-  }
+/* PROFILE */
+.profile-text{font-size:15px;font-weight:300;color:var(--t1);line-height:1.85;padding:28px}
 
-  .hero-text { flex: 1; }
+/* COMPETENCIES */
+.comp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
+.comp-cell{background:var(--bg-card);padding:13px 16px;font-size:13px;color:var(--t1);display:flex;align-items:center;gap:10px;transition:background .2s,color .2s}
+.comp-cell:hover{background:var(--bg-high);color:var(--t0)}
+.comp-cell::before{content:'>';font-family:var(--mono);font-size:10px;color:var(--primary);flex-shrink:0}
 
-  .hero-name {
-    font-family: var(--display);
-    font-size: clamp(30px, 4.5vw, 50px);
-    font-weight: 800;
-    color: var(--white);
-    letter-spacing: 0px;
-    line-height: 1.05;
-    margin-bottom: 8px;
-  }
+/* PATENTS */
+.patents-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.patent-card{padding:24px;min-height:180px;display:flex;flex-direction:column;justify-content:space-between;cursor:crosshair;position:relative}
+.patent-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--primary),transparent);opacity:0;transition:opacity .25s}
+.patent-card:hover::before{opacity:1}
+.pat-id{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--t3);margin-bottom:16px}
+.pat-name{font-size:15px;font-weight:600;color:var(--t0);margin-bottom:6px;line-height:1.3}
+.pat-num{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--primary)}
+.pat-icon{text-align:right;color:var(--t3);font-size:18px;transition:color .2s}
+.patent-card:hover .pat-icon{color:var(--primary)}
 
-  .hero-credentials {
-    font-family: var(--body);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 3.5px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
-    margin-bottom: 18px;
-  }
+/* CAREER */
+.career-log{border:1px solid var(--border);background:var(--bg-card)}
+.career-row{display:grid;grid-template-columns:260px 1fr;border-bottom:1px solid var(--border-dim);transition:background .2s}
+.career-row:last-child{border-bottom:none}
+.career-row:hover{background:var(--bg-mid)}
+.career-meta{padding:28px 24px;border-right:1px solid var(--border-dim);display:flex;flex-direction:column;gap:8px}
+.career-badge{display:inline-block;padding:3px 8px;background:var(--primary-dim);border:1px solid rgba(184,195,255,0.2);font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);width:fit-content}
+.career-title{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--t0);line-height:1.4}
+.career-org{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--t3)}
+.career-body{padding:28px 28px 28px 32px}
+.career-summary{font-size:13.5px;font-weight:300;color:var(--t2);line-height:1.75;margin-bottom:16px}
+.career-bullets{list-style:none;display:flex;flex-direction:column;gap:7px}
+.career-bullets li{font-family:var(--mono);font-size:11.5px;color:var(--t1);display:flex;align-items:flex-start;gap:10px;line-height:1.55}
+.career-bullets li::before{content:'>';color:var(--primary);flex-shrink:0;margin-top:1px}
 
-  .hero-tagline {
-    font-family: var(--body);
-    font-size: 14.5px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.62);
-    max-width: 580px;
-    line-height: 1.65;
-    margin-bottom: 28px;
-  }
+/* ITEM TABLE */
+.item-table{border:1px solid var(--border);background:var(--bg-card)}
+.item-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 20px;border-bottom:1px solid var(--border-dim);transition:background .18s,padding-left .18s}
+.item-row:last-child{border-bottom:none}
+.item-row:hover{background:var(--bg-mid);padding-left:26px}
+.item-name{font-size:12.5px;color:var(--t1);line-height:1.5;flex:1}
+.item-name strong{color:var(--t0);font-weight:600}
+.item-date{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--t3);white-space:nowrap}
+.winner-tag{display:inline-block;font-family:var(--mono);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:#001356;background:var(--primary);padding:2px 7px;margin-left:8px;vertical-align:middle}
 
-  .hero-contact {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
+/* TWO-COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 
-  .hero-contact a, .hero-contact span {
-    font-family: var(--body);
-    font-size: 12.5px;
-    font-weight: 400;
-    color: rgba(255,255,255,0.5);
-    text-decoration: none;
-    letter-spacing: 0.3px;
-    transition: color 0.2s;
-  }
+/* ECOSYSTEM */
+.eco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.eco-card{display:block;padding:24px;text-decoration:none;position:relative;overflow:hidden}
+.eco-card::after{content:'↗';position:absolute;top:16px;right:16px;font-size:14px;color:var(--t3);transition:color .2s,transform .2s}
+.eco-card:hover::after{color:var(--primary);transform:translate(2px,-2px)}
+.eco-tag{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--primary);margin-bottom:8px}
+.eco-name{font-size:15px;font-weight:600;color:var(--t0);margin-bottom:4px}
+.eco-url{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--amber);margin-bottom:12px;display:block}
+.eco-desc{font-size:12px;color:var(--t2);line-height:1.65;margin-bottom:14px;font-weight:300}
+.eco-badges{display:flex;gap:5px;flex-wrap:wrap}
+.eco-badge{font-family:var(--mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);padding:2px 7px;border:1px solid var(--border)}
 
-  .hero-contact a:hover { color: var(--white); }
+/* FOOTER */
+footer{border-top:1px solid var(--border);background:var(--bg-low);padding:24px clamp(16px,5vw,64px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-brand{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--t0);letter-spacing:.1em}
+.footer-links{display:flex;gap:24px;list-style:none}
+.footer-links a{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--t3);transition:color .2s}
+.footer-links a:hover{color:var(--amber)}
 
-  .rule-bar {
-    height: 3px;
-    background: var(--white);
-    width: 48px;
-    margin-bottom: 0;
-  }
+/* LABELS */
+.col-label{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--t3);margin-bottom:10px;padding-left:2px}
 
-  /* ── CONTAINER ────────────────────────────────────────────────── */
-  .container {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 40px 72px;
-  }
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
 
-  /* ── SECTION ──────────────────────────────────────────────────── */
-  .section {
-    margin-top: 52px;
-    opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-
-  .section.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .section-label {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-
-  .section-label h2 {
-    font-family: var(--display);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--black);
-    white-space: nowrap;
-  }
-
-  .section-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--rule);
-  }
-
-  /* ── PROFILE ──────────────────────────────────────────────────── */
-  .profile-text {
-    font-size: 15.5px;
-    font-weight: 300;
-    line-height: 1.8;
-    color: var(--dark);
-    max-width: 740px;
-  }
-
-  /* ── COMPETENCIES ─────────────────────────────────────────────── */
-  .competencies {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 8px;
-  }
-
-  .competency {
-    padding: 11px 15px;
-    background: var(--offwhite);
-    border-left: 2px solid var(--black);
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--dark);
-    line-height: 1.4;
-  }
-
-  /* ── ROLE ─────────────────────────────────────────────────────── */
-  .role { margin-bottom: 36px; }
-
-  .role-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 3px;
-  }
-
-  .role-title {
-    font-family: var(--display);
-    font-size: 16.5px;
-    font-weight: 700;
-    color: var(--black);
-    letter-spacing: 0px;
-  }
-
-  .role-dates {
-    font-size: 12px;
-    color: var(--steel);
-    font-style: italic;
-    white-space: nowrap;
-  }
-
-  .role-org {
-    font-size: 12.5px;
-    font-weight: 500;
-    color: var(--mid);
-    margin-bottom: 10px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-  }
-
-  .role-summary {
-    font-size: 13.5px;
-    font-weight: 300;
-    color: var(--mid);
-    line-height: 1.7;
-    margin-bottom: 12px;
-    max-width: 700px;
-  }
-
-  .role-bullets {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .role-bullets li {
-    font-size: 13.5px;
-    font-weight: 400;
-    color: var(--dark);
-    padding-left: 20px;
-    position: relative;
-    line-height: 1.55;
-  }
-
-  .role-bullets li::before {
-    content: '·';
-    position: absolute;
-    left: 0;
-    color: var(--steel);
-    font-size: 14px;
-  }
-
-  .role + .role {
-    padding-top: 32px;
-    border-top: 1px solid var(--rule);
-  }
-
-  /* ── PATENTS ──────────────────────────────────────────────────── */
-  .patents {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .patent {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    padding: 13px 16px;
-    background: var(--black);
-    color: var(--white);
-  }
-
-  .patent-name {
-    font-family: var(--display);
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--white);
-    letter-spacing: 0.2px;
-  }
-
-  .patent-num {
-    font-size: 11.5px;
-    color: rgba(255,255,255,0.45);
-    white-space: nowrap;
-    font-style: italic;
-  }
-
-  /* ── TWO-COL ──────────────────────────────────────────────────── */
-  .two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-  }
-
-  @media (max-width: 580px) {
-    .two-col { grid-template-columns: 1fr; gap: 0; }
-  }
-
-  /* ── ITEM LIST ────────────────────────────────────────────────── */
-  .item-list {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .item-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 12px;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .item-row:first-child { border-top: 1px solid var(--rule); }
-
-  .item-name {
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--dark);
-    line-height: 1.45;
-    flex: 1;
-  }
-
-  .item-name strong {
-    font-weight: 600;
-    color: var(--black);
-  }
-
-  .item-date {
-    font-size: 11.5px;
-    color: var(--steel);
-    white-space: nowrap;
-    font-style: italic;
-  }
-
-  .winner-tag {
-    display: inline-block;
-    font-family: var(--display);
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--white);
-    background: var(--black);
-    padding: 2px 7px;
-    margin-left: 8px;
-    vertical-align: middle;
-  }
-
-  /* ── FOOTER ───────────────────────────────────────────────────── */
-  .cv-footer {
-    margin-top: 60px;
-    padding-top: 20px;
-    border-top: 1px solid var(--rule);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .cv-footer span {
-    font-size: 11.5px;
-    color: var(--steel);
-    letter-spacing: 0.3px;
-  }
-
-  .cv-footer a {
-    font-size: 11.5px;
-    color: var(--mid);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .cv-footer a:hover { color: var(--black); }
-
-  /* ── RESPONSIVE ───────────────────────────────────────────────── */
-  @media (max-width: 640px) {
-    .hero { padding: 36px 24px 32px; }
-    .hero-inner { flex-direction: column; gap: 20px; }
-    .container { padding: 0 20px 52px; }
-  }
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-visual{height:200px}
+  .patents-grid{grid-template-columns:1fr 1fr}
+  .eco-grid{grid-template-columns:1fr 1fr}
+  .two-col{grid-template-columns:1fr}
+  .career-row{grid-template-columns:1fr}
+  .career-meta{border-right:none;border-bottom:1px solid var(--border-dim);padding:20px 24px 14px}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .header-nav{display:none}
+  .patents-grid{grid-template-columns:1fr}
+  .eco-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-inner">
-    <div class="logo-block">
-      <img src="data:image/jpeg;base64,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8UY9mK8UY9mKCkxmUqGkENj8N//EACoQAQABAgQFBAIDAQAAAAAAAAERACExQVFhQHGRofAQgbHBMPFw0eEg/9oACAEBAAE/If4enh59dmLJd2gyNgy7UACMlGFqV41JemIGxpEkTghDCvmuQZrU6ZpHnYu8iCnKKXVxfR/gXXuX8kNNTPJHPT54aNnEaewcBCOleB08EriSNtPL7IP9UJBBso4AUMp+iyQB5TUKcFnm5lujTVLZnlEzGksh3rZzsklCaILILDvOaVeB08Ei720EHaKBZAJhg/fhvHqmvAhvGLk7q/XqB1s7AiwPIp4HTwTaISNaAHMnsUefEULBGh/dihuIkpr1lg7Dq0BRv7oKLiJI0rdKCCLgaHWvC6eC0YbXIvk0UgswqdY9pN6RudCEJ6YJ5mP31NqAn0G7A1dMNjFWUfZg6DZITnXndPCKjWTHliKVwP7Dd6CrhlaGyfg+aBih+FGCURyi5B/gdtef0/8AB+Z302VJTe3YKjsg8cg4CPWShJZ1pXRj39Mqj98GCvD6eCT2AhhoTyDqrCjoKOjG8E9xO9Am4WiDop7ULeGF2Yfbel1Gl1c3YxaBefky6kD3VZvPqTBE0/cqfuVF28QdnlGPH8+TF76fTvU/GwMnp8roKVHcQhzPRwKY6gtigmbEHVLH72MXTpRlDKvC6oEXp8oUYEMzUNiCwBAVaRAIx614H9V4H9V4H9V4H9U/kYIR1Lfxv//aAAwDAQACAAMAAAAQ999998999999899w98888999999sdot95Mdtd999toEFRZMdt99999VUE4u1dtk9995RYkmAc0t59999gQW4iyhw59995cc4K4Go85999958gsO84x99999tglEIZJc9999tt9sMMM8999999999999999999999999999999//EABwRAAICAgMAAAAAAAAAAAAAAAERMEAAIBBBUP/aAAgBAwEBPxC8uFIsUxgFPvcbqoKD8H//xAAYEQACAwAAAAAAAAAAAAAAAAARYAEQMP/aAAgBAgEBPxBSNxmEn//EACYQAQACAQQBBAIDAQAAAAAAAAEAESExQVFhECAwQHFggZGh8LH/2gAIAQEAAT8Q/EA+OvuOPQte7fqfh0+s3D31rwW/C0/yk36KMXSkW9CMAAhYjYkdO0OJpAFBxZMF4Zg7SMJFiJqJv761HxY+Sgscb4sB+2gUWBUvsrQRNU2adVF7qdo6qusuoL5CmDcRRf8AxEjWwylUW1LYLOppwolKmCaUOREqvgeHSL4JixAqP5qfD2Rf2i2wAZVUANbg/d0RU1RTcB7l3NlRwGwe/wBEHcgo3K0+KzTsiIIg2BQKaPstOnmNwW7hIgOQQCh+BFSiKsoB/kogQ6si2sG4R6ICjwLhULgFzNLDvtHn/wDPEflXHnwOp/X6+B42gxwVAAhhhQz0n07o7dqSgRMiIIkD6pHAcl9Ahak4BR7rTsJpwutrhVB6iUYyNGVEXFk1SNcgmo7+BQRLjXHXwCIgNFvIiiIpHO2WbPTbBq0P4RfcFCDUR0fCFNLInFH7FY7kVLjRY0tAgWa0gNtx6swdC3dyNwfAEOkG5fhLiosUAL6f4kl63EMb2lnUF6107zicgIr5wjMS+MRUKDIiCPUU00UDUaOBfQNvGS4R9xrNPFw5me4KHJmqscs6nBjKAVm6q7x5eJYqreHosPXnw3mK6ranWX9nvlXw5lUS1eOY6sAQ7u1IKhGk3Ii/5IJQYlAyC3UFq2Nb5Rg61ckfKNuq2rVy1aKotwAP4HMKamwWmgCukxnGaMyVhCXgOzBuMJ4HwaLrS/MiUr4OKUDThlVl1r77eUF5WREyCCCkQREjyAty9UzXSpurYXOGUTwgI/cIVxqHz2lVxdtYFjeZ6q9UK6KalsyXEN0le1JOVVVe/Q6+A+lwQTlAcP3RKeWFL0loYz6MDgDSChBVRdQQ1H0OHCBQEeIKzYhYR3Ie9fi7l+FqDLPFkv3mVNZkJXirjUrwD8LWVKjK8V+Xf//Z" alt="Simon Legrand monogram">
+<header>
+  <div class="header-brand">S.<span>LEGRAND</span> // COMMAND_CENTER</div>
+  <ul class="header-nav">
+    <li><a href="#profile" class="active">SYSTEM_CORE</a></li>
+    <li><a href="#patents">SCHEMATICS</a></li>
+    <li><a href="#career">HISTORY</a></li>
+    <li><a href="#ecosystem">ECOSYSTEM</a></li>
+  </ul>
+  <div class="header-icons">
+    <i class="fa-solid fa-terminal"></i>
+    <i class="fa-solid fa-satellite-dish"></i>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="module hero-module glow reveal" id="profile">
+    <span class="hero-id">ID_01 // SYSTEM_INIT</span>
+    <div class="hero-grid">
+      <div>
+        <h1 class="hero-name">Simon Legrand</h1>
+        <div class="hero-sub">MCIM &nbsp;·&nbsp; Co-Founder &nbsp;·&nbsp; Patent Inventor</div>
+        <p class="hero-tagline">Technology co-founder and listed inventor with 20+ years building at the intersection of complex sensor systems, IoT infrastructure, and public health. Faversham, Kent.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="mailto:simongeorgelegrand@gmail.com"><i class="fa-solid fa-envelope"></i> Initialize_Comms</a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/-simonlegrand-" target="_blank"><i class="fa-brands fa-linkedin"></i> Neural_Net ↗</a>
+          <a class="btn btn-outline" href="https://www.simonlegrand.co.uk" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Full_Profile ↗</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="radar-ring"></div>
+        <div class="radar-ring"></div>
+        <div class="radar-ring"></div>
+        <div class="radar-ring"></div>
+        <div class="radar-dot"></div>
+        <div class="visual-label">SIG_ACTIVE // 51.3148°N · 0.8898°E</div>
+        <div class="visual-status"><div class="status-dot"></div><span class="status-txt">ONLINE</span></div>
+      </div>
     </div>
-    <div class="hero-text">
-      <div class="hero-name">Simon Legrand</div>
-      <div class="hero-credentials">MCIM &nbsp;·&nbsp; Co-Founder &nbsp;·&nbsp; Patent Inventor</div>
-      <div class="hero-tagline">
-        Technology co-founder and listed inventor with 20+ years building at the intersection of complex sensor systems, IoT infrastructure, and public health. Faversham, Kent.
-      </div>
-      <div class="hero-contact">
-        <a href="mailto:simongeorgelegrand@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/-simonlegrand-" target="_blank">LinkedIn ↗</a>
-      </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-module reveal" aria-hidden="true">
+    <div class="ticker-track">
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>MCIM · Chartered Institute of Marketing</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>Chevron Technology Ventures</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>Rivian Automotive</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>Network Rail</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>3 Granted Patents · Solar CCTV · Autonomous Power · Drone Charging</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>IFSEC Global Top 50 Most Influential 2018</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>WESCO Anixter Global Distribution</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>IBM Certified Cyber Security Board Lead</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>S&amp;FE Awards Winner 2023 · 2017</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>Responsible AI Institute Member 2025</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>Sunstone Systems · Acquired by WJ Group</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>58 Systems Deployed · Tengizchevroil · Kazakhstan</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>MCIM · Chartered Institute of Marketing</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>Chevron Technology Ventures</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>Rivian Automotive</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>Network Rail</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>3 Granted Patents · Solar CCTV · Autonomous Power · Drone Charging</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>IFSEC Global Top 50 Most Influential 2018</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>WESCO Anixter Global Distribution</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>IBM Certified Cyber Security Board Lead</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>S&amp;FE Awards Winner 2023 · 2017</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>Responsible AI Institute Member 2025</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>Sunstone Systems · Acquired by WJ Group</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>58 Systems Deployed · Tengizchevroil · Kazakhstan</span>
     </div>
   </div>
-</div>
 
-<!-- BODY -->
-<div class="container">
+  <!-- STATS -->
+  <div class="stats-row reveal">
+    <div class="stat-cell"><div class="stat-val">20+</div><div class="stat-lbl">Years_Experience</div></div>
+    <div class="stat-cell"><div class="stat-val">3</div><div class="stat-lbl">Granted_Patents</div></div>
+    <div class="stat-cell"><div class="stat-val">58</div><div class="stat-lbl">Systems_Deployed · KZ</div></div>
+    <div class="stat-cell"><div class="stat-val">15+</div><div class="stat-lbl">Published_Articles</div></div>
+  </div>
 
   <!-- PROFILE -->
-  <div class="section">
-    <div class="section-label"><h2>Profile</h2></div>
-    <p class="profile-text">
-      Senior leader with 20+ years across UK public sector health and social care, and technology co-founding. Co-founded Sunstone Systems from inception into a globally recognised, award-winning platform, earning contracts with Chevron, Rivian Automotive, and Network Rail, and acceptance into the Chevron Technology Ventures programme. Listed inventor on three patents spanning solar CCTV, autonomous power, and drone charging. Equally fluent in strategic marketing, technical concept development, business development, and academic research. Deep interest in agentic AI and the convergence of LLM-driven reasoning with physical sensor networks, where the next generation of genuinely transformative applications is being built.
-    </p>
-  </div>
+  <section class="reveal">
+    <div class="section-head"><h2>System_Core // Profile</h2></div>
+    <div class="module">
+      <p class="profile-text">Senior leader with 20+ years across UK public sector health and social care, and technology co-founding. Co-founded Sunstone Systems from inception into a globally recognised, award-winning platform, earning contracts with Chevron, Rivian Automotive, and Network Rail, and acceptance into the Chevron Technology Ventures programme. Listed inventor on three patents spanning solar CCTV, autonomous power, and drone charging. Equally fluent in strategic marketing, technical concept development, business development, and academic research. Deep interest in agentic AI and the convergence of LLM-driven reasoning with physical sensor networks, where the next generation of genuinely transformative applications is being built.</p>
+    </div>
+  </section>
 
   <!-- COMPETENCIES -->
-  <div class="section">
-    <div class="section-label"><h2>Core Competencies</h2></div>
-    <div class="competencies">
-      <div class="competency">Technology co-founding &amp; commercialisation</div>
-      <div class="competency">Strategic marketing, brand &amp; communications</div>
-      <div class="competency">IP development, listed patent inventor</div>
-      <div class="competency">Enterprise business development: global clients</div>
-      <div class="competency">UK public sector: NHS, Home Office, DfE, DoH</div>
-      <div class="competency">Academic &amp; qualitative research</div>
-      <div class="competency">Agentic AI &amp; LLM systems</div>
-      <div class="competency">Cyber security, IBM Certified Board Lead</div>
+  <section class="reveal">
+    <div class="section-head"><h2>Core_Competencies</h2></div>
+    <div class="comp-grid">
+      <div class="comp-cell">Technology co-founding &amp; commercialisation</div>
+      <div class="comp-cell">Strategic marketing, brand &amp; communications</div>
+      <div class="comp-cell">IP development, listed patent inventor</div>
+      <div class="comp-cell">Enterprise business development: global clients</div>
+      <div class="comp-cell">UK public sector: NHS, Home Office, DfE, DoH</div>
+      <div class="comp-cell">Academic &amp; qualitative research</div>
+      <div class="comp-cell">Agentic AI &amp; LLM systems</div>
+      <div class="comp-cell">Cyber security, IBM Certified Board Lead</div>
     </div>
-  </div>
+  </section>
+
+  <!-- PATENTS -->
+  <section class="reveal" id="patents">
+    <div class="section-head"><h2>Patent_Schematics // Listed Inventor</h2></div>
+    <div class="patents-grid">
+      <div class="module patent-card glow">
+        <div><div class="pat-id">PAT_01 // 2016</div><div class="pat-name">Solar CCTV System</div><div class="pat-num">WO2016185034A1</div></div>
+        <div class="pat-icon"><i class="fa-solid fa-camera"></i></div>
+      </div>
+      <div class="module patent-card glow">
+        <div><div class="pat-id">PAT_02 // 2020</div><div class="pat-name">Solar Power Station</div><div class="pat-num">US20200280280A1</div></div>
+        <div class="pat-icon"><i class="fa-solid fa-bolt"></i></div>
+      </div>
+      <div class="module patent-card glow">
+        <div><div class="pat-id">PAT_03 // 2022</div><div class="pat-name">Solar Drone Charging Station</div><div class="pat-num">US20220052538A1</div></div>
+        <div class="pat-icon"><i class="fa-solid fa-helicopter"></i></div>
+      </div>
+    </div>
+  </section>
 
   <!-- CAREER -->
-  <div class="section">
-    <div class="section-label"><h2>Career History</h2></div>
+  <section class="reveal" id="career">
+    <div class="section-head"><h2>Career_Log</h2></div>
+    <div class="career-log">
 
-    <div class="role">
-      <div class="role-header">
-        <div class="role-title">Technology Marketer</div>
-        <div class="role-dates">2024 – Present</div>
+      <div class="career-row">
+        <div class="career-meta">
+          <span class="career-badge">2024 – Present</span>
+          <div class="career-title">Technology Marketer</div>
+          <div class="career-org">WJ Group / WJ Sunstone</div>
+        </div>
+        <div class="career-body">
+          <p class="career-summary">Following Sunstone's acquisition, led strategic marketing for the technology portfolio within the new group structure, operating as de facto marketing lead while formal role definition was established.</p>
+          <ul class="career-bullets">
+            <li>Developed and executed go-to-market strategies for WJ Sunstone's solar-powered technology portfolio</li>
+            <li>Managed brand integration within WJ Group, maintaining consistent positioning and market voice</li>
+            <li>Led digital initiatives: website strategy, SEO, content development, and technical collateral</li>
+            <li>Additional responsibilities: Group Sustainability, Social Responsibility, MHFA Practitioner</li>
+          </ul>
+        </div>
       </div>
-      <div class="role-org">WJ Group / WJ Sunstone</div>
-      <p class="role-summary">Following Sunstone's acquisition, led strategic marketing for the technology portfolio within the new group structure, operating as de facto marketing lead while formal role definition was established.</p>
-      <ul class="role-bullets">
-        <li>Developed and executed go-to-market strategies for WJ Sunstone's solar-powered technology portfolio</li>
-        <li>Managed brand integration within WJ Group, maintaining consistent positioning and market voice</li>
-        <li>Led digital initiatives: website strategy, SEO, content development, and technical collateral</li>
-        <li>Additional responsibilities: Group Sustainability, Social Responsibility, MHFA Practitioner</li>
-      </ul>
-    </div>
 
-    <div class="role">
-      <div class="role-header">
-        <div class="role-title">Co-Founder, Director &amp; Chief Marketing Officer</div>
-        <div class="role-dates">2011 – 2024</div>
+      <div class="career-row">
+        <div class="career-meta">
+          <span class="career-badge">2011 – 2024</span>
+          <div class="career-title">Co-Founder, Director &amp; Chief Marketing Officer</div>
+          <div class="career-org">Sunstone Systems</div>
+        </div>
+        <div class="career-body">
+          <p class="career-summary">Co-founded and built Sunstone Systems from inception into an internationally recognised leader in solar-powered surveillance, autonomous power, and IoT telecommunications, winning multiple industry awards and securing major enterprise contracts globally.</p>
+          <ul class="career-bullets">
+            <li>Secured acceptance into Chevron Technology Ventures, led engagement with senior CTV venture partners</li>
+            <li>Co-designed patented Solar IP CCTV System with Chevron/Tengizchevroil; 58 systems deployed in Kazakhstan</li>
+            <li>Won Rivian Automotive contract, beating 15 competitors across UK, Germany, and USA</li>
+            <li>Led Network Rail / Telent Power Station deployment (Inverness) and LiDAR tunnel detection opportunity</li>
+            <li>Brokered WESCO Anixter global distribution partnership; multiple live pipeline opportunities</li>
+            <li>Initiated LiDAR (Flasheye), Peplink, and Bladon Micro Turbine technology integrations</li>
+            <li>Authored 15+ published articles across IFSEC Global, PSI Magazine, Security Buyer, and others</li>
+            <li>Achieved Cyber Essentials Accreditation; IBM Certified Cyber Security Board Lead</li>
+          </ul>
+        </div>
       </div>
-      <div class="role-org">Sunstone Systems</div>
-      <p class="role-summary">Co-founded and built Sunstone Systems from inception into an internationally recognised leader in solar-powered surveillance, autonomous power, and IoT telecommunications, winning multiple industry awards and securing major enterprise contracts globally.</p>
-      <ul class="role-bullets">
-        <li>Secured acceptance into Chevron Technology Ventures, led engagement with senior CTV venture partners</li>
-        <li>Co-designed patented Solar IP CCTV System with Chevron/Tengizchevroil; 58 systems deployed in Kazakhstan</li>
-        <li>Won Rivian Automotive contract, beating 15 competitors across UK, Germany, and USA</li>
-        <li>Led Network Rail / Telent Power Station deployment (Inverness) and LiDAR tunnel detection opportunity</li>
-        <li>Brokered WESCO Anixter global distribution partnership; multiple live pipeline opportunities</li>
-        <li>Initiated LiDAR (Flasheye), Peplink, and Bladon Micro Turbine technology integrations</li>
-        <li>Authored 15+ published articles across IFSEC Global, PSI Magazine, Security Buyer, and others</li>
-        <li>Achieved Cyber Essentials Accreditation; IBM Certified Cyber Security Board Lead</li>
-      </ul>
-    </div>
 
-    <div class="role">
-      <div class="role-header">
-        <div class="role-title">Public Sector Professional &amp; Consultant</div>
-        <div class="role-dates">2001 – 2015</div>
+      <div class="career-row">
+        <div class="career-meta">
+          <span class="career-badge">2001 – 2015</span>
+          <div class="career-title">Public Sector Professional &amp; Consultant</div>
+          <div class="career-org">Home Office · DfE · DoH · NHS NIHR · ARC CEPS</div>
+        </div>
+        <div class="career-body">
+          <p class="career-summary">Sustained consulting and research career across central government, NHS, and leading academic institutions, delivering policy, strategy, and service development across health, education, and security.</p>
+          <ul class="career-bullets">
+            <li>Service development with local authorities, NHS trusts, and public sector organisations</li>
+            <li>Policy and strategy with Local Authorities and Government departments</li>
+            <li>Qualitative and quantitative academic research with Essex, Bath, Kent, and Australian National University</li>
+          </ul>
+        </div>
       </div>
-      <div class="role-org">Home Office · DfE · DoH · NHS NIHR · ARC CEPS</div>
-      <p class="role-summary">Sustained consulting and research career across central government, NHS, and leading academic institutions, delivering policy, strategy, and service development across health, education, and security.</p>
-      <ul class="role-bullets">
-        <li>Service development with local authorities, NHS trusts, and public sector organisations</li>
-        <li>Policy and strategy with Local Authorities and Government departments</li>
-        <li>Qualitative and quantitative academic research with Essex, Bath, Kent, and Australian National University</li>
-      </ul>
-    </div>
-  </div>
 
-  <!-- PATENTS + EDUCATION -->
-  <div class="section">
+    </div>
+  </section>
+
+  <!-- EDUCATION + RECOGNITION -->
+  <section class="reveal">
+    <div class="section-head"><h2>Education &amp; Recognition</h2></div>
     <div class="two-col">
       <div>
-        <div class="section-label"><h2>Patents: Listed Inventor</h2></div>
-        <div class="patents">
-          <div class="patent">
-            <span class="patent-name">Solar CCTV System</span>
-            <span class="patent-num">WO2016185034A1 · 2016</span>
-          </div>
-          <div class="patent">
-            <span class="patent-name">Solar Power Station</span>
-            <span class="patent-num">US20200280280A1 · 2020</span>
-          </div>
-          <div class="patent">
-            <span class="patent-name">Solar Drone Charging Station</span>
-            <span class="patent-num">US20220052538A1 · 2022</span>
-          </div>
+        <p class="col-label">// Qualifications</p>
+        <div class="item-table">
+          <div class="item-row"><span class="item-name"><strong>MCIM</strong> Chartered Institute of Marketing</span><span class="item-date">2025</span></div>
+          <div class="item-row"><span class="item-name"><strong>MHFA Practitioner</strong> Mental Health First Aid UK</span><span class="item-date">2024</span></div>
+          <div class="item-row"><span class="item-name"><strong>DipHE</strong> Public Sector Change &amp; Innovation, Kent</span><span class="item-date">2003</span></div>
+          <div class="item-row"><span class="item-name"><strong>DipHE</strong> Public Sector Development, Brighton</span><span class="item-date">2003</span></div>
+          <div class="item-row"><span class="item-name"><strong>BA (Hons)</strong> Education &amp; Psychology, Leeds</span><span class="item-date">1999</span></div>
         </div>
       </div>
       <div>
-        <div class="section-label"><h2>Education</h2></div>
-        <div class="item-list">
-          <div class="item-row">
-            <span class="item-name"><strong>Member</strong> Chartered Institute of Marketing (MCIM)</span>
-            <span class="item-date">2025</span>
-          </div>
-          <div class="item-row">
-            <span class="item-name"><strong>MHFA Practitioner</strong>, Mental Health First Aid UK</span>
-            <span class="item-date">2024</span>
-          </div>
-          <div class="item-row">
-            <span class="item-name"><strong>DipHE</strong> Public Sector Change &amp; Innovation, Kent</span>
-            <span class="item-date">2003</span>
-          </div>
-          <div class="item-row">
-            <span class="item-name"><strong>DipHE</strong> Public Sector Development, Brighton</span>
-            <span class="item-date">2003</span>
-          </div>
-          <div class="item-row">
-            <span class="item-name"><strong>BA (Hons)</strong> Education &amp; Psychology, Leeds</span>
-            <span class="item-date">1999</span>
-          </div>
+        <p class="col-label">// Industry Recognition</p>
+        <div class="item-table">
+          <div class="item-row"><span class="item-name">S&amp;FE Awards, Security Partnering Initiative <span class="winner-tag">Winner</span></span><span class="item-date">2023</span></div>
+          <div class="item-row"><span class="item-name">Highways England, Network Management <span class="winner-tag">Winner</span></span><span class="item-date">2020</span></div>
+          <div class="item-row"><span class="item-name">Canterbury Business Awards, SME &amp; Innovation <span class="winner-tag">Winner</span></span><span class="item-date">2018</span></div>
+          <div class="item-row"><span class="item-name">S&amp;FE Awards, SME Installer &amp; Project of Year <span class="winner-tag">Winner</span></span><span class="item-date">2017</span></div>
+          <div class="item-row"><span class="item-name">IFSEC Global, Top 50 Most Influential</span><span class="item-date">2018</span></div>
+          <div class="item-row"><span class="item-name">S&amp;FE Awards, Champion of Champions (Finalist)</span><span class="item-date">2021</span></div>
+          <div class="item-row"><span class="item-name">CIHT Awards, Innovation (Highly Commended)</span><span class="item-date">2018</span></div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- AWARDS + ADVISORY -->
-  <div class="section">
-    <div class="two-col">
-      <div>
-        <div class="section-label"><h2>Industry Recognition</h2></div>
-        <div class="item-list">
-          <div class="item-row">
-            <span class="item-name">S&amp;FE Awards, Security Partnering Initiative <span class="winner-tag">Winner</span></span>
-            <span class="item-date">2023</span>
-          </div>
-          <div class="item-row">
-            <span class="item-name">Highways England, Network Management <span class="winner-tag">Winner</span></span>
-            <span class="item-date">2020</span>
-          </div>
-          <div class="item-row">
-            <span class="item-name">Canterbury Business Awards, SME &amp; Innovation <span class="winner-tag">Winner</span></span>
-            <span class="item-date">2018</span>
-          </div>
-          <div class="item-row">
-            <span class="item-name">S&amp;FE Awards, SME Installer &amp; Project of Year <span class="winner-tag">Winner</span></span>
-            <span class="item-date">2017</span>
-          </div>
-          <div class="item-row">
-            <span class="item-name">IFSEC Global, Top 50 Most Influential</span>
-            <span class="item-date">2018</span>
-          </div>
-          <div class="item-row">
-            <span class="item-name">S&amp;FE Awards, Champion of Champions (Finalist)</span>
-            <span class="item-date">2021</span>
-          </div>
-          <div class="item-row">
-            <span class="item-name">CIHT Awards, Innovation (Highly Commended)</span>
-            <span class="item-date">2018</span>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="section-label"><h2>Advisory &amp; Memberships</h2></div>
-        <div class="item-list">
-          <div class="item-row">
-            <span class="item-name">Responsible AI Institute, Member</span>
-            <span class="item-date">2025–</span>
-          </div>
-          <div class="item-row">
-            <span class="item-name">PSI Magazine, Content Advisory Panel</span>
-            <span class="item-date">2025–</span>
-          </div>
-          <div class="item-row">
-            <span class="item-name">Security Matters Magazine, Content Panel</span>
-            <span class="item-date">2024–</span>
-          </div>
-          <div class="item-row">
-            <span class="item-name">Security Buyer Magazine, Awards Panel</span>
-            <span class="item-date">2024–</span>
-          </div>
-          <div class="item-row">
-            <span class="item-name">LCRIG, Member</span>
-            <span class="item-date">2025–</span>
-          </div>
-        </div>
-      </div>
+  <!-- ADVISORY -->
+  <section class="reveal">
+    <div class="section-head"><h2>Advisory &amp; Memberships</h2></div>
+    <div class="item-table">
+      <div class="item-row"><span class="item-name">Responsible AI Institute, Member</span><span class="item-date">2025–</span></div>
+      <div class="item-row"><span class="item-name">PSI Magazine, Content Advisory Panel</span><span class="item-date">2025–</span></div>
+      <div class="item-row"><span class="item-name">Security Matters Magazine, Content Panel</span><span class="item-date">2024–</span></div>
+      <div class="item-row"><span class="item-name">Security Buyer Magazine, Awards Panel</span><span class="item-date">2024–</span></div>
+      <div class="item-row"><span class="item-name">LCRIG, Member</span><span class="item-date">2025–</span></div>
     </div>
-  </div>
+  </section>
 
-  <!-- FOOTER -->
-  <div class="cv-footer">
-    <span>© 2026 Simon Legrand MCIM &nbsp;·&nbsp; Faversham, Kent</span>
-    <a href="mailto:simongeorgelegrand@gmail.com">simongeorgelegrand@gmail.com</a>
-  </div>
+  <!-- ECOSYSTEM -->
+  <section class="reveal" id="ecosystem">
+    <div class="section-head"><h2>Client_Ecosystem // Featured Deployments</h2></div>
+    <div class="eco-grid">
 
-</div>
+      <a class="module eco-card glow" href="https://www.vestait.co.uk" target="_blank">
+        <div class="eco-tag">Enterprise IT Infrastructure</div>
+        <div class="eco-name">Vesta IT Services Ltd</div>
+        <span class="eco-url">vestait.co.uk</span>
+        <p class="eco-desc">Full B2B marketing build for enterprise network, CCTV, WiFi, fire detection, and AI analytics specialists. 26+ years enterprise experience, major ports and national infrastructure clients.</p>
+        <div class="eco-badges"><span class="eco-badge">Website</span><span class="eco-badge">B2B Copy</span><span class="eco-badge">Brand</span><span class="eco-badge">SEO</span></div>
+      </a>
+
+      <a class="module eco-card glow" href="https://www.marketingformymates.com" target="_blank">
+        <div class="eco-tag">B2B Marketing Engine</div>
+        <div class="eco-name">Marketing for my Mates</div>
+        <span class="eco-url">marketingformymates.com</span>
+        <p class="eco-desc">Full-service marketing department in a box for local B2B technical trades. Proprietary digital audit tool, ROI calculator, and interactive onboarding timeline.</p>
+        <div class="eco-badges"><span class="eco-badge">Strategy</span><span class="eco-badge">Web</span><span class="eco-badge">SEO</span><span class="eco-badge">Social</span></div>
+      </a>
+
+      <a class="module eco-card glow" href="https://www.assistiv.co" target="_blank">
+        <div class="eco-tag">Health Technology · Co-Founder</div>
+        <div class="eco-name">Assistiv Systems Ltd</div>
+        <span class="eco-url">assistiv.co</span>
+        <p class="eco-desc">Passive home monitoring for older adults in the UK's Missing Middle. Clinical advisory board includes ASCOT creator Prof. Ann Netten and UCL Prof. John Jerrim. 14:1 ROI at pilot scale.</p>
+        <div class="eco-badges"><span class="eco-badge">Co-Founder</span><span class="eco-badge">NHS</span><span class="eco-badge">AI Platform</span></div>
+      </a>
+
+      <a class="module eco-card glow" href="https://www.paulschelhaas.com" target="_blank">
+        <div class="eco-tag">Personal Brand · Advisory</div>
+        <div class="eco-name">Paul Schelhaas</div>
+        <span class="eco-url">paulschelhaas.com</span>
+        <p class="eco-desc">Executive brand platform for serial deep-tech entrepreneur and co-patent inventor. Positioned for PE-backed scale-ups and corporate venturing. Chevron personal endorsement featured.</p>
+        <div class="eco-badges"><span class="eco-badge">Personal Brand</span><span class="eco-badge">B2B Copy</span><span class="eco-badge">Advisory</span></div>
+      </a>
+
+      <a class="module eco-card glow" href="https://www.fyrflysystems.com" target="_blank">
+        <div class="eco-tag">Physical Security · Education</div>
+        <div class="eco-name">Fyrfly Systems</div>
+        <span class="eco-url">fyrflysystems.com</span>
+        <p class="eco-desc">NSI NACOSS Gold certified CCTV, access control, alarms, fire systems and 24/7 monitoring for UK schools and public sector. 20 regional SEO pages. 50+ sites protected.</p>
+        <div class="eco-badges"><span class="eco-badge">Website</span><span class="eco-badge">SEO</span><span class="eco-badge">B2B Copy</span></div>
+      </a>
+
+      <a class="module eco-card glow" href="https://www.timlegrand.org" target="_blank">
+        <div class="eco-tag">Academic Profile · Adelaide</div>
+        <div class="eco-name">Prof. Tim Legrand</div>
+        <span class="eco-url">timlegrand.org</span>
+        <p class="eco-desc">Full academic platform for ARC Future Fellow 2025–2029, Professor of Politics &amp; International Relations. Research, publications, grants, and global reach visualisation.</p>
+        <div class="eco-badges"><span class="eco-badge">Academic</span><span class="eco-badge">Personal Brand</span><span class="eco-badge">Research</span></div>
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-brand">© 2026 S_LEGRAND // ALL_RIGHTS_RESERVED // REF_606</div>
+  <ul class="footer-links">
+    <li><a href="#profile">SYSTEM_CORE</a></li>
+    <li><a href="mailto:simongeorgelegrand@gmail.com">ENCRYPTED_COMMS</a></li>
+    <li><a href="https://www.simonlegrand.co.uk" target="_blank">FULL_PROFILE</a></li>
+  </ul>
+</footer>
 
 <script>
-  const sections = document.querySelectorAll('.section');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 70);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.06 });
-  sections.forEach(s => observer.observe(s));
-</script>
+// REVEAL
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e,i) => {
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('visible'), i*50);
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.05});
+reveals.forEach(r=>obs.observe(r));
 
+// NAV ACTIVE
+const secs = document.querySelectorAll('section[id]');
+const links = document.querySelectorAll('.header-nav a');
+const navObs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      links.forEach(a=>a.classList.remove('active'));
+      const m = document.querySelector(`.header-nav a[href="#${e.target.id}"]`);
+      if(m) m.classList.add('active');
+    }
+  });
+},{threshold:0.4});
+secs.forEach(s=>navObs.observe(s));
+
+// LIVE CLOCK
+const lbl = document.querySelector('.visual-label');
+function tick(){
+  const t = new Date().toLocaleTimeString('en-GB',{hour12:false});
+  if(lbl) lbl.textContent = `SIG_ACTIVE // 51.3148°N · 0.8898°E · ${t}`;
+}
+tick(); setInterval(tick,1000);
+</script>
 </body>
 </html>
