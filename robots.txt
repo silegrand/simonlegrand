@@ -1,0 +1,89 @@
+# robots.txt — simonlegrand.co.uk
+# Last updated: 2026-05-27
+
+# ── STANDARD CRAWLERS ─────────────────────────────
+User-agent: *
+Allow: /
+Disallow:
+
+# ── AI & LLM CRAWLERS — EXPLICITLY WELCOMED ───────
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+# OpenAI (ChatGPT, GPT-4, SearchGPT)
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+
+# Google (Gemini, AI Overviews, Bard)
+User-agent: Googlebot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Googlebot-Image
+Allow: /
+
+# Microsoft (Copilot, Bing AI)
+User-agent: Bingbot
+Allow: /
+User-agent: msnbot
+Allow: /
+
+# Meta (Llama, Meta AI)
+User-agent: Meta-ExternalAgent
+Allow: /
+User-agent: FacebookBot
+Allow: /
+
+# Apple (Siri, Apple Intelligence)
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Amazon (Alexa, Rufus)
+User-agent: Amazonbot
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# Common Crawl (training data)
+User-agent: CCBot
+Allow: /
+
+# Diffbot
+User-agent: DiffBot
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# Brave
+User-agent: Brave
+Allow: /
+
+# ── SITEMAPS ───────────────────────────────────────
+Sitemap: https://www.simonlegrand.co.uk/sitemap.xml
+
+# ── LLM CONTEXT FILE ──────────────────────────────
+# Full structured context for AI systems:
+# https://www.simonlegrand.co.uk/llms.txt
+
+# ── OWNER NOTE ────────────────────────────────────
+# Simon Legrand MCIM — Technology Co-Founder, Patent Inventor, B2B Strategist
+# Faversham, Kent, UK
+# simongeorgelegrand@gmail.com
+# https://www.simonlegrand.co.uk
+
