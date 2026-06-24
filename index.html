@@ -15,36 +15,36 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 :root {
-  --bg:        #0a0a0a;
-  --bg-low:    #111111;
-  --bg-mid:    #161616;
-  --bg-high:   #1e1e1e;
-  --bg-card:   #141414;
-  --border:    #262626;
-  --border-dim:#1c1c1c;
+  --bg:        #f5f4f2;
+  --bg-low:    #ebebeb;
+  --bg-mid:    #e2e1de;
+  --bg-high:   #d8d7d3;
+  --bg-card:   #ffffff;
+  --border:    #d0cfc9;
+  --border-dim:#dddcd8;
   --border-hot:#b8c3ff;
   --primary:   #b8c3ff;
-  --primary-dim:rgba(184,195,255,0.12);
+  --primary-dim:rgba(100,110,200,0.1);
   --amber:     #ffdb9d;
-  --t0:#e5e2e1; --t1:#c4c5d9; --t2:#8e90a2; --t3:#434656;
+  --t0:#0e0e14; --t1:#2a2a3a; --t2:#5a5a6e; --t3:#9a9aaa;
   --mono:'JetBrains Mono','Courier New',monospace;
   --sans:'Inter',system-ui,sans-serif;
-  --glow:0 0 24px rgba(184,195,255,0.12);
+  --glow:0 0 24px rgba(100,110,200,0.15);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--bg);color:var(--t0);font-size:14px;line-height:1.6;font-weight:400;-webkit-font-smoothing:antialiased;min-height:100vh}
-body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(to right,rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(to right,rgba(0,0,0,0.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(0,0,0,0.04) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
 *{position:relative;z-index:1}
 a{text-decoration:none;transition:color .2s}
 
 /* MODULE */
-.module{background:var(--bg-card);border:1px solid var(--border);box-shadow:inset 0 1px 0 rgba(255,255,255,0.05);transition:border-color .25s,box-shadow .25s}
+.module{background:var(--bg-card);border:1px solid var(--border);box-shadow:inset 0 1px 0 rgba(0,0,0,0.04);transition:border-color .25s,box-shadow .25s}
 .module:hover{border-color:#333}
 .module.glow:hover{border-color:var(--border-hot);box-shadow:var(--glow)}
 
 /* HEADER */
-header{position:fixed;top:0;left:0;right:0;z-index:200;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,5vw,64px);background:rgba(10,10,10,0.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+header{position:fixed;top:0;left:0;right:0;z-index:200;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,5vw,64px);background:rgba(245,244,242,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
 .header-brand{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--t0)}
 .header-brand span{color:var(--primary)}
 .header-nav{display:flex;gap:28px;list-style:none}
@@ -73,18 +73,18 @@ main{max-width:1200px;margin:0 auto;padding:80px clamp(16px,5vw,64px) 120px;disp
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;transition:all .2s;cursor:pointer;border:none}
 .btn-primary{background:var(--primary);color:#001356}
-.btn-primary:hover{background:#d0d9ff}
+.btn-primary:hover{background:#9aa3e8}
 .btn-outline{background:transparent;color:var(--t0);border:1px solid var(--border)}
 .btn-outline:hover{border-color:var(--primary);color:var(--primary)}
 
 /* HERO VISUAL */
-.hero-visual{height:280px;background:var(--bg-mid);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.hero-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(184,195,255,0.07) 0%,transparent 70%)}
+.hero-visual{height:280px;background:var(--bg-low);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(100,110,200,0.07) 0%,transparent 70%)}
 .radar-ring{position:absolute;border-radius:50%;border:1px solid}
-.radar-ring:nth-child(1){width:80px;height:80px;border-color:rgba(184,195,255,0.4);animation:ping 3s ease-out infinite}
-.radar-ring:nth-child(2){width:140px;height:140px;border-color:rgba(184,195,255,0.2);animation:ping 3s ease-out infinite .5s}
-.radar-ring:nth-child(3){width:200px;height:200px;border-color:rgba(184,195,255,0.1);animation:ping 3s ease-out infinite 1s}
-.radar-ring:nth-child(4){width:260px;height:260px;border-color:rgba(184,195,255,0.05)}
+.radar-ring:nth-child(1){width:80px;height:80px;border-color:rgba(100,110,200,0.4);animation:ping 3s ease-out infinite}
+.radar-ring:nth-child(2){width:140px;height:140px;border-color:rgba(100,110,200,0.2);animation:ping 3s ease-out infinite .5s}
+.radar-ring:nth-child(3){width:200px;height:200px;border-color:rgba(100,110,200,0.1);animation:ping 3s ease-out infinite 1s}
+.radar-ring:nth-child(4){width:260px;height:260px;border-color:rgba(100,110,200,0.05)}
 @keyframes ping{0%{transform:scale(.8);opacity:1}80%{transform:scale(1.1);opacity:.2}100%{transform:scale(1.1);opacity:0}}
 .radar-dot{width:8px;height:8px;background:var(--primary);border-radius:50%;box-shadow:0 0 12px var(--primary);z-index:1}
 .visual-label{position:absolute;bottom:12px;left:14px;font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--t3)}
@@ -94,7 +94,7 @@ main{max-width:1200px;margin:0 auto;padding:80px clamp(16px,5vw,64px) 120px;disp
 .status-txt{font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:#4caf50}
 
 /* TICKER */
-.ticker-module{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg-low);padding:10px 0;overflow:hidden}
+.ticker-module{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg-mid);padding:10px 0;overflow:hidden}
 .ticker-track{display:inline-flex;white-space:nowrap;animation:marquee 40s linear infinite}
 .ticker-track:hover{animation-play-state:paused}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
@@ -151,7 +151,7 @@ main{max-width:1200px;margin:0 auto;padding:80px clamp(16px,5vw,64px) 120px;disp
 .item-name{font-size:12.5px;color:var(--t1);line-height:1.5;flex:1}
 .item-name strong{color:var(--t0);font-weight:600}
 .item-date{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--t3);white-space:nowrap}
-.winner-tag{display:inline-block;font-family:var(--mono);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:#001356;background:var(--primary);padding:2px 7px;margin-left:8px;vertical-align:middle}
+.winner-tag{display:inline-block;font-family:var(--mono);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:#fff;background:var(--primary);padding:2px 7px;margin-left:8px;vertical-align:middle}
 
 /* TWO-COL */
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -169,7 +169,7 @@ main{max-width:1200px;margin:0 auto;padding:80px clamp(16px,5vw,64px) 120px;disp
 .eco-badge{font-family:var(--mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);padding:2px 7px;border:1px solid var(--border)}
 
 /* FOOTER */
-footer{border-top:1px solid var(--border);background:var(--bg-low);padding:24px clamp(16px,5vw,64px);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px}
+footer{border-top:1px solid var(--border);background:var(--bg-mid);padding:24px clamp(16px,5vw,64px);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px}
 .footer-credit{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--t3);text-align:center}
 .footer-credit a{color:var(--amber);text-decoration:none;transition:color .2s}
 .footer-credit a:hover{color:var(--t0)}
@@ -228,7 +228,7 @@ footer{border-top:1px solid var(--border);background:var(--bg-low);padding:24px 
     <div class="hero-grid">
       <div>
         <h1 class="hero-name">Simon Legrand</h1>
-        <div class="hero-sub">MCIM &nbsp;·&nbsp; Co-Founder &nbsp;·&nbsp; Marketer</div>
+        <div class="hero-sub">MCIM &nbsp;·&nbsp; Founder, Fyrfly Systems &nbsp;·&nbsp; Co-Founder, Assistiv Systems</div>
         <p class="hero-tagline">Technology co-founder and marketer with 20+ years building at the intersection of complex sensor systems, IoT infrastructure and public health. Faversham, Kent.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="mailto:simongeorgelegrand@gmail.com"><i class="fa-solid fa-envelope"></i> Initialize_Comms</a>
@@ -275,6 +275,8 @@ footer{border-top:1px solid var(--border);background:var(--bg-low);padding:24px 
       <span class="ticker-item"><i class="fa-solid fa-circle"></i>Responsible AI Institute Member 2025</span>
       <span class="ticker-item"><i class="fa-solid fa-circle"></i>Sunstone Systems · Acquired by WJ Group</span>
       <span class="ticker-item"><i class="fa-solid fa-circle"></i>58 Systems Deployed · Tengizchevroil · Kazakhstan</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>Founder · Fyrfly Systems · Physical Security · Education &amp; Public Sector</span>
+      <span class="ticker-item"><i class="fa-solid fa-circle"></i>Martyn's Law · Terrorism (Protection of Premises) Act 2025</span>
     </div>
   </div>
 
@@ -332,6 +334,25 @@ footer{border-top:1px solid var(--border);background:var(--bg-low);padding:24px 
   <section class="reveal" id="career">
     <div class="section-head"><h2>Career_Log</h2></div>
     <div class="career-log">
+
+
+      <div class="career-row">
+        <div class="career-meta">
+          <span class="career-badge">2026 – Present</span>
+          <div class="career-title">Founder &amp; Chief Security Officer</div>
+          <div class="career-org">Fyrfly Systems</div>
+        </div>
+        <div class="career-body">
+          <p class="career-summary">Founded Fyrfly Systems to bring intelligent, standards-compliant physical security to UK schools and public sector organisations — a sector chronically underserved by legacy installers and unprepared for the imminent obligations of Martyn's Law. Drawing on fourteen years of sensor platform development, three granted patents, and deep public sector knowledge, Fyrfly delivers CCTV, access control, intruder alarms, fire systems, and 24/7 monitoring with a technology-first methodology rare in the industry.</p>
+          <ul class="career-bullets">
+            <li>Built full commercial platform from zero: brand, website, 30+ technical articles, free compliance tooling, and regional SEO infrastructure — all before first installation</li>
+            <li>Designed and published the UK's first freely accessible Martyn's Law self-assessment tool, generating inbound pipeline from Responsible Person-level contacts across education and local government</li>
+            <li>Developed proprietary Solar CCTV Tower product line applying Sunstone Systems IP in a new commercial context, targeting temporary and infrastructure-constrained sites</li>
+            <li>Built AI-assisted workflow across the entire business: compliance checking, policy generation, incident analysis, solar viability, and cost estimation — all client-facing and free at point of use</li>
+            <li>Established DfE, KCSiE and BS EN standards alignment as a core market positioning plank, differentiating from price-led competitors in the school security procurement market</li>
+          </ul>
+        </div>
+      </div>
 
       <div class="career-row">
         <div class="career-meta">
@@ -469,11 +490,11 @@ footer{border-top:1px solid var(--border);background:var(--bg-low);padding:24px 
       </a>
 
       <a class="module eco-card glow" href="https://www.fyrflysystems.com" target="_blank">
-        <div class="eco-tag">Physical Security · Education</div>
+        <div class="eco-tag">Physical Security · Founder</div>
         <div class="eco-name">Fyrfly Systems</div>
         <span class="eco-url">fyrflysystems.com</span>
-        <p class="eco-desc">NSI NACOSS Gold certified CCTV, access control, alarms, fire systems and 24/7 monitoring for UK schools and public sector. 20 regional SEO pages. 50+ sites protected.</p>
-        <div class="eco-badges"><span class="eco-badge">Website</span><span class="eco-badge">SEO</span><span class="eco-badge">B2B Copy</span></div>
+        <p class="eco-desc">Intelligent physical security for UK schools and public sector. CCTV, access control, alarms, fire systems and 24/7 monitoring. DfE and KCSiE aligned. Martyn's Law ready. Built with AI-assisted compliance tooling across the full platform.</p>
+        <div class="eco-badges"><span class="eco-badge">Founder</span><span class="eco-badge">Website</span><span class="eco-badge">AI Tools</span><span class="eco-badge">SEO</span></div>
       </a>
 
       <a class="module eco-card glow" href="https://www.timlegrand.org" target="_blank">
