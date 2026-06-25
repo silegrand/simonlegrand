@@ -2,252 +2,204 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="theme-color" content="#fafaf8">
+<meta name="theme-color" content="#ffffff">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Simon Legrand · Founder · MCIM · Patent Inventor</title>
-<meta name="description" content="Simon Legrand — technology co-founder, MCIM Chartered Marketer, patent inventor. Founder of Fyrfly Systems, co-founder of Assistiv Systems Ltd.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fafaf8'/%3E%3Ctext x='4' y='24' font-family='system-ui' font-size='18' font-weight='900' fill='%23e8440a'%3ESL%3C/text%3E%3C/svg%3E">
-<!-- System font stack — SF Pro on Apple, Segoe UI on Windows, no web font load -->
+<meta name="description" content="Simon Legrand — technology co-founder, MCIM Chartered Marketer, patent inventor. Founder of Fyrfly Systems, co-founder of Assistiv Systems.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fff' rx='7'/%3E%3Ctext x='4' y='24' font-family='-apple-system,sans-serif' font-size='17' font-weight='700' fill='%230071e3'%3ESL%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-/* ─────────────────────────────────────────────────────────────
-   TOKENS
-───────────────────────────────────────────────────────────── */
+/* ═══════════════════════════════════
+   APPLE DESIGN SYSTEM
+═══════════════════════════════════ */
 :root {
-  --ink:      #0f0d0b;
-  --ink-2:    #2d2b28;
-  --ink-3:    #5c5954;
-  --ink-4:    #9c9892;
-  --ink-5:    #ccc9c3;
-  --rule:     #e2dfd9;
-  --bg:       #fafaf8;
-  --bg-warm:  #f3f1ec;
-  --bg-card:  #ffffff;
-  --accent:   #e8440a;
-  --accent-2: #ff6b35;
-  --accent-d: #b5340a;
-  --green:    #1a7a4a;
-  --blue:     #1a3a7a;
-  --f: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --r:        0px;
+  --f: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+  --white:   #ffffff;
+  --grey-1:  #f5f5f7;
+  --grey-2:  #e8e8ed;
+  --grey-3:  #d2d2d7;
+  --grey-4:  #86868b;
+  --grey-5:  #6e6e73;
+  --black:   #1d1d1f;
+  --blue:    #0071e3;
+  --blue-h:  #0077ed;
+  --green:   #1d8348;
+  --r-card:  18px;
+  --r-btn:   980px;
+  --shadow:  0 2px 20px rgba(0,0,0,0.08);
+  --shadow-l:0 8px 40px rgba(0,0,0,0.12);
 }
 
-/* ─────────────────────────────────────────────────────────────
-   RESET
-───────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
-html { scroll-behavior: smooth; font-size: 15px }
+html { scroll-behavior: smooth }
 body {
   font-family: var(--f);
-  background: var(--bg);
-  color: var(--ink);
-  line-height: 1.6;
+  background: var(--white);
+  color: var(--black);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
-/* Force system font on all text elements — overrides any CDN stylesheet inheritance */
-h1,h2,h3,h4,h5,h6,p,span,a,li,div,button,input,textarea,label,td,th,caption,
-.nav-brand,.nav-links a,.nav-status,.nav-drawer a,.ticker-item,
-.btn,.hero-eyebrow,.hero-date,.hero-name,.hero-desc p,.cred-label,.cred-value,
-.s-num,.s-title,.s-ghost,.hero-bg-num,.stat-n,.stat-l,
-.profile-body p,.side-lbl,.side-row,.venture-role,.venture-name,.venture-url,
-.venture-desc,.vtag,.vmet-n,.vmet-l,.comp-cell,.patent-id,.patent-name,
-.patent-summary,.patent-num,.tl-badge,.tl-title,.tl-org,.tl-summary,
-.tl-bullets li,.col-lbl,.item-name,.item-date,.winner,.advisory-name,
-.advisory-date,.eco-tag,.eco-name,.eco-url,.eco-desc,.eco-badge,
-.map-title,.map-live,.map-clock,.map-key-item,.footer-brand,.footer-credit,
-.footer-links a {
-  font-family: var(--f);
-}
+*, *::before, *::after { font-family: inherit }
 a { text-decoration: none; color: inherit }
 img { display: block; max-width: 100% }
 
-/* ─────────────────────────────────────────────────────────────
-   NAV
-───────────────────────────────────────────────────────────── */
+/* ═══════════════════════════════════
+   NAV — apple.com frosted glass
+═══════════════════════════════════ */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 900;
-  height: 52px;
+  height: 48px;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 clamp(20px, 5vw, 60px);
-  background: rgba(250,250,248,0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--rule);
+  padding: 0 clamp(16px, 4vw, 44px);
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
 }
-.nav-brand {
-  font-size: 13px; font-weight: 800; letter-spacing: -.01em;
-  color: var(--ink);
+.nav-logo {
+  font-size: 21px; font-weight: 600; letter-spacing: -0.5px;
+  color: var(--black);
 }
-.nav-brand em { color: var(--accent); font-style: normal }
+.nav-logo em { color: var(--blue); font-style: normal }
 .nav-links { display: flex; gap: 0; list-style: none }
 .nav-links a {
-  font-size: 11px; font-weight: 500; letter-spacing: .12em;
-  text-transform: uppercase; color: var(--ink-3);
-  padding: 6px 14px; transition: color .15s;
+  font-size: 12px; font-weight: 400; letter-spacing: 0;
+  color: var(--grey-5);
+  padding: 0 12px; line-height: 48px;
+  transition: color .2s;
 }
-.nav-links a:hover, .nav-links a.active { color: var(--accent) }
-.nav-status {
-  display: flex; align-items: center; gap: 7px;
-  font-size: 10px; font-weight: 500; letter-spacing: .14em;
-  text-transform: uppercase; color: var(--ink-4);
+.nav-links a:hover, .nav-links a.active { color: var(--black) }
+.nav-cta {
+  font-size: 12px; font-weight: 400;
+  color: var(--blue); letter-spacing: 0;
+  transition: opacity .2s; white-space: nowrap;
 }
-.status-pip {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--green);
-  animation: pip 2.5s ease-in-out infinite;
-}
-@keyframes pip { 0%,100%{opacity:1} 50%{opacity:.25} }
-
-/* Hamburger */
+.nav-cta:hover { opacity: .7 }
 .nav-burger {
   display: none; flex-direction: column; gap: 5px;
   background: none; border: none; cursor: pointer; padding: 4px;
 }
 .nav-burger span {
-  display: block; width: 22px; height: 1.5px;
-  background: var(--ink); transition: all .3s;
+  display: block; width: 18px; height: 1.5px;
+  background: var(--black); border-radius: 2px; transition: all .3s;
 }
 .nav-burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg) }
 .nav-burger.open span:nth-child(2) { opacity: 0 }
 .nav-burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg) }
-
 .nav-drawer {
-  display: none; position: fixed; top: 52px; left: 0; right: 0;
-  background: var(--bg); border-bottom: 1px solid var(--rule);
-  padding: 8px 0; z-index: 899; flex-direction: column;
+  display: none; position: fixed; top: 48px; left: 0; right: 0;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  z-index: 899; flex-direction: column; padding: 8px 0;
 }
 .nav-drawer.open { display: flex }
 .nav-drawer a {
-  font-size: 12px; font-weight: 500; letter-spacing: .12em;
-  text-transform: uppercase; color: var(--ink-3);
-  padding: 14px clamp(20px,5vw,60px);
-  border-bottom: 1px solid var(--rule);
-  transition: color .15s, background .15s;
+  font-size: 17px; font-weight: 400;
+  color: var(--black);
+  padding: 14px clamp(16px,4vw,44px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  transition: background .15s;
 }
 .nav-drawer a:last-child { border-bottom: none }
-.nav-drawer a:hover { color: var(--accent); background: var(--bg-warm) }
+.nav-drawer a:hover { background: var(--grey-1) }
 
-/* ─────────────────────────────────────────────────────────────
-   HERO — full viewport, editorial broadsheet
-───────────────────────────────────────────────────────────── */
+/* ═══════════════════════════════════
+   HERO — Apple product page opening
+═══════════════════════════════════ */
 .hero {
-  min-height: 100svh;
-  padding: calc(52px + 6vw) clamp(20px,5vw,60px) 0;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  border-bottom: 2px solid var(--ink);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Faint large background number */
-.hero-bg-num {
-  position: absolute; right: -0.05em; bottom: -0.15em;
-  font-size: clamp(200px, 40vw, 420px);
-  font-weight: 900; line-height: 1;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--rule);
-  pointer-events: none; user-select: none;
-  letter-spacing: -.06em;
-}
-
-.hero-top {
-  display: flex; align-items: baseline; justify-content: space-between;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--rule);
-  margin-bottom: 40px;
+  padding: calc(48px + 80px) clamp(20px,6vw,80px) 80px;
+  text-align: center;
+  max-width: 980px; margin: 0 auto;
 }
 .hero-eyebrow {
-  font-size: 11px; font-weight: 500; letter-spacing: .22em;
-  text-transform: uppercase; color: var(--ink-3);
+  font-size: 17px; font-weight: 600; letter-spacing: -.01em;
+  color: var(--blue); margin-bottom: 12px;
 }
-.hero-date {
-  font-size: 11px; font-weight: 400; letter-spacing: .12em;
-  text-transform: uppercase; color: var(--ink-4);
-}
-
-/* The name — the centrepiece */
 .hero-name {
-  font-size: clamp(64px, 13vw, 148px);
-  font-weight: 900;
-  letter-spacing: -.05em;
-  line-height: .92;
-  color: var(--ink);
-  margin-bottom: clamp(28px, 4vw, 56px);
+  font-size: clamp(52px, 9vw, 96px);
+  font-weight: 700; letter-spacing: -0.035em; line-height: 1.04;
+  color: var(--black); margin-bottom: 20px;
 }
-.hero-name .accent { color: var(--accent) }
-
-.hero-mid {
-  display: grid;
-  grid-template-columns: 1fr 1px 420px;
-  gap: 0;
-  align-items: start;
-  margin-bottom: 0;
+.hero-sub {
+  font-size: clamp(19px, 2.5vw, 24px);
+  font-weight: 400; line-height: 1.5;
+  color: var(--grey-5); max-width: 620px;
+  margin: 0 auto 36px;
 }
-.hero-mid-rule { background: var(--rule); height: 100% }
-
-.hero-desc {
-  padding-right: 48px;
-  padding-bottom: 48px;
+.hero-sub strong { color: var(--black); font-weight: 600 }
+.hero-btns {
+  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+  margin-bottom: 56px;
 }
-.hero-desc p {
-  font-size: clamp(17px, 2vw, 21px);
-  font-weight: 300;
-  line-height: 1.65;
-  color: var(--ink-2);
-  margin-bottom: 32px;
-  max-width: 520px;
-}
-.hero-desc p strong { font-weight: 700; color: var(--ink) }
-
-.hero-ctas { display: flex; gap: 10px; flex-wrap: wrap }
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 12px 22px;
-  font-family: var(--f); font-size: 11px; font-weight: 600;
-  letter-spacing: .12em; text-transform: uppercase;
-  border: 1.5px solid transparent; cursor: pointer;
-  transition: all .2s;
+  font-family: var(--f); font-size: 17px; font-weight: 400;
+  border-radius: var(--r-btn); cursor: pointer;
+  border: none; transition: all .2s; letter-spacing: -.01em;
 }
-.btn-accent {
-  background: var(--accent); color: #fff; border-color: var(--accent);
+.btn-primary {
+  background: var(--blue); color: #fff;
 }
-.btn-accent:hover { background: var(--accent-d); border-color: var(--accent-d) }
-.btn-outline {
-  background: transparent; color: var(--ink); border-color: var(--ink);
+.btn-primary:hover { background: var(--blue-h); transform: scale(1.02) }
+.btn-secondary {
+  background: var(--grey-1); color: var(--blue);
 }
-.btn-outline:hover { background: var(--ink); color: var(--bg) }
+.btn-secondary:hover { background: var(--grey-2); transform: scale(1.02) }
 
-/* Hero right panel — credential stack */
-.hero-creds {
-  padding-left: 40px;
-  padding-bottom: 48px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+/* Hero credential chips — minimal */
+.hero-chips {
+  display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
 }
-.cred-item {
-  display: flex; align-items: baseline; justify-content: space-between;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--rule);
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 14px;
+  background: var(--grey-1);
+  border-radius: var(--r-btn);
+  font-size: 13px; font-weight: 500; color: var(--grey-5);
+  transition: background .2s;
 }
-.cred-item:first-child { border-top: 1px solid var(--rule) }
-.cred-label {
-  font-size: 12px; font-weight: 600; letter-spacing: .01em; color: var(--ink);
+.chip:hover { background: var(--grey-2) }
+.chip i { font-size: 11px; color: var(--blue) }
+
+/* ═══════════════════════════════════
+   SECTION ANATOMY
+═══════════════════════════════════ */
+.section {
+  padding: 80px clamp(20px,6vw,80px);
+  max-width: 1200px; margin: 0 auto;
 }
-.cred-value {
-  font-size: 11px; font-weight: 400; letter-spacing: .08em;
-  text-transform: uppercase; color: var(--ink-4);
-  text-align: right;
+.section-sm { max-width: 980px }
+.section-full { max-width: none; padding-left: 0; padding-right: 0 }
+
+.section-label {
+  font-size: 13px; font-weight: 600; letter-spacing: .04em;
+  text-transform: uppercase; color: var(--blue);
+  margin-bottom: 10px; text-align: center;
+}
+.section-title {
+  font-size: clamp(32px,4.5vw,52px);
+  font-weight: 700; letter-spacing: -.03em; line-height: 1.06;
+  color: var(--black); margin-bottom: 16px; text-align: center;
+}
+.section-body {
+  font-size: 19px; font-weight: 400; line-height: 1.6;
+  color: var(--grey-5); max-width: 680px;
+  margin: 0 auto 56px; text-align: center;
 }
 
-/* ─────────────────────────────────────────────────────────────
-   TICKER
-───────────────────────────────────────────────────────────── */
-.ticker {
-  background: var(--ink);
-  padding: 11px 0;
-  overflow: hidden;
+/* Alternating section backgrounds */
+.bg-grey { background: var(--grey-1) }
+.bg-white { background: var(--white) }
+.bg-black { background: var(--black) }
+
+/* ═══════════════════════════════════
+   TICKER — black band
+═══════════════════════════════════ */
+.ticker-band {
+  background: var(--black); padding: 14px 0; overflow: hidden;
 }
 .ticker-track {
   display: inline-flex; white-space: nowrap;
@@ -256,1082 +208,939 @@ nav {
 .ticker-track:hover { animation-play-state: paused }
 @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 .ticker-item {
-  font-size: 10px; font-weight: 500; letter-spacing: .18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.38);
-  padding: 0 36px;
-  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 12px; font-weight: 400; letter-spacing: .02em;
+  color: rgba(255,255,255,.4);
+  padding: 0 32px;
+  display: inline-flex; align-items: center; gap: 8px;
 }
-.ticker-item i { color: var(--accent); font-size: 5px }
-.ticker-hi { color: #fff }
-.ticker-amber { color: #ffb347 }
+.ticker-item i { color: var(--blue); font-size: 5px }
+.t-hi { color: rgba(255,255,255,.85) }
 
-/* ─────────────────────────────────────────────────────────────
-   MAP BAND
-───────────────────────────────────────────────────────────── */
-.map-band {
-  background: var(--bg-warm);
-  border-bottom: 1px solid var(--rule);
+/* ═══════════════════════════════════
+   MAP — grey card
+═══════════════════════════════════ */
+.map-card {
+  background: var(--grey-1);
+  border-radius: var(--r-card);
+  overflow: hidden; position: relative;
+  margin: 0 clamp(20px,6vw,80px);
 }
-.map-inner {
-  max-width: 1400px; margin: 0 auto;
-  padding: 0 clamp(20px,5vw,60px);
-}
-.map-header {
+.map-card-header {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 18px 0 0;
+  padding: 20px 24px 0;
 }
-.map-title {
-  font-size: 10px; font-weight: 600; letter-spacing: .22em;
-  text-transform: uppercase; color: var(--ink-3);
+.map-card-title {
+  font-size: 13px; font-weight: 600; letter-spacing: .03em;
+  text-transform: uppercase; color: var(--grey-4);
 }
 .map-live {
   display: flex; align-items: center; gap: 6px;
-  font-size: 10px; font-weight: 500; letter-spacing: .14em;
-  color: var(--green);
+  font-size: 13px; font-weight: 400; color: var(--green);
 }
 .map-live-pip {
-  width: 6px; height: 6px; border-radius: 50%;
+  width: 7px; height: 7px; border-radius: 50%;
   background: var(--green);
   animation: pip 2s ease-in-out infinite;
 }
-.map-wrap {
-  height: clamp(240px,36vw,440px);
-  position: relative;
-}
+@keyframes pip { 0%,100%{opacity:1} 50%{opacity:.25} }
+.map-wrap { height: clamp(240px,35vw,420px); position: relative }
 #mapCanvas { width: 100%; height: 100%; display: block }
-.map-clock {
-  position: absolute; bottom: 14px; left: 0;
-  font-size: 10px; font-weight: 400; letter-spacing: .12em;
-  color: var(--ink-4);
+.map-foot {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 24px 20px;
+  font-size: 12px; font-weight: 400; color: var(--grey-4);
 }
-.map-key {
-  position: absolute; bottom: 14px; right: 0;
-  display: flex; gap: 16px;
-}
-.map-key-item {
-  display: flex; align-items: center; gap: 5px;
-  font-size: 9px; font-weight: 500; letter-spacing: .12em;
-  text-transform: uppercase; color: var(--ink-4);
-}
+.map-key { display: flex; gap: 16px }
+.map-key-item { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--grey-4) }
 .map-key-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0 }
 
-/* ─────────────────────────────────────────────────────────────
-   SECTIONS WRAPPER
-───────────────────────────────────────────────────────────── */
-.wrap {
-  max-width: 1400px; margin: 0 auto;
-  padding: 0 clamp(20px,5vw,60px);
-}
-
-/* ─────────────────────────────────────────────────────────────
-   SECTION HEADING — editorial with ghost number
-───────────────────────────────────────────────────────────── */
-.s {
-  padding: 80px 0 0;
-  border-top: 2px solid var(--ink);
-}
-.s-head {
-  display: flex; align-items: baseline; gap: 24px;
-  margin-bottom: 40px;
-  position: relative;
-}
-.s-num {
-  font-size: 11px; font-weight: 700; letter-spacing: .18em;
-  text-transform: uppercase; color: var(--accent);
-  flex-shrink: 0; width: 32px;
-}
-.s-title {
-  font-size: 11px; font-weight: 700; letter-spacing: .22em;
-  text-transform: uppercase; color: var(--ink);
-}
-.s-rule { flex: 1; height: 1px; background: var(--rule); margin-left: 12px }
-.s-ghost {
-  position: absolute; right: -0.03em; top: -0.7em;
-  font-size: clamp(60px,10vw,110px); font-weight: 900; line-height: 1;
-  color: transparent; -webkit-text-stroke: 1px var(--rule);
-  pointer-events: none; user-select: none; letter-spacing: -.05em;
-}
-
-/* ─────────────────────────────────────────────────────────────
-   STATS STRIP
-───────────────────────────────────────────────────────────── */
-.stats-strip {
+/* ═══════════════════════════════════
+   STATS — Apple large-number grid
+═══════════════════════════════════ */
+.stats-grid {
   display: grid; grid-template-columns: repeat(5,1fr);
-  border: 1.5px solid var(--ink); border-right: none;
+  gap: 1px; background: var(--grey-2);
+  border-radius: var(--r-card); overflow: hidden;
+  box-shadow: var(--shadow);
 }
-.stat {
-  padding: 28px 20px;
-  border-right: 1.5px solid var(--ink);
-  transition: background .2s;
-  cursor: default;
+.stat-cell {
+  background: var(--white); padding: 36px 20px;
+  text-align: center; transition: background .2s;
 }
-.stat:hover { background: var(--bg-warm) }
+.stat-cell:hover { background: var(--grey-1) }
 .stat-n {
-  font-size: clamp(28px,4vw,42px); font-weight: 900;
-  letter-spacing: -.04em; line-height: 1;
-  color: var(--accent); margin-bottom: 6px;
+  font-size: clamp(36px,4.5vw,56px);
+  font-weight: 700; letter-spacing: -.04em; line-height: 1;
+  color: var(--black); margin-bottom: 8px;
 }
+.stat-n span { color: var(--blue) }
 .stat-l {
-  font-size: 10px; font-weight: 600; letter-spacing: .18em;
-  text-transform: uppercase; color: var(--ink-4);
+  font-size: 13px; font-weight: 400; color: var(--grey-4); letter-spacing: .01em;
 }
 
-/* ─────────────────────────────────────────────────────────────
-   PROFILE
-───────────────────────────────────────────────────────────── */
-.profile-layout {
-  display: grid; grid-template-columns: 1fr 280px;
-  border: 1.5px solid var(--ink);
+/* ═══════════════════════════════════
+   PROFILE CARD
+═══════════════════════════════════ */
+.profile-card {
+  background: var(--white); border-radius: var(--r-card);
+  box-shadow: var(--shadow-l);
+  display: grid; grid-template-columns: 1fr 260px;
+  overflow: hidden;
 }
 .profile-body {
-  padding: 36px 40px;
-  border-right: 1px solid var(--rule);
+  padding: 48px 52px;
 }
 .profile-body p {
-  font-size: 16px; font-weight: 300; line-height: 1.9;
-  color: var(--ink-2);
+  font-size: 19px; font-weight: 400; line-height: 1.75;
+  color: var(--grey-5);
 }
-.profile-body p strong { font-weight: 700; color: var(--ink) }
+.profile-body p strong { color: var(--black); font-weight: 600 }
 .profile-side {
-  padding: 28px 24px;
-  background: var(--bg-warm);
-  display: flex; flex-direction: column; gap: 0;
+  background: var(--grey-1);
+  padding: 36px 28px;
+  display: flex; flex-direction: column; gap: 28px;
 }
-.side-block { padding: 18px 0; border-bottom: 1px solid var(--rule) }
-.side-block:first-child { padding-top: 0 }
-.side-block:last-child { border-bottom: none }
-.side-lbl {
-  font-size: 9px; font-weight: 700; letter-spacing: .24em;
-  text-transform: uppercase; color: var(--ink-4); margin-bottom: 10px;
+.side-label {
+  font-size: 11px; font-weight: 600; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--grey-4); margin-bottom: 10px;
 }
 .side-row {
-  display: flex; align-items: center; gap: 9px;
-  font-size: 12px; font-weight: 400; color: var(--ink-2);
-  line-height: 1.5;
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14px; font-weight: 400; color: var(--grey-5); line-height: 1.4;
 }
-.side-row + .side-row { margin-top: 7px }
+.side-row + .side-row { margin-top: 8px }
 .side-row i {
-  color: var(--accent); font-size: 10px;
-  width: 12px; text-align: center; flex-shrink: 0;
+  font-size: 12px; color: var(--blue);
+  width: 14px; text-align: center; flex-shrink: 0;
 }
 
-/* ─────────────────────────────────────────────────────────────
-   VENTURES — large cards, strong visual hierarchy
-───────────────────────────────────────────────────────────── */
+/* ═══════════════════════════════════
+   VENTURE TILES — Apple feature cards
+═══════════════════════════════════ */
 .ventures-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
-  border: 1.5px solid var(--ink);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
 }
-.venture {
-  padding: 36px 36px 32px;
-  position: relative; overflow: hidden;
-  border-right: 1px solid var(--rule);
-  transition: background .25s;
-  display: flex; flex-direction: column;
+.venture-tile {
+  border-radius: var(--r-card); overflow: hidden;
+  position: relative; min-height: 520px;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  transition: transform .4s cubic-bezier(.25,.46,.45,.94), box-shadow .4s;
+  box-shadow: var(--shadow);
 }
-.venture:last-child { border-right: none }
-.venture:hover { background: var(--bg-warm) }
+.venture-tile:hover { transform: scale(1.015); box-shadow: var(--shadow-l) }
 
-/* Fat colour bar at top */
-.venture-bar {
-  position: absolute; top: 0; left: 0; right: 0; height: 4px;
+/* Fyrfly — rich navy gradient */
+.vt-security {
+  background: linear-gradient(160deg, #1c2e58 0%, #0a1628 60%, #060e1c 100%);
 }
-.v-security .venture-bar { background: var(--accent) }
-.v-health   .venture-bar { background: var(--green) }
+/* Assistiv — deep forest */
+.vt-health {
+  background: linear-gradient(160deg, #0a3d2e 0%, #051f18 60%, #020d0a 100%);
+}
 
-.venture-arrow {
-  position: absolute; top: 24px; right: 28px;
-  width: 34px; height: 34px;
-  border: 1.5px solid var(--rule);
+.venture-tile-inner { padding: 40px; position: relative; z-index: 2 }
+.vt-eyebrow {
+  font-size: 13px; font-weight: 600; letter-spacing: .04em;
+  text-transform: uppercase; margin-bottom: 12px;
+}
+.vt-security .vt-eyebrow { color: #6e9fff }
+.vt-health   .vt-eyebrow { color: #4cd891 }
+
+.vt-name {
+  font-size: clamp(34px,4vw,48px);
+  font-weight: 700; letter-spacing: -.03em; line-height: 1.04;
+  color: #ffffff; margin-bottom: 6px;
+}
+.vt-url {
+  font-size: 14px; font-weight: 400; display: block; margin-bottom: 18px;
+  transition: opacity .2s;
+}
+.vt-security .vt-url { color: #6e9fff }
+.vt-health   .vt-url { color: #4cd891 }
+.venture-tile:hover .vt-url { opacity: .7 }
+
+.vt-desc {
+  font-size: 15px; font-weight: 400; line-height: 1.65;
+  color: rgba(255,255,255,.65); margin-bottom: 24px;
+}
+.vt-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 28px }
+.vt-tag {
+  font-size: 11px; font-weight: 500; letter-spacing: .03em;
+  padding: 5px 12px; border-radius: 100px;
+  color: rgba(255,255,255,.55);
+  border: 1px solid rgba(255,255,255,.15);
+}
+.vt-metrics {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,.12);
+  padding-top: 20px;
+}
+.vt-metric { text-align: center; border-right: 1px solid rgba(255,255,255,.1) }
+.vt-metric:last-child { border-right: none }
+.vt-metric-n {
+  font-size: 26px; font-weight: 700; letter-spacing: -.03em;
+  line-height: 1; margin-bottom: 4px;
+}
+.vt-security .vt-metric-n { color: #6e9fff }
+.vt-health   .vt-metric-n { color: #4cd891 }
+.vt-metric-l {
+  font-size: 11px; font-weight: 400; color: rgba(255,255,255,.4); letter-spacing: .01em;
+}
+.vt-link {
+  position: absolute; top: 28px; right: 28px; z-index: 2;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(255,255,255,.1);
   display: flex; align-items: center; justify-content: center;
-  font-size: 14px; color: var(--ink-4);
-  transition: all .2s;
-}
-.venture:hover .venture-arrow { border-color: var(--accent); color: var(--accent) }
-.v-health:hover .venture-arrow { border-color: var(--green); color: var(--green) }
-
-.venture-role {
-  font-size: 10px; font-weight: 600; letter-spacing: .2em;
-  text-transform: uppercase; color: var(--accent);
-  margin-top: 10px; margin-bottom: 16px;
-}
-.v-health .venture-role { color: var(--green) }
-.venture-name {
-  font-size: clamp(28px,3.5vw,38px); font-weight: 900;
-  letter-spacing: -.03em; line-height: 1; color: var(--ink);
-  margin-bottom: 4px;
-}
-.venture-url {
-  font-size: 11px; font-weight: 500; letter-spacing: .1em;
-  color: var(--ink-4); display: block; margin-bottom: 20px;
-}
-.venture-url:hover { color: var(--accent) }
-.venture-desc {
-  font-size: 14px; font-weight: 300; line-height: 1.75;
-  color: var(--ink-2); margin-bottom: 24px; flex: 1;
-}
-.v-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 28px }
-.vtag {
-  font-size: 9px; font-weight: 600; letter-spacing: .16em;
-  text-transform: uppercase; color: var(--ink-3);
-  padding: 4px 10px; border: 1px solid var(--rule);
-}
-.v-metrics {
-  display: grid; grid-template-columns: repeat(3,1fr);
-  border-top: 1px solid var(--rule); padding-top: 20px; gap: 0;
-}
-.vmet { text-align: center; border-right: 1px solid var(--rule) }
-.vmet:last-child { border-right: none }
-.vmet-n {
-  font-size: 22px; font-weight: 900; letter-spacing: -.03em;
-  color: var(--accent); line-height: 1; margin-bottom: 4px;
-}
-.v-health .vmet-n { color: var(--green) }
-.vmet-l {
-  font-size: 9px; font-weight: 600; letter-spacing: .14em;
-  text-transform: uppercase; color: var(--ink-4);
-}
-
-/* ─────────────────────────────────────────────────────────────
-   COMPETENCIES
-───────────────────────────────────────────────────────────── */
-.comp-grid {
-  display: grid; grid-template-columns: repeat(4,1fr);
-  border: 1.5px solid var(--ink);
-}
-.comp-cell {
-  padding: 16px 18px;
-  border-right: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  font-size: 13px; font-weight: 400; color: var(--ink-2);
-  display: flex; align-items: center; gap: 12px;
+  font-size: 14px; color: rgba(255,255,255,.6);
   transition: background .2s, color .2s;
-  cursor: default;
 }
-.comp-cell:hover { background: var(--bg-warm); color: var(--ink) }
-.comp-cell::before {
-  content: '';
-  width: 5px; height: 5px;
-  background: var(--accent); flex-shrink: 0;
-  opacity: 0; transition: opacity .2s;
-}
-.comp-cell:hover::before { opacity: 1 }
+.venture-tile:hover .vt-link { background: rgba(255,255,255,.2); color: #fff }
 
-/* ─────────────────────────────────────────────────────────────
-   PATENTS — 3-up cards
-───────────────────────────────────────────────────────────── */
+/* Decorative gradient orb */
+.vt-orb {
+  position: absolute; pointer-events: none; border-radius: 50%; z-index: 1;
+  filter: blur(60px);
+}
+.vt-security .vt-orb { width: 300px; height: 300px; top: -80px; right: -80px; background: rgba(110,159,255,0.15) }
+.vt-health   .vt-orb { width: 300px; height: 300px; top: -80px; right: -80px; background: rgba(76,216,145,0.12) }
+
+/* ═══════════════════════════════════
+   COMPETENCIES — clean Apple grid
+═══════════════════════════════════ */
+.comp-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 12px;
+}
+.comp-card {
+  background: var(--white); border-radius: var(--r-card);
+  padding: 24px; box-shadow: var(--shadow);
+  display: flex; align-items: flex-start; gap: 14px;
+  transition: transform .2s, box-shadow .2s;
+}
+.comp-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-l) }
+.comp-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: var(--grey-1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; color: var(--blue); flex-shrink: 0;
+}
+.comp-text { font-size: 15px; font-weight: 500; color: var(--black); line-height: 1.4 }
+
+/* ═══════════════════════════════════
+   PATENTS — horizontal cards
+═══════════════════════════════════ */
 .patents-grid {
-  display: grid; grid-template-columns: repeat(3,1fr);
-  border: 1.5px solid var(--ink); border-right: none;
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 16px;
 }
-.patent {
-  padding: 30px 28px;
-  border-right: 1.5px solid var(--ink);
+.patent-card {
+  background: var(--white); border-radius: var(--r-card);
+  padding: 32px 28px; box-shadow: var(--shadow);
+  transition: transform .3s, box-shadow .3s;
+  display: flex; flex-direction: column; gap: 12px;
   position: relative; overflow: hidden;
-  transition: background .2s;
-  display: flex; flex-direction: column; justify-content: space-between;
-  min-height: 220px;
 }
-.patent:hover { background: var(--bg-warm) }
-.patent-ghost {
-  position: absolute; bottom: -20px; right: -10px;
-  font-size: 90px; line-height: 1; color: transparent;
-  -webkit-text-stroke: 1px var(--rule);
-  pointer-events: none;
+.patent-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-l) }
+.patent-icon {
+  width: 50px; height: 50px; border-radius: 12px;
+  background: linear-gradient(135deg, var(--blue), #34aadc);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; color: #fff; margin-bottom: 4px;
 }
 .patent-id {
-  font-size: 9px; font-weight: 700; letter-spacing: .22em;
-  text-transform: uppercase; color: var(--ink-4); margin-bottom: 20px;
+  font-size: 12px; font-weight: 600; letter-spacing: .04em;
+  text-transform: uppercase; color: var(--blue);
 }
 .patent-name {
-  font-size: 18px; font-weight: 800; letter-spacing: -.01em;
-  color: var(--ink); line-height: 1.2; margin-bottom: 8px;
+  font-size: 20px; font-weight: 700; letter-spacing: -.02em;
+  color: var(--black); line-height: 1.2;
 }
 .patent-summary {
-  font-size: 12px; font-weight: 300; line-height: 1.65;
-  color: var(--ink-3); margin-bottom: 16px; flex: 1;
+  font-size: 14px; font-weight: 400; line-height: 1.65;
+  color: var(--grey-5); flex: 1;
 }
 .patent-num {
-  font-size: 10px; font-weight: 600; letter-spacing: .1em; color: var(--accent);
+  font-size: 12px; font-weight: 500; color: var(--grey-4); letter-spacing: .02em;
 }
 
-/* ─────────────────────────────────────────────────────────────
-   CAREER TIMELINE
-───────────────────────────────────────────────────────────── */
-.timeline { display: flex; flex-direction: column; gap: 0 }
-.tl-item {
-  display: grid; grid-template-columns: 220px 1fr;
-  border: 1.5px solid var(--ink); margin-top: -1.5px;
+/* ═══════════════════════════════════
+   CAREER — Apple timeline
+═══════════════════════════════════ */
+.timeline { display: flex; flex-direction: column; gap: 12px }
+.tl-card {
+  background: var(--white); border-radius: var(--r-card);
+  box-shadow: var(--shadow);
+  overflow: hidden; transition: box-shadow .2s;
 }
+.tl-card:hover { box-shadow: var(--shadow-l) }
+.tl-inner { display: grid; grid-template-columns: 220px 1fr }
 .tl-meta {
-  padding: 24px 20px;
-  border-right: 1.5px solid var(--ink);
-  background: var(--bg-warm);
+  padding: 28px 24px;
+  background: var(--grey-1);
+  border-right: 1px solid var(--grey-2);
   display: flex; flex-direction: column; gap: 6px;
 }
-.tl-badge {
-  display: inline-block; padding: 3px 10px;
-  font-size: 9px; font-weight: 700; letter-spacing: .16em;
-  text-transform: uppercase; border: 1.5px solid var(--ink);
-  color: var(--ink); background: transparent; width: fit-content;
+.tl-pill {
+  display: inline-block; padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 12px; font-weight: 600; width: fit-content;
   margin-bottom: 4px;
 }
-.tl-badge.live {
-  background: var(--accent); border-color: var(--accent); color: #fff;
-}
+.tl-pill-live { background: rgba(29,131,72,.1); color: var(--green) }
+.tl-pill-past { background: var(--grey-2); color: var(--grey-5) }
 .tl-title {
-  font-size: 11px; font-weight: 700; letter-spacing: .06em;
-  text-transform: uppercase; color: var(--ink); line-height: 1.4;
+  font-size: 14px; font-weight: 700; color: var(--black); line-height: 1.3; letter-spacing: -.01em;
 }
-.tl-org {
-  font-size: 11px; font-weight: 400; color: var(--ink-4);
-  letter-spacing: .04em;
-}
-.tl-body { padding: 24px 28px }
+.tl-org { font-size: 13px; font-weight: 400; color: var(--grey-4) }
+.tl-body { padding: 28px 32px }
 .tl-summary {
-  font-size: 13.5px; font-weight: 300; color: var(--ink-2);
-  line-height: 1.8; margin-bottom: 16px;
+  font-size: 15px; font-weight: 400; color: var(--grey-5);
+  line-height: 1.75; margin-bottom: 16px;
 }
-.tl-bullets { list-style: none; display: flex; flex-direction: column; gap: 7px }
+.tl-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px }
 .tl-bullets li {
-  font-size: 12px; font-weight: 400; color: var(--ink-2);
-  display: flex; align-items: flex-start; gap: 12px; line-height: 1.6;
+  font-size: 14px; font-weight: 400; color: var(--grey-5);
+  display: flex; align-items: flex-start; gap: 10px; line-height: 1.6;
 }
 .tl-bullets li::before {
-  content: '—'; color: var(--accent); flex-shrink: 0;
-  font-weight: 700; margin-top: 0;
+  content: '';
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--blue); flex-shrink: 0; margin-top: 8px;
 }
 
-/* ─────────────────────────────────────────────────────────────
-   TWO-COL
-───────────────────────────────────────────────────────────── */
+/* ═══════════════════════════════════
+   TWO COL — education / recognition
+═══════════════════════════════════ */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px }
-.col-lbl {
-  font-size: 9px; font-weight: 700; letter-spacing: .24em;
-  text-transform: uppercase; color: var(--ink-4); margin-bottom: 12px;
+.list-title {
+  font-size: 14px; font-weight: 600; letter-spacing: .04em;
+  text-transform: uppercase; color: var(--grey-4); margin-bottom: 12px;
 }
-.item-list { display: flex; flex-direction: column; gap: 0 }
-.item-row {
-  display: flex; justify-content: space-between; align-items: center; gap: 12px;
-  padding: 13px 16px;
-  border: 1px solid var(--rule); margin-top: -1px;
-  transition: background .15s, padding-left .15s;
-}
-.item-row:hover { background: var(--bg-warm); padding-left: 22px }
-.item-name { font-size: 13px; font-weight: 400; color: var(--ink-2); flex: 1; line-height: 1.4 }
-.item-name strong { font-weight: 700; color: var(--ink) }
-.item-date { font-size: 10px; font-weight: 600; letter-spacing: .1em; color: var(--ink-4); white-space: nowrap }
-.winner {
-  display: inline-block; font-size: 8px; font-weight: 700; letter-spacing: .16em;
-  text-transform: uppercase; color: #fff; background: var(--accent);
-  padding: 2px 8px; margin-left: 8px; vertical-align: middle;
-}
-
-/* ─────────────────────────────────────────────────────────────
-   ADVISORY
-───────────────────────────────────────────────────────────── */
-.advisory-grid {
-  display: grid; grid-template-columns: repeat(3,1fr);
-  border: 1.5px solid var(--ink); border-right: none;
-}
-.advisory-item {
-  display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  padding: 16px 18px;
-  border-right: 1.5px solid var(--ink);
-  border-bottom: 1px solid var(--rule);
+.list-card { background: var(--white); border-radius: var(--r-card); box-shadow: var(--shadow); overflow: hidden }
+.list-row {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 12px; padding: 15px 20px;
+  border-bottom: 1px solid var(--grey-1);
   transition: background .15s;
 }
-.advisory-item:nth-child(n+4) { border-bottom: none }
-.advisory-item:hover { background: var(--bg-warm) }
-.advisory-name { font-size: 12.5px; font-weight: 400; color: var(--ink-2) }
-.advisory-date { font-size: 9px; font-weight: 700; letter-spacing: .12em; color: var(--ink-4); white-space: nowrap }
+.list-row:last-child { border-bottom: none }
+.list-row:hover { background: var(--grey-1) }
+.list-name { font-size: 14px; font-weight: 400; color: var(--grey-5); flex: 1; line-height: 1.4 }
+.list-name strong { font-weight: 700; color: var(--black) }
+.list-date { font-size: 13px; font-weight: 500; color: var(--grey-4); white-space: nowrap }
+.winner {
+  display: inline-block; font-size: 10px; font-weight: 600;
+  color: #fff; background: var(--blue);
+  padding: 2px 8px; border-radius: 100px; margin-left: 8px; vertical-align: middle;
+}
 
-/* ─────────────────────────────────────────────────────────────
+/* ═══════════════════════════════════
+   ADVISORY
+═══════════════════════════════════ */
+.advisory-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px }
+.advisory-card {
+  background: var(--white); border-radius: var(--r-card);
+  padding: 20px; box-shadow: var(--shadow);
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  transition: transform .2s, box-shadow .2s;
+}
+.advisory-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-l) }
+.advisory-name { font-size: 14px; font-weight: 500; color: var(--black); line-height: 1.35 }
+.advisory-date { font-size: 12px; font-weight: 500; color: var(--grey-4); white-space: nowrap }
+
+/* ═══════════════════════════════════
    ECOSYSTEM
-───────────────────────────────────────────────────────────── */
-.eco-grid {
-  display: grid; grid-template-columns: repeat(3,1fr);
-  border: 1.5px solid var(--ink); border-right: none;
-}
+═══════════════════════════════════ */
+.eco-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px }
 .eco-card {
-  display: block; padding: 24px;
-  border-right: 1.5px solid var(--ink);
-  border-bottom: 1px solid var(--rule);
-  position: relative; overflow: hidden;
-  transition: background .2s;
+  display: block;
+  background: var(--white); border-radius: var(--r-card);
+  padding: 28px; box-shadow: var(--shadow);
+  transition: transform .3s, box-shadow .3s; position: relative;
 }
-.eco-card:nth-child(n+4) { border-bottom: none }
-.eco-card:hover { background: var(--bg-warm) }
+.eco-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-l) }
 .eco-arr {
-  position: absolute; top: 20px; right: 20px;
-  width: 28px; height: 28px; border: 1px solid var(--rule);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 11px; color: var(--ink-4);
-  transition: all .2s;
+  position: absolute; top: 24px; right: 24px;
+  font-size: 16px; color: var(--grey-3); transition: color .2s;
 }
-.eco-card:hover .eco-arr { border-color: var(--accent); color: var(--accent) }
-.eco-tag {
-  font-size: 9px; font-weight: 700; letter-spacing: .2em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+.eco-card:hover .eco-arr { color: var(--blue) }
+.eco-label {
+  font-size: 12px; font-weight: 600; letter-spacing: .04em;
+  text-transform: uppercase; color: var(--blue); margin-bottom: 8px;
 }
-.eco-name { font-size: 16px; font-weight: 800; color: var(--ink); margin-bottom: 4px }
-.eco-url {
-  font-size: 10px; font-weight: 500; letter-spacing: .1em;
-  color: var(--ink-4); display: block; margin-bottom: 12px;
-}
-.eco-url:hover { color: var(--accent) }
-.eco-desc { font-size: 12px; font-weight: 300; line-height: 1.65; color: var(--ink-3); margin-bottom: 14px }
-.eco-badges { display: flex; gap: 5px; flex-wrap: wrap }
-.eco-badge {
-  font-size: 8px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--ink-4); padding: 3px 8px; border: 1px solid var(--rule);
+.eco-name { font-size: 19px; font-weight: 700; color: var(--black); margin-bottom: 4px; letter-spacing: -.01em }
+.eco-url { font-size: 13px; font-weight: 400; color: var(--blue); display: block; margin-bottom: 14px }
+.eco-desc { font-size: 14px; font-weight: 400; line-height: 1.6; color: var(--grey-5); margin-bottom: 14px }
+.eco-tags { display: flex; gap: 6px; flex-wrap: wrap }
+.eco-tag-pill {
+  font-size: 11px; font-weight: 500;
+  padding: 4px 10px; border-radius: 100px;
+  background: var(--grey-1); color: var(--grey-4);
 }
 
-/* ─────────────────────────────────────────────────────────────
-   FOOTER
-───────────────────────────────────────────────────────────── */
+/* ═══════════════════════════════════
+   FOOTER — dark Apple style
+═══════════════════════════════════ */
 footer {
-  background: var(--ink); color: var(--bg);
-  padding: 32px clamp(20px,5vw,60px);
+  background: var(--grey-1);
+  border-top: 1px solid var(--grey-2);
+  padding: 48px clamp(20px,6vw,80px);
+}
+.footer-inner {
+  max-width: 1200px; margin: 0 auto;
   display: grid; grid-template-columns: 1fr auto 1fr;
-  align-items: center; gap: 16px;
-  margin-top: 80px;
+  align-items: center; gap: 20px;
 }
 .footer-brand {
-  font-size: 13px; font-weight: 800; letter-spacing: -.01em;
+  font-size: 15px; font-weight: 600; color: var(--black); letter-spacing: -.01em;
 }
-.footer-brand em { color: var(--accent); font-style: normal }
-.footer-credit {
-  font-size: 9px; font-weight: 500; letter-spacing: .2em;
-  text-transform: uppercase; color: rgba(250,250,248,.3);
-  text-align: center;
-}
-.footer-credit a { color: #ffb347; transition: color .2s }
-.footer-credit a:hover { color: #fff }
+.footer-brand em { color: var(--blue); font-style: normal }
+.footer-credit { font-size: 12px; font-weight: 400; color: var(--grey-4); text-align: center }
+.footer-credit a { color: var(--blue); transition: opacity .2s }
+.footer-credit a:hover { opacity: .7 }
 .footer-links { display: flex; gap: 20px; list-style: none; justify-content: flex-end }
 .footer-links a {
-  font-size: 10px; font-weight: 500; letter-spacing: .16em;
-  text-transform: uppercase; color: rgba(250,250,248,.4);
-  transition: color .2s;
+  font-size: 13px; font-weight: 400; color: var(--blue);
+  transition: opacity .2s;
 }
-.footer-links a:hover { color: #fff }
+.footer-links a:hover { opacity: .7 }
 
-/* ─────────────────────────────────────────────────────────────
-   REVEAL
-───────────────────────────────────────────────────────────── */
+/* ═══════════════════════════════════
+   REVEAL ANIMATIONS
+═══════════════════════════════════ */
 .reveal {
   opacity: 0; transform: translateY(20px);
-  transition: opacity .6s ease, transform .6s ease;
+  transition: opacity .7s cubic-bezier(.25,.46,.45,.94),
+              transform .7s cubic-bezier(.25,.46,.45,.94);
 }
 .reveal.vis { opacity: 1; transform: none }
 
-/* ─────────────────────────────────────────────────────────────
+/* ═══════════════════════════════════
    RESPONSIVE
-───────────────────────────────────────────────────────────── */
+═══════════════════════════════════ */
 @media (max-width: 900px) {
-  .nav-links, .nav-status { display: none }
+  .nav-links, .nav-cta { display: none }
   .nav-burger { display: flex }
-
-  .hero-mid { grid-template-columns: 1fr; }
-  .hero-mid-rule { display: none }
-  .hero-desc { padding-right: 0; padding-bottom: 32px }
-  .hero-creds { padding-left: 0; padding-bottom: 40px; border-top: 1px solid var(--rule) }
-  .hero-creds .cred-item:first-child { border-top: none }
-
-  .stats-strip { grid-template-columns: repeat(3,1fr) }
-  .profile-layout { grid-template-columns: 1fr }
-  .profile-side { border-top: 1px solid var(--rule) }
+  .hero { padding-top: calc(48px + 50px) }
   .ventures-grid { grid-template-columns: 1fr }
-  .venture { border-right: none; border-bottom: 1px solid var(--rule) }
-  .venture:last-child { border-bottom: none }
-  .comp-grid { grid-template-columns: repeat(2,1fr) }
-  .patents-grid { grid-template-columns: 1fr 1fr; border-right: 1.5px solid var(--ink) }
-  .patent:last-child { grid-column: span 2 }
+  .venture-tile { min-height: 420px }
+  .patents-grid { grid-template-columns: 1fr 1fr }
+  .comp-grid { grid-template-columns: 1fr 1fr }
   .two-col { grid-template-columns: 1fr }
   .advisory-grid { grid-template-columns: 1fr 1fr }
-  .advisory-item:nth-child(n+4) { border-bottom: 1px solid var(--rule) }
-  .advisory-item:nth-last-child(-n+2) { border-bottom: none }
   .eco-grid { grid-template-columns: 1fr 1fr }
-  .eco-card:nth-child(n+4) { border-bottom: 1px solid var(--rule) }
-  .eco-card:nth-last-child(-n+2) { border-bottom: none }
-  .tl-item { grid-template-columns: 1fr }
-  .tl-meta { border-right: none; border-bottom: 1px solid var(--rule) }
-  footer { grid-template-columns: 1fr; text-align: center }
+  .stats-grid { grid-template-columns: repeat(3,1fr) }
+  .profile-card { grid-template-columns: 1fr }
+  .profile-side { border-top: 1px solid var(--grey-2) }
+  .tl-inner { grid-template-columns: 1fr }
+  .tl-meta { border-right: none; border-bottom: 1px solid var(--grey-2) }
+  .footer-inner { grid-template-columns: 1fr; text-align: center }
   .footer-links { justify-content: center }
   .map-key { display: none }
 }
-
 @media (max-width: 600px) {
-  .hero-name { letter-spacing: -.04em }
-  .stats-strip { grid-template-columns: repeat(2,1fr) }
+  .hero-name { letter-spacing: -.03em }
+  .stats-grid { grid-template-columns: repeat(2,1fr) }
+  .patents-grid { grid-template-columns: 1fr }
   .comp-grid { grid-template-columns: 1fr }
-  .patents-grid { grid-template-columns: 1fr; border-right: 1.5px solid var(--ink) }
-  .patent:last-child { grid-column: span 1 }
   .advisory-grid { grid-template-columns: 1fr }
-  .advisory-item:nth-child(n) { border-bottom: 1px solid var(--rule) }
-  .advisory-item:last-child { border-bottom: none }
   .eco-grid { grid-template-columns: 1fr }
-  .eco-card:nth-child(n) { border-bottom: 1px solid var(--rule) }
-  .eco-card:last-child { border-bottom: none }
-  .hero-top { flex-direction: column; gap: 4px }
-  .hero-bg-num { display: none }
-  .two-col { grid-template-columns: 1fr }
+  .hero-btns .btn { font-size: 15px; padding: 10px 18px }
+  .map-card { margin: 0 clamp(16px,4vw,44px) }
 }
-
 @media (prefers-reduced-motion: reduce) {
   .ticker-track { animation: none }
   .reveal { opacity: 1; transform: none }
-  .status-pip, .map-live-pip { animation: none }
+  .map-live-pip { animation: none }
 }
 </style>
 </head>
 <body>
 
-<!-- ── NAV ──────────────────────────────────────────────── -->
+<!-- ══ NAV ═════════════════════════════════════════════ -->
 <nav>
-  <div class="nav-brand">S.<em>LEGRAND</em></div>
+  <div class="nav-logo">Simon <em>Legrand</em></div>
   <ul class="nav-links">
-    <li><a href="#profile" class="active">Profile</a></li>
+    <li><a href="#hero" class="active">Home</a></li>
     <li><a href="#ventures">Ventures</a></li>
     <li><a href="#patents">Patents</a></li>
     <li><a href="#career">Career</a></li>
     <li><a href="#work">Work</a></li>
   </ul>
-  <div class="nav-status">
-    <div class="status-pip"></div>
-    <span>MCIM · Active · Faversham</span>
-  </div>
-  <button class="nav-burger" id="navBurger">
-    <span></span><span></span><span></span>
-  </button>
+  <a class="nav-cta" href="mailto:simongeorgelegrand@gmail.com">Get in Touch</a>
+  <button class="nav-burger" id="navBurger"><span></span><span></span><span></span></button>
 </nav>
 <div class="nav-drawer" id="navDrawer">
-  <a href="#profile">Profile</a>
+  <a href="#hero">Home</a>
   <a href="#ventures">Ventures</a>
   <a href="#patents">Patents</a>
   <a href="#career">Career</a>
   <a href="#work">Work</a>
+  <a href="mailto:simongeorgelegrand@gmail.com">Get in Touch</a>
 </div>
 
-<!-- ── HERO ─────────────────────────────────────────────── -->
-<section class="hero" id="profile">
-  <div class="hero-bg-num">SL</div>
-  <div class="hero-top">
-    <span class="hero-eyebrow">Technology Founder · MCIM · Patent Inventor · Faversham, Kent</span>
-    <span class="hero-date" id="heroDate"></span>
-  </div>
-  <div>
-    <h1 class="hero-name">Simon<br><span class="accent">Le</span>grand</h1>
-    <div class="hero-mid">
-      <div class="hero-desc">
-        <p><strong>MCIM Chartered Marketer</strong> and listed patent inventor. Co-founder across physical security, preventative health, and digital consulting. 20+ years building at the intersection of sensor systems, IoT infrastructure, and public sector transformation.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-accent" href="mailto:simongeorgelegrand@gmail.com">
-            <i class="fa-solid fa-envelope"></i> Get in Touch
-          </a>
-          <a class="btn btn-outline" href="https://www.linkedin.com/in/-simonlegrand-" target="_blank">
-            <i class="fa-brands fa-linkedin"></i> LinkedIn ↗
-          </a>
-          <a class="btn btn-outline" href="https://www.fyrflysystems.com" target="_blank">Fyrfly ↗</a>
-          <a class="btn btn-outline" href="https://assistiv.co" target="_blank">Assistiv ↗</a>
-        </div>
-      </div>
-      <div class="hero-mid-rule"></div>
-      <div class="hero-creds">
-        <div class="cred-item">
-          <span class="cred-label">MCIM — Chartered Marketer</span>
-          <span class="cred-value">2025</span>
-        </div>
-        <div class="cred-item">
-          <span class="cred-label">3 Granted Patents</span>
-          <span class="cred-value">Co-Inventor</span>
-        </div>
-        <div class="cred-item">
-          <span class="cred-label">58 Systems Deployed</span>
-          <span class="cred-value">Kazakhstan</span>
-        </div>
-        <div class="cred-item">
-          <span class="cred-label">IFSEC Global Top 50</span>
-          <span class="cred-value">Most Influential 2018</span>
-        </div>
-        <div class="cred-item">
-          <span class="cred-label">IBM Cyber Security Board Lead</span>
-          <span class="cred-value">Certified</span>
-        </div>
-        <div class="cred-item">
-          <span class="cred-label">Anthropic Startups</span>
-          <span class="cred-value">Claude Programme</span>
-        </div>
-        <div class="cred-item">
-          <span class="cred-label">Rivian Automotive</span>
-          <span class="cred-value">Won vs 15 competitors</span>
-        </div>
-        <div class="cred-item">
-          <span class="cred-label">Chevron Technology Ventures</span>
-          <span class="cred-value">Accepted</span>
-        </div>
-      </div>
+<!-- ══ HERO ════════════════════════════════════════════ -->
+<div id="hero" class="reveal">
+  <div class="hero">
+    <div class="hero-eyebrow">MCIM · Founder · Patent Inventor</div>
+    <h1 class="hero-name">Simon Legrand</h1>
+    <p class="hero-sub">
+      Technology co-founder and <strong>MCIM Chartered Marketer</strong> with 20+ years building at the intersection of sensor systems, IoT infrastructure, and public sector transformation.
+    </p>
+    <div class="hero-btns">
+      <a class="btn btn-primary" href="mailto:simongeorgelegrand@gmail.com">Get in Touch</a>
+      <a class="btn btn-secondary" href="https://www.linkedin.com/in/-simonlegrand-" target="_blank">LinkedIn ↗</a>
+    </div>
+    <div class="hero-chips">
+      <span class="chip"><i class="fa-solid fa-certificate"></i> MCIM · 2025</span>
+      <span class="chip"><i class="fa-solid fa-microchip"></i> 3 Granted Patents</span>
+      <span class="chip"><i class="fa-solid fa-globe"></i> 58 Systems · Kazakhstan</span>
+      <span class="chip"><i class="fa-solid fa-trophy"></i> IFSEC Global Top 50</span>
+      <span class="chip"><i class="fa-solid fa-robot"></i> Anthropic Startups</span>
+      <span class="chip"><i class="fa-solid fa-shield-halved"></i> IBM Cyber Security Lead</span>
     </div>
   </div>
-  <div></div><!-- spacer row -->
-</section>
+</div>
 
-<!-- ── TICKER ────────────────────────────────────────────── -->
-<div class="ticker" aria-hidden="true">
+<!-- ══ TICKER ══════════════════════════════════════════ -->
+<div class="ticker-band" aria-hidden="true">
   <div class="ticker-track">
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="ticker-hi">MCIM</span> · Chartered Institute of Marketing · 2025</span>
+    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="t-hi">MCIM</span> · Chartered Institute of Marketing · 2025</span>
     <span class="ticker-item"><i class="fa-solid fa-circle"></i>Chevron Technology Ventures · Accepted</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="ticker-hi">Rivian Automotive</span> · Won vs 15 competitors · UK · Germany · USA</span>
+    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="t-hi">Rivian Automotive</span> · Won vs 15 competitors · UK · Germany · USA</span>
     <span class="ticker-item"><i class="fa-solid fa-circle"></i>WESCO Anixter · Global Distribution Partnership</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="ticker-hi">3 Granted Patents</span> · Solar CCTV · Autonomous Power · Drone Charging</span>
+    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="t-hi">3 Granted Patents</span> · Solar CCTV · Autonomous Power · Drone Charging</span>
     <span class="ticker-item"><i class="fa-solid fa-circle"></i>IFSEC Global Top 50 Most Influential · 2018</span>
     <span class="ticker-item"><i class="fa-solid fa-circle"></i>IBM Certified Cyber Security Board Lead</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="ticker-amber">S&amp;FE Awards</span> · Winner 2023 · 2017</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i>Responsible AI Institute · Member 2025</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="ticker-hi">58 Systems</span> · Tengizchevroil · Kazakhstan</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i">Network Rail · Telent · Inverness Power Station</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i>Martyn's Law · Terrorism (Protection of Premises) Act 2025</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="ticker-hi">Assistiv Systems</span> · Claude for Startups · Anthropic</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i>Home Office · DfE · DoH · NHS NIHR · Public Sector 2001–2015</span>
-    <!-- dupe -->
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="ticker-hi">MCIM</span> · Chartered Institute of Marketing · 2025</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i>Chevron Technology Ventures · Accepted</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="ticker-hi">Rivian Automotive</span> · Won vs 15 competitors · UK · Germany · USA</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i>WESCO Anixter · Global Distribution Partnership</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="ticker-hi">3 Granted Patents</span> · Solar CCTV · Autonomous Power · Drone Charging</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i>IFSEC Global Top 50 Most Influential · 2018</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i>IBM Certified Cyber Security Board Lead</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="ticker-amber">S&amp;FE Awards</span> · Winner 2023 · 2017</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i>Responsible AI Institute · Member 2025</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="ticker-hi">58 Systems</span> · Tengizchevroil · Kazakhstan</span>
+    <span class="ticker-item"><i class="fa-solid fa-circle"></i>S&amp;FE Awards · Winner 2023 · 2017</span>
+    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="t-hi">58 Systems</span> · Tengizchevroil · Kazakhstan</span>
     <span class="ticker-item"><i class="fa-solid fa-circle"></i>Network Rail · Telent · Inverness Power Station</span>
     <span class="ticker-item"><i class="fa-solid fa-circle"></i>Martyn's Law · Terrorism (Protection of Premises) Act 2025</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="ticker-hi">Assistiv Systems</span> · Claude for Startups · Anthropic</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i>Home Office · DfE · DoH · NHS NIHR · Public Sector 2001–2015</span>
+    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="t-hi">Assistiv Systems</span> · Claude for Startups · Anthropic</span>
+    <!-- dupe -->
+    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="t-hi">MCIM</span> · Chartered Institute of Marketing · 2025</span>
+    <span class="ticker-item"><i class="fa-solid fa-circle"></i>Chevron Technology Ventures · Accepted</span>
+    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="t-hi">Rivian Automotive</span> · Won vs 15 competitors · UK · Germany · USA</span>
+    <span class="ticker-item"><i class="fa-solid fa-circle"></i>WESCO Anixter · Global Distribution Partnership</span>
+    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="t-hi">3 Granted Patents</span> · Solar CCTV · Autonomous Power · Drone Charging</span>
+    <span class="ticker-item"><i class="fa-solid fa-circle"></i>IFSEC Global Top 50 Most Influential · 2018</span>
+    <span class="ticker-item"><i class="fa-solid fa-circle"></i>IBM Certified Cyber Security Board Lead</span>
+    <span class="ticker-item"><i class="fa-solid fa-circle"></i>S&amp;FE Awards · Winner 2023 · 2017</span>
+    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="t-hi">58 Systems</span> · Tengizchevroil · Kazakhstan</span>
+    <span class="ticker-item"><i class="fa-solid fa-circle"></i>Network Rail · Telent · Inverness Power Station</span>
+    <span class="ticker-item"><i class="fa-solid fa-circle"></i>Martyn's Law · Terrorism (Protection of Premises) Act 2025</span>
+    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="t-hi">Assistiv Systems</span> · Claude for Startups · Anthropic</span>
   </div>
 </div>
 
-<!-- ── MAP ───────────────────────────────────────────────── -->
-<div class="map-band">
-  <div class="map-inner">
-    <div class="map-header">
-      <span class="map-title">Global Footprint // SL·Systems · 11 Locations</span>
-      <div class="map-live"><div class="map-live-pip"></div><span id="mapClock">LIVE</span></div>
-    </div>
-    <div class="map-wrap">
-      <canvas id="mapCanvas"></canvas>
-      <div class="map-clock" id="mapClockLabel">51.3148°N · 0.8898°E · Faversham</div>
-      <div class="map-key">
-        <div class="map-key-item"><div class="map-key-dot" style="background:#e8440a"></div>Home</div>
-        <div class="map-key-item"><div class="map-key-dot" style="background:#1a3a7a"></div>Deployment</div>
-        <div class="map-key-item"><div class="map-key-dot" style="background:#1a7a4a"></div>Client</div>
-        <div class="map-key-item"><div class="map-key-dot" style="background:#b87a00"></div>Academic</div>
+<!-- ══ MAP ══════════════════════════════════════════════ -->
+<div class="bg-grey" style="padding: 64px 0">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="section-label reveal">Global Footprint</div>
+    <div class="section-title reveal" style="margin-bottom:40px">11 Countries.<br>One Base.</div>
+    <div class="map-card reveal">
+      <div class="map-card-header">
+        <span class="map-card-title">SL · Systems · Global Reach</span>
+        <div class="map-live"><div class="map-live-pip"></div><span id="mapClock">Live</span></div>
+      </div>
+      <div class="map-wrap"><canvas id="mapCanvas"></canvas></div>
+      <div class="map-foot">
+        <span id="mapClockLabel">51.3148°N · 0.8898°E · Faversham</span>
+        <div class="map-key">
+          <div class="map-key-item"><div class="map-key-dot" style="background:#0071e3"></div>Home</div>
+          <div class="map-key-item"><div class="map-key-dot" style="background:#1d3d8a"></div>Deployment</div>
+          <div class="map-key-item"><div class="map-key-dot" style="background:#1d8348"></div>Client</div>
+          <div class="map-key-item"><div class="map-key-dot" style="background:#b87a00"></div>Academic</div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ── SECTIONS ──────────────────────────────────────────── -->
-<div class="wrap">
-
-  <!-- STATS -->
-  <div class="s reveal" style="padding-top:60px;border-top:none">
-    <div class="stats-strip reveal">
-      <div class="stat"><div class="stat-n" data-count="20" data-suffix="+">0</div><div class="stat-l">Years Experience</div></div>
-      <div class="stat"><div class="stat-n" data-count="3">0</div><div class="stat-l">Granted Patents</div></div>
-      <div class="stat"><div class="stat-n" data-count="58">0</div><div class="stat-l">Systems Deployed · KZ</div></div>
-      <div class="stat"><div class="stat-n" data-count="15" data-suffix="+">0</div><div class="stat-l">Published Articles</div></div>
-      <div class="stat"><div class="stat-n" data-count="14" data-suffix=":1">0</div><div class="stat-l">Assistiv ROI · Pilot</div></div>
+<!-- ══ STATS ════════════════════════════════════════════ -->
+<div class="bg-white">
+  <div class="section reveal">
+    <div class="stats-grid">
+      <div class="stat-cell"><div class="stat-n" data-count="20" data-suffix="+">0</div><div class="stat-l">Years experience</div></div>
+      <div class="stat-cell"><div class="stat-n" data-count="3">0</div><div class="stat-l">Granted patents</div></div>
+      <div class="stat-cell"><div class="stat-n" data-count="58">0</div><div class="stat-l">Systems deployed</div></div>
+      <div class="stat-cell"><div class="stat-n" data-count="15" data-suffix="+">0</div><div class="stat-l">Published articles</div></div>
+      <div class="stat-cell"><div class="stat-n" data-count="14" data-suffix=":1">0</div><div class="stat-l">Assistiv ROI</div></div>
     </div>
   </div>
+</div>
 
-  <!-- PROFILE -->
-  <div class="s reveal">
-    <div class="s-head">
-      <span class="s-num">01</span>
-      <span class="s-title">Profile</span>
-      <div class="s-rule"></div>
-      <span class="s-ghost">01</span>
-    </div>
-    <div class="profile-layout">
+<!-- ══ PROFILE ══════════════════════════════════════════ -->
+<div class="bg-grey" id="profile">
+  <div class="section reveal">
+    <div class="section-label">About</div>
+    <div class="section-title" style="margin-bottom:40px">Built for complexity.<br>Fluent across disciplines.</div>
+    <div class="profile-card">
       <div class="profile-body">
-        <p>Senior technology leader with <strong>20+ years</strong> spanning UK public sector health and social care, technology co-founding, IP development, and AI-native product design. Co-founded <strong>Sunstone Systems</strong> from scratch into a globally recognised, award-winning platform — earning enterprise contracts with <strong>Chevron, Rivian Automotive,</strong> and <strong>Network Rail</strong>, and acceptance into Chevron Technology Ventures. Listed inventor on three granted patents covering solar CCTV, autonomous power, and drone charging. Now operating two active ventures: <strong>Fyrfly Systems</strong>, delivering intelligent physical security to UK schools and public sector, and <strong>Assistiv Systems</strong>, a preventative care platform targeting the UK's ageing population. Deep expertise in agentic AI and the convergence of LLM reasoning with physical sensor networks.</p>
+        <p>Senior technology leader with <strong>20+ years</strong> spanning UK public sector health and social care, technology co-founding, IP development, and AI-native product design. Co-founded <strong>Sunstone Systems</strong> from scratch into a globally recognised, award-winning platform — earning enterprise contracts with <strong>Chevron, Rivian Automotive,</strong> and <strong>Network Rail</strong>, and acceptance into Chevron Technology Ventures. Listed inventor on three granted patents covering solar CCTV, autonomous power, and drone charging. Now operating two active ventures: <strong>Fyrfly Systems</strong>, delivering intelligent physical security to UK schools, and <strong>Assistiv Systems</strong>, a preventative care platform for the UK's ageing population. Deep expertise in agentic AI and the convergence of LLM reasoning with physical sensor networks.</p>
       </div>
       <div class="profile-side">
-        <div class="side-block">
-          <div class="side-lbl">// Location</div>
+        <div>
+          <div class="side-label">Location</div>
           <div class="side-row"><i class="fa-solid fa-location-dot"></i>Faversham, Kent, UK</div>
         </div>
-        <div class="side-block">
-          <div class="side-lbl">// Credentials</div>
+        <div>
+          <div class="side-label">Credentials</div>
           <div class="side-row"><i class="fa-solid fa-award"></i>MCIM — Chartered Marketer</div>
           <div class="side-row"><i class="fa-solid fa-shield-halved"></i>IBM Cyber Security Board Lead</div>
           <div class="side-row"><i class="fa-solid fa-heart"></i>MHFA Practitioner</div>
         </div>
-        <div class="side-block">
-          <div class="side-lbl">// Active Focus</div>
+        <div>
+          <div class="side-label">Active Focus</div>
           <div class="side-row"><i class="fa-solid fa-robot"></i>Agentic AI systems</div>
           <div class="side-row"><i class="fa-solid fa-camera"></i>Physical security · Martyn's Law</div>
           <div class="side-row"><i class="fa-solid fa-user-doctor"></i>NHS · Preventative care</div>
         </div>
-        <div class="side-block">
-          <div class="side-lbl">// Heritage</div>
-          <div class="side-row"><i class="fa-solid fa-flag"></i>1820 British Settler lineage · SA</div>
-        </div>
+
       </div>
     </div>
   </div>
+</div>
 
-  <!-- VENTURES -->
-  <div class="s reveal" id="ventures">
-    <div class="s-head">
-      <span class="s-num">02</span>
-      <span class="s-title">Active Ventures</span>
-      <div class="s-rule"></div>
-      <span class="s-ghost">02</span>
-    </div>
+<!-- ══ VENTURES ══════════════════════════════════════════ -->
+<div class="bg-white" id="ventures">
+  <div class="section reveal">
+    <div class="section-label">Active Ventures</div>
+    <div class="section-title">Founded. Built. Deployed.</div>
+    <div class="section-body">Two active companies — one in physical security, one in health technology — both built with AI-native tooling from day one.</div>
     <div class="ventures-grid">
 
-      <a class="venture v-security" href="https://www.fyrflysystems.com" target="_blank">
-        <div class="venture-bar"></div>
-        <div class="venture-arrow">↗</div>
-        <div class="venture-role">Founder &amp; Director · 2026 – Present</div>
-        <div class="venture-name">Fyrfly Systems</div>
-        <span class="venture-url">fyrflysystems.com</span>
-        <p class="venture-desc">Intelligent physical security for UK schools and public sector. CCTV, access control, intruder alarms, fire systems, and 24/7 monitoring — built on fourteen years of sensor platform development, three granted patents, and deep public sector knowledge. DfE and KCSiE aligned. Martyn's Law ready. The UK's first freely accessible Martyn's Law self-assessment tool was published before a single installation was made.</p>
-        <div class="v-tags">
-          <span class="vtag">Physical Security</span>
-          <span class="vtag">Schools &amp; Public Sector</span>
-          <span class="vtag">Martyn's Law</span>
-          <span class="vtag">AI Compliance Tooling</span>
-          <span class="vtag">24/7 Monitoring</span>
-        </div>
-        <div class="v-metrics">
-          <div class="vmet"><div class="vmet-n">40+</div><div class="vmet-l">Platform pages</div></div>
-          <div class="vmet"><div class="vmet-n">5</div><div class="vmet-l">Free AI tools</div></div>
-          <div class="vmet"><div class="vmet-n">DfE</div><div class="vmet-l">Standards aligned</div></div>
+      <a class="venture-tile vt-security" href="https://www.fyrflysystems.com" target="_blank">
+        <div class="vt-orb"></div>
+        <div class="vt-link">↗</div>
+        <div class="venture-tile-inner">
+          <div class="vt-eyebrow">Founder &amp; Director · 2026 – Present</div>
+          <div class="vt-name">Fyrfly Systems</div>
+          <span class="vt-url">fyrflysystems.com</span>
+          <p class="vt-desc">Intelligent physical security for UK schools and public sector. CCTV, access control, intruder alarms, fire systems, and 24/7 monitoring — built on 14 years of sensor platform development and three granted patents. DfE and KCSiE aligned. Martyn's Law ready.</p>
+          <div class="vt-tags">
+            <span class="vt-tag">Physical Security</span>
+            <span class="vt-tag">Schools</span>
+            <span class="vt-tag">Martyn's Law</span>
+            <span class="vt-tag">AI Tooling</span>
+            <span class="vt-tag">24/7 Monitoring</span>
+          </div>
+          <div class="vt-metrics">
+            <div class="vt-metric"><div class="vt-metric-n">40+</div><div class="vt-metric-l">Pages built</div></div>
+            <div class="vt-metric"><div class="vt-metric-n">5</div><div class="vt-metric-l">Free AI tools</div></div>
+            <div class="vt-metric"><div class="vt-metric-n">DfE</div><div class="vt-metric-l">Aligned</div></div>
+          </div>
         </div>
       </a>
 
-      <a class="venture v-health" href="https://assistiv.co" target="_blank">
-        <div class="venture-bar"></div>
-        <div class="venture-arrow">↗</div>
-        <div class="venture-role">Co-Founder &amp; Director · Active · Anthropic Startup</div>
-        <div class="venture-name">Assistiv Systems</div>
-        <span class="venture-url">assistiv.co</span>
-        <p class="venture-desc">Preventative care platform for older adults in the UK's "Missing Middle" — those beyond full independence but not yet eligible for formal care. Population health FEP scoring across 21 NHS signals, district-level prescribing data, live data pipelines, and a carer hotspot mapping tool. Clinical advisory board includes ASCOT creator Prof. Ann Netten (Exeter) and UCL Prof. John Jerrim. Accepted into Anthropic's Claude for Startups programme.</p>
-        <div class="v-tags">
-          <span class="vtag">NHS</span>
-          <span class="vtag">Health Technology</span>
-          <span class="vtag">AI Platform</span>
-          <span class="vtag">Missing Middle</span>
-          <span class="vtag">Anthropic Startup</span>
-        </div>
-        <div class="v-metrics">
-          <div class="vmet"><div class="vmet-n">14:1</div><div class="vmet-l">ROI at pilot</div></div>
-          <div class="vmet"><div class="vmet-n">21</div><div class="vmet-l">NHS signals</div></div>
-          <div class="vmet"><div class="vmet-n">ICB</div><div class="vmet-l">Commissioner ready</div></div>
+      <a class="venture-tile vt-health" href="https://assistiv.co" target="_blank">
+        <div class="vt-orb"></div>
+        <div class="vt-link">↗</div>
+        <div class="venture-tile-inner">
+          <div class="vt-eyebrow">Co-Founder &amp; Director · Active · Anthropic Startup</div>
+          <div class="vt-name">Assistiv Systems</div>
+          <span class="vt-url">assistiv.co</span>
+          <p class="vt-desc">Preventative care platform for older adults in the UK's "Missing Middle." Population health scoring across 21 NHS signals, district-level prescribing data, live data pipelines, and a carer hotspot tool. Clinical advisory board includes ASCOT creator Prof. Ann Netten and UCL Prof. John Jerrim.</p>
+          <div class="vt-tags">
+            <span class="vt-tag">NHS</span>
+            <span class="vt-tag">Health Tech</span>
+            <span class="vt-tag">AI Platform</span>
+            <span class="vt-tag">Missing Middle</span>
+            <span class="vt-tag">Anthropic Startup</span>
+          </div>
+          <div class="vt-metrics">
+            <div class="vt-metric"><div class="vt-metric-n">14:1</div><div class="vt-metric-l">ROI at pilot</div></div>
+            <div class="vt-metric"><div class="vt-metric-n">21</div><div class="vt-metric-l">NHS signals</div></div>
+            <div class="vt-metric"><div class="vt-metric-n">ICB</div><div class="vt-metric-l">Ready</div></div>
+          </div>
         </div>
       </a>
 
     </div>
   </div>
+</div>
 
-  <!-- COMPETENCIES -->
-  <div class="s reveal">
-    <div class="s-head">
-      <span class="s-num">03</span>
-      <span class="s-title">Core Competencies</span>
-      <div class="s-rule"></div>
-      <span class="s-ghost">03</span>
-    </div>
+<!-- ══ COMPETENCIES ══════════════════════════════════════ -->
+<div class="bg-grey">
+  <div class="section reveal">
+    <div class="section-label">Capabilities</div>
+    <div class="section-title" style="margin-bottom:48px">A rare combination<br>of skills.</div>
     <div class="comp-grid">
-      <div class="comp-cell">Technology co-founding &amp; commercialisation</div>
-      <div class="comp-cell">Strategic marketing, brand &amp; communications</div>
-      <div class="comp-cell">IP development · listed patent inventor</div>
-      <div class="comp-cell">Enterprise business development · global clients</div>
-      <div class="comp-cell">UK public sector: NHS, Home Office, DfE, DoH</div>
-      <div class="comp-cell">Academic &amp; qualitative research</div>
-      <div class="comp-cell">Agentic AI &amp; LLM system design</div>
-      <div class="comp-cell">Cyber security · IBM Certified Board Lead</div>
-      <div class="comp-cell">Physical security · sensor networks · IoT</div>
-      <div class="comp-cell">Preventative health platform design</div>
-      <div class="comp-cell">Static-web architecture · GitHub · Cloudflare</div>
-      <div class="comp-cell">Standards compliance: DfE · KCSiE · BS EN</div>
+      <div class="comp-card"><div class="comp-icon"><i class="fa-solid fa-rocket"></i></div><div class="comp-text">Technology co-founding &amp; commercialisation</div></div>
+      <div class="comp-card"><div class="comp-icon"><i class="fa-solid fa-bullhorn"></i></div><div class="comp-text">Strategic marketing, brand &amp; communications</div></div>
+      <div class="comp-card"><div class="comp-icon"><i class="fa-solid fa-microchip"></i></div><div class="comp-text">IP development · listed patent inventor</div></div>
+      <div class="comp-card"><div class="comp-icon"><i class="fa-solid fa-earth-europe"></i></div><div class="comp-text">Enterprise business development · global clients</div></div>
+      <div class="comp-card"><div class="comp-icon"><i class="fa-solid fa-landmark"></i></div><div class="comp-text">UK public sector: NHS, Home Office, DfE, DoH</div></div>
+      <div class="comp-card"><div class="comp-icon"><i class="fa-solid fa-flask"></i></div><div class="comp-text">Academic &amp; qualitative research</div></div>
+      <div class="comp-card"><div class="comp-icon"><i class="fa-solid fa-robot"></i></div><div class="comp-text">Agentic AI &amp; LLM system design</div></div>
+      <div class="comp-card"><div class="comp-icon"><i class="fa-solid fa-shield-halved"></i></div><div class="comp-text">Cyber security · IBM Certified Board Lead</div></div>
+      <div class="comp-card"><div class="comp-icon"><i class="fa-solid fa-camera"></i></div><div class="comp-text">Physical security · sensor networks · IoT</div></div>
+      <div class="comp-card"><div class="comp-icon"><i class="fa-solid fa-heart-pulse"></i></div><div class="comp-text">Preventative health platform design</div></div>
+      <div class="comp-card"><div class="comp-icon"><i class="fa-brands fa-github"></i></div><div class="comp-text">Static-web architecture · GitHub · Cloudflare</div></div>
+      <div class="comp-card"><div class="comp-icon"><i class="fa-solid fa-clipboard-check"></i></div><div class="comp-text">Standards compliance: DfE · KCSiE · BS EN</div></div>
     </div>
   </div>
+</div>
 
-  <!-- PATENTS -->
-  <div class="s reveal" id="patents">
-    <div class="s-head">
-      <span class="s-num">04</span>
-      <span class="s-title">Patent Schematics // Listed Inventor</span>
-      <div class="s-rule"></div>
-      <span class="s-ghost">04</span>
-    </div>
+<!-- ══ PATENTS ════════════════════════════════════════════ -->
+<div class="bg-white" id="patents">
+  <div class="section reveal">
+    <div class="section-label">Intellectual Property</div>
+    <div class="section-title">Three granted patents.<br>Co-inventor.</div>
+    <div class="section-body">Solar-powered surveillance, autonomous power, and drone charging — a suite of IP developed alongside Chevron Technology Ventures.</div>
     <div class="patents-grid">
-
-      <div class="patent">
-        <div class="patent-ghost"><i class="fa-solid fa-camera"></i></div>
-        <div>
-          <div class="patent-id">PAT_01 · 2016 · Co-inventor</div>
-          <div class="patent-name">Solar CCTV System</div>
-          <div class="patent-summary">Solar-powered autonomous surveillance developed with Chevron / Tengizchevroil. 58 units deployed across Kazakhstan.</div>
-          <div class="patent-num">WO2016185034A1</div>
-        </div>
+      <div class="patent-card">
+        <div class="patent-icon"><i class="fa-solid fa-camera"></i></div>
+        <div class="patent-id">PAT · 01 · 2016</div>
+        <div class="patent-name">Solar CCTV System</div>
+        <div class="patent-summary">Solar-powered autonomous surveillance developed with Chevron / Tengizchevroil. 58 units deployed across Kazakhstan.</div>
+        <div class="patent-num">WO2016185034A1</div>
       </div>
-
-      <div class="patent">
-        <div class="patent-ghost"><i class="fa-solid fa-bolt"></i></div>
-        <div>
-          <div class="patent-id">PAT_02 · 2020 · Co-inventor</div>
-          <div class="patent-name">Solar Power Station</div>
-          <div class="patent-summary">Autonomous off-grid power station for remote IoT and surveillance infrastructure. Deployed across Network Rail and major infrastructure clients.</div>
-          <div class="patent-num">US20200280280A1</div>
-        </div>
+      <div class="patent-card">
+        <div class="patent-icon"><i class="fa-solid fa-bolt"></i></div>
+        <div class="patent-id">PAT · 02 · 2020</div>
+        <div class="patent-name">Solar Power Station</div>
+        <div class="patent-summary">Autonomous off-grid power station for remote IoT and surveillance infrastructure. Deployed across Network Rail and major infrastructure clients.</div>
+        <div class="patent-num">US20200280280A1</div>
       </div>
-
-      <div class="patent">
-        <div class="patent-ghost"><i class="fa-solid fa-helicopter"></i></div>
-        <div>
-          <div class="patent-id">PAT_03 · 2022 · Co-inventor</div>
-          <div class="patent-name">Solar Drone Charging Station</div>
-          <div class="patent-summary">Solar-powered autonomous drone charging and deployment station for persistent remote surveillance and infrastructure monitoring.</div>
-          <div class="patent-num">US20220052538A1</div>
-        </div>
+      <div class="patent-card">
+        <div class="patent-icon"><i class="fa-solid fa-helicopter"></i></div>
+        <div class="patent-id">PAT · 03 · 2022</div>
+        <div class="patent-name">Solar Drone Charging</div>
+        <div class="patent-summary">Solar-powered autonomous drone charging and deployment station for persistent remote surveillance and infrastructure monitoring.</div>
+        <div class="patent-num">US20220052538A1</div>
       </div>
-
     </div>
   </div>
+</div>
 
-  <!-- CAREER -->
-  <div class="s reveal" id="career">
-    <div class="s-head">
-      <span class="s-num">05</span>
-      <span class="s-title">Career Log</span>
-      <div class="s-rule"></div>
-      <span class="s-ghost">05</span>
-    </div>
+<!-- ══ CAREER ═════════════════════════════════════════════ -->
+<div class="bg-grey" id="career">
+  <div class="section reveal">
+    <div class="section-label">Career</div>
+    <div class="section-title" style="margin-bottom:48px">Twenty-five years<br>of building.</div>
     <div class="timeline">
 
-      <div class="tl-item reveal">
-        <div class="tl-meta">
-          <span class="tl-badge live">2026 – Present</span>
-          <div class="tl-title">Founder &amp; Director</div>
-          <div class="tl-org">Fyrfly Systems</div>
-        </div>
-        <div class="tl-body">
-          <p class="tl-summary">Founded Fyrfly Systems to deliver intelligent, standards-compliant physical security to UK schools and public sector — a sector chronically underserved by legacy installers and unprepared for Martyn's Law obligations.</p>
-          <ul class="tl-bullets">
-            <li>Full commercial platform built before first installation: 40+ pages, AI compliance tooling, regional SEO infrastructure</li>
-            <li>Published UK's first freely accessible Martyn's Law self-assessment tool, generating Responsible Person-level inbound pipeline</li>
-            <li>Proprietary Solar CCTV Tower product line applying Sunstone IP to new commercial contexts</li>
-            <li>AI-assisted workflow across the business: compliance checking, policy generation, incident analysis, cost estimation</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-meta">
-          <span class="tl-badge live">2024 – Present</span>
-          <div class="tl-title">Co-Founder &amp; Director</div>
-          <div class="tl-org">Assistiv Systems Ltd</div>
-        </div>
-        <div class="tl-body">
-          <p class="tl-summary">Co-founding and building a preventative care platform for older adults in the "Missing Middle" — leveraging NHS open data, live pipelines, and AI-native design.</p>
-          <ul class="tl-bullets">
-            <li>Built assistiv.cloud: 21-signal NHS FEP scoring, district-level EPD prescribing data, live GitHub Actions pipelines</li>
-            <li>Clinical advisory board: ASCOT creator Prof. Ann Netten (Exeter) and UCL Prof. John Jerrim</li>
-            <li>Accepted into Anthropic's Claude for Startups programme</li>
-            <li>Strategic comms targeting NHS England and ICB commissioners; parliamentary engagement via Sir Roger Gale MP</li>
-            <li>14:1 ROI demonstrated at pilot scale vs residential care comparators</li>
-          </ul>
+      <div class="tl-card reveal">
+        <div class="tl-inner">
+          <div class="tl-meta">
+            <span class="tl-pill tl-pill-live">2026 – Present</span>
+            <div class="tl-title">Founder &amp; Director</div>
+            <div class="tl-org">Fyrfly Systems</div>
+          </div>
+          <div class="tl-body">
+            <p class="tl-summary">Founded Fyrfly Systems to deliver intelligent, standards-compliant physical security to UK schools and public sector — a sector chronically underserved by legacy installers and unprepared for Martyn's Law.</p>
+            <ul class="tl-bullets">
+              <li>Full commercial platform built before first installation: 40+ pages, AI compliance tooling, regional SEO</li>
+              <li>Published UK's first freely accessible Martyn's Law self-assessment tool</li>
+              <li>Proprietary Solar CCTV Tower product line applying Sunstone IP to new commercial contexts</li>
+              <li>AI-assisted workflow: compliance checking, policy generation, incident analysis, cost estimation</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div class="tl-item reveal">
-        <div class="tl-meta">
-          <span class="tl-badge">2024 – 2026</span>
-          <div class="tl-title">Technology Marketer</div>
-          <div class="tl-org">WJ Group / WJ Sunstone</div>
-        </div>
-        <div class="tl-body">
-          <p class="tl-summary">Following Sunstone's acquisition, led strategic marketing for the technology portfolio within the new group structure as de facto marketing lead.</p>
-          <ul class="tl-bullets">
-            <li>Go-to-market strategies for WJ Sunstone's solar-powered technology portfolio</li>
-            <li>Brand integration within WJ Group: consistent positioning and market voice</li>
-            <li>Website strategy, SEO, content development, and technical collateral</li>
-            <li>Group Sustainability, Social Responsibility, MHFA Practitioner</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-meta">
-          <span class="tl-badge">2011 – 2024</span>
-          <div class="tl-title">Co-Founder, Director &amp; CMO</div>
-          <div class="tl-org">Sunstone Systems</div>
-        </div>
-        <div class="tl-body">
-          <p class="tl-summary">Co-founded and built Sunstone Systems from inception into an internationally recognised leader in solar-powered surveillance, autonomous power, and IoT telecommunications — winning multiple industry awards and securing major enterprise contracts globally.</p>
-          <ul class="tl-bullets">
-            <li>Accepted into Chevron Technology Ventures; led engagement with senior CTV venture partners</li>
-            <li>Co-designed patented Solar IP CCTV System with Chevron / Tengizchevroil — 58 systems deployed in Kazakhstan</li>
-            <li>Won Rivian Automotive contract, beating 15 competitors across UK, Germany, and USA</li>
-            <li>Network Rail / Telent Power Station deployment (Inverness) and LiDAR tunnel detection</li>
-            <li>WESCO Anixter global distribution partnership brokered</li>
-            <li>15+ published articles: IFSEC Global, PSI Magazine, Security Buyer</li>
-            <li>IBM Certified Cyber Security Board Lead; Cyber Essentials Accreditation</li>
-          </ul>
+      <div class="tl-card reveal">
+        <div class="tl-inner">
+          <div class="tl-meta">
+            <span class="tl-pill tl-pill-live">2024 – Present</span>
+            <div class="tl-title">Co-Founder &amp; Director</div>
+            <div class="tl-org">Assistiv Systems Ltd</div>
+          </div>
+          <div class="tl-body">
+            <p class="tl-summary">Co-founding and building a preventative care platform for older adults in the "Missing Middle," leveraging NHS open data, live pipelines, and AI-native design.</p>
+            <ul class="tl-bullets">
+              <li>Built assistiv.cloud: 21-signal NHS FEP scoring, district-level EPD prescribing data, live GitHub Actions pipelines</li>
+              <li>Clinical advisory board: Prof. Ann Netten (Exeter) and UCL Prof. John Jerrim</li>
+              <li>Accepted into Anthropic's Claude for Startups programme</li>
+              <li>Parliamentary engagement via Sir Roger Gale MP; ICB commissioner targeting</li>
+              <li>14:1 ROI demonstrated at pilot scale vs residential care comparators</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div class="tl-item reveal">
-        <div class="tl-meta">
-          <span class="tl-badge">2001 – 2015</span>
-          <div class="tl-title">Public Sector Professional</div>
-          <div class="tl-org">Home Office · DfE · DoH · NHS NIHR</div>
+      <div class="tl-card reveal">
+        <div class="tl-inner">
+          <div class="tl-meta">
+            <span class="tl-pill tl-pill-past">2024 – 2026</span>
+            <div class="tl-title">Technology Marketer</div>
+            <div class="tl-org">WJ Group / WJ Sunstone</div>
+          </div>
+          <div class="tl-body">
+            <p class="tl-summary">Following Sunstone's acquisition, led strategic marketing for the technology portfolio as de facto marketing lead within the new group structure.</p>
+            <ul class="tl-bullets">
+              <li>Go-to-market strategies for WJ Sunstone's solar-powered technology portfolio</li>
+              <li>Brand integration, website strategy, SEO, content, and technical collateral</li>
+              <li>Group Sustainability, Social Responsibility, and MHFA Practitioner</li>
+            </ul>
+          </div>
         </div>
-        <div class="tl-body">
-          <p class="tl-summary">Sustained consulting and research career across central government, NHS, and leading academic institutions, delivering policy, strategy, and service development across health, education, and security.</p>
-          <ul class="tl-bullets">
-            <li>Service development with local authorities, NHS trusts, and public sector organisations</li>
-            <li>Policy and strategy with Local Authorities and Government departments</li>
-            <li>Academic research with Essex, Bath, Kent, and Australian National University</li>
-          </ul>
+      </div>
+
+      <div class="tl-card reveal">
+        <div class="tl-inner">
+          <div class="tl-meta">
+            <span class="tl-pill tl-pill-past">2011 – 2024</span>
+            <div class="tl-title">Co-Founder, Director &amp; CMO</div>
+            <div class="tl-org">Sunstone Systems</div>
+          </div>
+          <div class="tl-body">
+            <p class="tl-summary">Co-founded and built Sunstone Systems into an internationally recognised leader in solar-powered surveillance, autonomous power, and IoT — winning multiple industry awards and securing major enterprise contracts globally.</p>
+            <ul class="tl-bullets">
+              <li>Accepted into Chevron Technology Ventures; led engagement with senior CTV venture partners</li>
+              <li>Co-designed patented Solar IP CCTV System — 58 systems deployed in Kazakhstan</li>
+              <li>Won Rivian Automotive contract, beating 15 competitors across UK, Germany, and USA</li>
+              <li>Network Rail / Telent Power Station (Inverness); WESCO Anixter global distribution</li>
+              <li>15+ published articles: IFSEC Global, PSI Magazine, Security Buyer</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-card reveal">
+        <div class="tl-inner">
+          <div class="tl-meta">
+            <span class="tl-pill tl-pill-past">2001 – 2015</span>
+            <div class="tl-title">Public Sector Professional</div>
+            <div class="tl-org">Home Office · DfE · DoH · NHS NIHR</div>
+          </div>
+          <div class="tl-body">
+            <p class="tl-summary">Sustained consulting and research career across central government, NHS, and leading academic institutions — delivering policy, strategy, and service development across health, education, and security.</p>
+            <ul class="tl-bullets">
+              <li>Service development with local authorities, NHS trusts, and public sector organisations</li>
+              <li>Policy and strategy with Local Authorities and Government departments</li>
+              <li>Academic research with Essex, Bath, Kent, and Australian National University</li>
+            </ul>
+          </div>
         </div>
       </div>
 
     </div>
   </div>
+</div>
 
-  <!-- EDUCATION & RECOGNITION -->
-  <div class="s reveal">
-    <div class="s-head">
-      <span class="s-num">06</span>
-      <span class="s-title">Education &amp; Recognition</span>
-      <div class="s-rule"></div>
-      <span class="s-ghost">06</span>
-    </div>
+<!-- ══ EDUCATION & RECOGNITION ═══════════════════════════ -->
+<div class="bg-white">
+  <div class="section reveal">
+    <div class="section-label">Education &amp; Recognition</div>
+    <div class="section-title" style="margin-bottom:48px">Qualified. Recognised.<br>Awarded.</div>
     <div class="two-col">
       <div>
-        <div class="col-lbl">// Qualifications</div>
-        <div class="item-list">
-          <div class="item-row"><span class="item-name"><strong>MCIM</strong> · Chartered Institute of Marketing</span><span class="item-date">2025</span></div>
-          <div class="item-row"><span class="item-name"><strong>MHFA Practitioner</strong> · Mental Health First Aid UK</span><span class="item-date">2024</span></div>
-          <div class="item-row"><span class="item-name"><strong>DipHE</strong> · Public Sector Change &amp; Innovation, Kent</span><span class="item-date">2003</span></div>
-          <div class="item-row"><span class="item-name"><strong>DipHE</strong> · Public Sector Development, Brighton</span><span class="item-date">2003</span></div>
-          <div class="item-row"><span class="item-name"><strong>BA (Hons)</strong> · Education &amp; Psychology, Leeds</span><span class="item-date">1999</span></div>
+        <div class="list-title">Qualifications</div>
+        <div class="list-card">
+          <div class="list-row"><span class="list-name"><strong>MCIM</strong> · Chartered Institute of Marketing</span><span class="list-date">2025</span></div>
+          <div class="list-row"><span class="list-name"><strong>MHFA Practitioner</strong> · Mental Health First Aid UK</span><span class="list-date">2024</span></div>
+          <div class="list-row"><span class="list-name"><strong>DipHE</strong> · Public Sector Change &amp; Innovation, Kent</span><span class="list-date">2003</span></div>
+          <div class="list-row"><span class="list-name"><strong>DipHE</strong> · Public Sector Development, Brighton</span><span class="list-date">2003</span></div>
+          <div class="list-row"><span class="list-name"><strong>BA (Hons)</strong> · Education &amp; Psychology, Leeds</span><span class="list-date">1999</span></div>
         </div>
       </div>
       <div>
-        <div class="col-lbl">// Industry Recognition</div>
-        <div class="item-list">
-          <div class="item-row"><span class="item-name">S&amp;FE Awards · Security Partnering Initiative <span class="winner">Winner</span></span><span class="item-date">2023</span></div>
-          <div class="item-row"><span class="item-name">Highways England · Network Management <span class="winner">Winner</span></span><span class="item-date">2020</span></div>
-          <div class="item-row"><span class="item-name">Canterbury Business Awards · SME &amp; Innovation <span class="winner">Winner</span></span><span class="item-date">2018</span></div>
-          <div class="item-row"><span class="item-name">S&amp;FE Awards · SME Installer &amp; Project of Year <span class="winner">Winner</span></span><span class="item-date">2017</span></div>
-          <div class="item-row"><span class="item-name">IFSEC Global · Top 50 Most Influential</span><span class="item-date">2018</span></div>
-          <div class="item-row"><span class="item-name">S&amp;FE Awards · Champion of Champions (Finalist)</span><span class="item-date">2021</span></div>
-          <div class="item-row"><span class="item-name">CIHT Awards · Innovation (Highly Commended)</span><span class="item-date">2018</span></div>
+        <div class="list-title">Industry Recognition</div>
+        <div class="list-card">
+          <div class="list-row"><span class="list-name">S&amp;FE Awards · Security Partnering Initiative <span class="winner">Winner</span></span><span class="list-date">2023</span></div>
+          <div class="list-row"><span class="list-name">Highways England · Network Management <span class="winner">Winner</span></span><span class="list-date">2020</span></div>
+          <div class="list-row"><span class="list-name">Canterbury Business Awards · SME &amp; Innovation <span class="winner">Winner</span></span><span class="list-date">2018</span></div>
+          <div class="list-row"><span class="list-name">S&amp;FE Awards · SME Installer &amp; Project of Year <span class="winner">Winner</span></span><span class="list-date">2017</span></div>
+          <div class="list-row"><span class="list-name">IFSEC Global · Top 50 Most Influential</span><span class="list-date">2018</span></div>
+          <div class="list-row"><span class="list-name">S&amp;FE Awards · Champion of Champions (Finalist)</span><span class="list-date">2021</span></div>
+          <div class="list-row"><span class="list-name">CIHT Awards · Innovation (Highly Commended)</span><span class="list-date">2018</span></div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- ADVISORY -->
-  <div class="s reveal">
-    <div class="s-head">
-      <span class="s-num">07</span>
-      <span class="s-title">Advisory &amp; Memberships</span>
-      <div class="s-rule"></div>
-      <span class="s-ghost">07</span>
-    </div>
+<!-- ══ ADVISORY ══════════════════════════════════════════ -->
+<div class="bg-grey">
+  <div class="section reveal">
+    <div class="section-label">Advisory &amp; Memberships</div>
+    <div class="section-title" style="margin-bottom:48px">Contributing to<br>the conversation.</div>
     <div class="advisory-grid">
-      <div class="advisory-item"><span class="advisory-name">Responsible AI Institute · Member</span><span class="advisory-date">2025 –</span></div>
-      <div class="advisory-item"><span class="advisory-name">PSI Magazine · Content Advisory Panel</span><span class="advisory-date">2025 –</span></div>
-      <div class="advisory-item"><span class="advisory-name">Security Matters Magazine · Content Panel</span><span class="advisory-date">2024 –</span></div>
-      <div class="advisory-item"><span class="advisory-name">Security Buyer Magazine · Awards Panel</span><span class="advisory-date">2024 –</span></div>
-      <div class="advisory-item"><span class="advisory-name">LCRIG · Member</span><span class="advisory-date">2025 –</span></div>
-      <div class="advisory-item"><span class="advisory-name">Chartered Institute of Marketing · Full Member</span><span class="advisory-date">2025 –</span></div>
+      <div class="advisory-card"><span class="advisory-name">Responsible AI Institute · Member</span><span class="advisory-date">2025 –</span></div>
+      <div class="advisory-card"><span class="advisory-name">PSI Magazine · Content Advisory Panel</span><span class="advisory-date">2025 –</span></div>
+      <div class="advisory-card"><span class="advisory-name">Security Matters Magazine · Content Panel</span><span class="advisory-date">2024 –</span></div>
+      <div class="advisory-card"><span class="advisory-name">Security Buyer Magazine · Awards Panel</span><span class="advisory-date">2024 –</span></div>
+      <div class="advisory-card"><span class="advisory-name">LCRIG · Member</span><span class="advisory-date">2025 –</span></div>
+      <div class="advisory-card"><span class="advisory-name">Chartered Institute of Marketing · Full Member</span><span class="advisory-date">2025 –</span></div>
     </div>
   </div>
+</div>
 
-  <!-- ECOSYSTEM -->
-  <div class="s reveal" id="work">
-    <div class="s-head">
-      <span class="s-num">08</span>
-      <span class="s-title">Client Ecosystem // Featured Deployments</span>
-      <div class="s-rule"></div>
-      <span class="s-ghost">08</span>
-    </div>
+<!-- ══ ECOSYSTEM ══════════════════════════════════════════ -->
+<div class="bg-white" id="work">
+  <div class="section reveal">
+    <div class="section-label">Client Work</div>
+    <div class="section-title" style="margin-bottom:16px">Built for others.<br>Done properly.</div>
+    <div class="section-body">A selection of digital platforms, brand builds, and web deployments across security, health, academia, and professional services.</div>
     <div class="eco-grid">
       <a class="eco-card" href="https://www.vestait.co.uk" target="_blank">
         <div class="eco-arr">↗</div>
-        <div class="eco-tag">Enterprise IT Infrastructure</div>
+        <div class="eco-label">Enterprise IT Infrastructure</div>
         <div class="eco-name">Vesta IT Services</div>
         <span class="eco-url">vestait.co.uk</span>
-        <p class="eco-desc">Full B2B marketing build for enterprise network, CCTV, WiFi, fire detection, and AI analytics specialists. 26+ years enterprise experience, major ports and national infrastructure clients.</p>
-        <div class="eco-badges"><span class="eco-badge">Website</span><span class="eco-badge">B2B Copy</span><span class="eco-badge">Brand</span><span class="eco-badge">SEO</span></div>
+        <p class="eco-desc">Full B2B marketing build for enterprise network, CCTV, WiFi, fire detection, and AI analytics specialists. 26+ years enterprise experience.</p>
+        <div class="eco-tags"><span class="eco-tag-pill">Website</span><span class="eco-tag-pill">B2B Copy</span><span class="eco-tag-pill">Brand</span><span class="eco-tag-pill">SEO</span></div>
       </a>
       <a class="eco-card" href="https://www.marketingformymates.com" target="_blank">
         <div class="eco-arr">↗</div>
-        <div class="eco-tag">B2B Marketing Engine</div>
+        <div class="eco-label">B2B Marketing Engine</div>
         <div class="eco-name">Marketing for my Mates</div>
         <span class="eco-url">marketingformymates.com</span>
-        <p class="eco-desc">Full-service marketing department for local B2B technical trades. Proprietary digital audit tool, ROI calculator, and interactive onboarding timeline.</p>
-        <div class="eco-badges"><span class="eco-badge">Strategy</span><span class="eco-badge">Web</span><span class="eco-badge">SEO</span><span class="eco-badge">Social</span></div>
+        <p class="eco-desc">Full-service marketing for local B2B technical trades. Proprietary digital audit tool, ROI calculator, and interactive onboarding timeline.</p>
+        <div class="eco-tags"><span class="eco-tag-pill">Strategy</span><span class="eco-tag-pill">Web</span><span class="eco-tag-pill">SEO</span><span class="eco-tag-pill">Social</span></div>
       </a>
       <a class="eco-card" href="https://assistiv.co" target="_blank">
         <div class="eco-arr">↗</div>
-        <div class="eco-tag">Health Technology · Co-Founder</div>
+        <div class="eco-label">Health Technology · Co-Founder</div>
         <div class="eco-name">Assistiv Systems</div>
         <span class="eco-url">assistiv.co</span>
-        <p class="eco-desc">Passive home monitoring for older adults in the Missing Middle. Clinical advisory board includes Prof. Ann Netten and UCL Prof. John Jerrim. 14:1 ROI at pilot scale.</p>
-        <div class="eco-badges"><span class="eco-badge">Co-Founder</span><span class="eco-badge">NHS</span><span class="eco-badge">AI Platform</span></div>
+        <p class="eco-desc">Passive monitoring for older adults in the Missing Middle. Clinical advisory board includes Prof. Ann Netten and UCL Prof. John Jerrim.</p>
+        <div class="eco-tags"><span class="eco-tag-pill">Co-Founder</span><span class="eco-tag-pill">NHS</span><span class="eco-tag-pill">AI Platform</span></div>
       </a>
       <a class="eco-card" href="https://www.paulschelhaas.com" target="_blank">
         <div class="eco-arr">↗</div>
-        <div class="eco-tag">Personal Brand · Advisory</div>
+        <div class="eco-label">Personal Brand · Advisory</div>
         <div class="eco-name">Paul Schelhaas</div>
         <span class="eco-url">paulschelhaas.com</span>
-        <p class="eco-desc">Executive brand platform for serial deep-tech entrepreneur and co-patent inventor. Positioned for PE-backed scale-ups. Chevron personal endorsement featured.</p>
-        <div class="eco-badges"><span class="eco-badge">Personal Brand</span><span class="eco-badge">B2B Copy</span><span class="eco-badge">Advisory</span></div>
+        <p class="eco-desc">Executive brand platform for serial deep-tech entrepreneur and co-patent inventor. Positioned for PE-backed scale-ups. Chevron endorsement featured.</p>
+        <div class="eco-tags"><span class="eco-tag-pill">Personal Brand</span><span class="eco-tag-pill">B2B Copy</span><span class="eco-tag-pill">Advisory</span></div>
       </a>
       <a class="eco-card" href="https://www.fyrflysystems.com" target="_blank">
         <div class="eco-arr">↗</div>
-        <div class="eco-tag">Physical Security · Founder</div>
+        <div class="eco-label">Physical Security · Founder</div>
         <div class="eco-name">Fyrfly Systems</div>
         <span class="eco-url">fyrflysystems.com</span>
-        <p class="eco-desc">Intelligent physical security for UK schools and public sector. CCTV, access control, alarms, fire systems, 24/7 monitoring. DfE and KCSiE aligned. Martyn's Law ready.</p>
-        <div class="eco-badges"><span class="eco-badge">Founder</span><span class="eco-badge">Website</span><span class="eco-badge">AI Tools</span><span class="eco-badge">SEO</span></div>
+        <p class="eco-desc">Intelligent physical security for UK schools and public sector. CCTV, access control, alarms, fire, 24/7 monitoring. Martyn's Law ready.</p>
+        <div class="eco-tags"><span class="eco-tag-pill">Founder</span><span class="eco-tag-pill">Website</span><span class="eco-tag-pill">AI Tools</span><span class="eco-tag-pill">SEO</span></div>
       </a>
       <a class="eco-card" href="https://www.timlegrand.org" target="_blank">
         <div class="eco-arr">↗</div>
-        <div class="eco-tag">Academic Profile · Adelaide</div>
+        <div class="eco-label">Academic Profile · Adelaide</div>
         <div class="eco-name">Prof. Tim Legrand</div>
         <span class="eco-url">timlegrand.org</span>
-        <p class="eco-desc">Full academic platform for ARC Future Fellow 2025–2029, Professor of Politics &amp; International Relations. Research, publications, grants, and global reach.</p>
-        <div class="eco-badges"><span class="eco-badge">Academic</span><span class="eco-badge">Personal Brand</span><span class="eco-badge">Research</span></div>
+        <p class="eco-desc">Full academic platform for ARC Future Fellow 2025–2029, Professor of Politics &amp; International Relations. Research, publications, grants.</p>
+        <div class="eco-tags"><span class="eco-tag-pill">Academic</span><span class="eco-tag-pill">Personal Brand</span><span class="eco-tag-pill">Research</span></div>
       </a>
     </div>
   </div>
+</div>
 
-</div><!-- /wrap -->
-
+<!-- ══ FOOTER ═════════════════════════════════════════════ -->
 <footer>
-  <div class="footer-brand">© 2026 S.<em>LEGRAND</em></div>
-  <div class="footer-credit">Built by <a href="https://www.marketingformymates.com" target="_blank">marketingformymates.com</a></div>
-  <ul class="footer-links">
-    <li><a href="#profile">Profile</a></li>
-    <li><a href="mailto:simongeorgelegrand@gmail.com">Email</a></li>
-    <li><a href="https://www.linkedin.com/in/-simonlegrand-" target="_blank">LinkedIn</a></li>
-  </ul>
+  <div class="footer-inner">
+    <div class="footer-brand">Simon <em>Legrand</em> · © 2026</div>
+    <div class="footer-credit">Built by <a href="https://www.marketingformymates.com" target="_blank">marketingformymates.com</a></div>
+    <ul class="footer-links">
+      <li><a href="#hero">Top</a></li>
+      <li><a href="mailto:simongeorgelegrand@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/-simonlegrand-" target="_blank">LinkedIn</a></li>
+    </ul>
+  </div>
 </footer>
 
 <script>
-/* ── MOBILE NAV ─────────────────────────────────────────── */
+/* ── MOBILE NAV ─────────────────── */
 const burger = document.getElementById('navBurger');
 const drawer = document.getElementById('navDrawer');
 burger.addEventListener('click', () => {
@@ -1343,27 +1152,19 @@ drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   drawer.classList.remove('open');
 }));
 
-/* ── HERO DATE ──────────────────────────────────────────── */
-const hd = document.getElementById('heroDate');
-if (hd) {
-  hd.textContent = new Date().toLocaleDateString('en-GB', {
-    day: 'numeric', month: 'long', year: 'numeric'
-  });
-}
-
-/* ── REVEAL ─────────────────────────────────────────────── */
+/* ── REVEAL ─────────────────────── */
 const ro = new IntersectionObserver((entries) => {
   entries.forEach((e, i) => {
     if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('vis'), i * 55);
+      setTimeout(() => e.target.classList.add('vis'), i * 60);
       ro.unobserve(e.target);
     }
   });
-}, { threshold: 0.04 });
+}, { threshold: 0.06 });
 document.querySelectorAll('.reveal').forEach(r => ro.observe(r));
 
-/* ── NAV ACTIVE ─────────────────────────────────────────── */
-const no = new IntersectionObserver((entries) => {
+/* ── NAV ACTIVE ─────────────────── */
+const no = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
@@ -1371,10 +1172,10 @@ const no = new IntersectionObserver((entries) => {
       if (m) m.classList.add('active');
     }
   });
-}, { threshold: 0.25 });
+}, { threshold: 0.3 });
 document.querySelectorAll('[id]').forEach(s => no.observe(s));
 
-/* ── COUNTING STATS ─────────────────────────────────────── */
+/* ── COUNTING STATS ─────────────── */
 function animCount(el) {
   const target = +el.dataset.count;
   const suffix = el.dataset.suffix || '';
@@ -1386,7 +1187,7 @@ function animCount(el) {
     if (cur >= target) clearInterval(t);
   }, step);
 }
-const so = new IntersectionObserver((entries) => {
+const so = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       e.target.querySelectorAll('[data-count]').forEach(animCount);
@@ -1394,44 +1195,31 @@ const so = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.5 });
-document.querySelectorAll('.stats-strip').forEach(r => so.observe(r));
+document.querySelectorAll('.stats-grid').forEach(r => so.observe(r));
 
-/* ── MAP ────────────────────────────────────────────────── */
+/* ── MAP ────────────────────────── */
 (function () {
   const canvas = document.getElementById('mapCanvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
 
-  // [lat, lon, label, type, ldx, ldy]
   const LOCS = [
     [51.3148,   0.8898, 'Faversham',         'home',     8,  -9],
-    [47.2490,  53.4478, 'Kazakhstan · 58×',  'deploy', -112, -9],
+    [47.2490,  53.4478, 'Kazakhstan · 58×',  'deploy', -112,  -9],
     [40.4093,  49.8671, 'Azerbaijan',         'client',   8,   4],
     [24.7136,  46.6753, 'Saudi Arabia',       'client',   8,   4],
-    [42.2711, -83.7430, 'Rivian · Michigan',  'client', -112, -9],
+    [42.2711, -83.7430, 'Rivian · Michigan',  'client', -112,  -9],
     [52.5200,  13.4050, 'Germany',            'client',   8,  14],
     [60.4720,   8.4689, 'Norway',             'client',   8,   4],
     [57.4778,  -4.2247, 'Scotland',           'client',   8, -10],
-    [53.1424,  -7.6921, 'Ireland',            'client',  -54, -9],
+    [53.1424,  -7.6921, 'Ireland',            'client',  -54,  -9],
     [51.5074,  -0.1278, 'London · NHS',       'client',   8,  14],
-    [-34.9285,138.6007, 'Adelaide',           'academic', -60, 14],
+    [-34.9285,138.6007, 'Adelaide',           'academic', -58,  14],
   ];
 
-  const COL = {
-    home:    '#e8440a',
-    deploy:  '#1a3a7a',
-    client:  '#1a7a4a',
-    academic:'#b87a00',
-  };
+  const COL = { home:'#0071e3', deploy:'#1d3d8a', client:'#1d8348', academic:'#b87a00' };
+  const RGB = { home:'0,113,227', deploy:'29,61,138', client:'29,131,72', academic:'184,122,0' };
 
-  const RGB = {
-    home:    '232,68,10',
-    deploy:  '26,58,122',
-    client:  '26,122,74',
-    academic:'184,122,0',
-  };
-
-  // Simplified land polygons — warm/cream tones
   const LAND = [
     [[58.6,-3.1],[57.5,-2],[56.5,-2.5],[55,-1.7],[54.5,-1],[53.4,-3],[52.4,-4.2],[51.4,-5],[50.1,-5.7],[49.9,-3],[50,-1],[50.9,0.9],[51.8,1.4],[52.9,1.7],[53.7,0.2],[54.2,-0.5],[55.5,-1.5],[57,-2],[58,-3.5],[58.6,-3.1]],
     [[55.9,-4.8],[55.6,-5.5],[54.6,-5.9],[54.3,-5.5],[54.6,-4.7],[55.9,-4.8]],
@@ -1455,132 +1243,66 @@ document.querySelectorAll('.stats-strip').forEach(r => so.observe(r));
   ];
 
   let pulseT = 0;
-
-  function resize() {
-    canvas.width  = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-  }
-
+  function resize() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight }
   function project(lat, lon) {
     const w = canvas.width, h = canvas.height;
-    const lonMin = -115, lonMax = 165;
-    const latMin = -42,  latMax = 76;
-    const x = (lon - lonMin) / (lonMax - lonMin) * w;
-    const toM = l => Math.log(Math.tan(Math.PI/4 + l*Math.PI/360));
-    const yNorm = (toM(lat) - toM(latMin)) / (toM(latMax) - toM(latMin));
-    const y = h - yNorm * h;
-    return [x, y];
+    const lonMin=-115,lonMax=165,latMin=-42,latMax=76;
+    const x=(lon-lonMin)/(lonMax-lonMin)*w;
+    const toM=l=>Math.log(Math.tan(Math.PI/4+l*Math.PI/360));
+    const yN=(toM(lat)-toM(latMin))/(toM(latMax)-toM(latMin));
+    return [x, h-yN*h];
   }
-
   function drawGrid() {
-    ctx.strokeStyle = 'rgba(15,13,11,0.05)';
-    ctx.lineWidth = 0.5;
-    for (let lon = -120; lon <= 170; lon += 20) {
-      const [x] = project(0, lon);
-      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height); ctx.stroke();
-    }
-    for (let lat = -40; lat <= 75; lat += 20) {
-      const [, y] = project(lat, 0);
-      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
-    }
+    ctx.strokeStyle='rgba(0,0,0,0.05)'; ctx.lineWidth=0.5;
+    for(let lon=-120;lon<=170;lon+=20){const[x]=project(0,lon);ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,canvas.height);ctx.stroke()}
+    for(let lat=-40;lat<=75;lat+=20){const[,y]=project(lat,0);ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(canvas.width,y);ctx.stroke()}
   }
-
   function drawLand() {
-    ctx.fillStyle   = 'rgba(15,13,11,0.07)';
-    ctx.strokeStyle = 'rgba(15,13,11,0.18)';
-    ctx.lineWidth   = 0.7;
-    LAND.forEach(pts => {
-      ctx.beginPath();
-      pts.forEach(([lat, lon], i) => {
-        const [x, y] = project(lat, lon);
-        i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-      });
-      ctx.closePath(); ctx.fill(); ctx.stroke();
-    });
+    ctx.fillStyle='rgba(0,0,0,0.06)'; ctx.strokeStyle='rgba(0,0,0,0.14)'; ctx.lineWidth=0.7;
+    LAND.forEach(pts=>{ctx.beginPath();pts.forEach(([la,lo],i)=>{const[x,y]=project(la,lo);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y)});ctx.closePath();ctx.fill();ctx.stroke()});
   }
-
   function drawArcs() {
-    const [hx, hy] = project(LOCS[0][0], LOCS[0][1]);
-    LOCS.slice(1).forEach(([lat, lon,, type]) => {
-      const [tx, ty] = project(lat, lon);
-      const dx = tx - hx;
-      const mx = hx + dx * 0.5;
-      const my = (hy + ty) / 2 - Math.abs(dx) * 0.22;
-      const rgb = type==='deploy'?'26,58,122':type==='academic'?'184,122,0':'26,122,74';
-      ctx.beginPath();
-      ctx.moveTo(hx, hy);
-      ctx.quadraticCurveTo(mx, my, tx, ty);
-      ctx.strokeStyle = `rgba(${rgb},0.4)`;
-      ctx.lineWidth = 1.1;
-      ctx.setLineDash([5, 6]);
-      ctx.stroke();
-      ctx.setLineDash([]);
+    const[hx,hy]=project(LOCS[0][0],LOCS[0][1]);
+    LOCS.slice(1).forEach(([la,lo,,type])=>{
+      const[tx,ty]=project(la,lo);
+      const mx=hx+(tx-hx)*.5,my=(hy+ty)/2-Math.abs(tx-hx)*.22;
+      const rgb=type==='deploy'?'29,61,138':type==='academic'?'184,122,0':'29,131,72';
+      ctx.beginPath();ctx.moveTo(hx,hy);ctx.quadraticCurveTo(mx,my,tx,ty);
+      ctx.strokeStyle=`rgba(${rgb},0.35)`;ctx.lineWidth=1.1;ctx.setLineDash([5,6]);ctx.stroke();ctx.setLineDash([]);
     });
   }
-
   function drawDots() {
-    LOCS.forEach(([lat, lon, label, type, ldx, ldy], idx) => {
-      const [x, y] = project(lat, lon);
-      const col = COL[type];
-      const rgb = RGB[type];
-      const isHome = type === 'home';
-      const r = isHome ? 6 : 4;
-
-      // Pulse rings
-      [[((pulseT - idx*0.2)%1+1)%1, 0.35], [(((pulseT - idx*0.2)+0.5)%1+1)%1, 0.18]].forEach(([p, maxA]) => {
-        const pr = Math.max(0.1, r + p*15);
-        ctx.beginPath(); ctx.arc(x, y, pr, 0, Math.PI*2);
-        ctx.strokeStyle = `rgba(${rgb},${Math.max(0,1-p)*maxA})`;
-        ctx.lineWidth = 1.2; ctx.stroke();
+    LOCS.forEach(([la,lo,label,type,ldx,ldy],idx)=>{
+      const[x,y]=project(la,lo);
+      const col=COL[type],rgb=RGB[type],isHome=type==='home',r=isHome?6:4;
+      [[((pulseT-idx*.2)%1+1)%1,.35],[(((pulseT-idx*.2)+.5)%1+1)%1,.18]].forEach(([p,maxA])=>{
+        const pr=Math.max(.1,r+p*15);
+        ctx.beginPath();ctx.arc(x,y,pr,0,Math.PI*2);
+        ctx.strokeStyle=`rgba(${rgb},${Math.max(0,1-p)*maxA})`;ctx.lineWidth=1.2;ctx.stroke();
       });
-
-      // Dot
-      ctx.shadowColor = col; ctx.shadowBlur = isHome ? 12 : 6;
-      ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2);
-      ctx.fillStyle = col; ctx.fill();
-      ctx.shadowBlur = 0;
-
-      // White core
-      ctx.beginPath(); ctx.arc(x, y, isHome ? 2.5 : 1.8, 0, Math.PI*2);
-      ctx.fillStyle = '#fff'; ctx.fill();
-
-      // Label pill
-      const fs = isHome ? 9.5 : 8.5;
-      ctx.font = `${isHome?700:600} ${fs}px -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif`;
-      const tw = ctx.measureText(label).width;
-      const lx = x + (ldx || 8);
-      const ly = y + (ldy || 4);
-      const pad = 4;
-      ctx.fillStyle = 'rgba(243,241,236,0.9)';
-      ctx.beginPath();
-      ctx.roundRect(lx-pad, ly-fs+1, tw+pad*2, fs+5, 2);
-      ctx.fill();
-      ctx.fillStyle = isHome ? '#e8440a' : col;
-      ctx.fillText(label, lx, ly);
+      ctx.shadowColor=col;ctx.shadowBlur=isHome?12:6;
+      ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle=col;ctx.fill();
+      ctx.shadowBlur=0;
+      ctx.beginPath();ctx.arc(x,y,isHome?2.5:1.8,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();
+      const fs=isHome?9.5:8.5;
+      ctx.font=`${isHome?700:600} ${fs}px -apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif`;
+      const tw=ctx.measureText(label).width,lx=x+(ldx||8),ly=y+(ldy||4),pad=4;
+      ctx.fillStyle='rgba(245,245,247,0.92)';
+      ctx.beginPath();ctx.roundRect(lx-pad,ly-fs+1,tw+pad*2,fs+5,3);ctx.fill();
+      ctx.fillStyle=isHome?'#0071e3':col;ctx.fillText(label,lx,ly);
     });
   }
-
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawGrid(); drawLand(); drawArcs(); drawDots();
+  function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);drawGrid();drawLand();drawArcs();drawDots()}
+  function loop(){pulseT+=.005;draw();requestAnimationFrame(loop)}
+  resize();window.addEventListener('resize',resize);loop();
+  const cl=document.getElementById('mapClockLabel');
+  const ck=document.getElementById('mapClock');
+  function tick(){
+    const t=new Date().toLocaleTimeString('en-GB',{hour12:false});
+    if(cl)cl.textContent=`51.3148°N · 0.8898°E · ${t}`;
+    if(ck)ck.textContent=t;
   }
-
-  function loop() {
-    pulseT += 0.005;
-    draw();
-    requestAnimationFrame(loop);
-  }
-
-  resize();
-  window.addEventListener('resize', resize);
-  loop();
-
-  const cl = document.getElementById('mapClockLabel');
-  function tick() {
-    const t = new Date().toLocaleTimeString('en-GB', { hour12: false });
-    if (cl) cl.textContent = `51.3148°N · 0.8898°E · ${t}`;
-  }
-  tick(); setInterval(tick, 1000);
+  tick();setInterval(tick,1000);
 })();
 </script>
 </body>
