@@ -5,9 +5,26 @@
 <meta name="theme-color" content="#ffffff">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Simon Legrand · Founder · MCIM · Patent Inventor</title>
-<meta name="description" content="Simon Legrand — technology co-founder, MCIM Chartered Marketer, patent inventor. Founder of Fyrfly Systems, co-founder of Assistiv Systems.">
+<meta name="description" content="Simon Legrand — technology co-founder, MCIM Chartered Marketer, patent inventor. Founder of Fyrfly Systems, co-founder of Assistiv Systems. Based in Faversham, Kent.">
+
+<!-- ① OpenGraph / Social Preview -->
+<meta property="og:title" content="Simon Legrand · Founder · MCIM · Patent Inventor">
+<meta property="og:description" content="Technology co-founder, MCIM Chartered Marketer and patent inventor. Founder of Fyrfly Systems, co-founder of Assistiv Systems. 25+ years at the intersection of sensor systems, IoT, and public sector transformation.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.simonlegrand.co.uk">
+<meta property="og:image" content="https://www.simonlegrand.co.uk/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Simon Legrand">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Simon Legrand · Founder · MCIM · Patent Inventor">
+<meta name="twitter:description" content="Technology co-founder, MCIM Chartered Marketer and patent inventor. Founder of Fyrfly Systems, co-founder of Assistiv Systems.">
+<meta name="twitter:image" content="https://www.simonlegrand.co.uk/og-image.jpg">
+
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fff' rx='7'/%3E%3Ctext x='4' y='24' font-family='-apple-system,sans-serif' font-size='17' font-weight='700' fill='%230071e3'%3ESL%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- ⑨ Replaced Font Awesome CDN with inline SVG sprites — no external 800kb CSS load -->
+<!-- System font only — zero web font requests -->
 <style>
 /* ═══════════════════════════════════
    APPLE DESIGN SYSTEM
@@ -30,7 +47,7 @@
   --shadow-l:0 8px 40px rgba(0,0,0,0.12);
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; font-family: inherit }
 html { scroll-behavior: smooth }
 body {
   font-family: var(--f);
@@ -40,12 +57,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
-*, *::before, *::after { font-family: inherit }
 a { text-decoration: none; color: inherit }
 img { display: block; max-width: 100% }
 
+/* ⑧ Scroll progress bar */
+#progress {
+  position: fixed; top: 0; left: 0; z-index: 1000;
+  height: 2px; width: 0%;
+  background: var(--blue);
+  transition: width .1s linear;
+  pointer-events: none;
+}
+
 /* ═══════════════════════════════════
-   NAV — apple.com frosted glass
+   NAV
 ═══════════════════════════════════ */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 900;
@@ -57,495 +82,383 @@ nav {
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   border-bottom: 1px solid rgba(0,0,0,0.08);
 }
-.nav-logo {
-  font-size: 21px; font-weight: 600; letter-spacing: -0.5px;
-  color: var(--black); flex-shrink: 0;
-}
+.nav-logo { font-size: 21px; font-weight: 600; letter-spacing: -0.5px; color: var(--black); flex-shrink: 0 }
 .nav-logo em { color: var(--blue); font-style: normal }
 .nav-links {
   position: absolute; left: 50%; transform: translateX(-50%);
   display: flex; gap: 0; list-style: none;
 }
 .nav-links a {
-  font-size: 12px; font-weight: 400; letter-spacing: 0;
-  color: var(--grey-5);
-  padding: 0 12px; line-height: 48px;
-  transition: color .2s;
+  font-size: 12px; font-weight: 400; color: var(--grey-5);
+  padding: 0 12px; line-height: 48px; transition: color .2s;
 }
 .nav-links a:hover, .nav-links a.active { color: var(--black) }
-.nav-cta {
-  font-size: 12px; font-weight: 400;
-  color: var(--blue); letter-spacing: 0;
-  transition: opacity .2s; white-space: nowrap; flex-shrink: 0;
-}
+.nav-cta { font-size: 12px; font-weight: 400; color: var(--blue); transition: opacity .2s; white-space: nowrap; flex-shrink: 0 }
 .nav-cta:hover { opacity: .7 }
-.nav-burger {
-  display: none; flex-direction: column; gap: 5px;
-  background: none; border: none; cursor: pointer; padding: 4px;
-}
-.nav-burger span {
-  display: block; width: 18px; height: 1.5px;
-  background: var(--black); border-radius: 2px; transition: all .3s;
-}
+.nav-burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px }
+.nav-burger span { display: block; width: 18px; height: 1.5px; background: var(--black); border-radius: 2px; transition: all .3s }
 .nav-burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg) }
 .nav-burger.open span:nth-child(2) { opacity: 0 }
 .nav-burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg) }
 .nav-drawer {
   display: none; position: fixed; top: 48px; left: 0; right: 0;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-  z-index: 899; flex-direction: column; padding: 8px 0;
+  background: rgba(255,255,255,0.97); backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.08); z-index: 899; flex-direction: column; padding: 8px 0;
 }
 .nav-drawer.open { display: flex }
-.nav-drawer a {
-  font-size: 17px; font-weight: 400;
-  color: var(--black);
-  padding: 14px clamp(16px,4vw,44px);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-  transition: background .15s;
-}
+.nav-drawer a { font-size: 17px; font-weight: 400; color: var(--black); padding: 14px clamp(16px,4vw,44px); border-bottom: 1px solid rgba(0,0,0,0.06); transition: background .15s }
 .nav-drawer a:last-child { border-bottom: none }
 .nav-drawer a:hover { background: var(--grey-1) }
 
 /* ═══════════════════════════════════
-   HERO — Apple product page opening
+   HERO
 ═══════════════════════════════════ */
 .hero {
   padding: calc(48px + 80px) clamp(20px,6vw,80px) 80px;
-  text-align: center;
-  max-width: 980px; margin: 0 auto;
+  text-align: center; max-width: 980px; margin: 0 auto;
 }
-.hero-eyebrow {
-  font-size: 17px; font-weight: 600; letter-spacing: -.01em;
-  color: var(--blue); margin-bottom: 12px;
-}
-.hero-name {
-  font-size: clamp(52px, 9vw, 96px);
-  font-weight: 700; letter-spacing: -0.035em; line-height: 1.04;
-  color: var(--black); margin-bottom: 20px;
-}
-.hero-sub {
-  font-size: clamp(19px, 2.5vw, 24px);
-  font-weight: 400; line-height: 1.5;
-  color: var(--grey-5); max-width: 620px;
-  margin: 0 auto 36px;
-}
-.hero-sub strong { color: var(--black); font-weight: 600 }
-.hero-btns {
-  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
-  margin-bottom: 56px;
-}
-.btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 12px 22px;
-  font-family: var(--f); font-size: 17px; font-weight: 400;
-  border-radius: var(--r-btn); cursor: pointer;
-  border: none; transition: all .2s; letter-spacing: -.01em;
-}
-.btn-primary {
-  background: var(--blue); color: #fff;
-}
-.btn-primary:hover { background: var(--blue-h); transform: scale(1.02) }
-.btn-secondary {
-  background: var(--grey-1); color: var(--blue);
-}
-.btn-secondary:hover { background: var(--grey-2); transform: scale(1.02) }
+.hero-eyebrow { font-size: 17px; font-weight: 600; letter-spacing: -.01em; color: var(--blue); margin-bottom: 12px }
 
-/* Hero credential chips — minimal */
-.hero-chips {
-  display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+/* ① Photo placeholder — swap src for real photo */
+.hero-photo-wrap {
+  display: flex; justify-content: center; margin-bottom: 32px;
 }
+.hero-photo-img {
+  width: 120px; height: 120px; border-radius: 50%;
+  object-fit: cover; object-position: center top;
+  border: 3px solid var(--grey-2);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  display: block;
+}
+
+.hero-name { font-size: clamp(52px, 9vw, 96px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.04; color: var(--black); margin-bottom: 20px }
+.hero-sub { font-size: clamp(19px, 2.5vw, 24px); font-weight: 400; line-height: 1.5; color: var(--grey-5); max-width: 620px; margin: 0 auto 36px }
+.hero-sub strong { color: var(--black); font-weight: 600 }
+.hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 56px }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px;
+  font-size: 17px; font-weight: 400; border-radius: var(--r-btn);
+  cursor: pointer; border: none; transition: all .2s; letter-spacing: -.01em;
+}
+.btn-primary { background: var(--blue); color: #fff }
+.btn-primary:hover { background: var(--blue-h); transform: scale(1.02) }
+.btn-secondary { background: var(--grey-1); color: var(--blue) }
+.btn-secondary:hover { background: var(--grey-2); transform: scale(1.02) }
+.hero-chips { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap }
 .chip {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 7px 14px;
-  background: var(--grey-1);
-  border-radius: var(--r-btn);
-  font-size: 13px; font-weight: 500; color: var(--grey-5);
-  transition: background .2s;
+  display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px;
+  background: var(--grey-1); border-radius: var(--r-btn);
+  font-size: 13px; font-weight: 500; color: var(--grey-5); transition: background .2s;
 }
 .chip:hover { background: var(--grey-2) }
-.chip i { font-size: 11px; color: var(--blue) }
+.chip svg { width: 12px; height: 12px; flex-shrink: 0; fill: var(--blue) }
+
+/* ③ Currently Building spotlight */
+.building-band {
+  background: var(--black); padding: 0;
+}
+.building-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 180px;
+}
+.building-cell {
+  padding: 36px 48px; position: relative; overflow: hidden;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  transition: background .2s;
+}
+.building-cell:last-child { border-right: none }
+.building-cell:hover { background: rgba(255,255,255,0.03) }
+.building-cell-orb {
+  position: absolute; width: 200px; height: 200px; border-radius: 50%;
+  right: -60px; top: -60px; filter: blur(50px); pointer-events: none;
+}
+.bc-fy .building-cell-orb { background: rgba(110,159,255,0.12) }
+.bc-as .building-cell-orb { background: rgba(76,216,145,0.10) }
+.building-label {
+  font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+  margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
+}
+.bc-fy .building-label { color: #6e9fff }
+.bc-as .building-label { color: #4cd891 }
+.building-pulse {
+  width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
+  animation: pip 2s ease-in-out infinite;
+}
+.bc-fy .building-pulse { background: #6e9fff }
+.bc-as .building-pulse { background: #4cd891 }
+.building-text { font-size: 15px; font-weight: 400; color: rgba(255,255,255,0.7); line-height: 1.65; max-width: 400px }
+.building-text strong { color: #fff; font-weight: 600 }
+.building-date { font-size: 11px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.25); margin-top: 16px }
 
 /* ═══════════════════════════════════
    SECTION ANATOMY
 ═══════════════════════════════════ */
-.section {
-  padding: 80px clamp(20px,6vw,80px);
-  max-width: 1200px; margin: 0 auto;
-}
-.section-sm { max-width: 980px }
-.section-full { max-width: none; padding-left: 0; padding-right: 0 }
-
-.section-label {
-  font-size: 13px; font-weight: 600; letter-spacing: .04em;
-  text-transform: uppercase; color: var(--blue);
-  margin-bottom: 10px; text-align: center;
-}
-.section-title {
-  font-size: clamp(32px,4.5vw,52px);
-  font-weight: 700; letter-spacing: -.03em; line-height: 1.06;
-  color: var(--black); margin-bottom: 16px; text-align: center;
-}
-.section-body {
-  font-size: 19px; font-weight: 400; line-height: 1.6;
-  color: var(--grey-5); max-width: 680px;
-  margin: 0 auto 56px; text-align: center;
-}
-
-/* Alternating section backgrounds */
+.section { padding: 80px clamp(20px,6vw,80px); max-width: 1200px; margin: 0 auto }
+.section-label { font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; text-align: center }
+.section-title { font-size: clamp(32px,4.5vw,52px); font-weight: 700; letter-spacing: -.03em; line-height: 1.06; color: var(--black); margin-bottom: 16px; text-align: center }
+.section-body { font-size: 19px; font-weight: 400; line-height: 1.6; color: var(--grey-5); max-width: 680px; margin: 0 auto 56px; text-align: center }
 .bg-grey { background: var(--grey-1) }
 .bg-white { background: var(--white) }
 .bg-black { background: var(--black) }
 
 /* ═══════════════════════════════════
-   TICKER — black band
+   TICKER
 ═══════════════════════════════════ */
-.ticker-band {
-  background: var(--black); padding: 14px 0; overflow: hidden;
-}
-.ticker-track {
-  display: inline-flex; white-space: nowrap;
-  animation: marquee 55s linear infinite;
-}
+.ticker-band { background: #000; padding: 14px 0; overflow: hidden }
+.ticker-track { display: inline-flex; white-space: nowrap; animation: marquee 55s linear infinite }
 .ticker-track:hover { animation-play-state: paused }
 @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-.ticker-item {
-  font-size: 12px; font-weight: 500; letter-spacing: .02em;
-  color: rgba(255,255,255,.65);
-  padding: 0 32px;
-  display: inline-flex; align-items: center; gap: 8px;
+.ticker-item { font-size: 12px; font-weight: 500; letter-spacing: .02em; color: rgba(255,255,255,.65); padding: 0 32px; display: inline-flex; align-items: center; gap: 8px }
+.ticker-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--blue); flex-shrink: 0 }
+.t-hi { color: #fff; font-weight: 600 }
+
+/* ② Logo strip */
+.logos-band {
+  background: var(--white); padding: 32px clamp(20px,6vw,80px);
+  border-bottom: 1px solid var(--grey-2);
 }
-.ticker-item i { color: var(--blue); font-size: 5px }
-.t-hi { color: #ffffff; font-weight: 600 }
+.logos-label {
+  font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--grey-4); text-align: center; margin-bottom: 24px;
+}
+.logos-row {
+  display: flex; align-items: center; justify-content: center;
+  gap: clamp(24px,5vw,56px); flex-wrap: wrap;
+  max-width: 1000px; margin: 0 auto;
+}
+.logo-item {
+  font-size: 14px; font-weight: 700; letter-spacing: -.01em;
+  color: var(--grey-3); transition: color .25s;
+  white-space: nowrap; user-select: none;
+  text-transform: uppercase;
+}
+.logo-item:hover { color: var(--grey-4) }
+.logo-item span { display: block; font-size: 9px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--grey-3); margin-top: 2px; text-align: center }
 
 /* ═══════════════════════════════════
-   MAP — grey card
+   MAP
 ═══════════════════════════════════ */
-.map-card {
-  background: var(--grey-1);
-  border-radius: var(--r-card);
-  overflow: hidden; position: relative;
-  margin: 0 clamp(20px,6vw,80px);
-}
-.map-card-header {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 20px 24px 0;
-}
-.map-card-title {
-  font-size: 13px; font-weight: 600; letter-spacing: .03em;
-  text-transform: uppercase; color: var(--grey-4);
-}
-.map-live {
-  display: flex; align-items: center; gap: 6px;
-  font-size: 13px; font-weight: 400; color: var(--green);
-}
-.map-live-pip {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--green);
-  animation: pip 2s ease-in-out infinite;
-}
+.map-card { background: var(--grey-1); border-radius: var(--r-card); overflow: hidden; position: relative; margin: 0 clamp(20px,6vw,80px) }
+.map-card-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px 0 }
+.map-card-title { font-size: 13px; font-weight: 600; letter-spacing: .03em; text-transform: uppercase; color: var(--grey-4) }
+.map-live { display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 400; color: var(--green) }
+.map-live-pip { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: pip 2s ease-in-out infinite }
 @keyframes pip { 0%,100%{opacity:1} 50%{opacity:.25} }
-.map-wrap { height: clamp(240px,35vw,420px); position: relative }
+.map-wrap { height: clamp(240px,35vw,440px); position: relative }
 #mapCanvas { width: 100%; height: 100%; display: block }
-.map-foot {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 12px 24px 20px;
-  font-size: 12px; font-weight: 400; color: var(--grey-4);
-}
+.map-foot { display: flex; align-items: center; justify-content: space-between; padding: 12px 24px 20px; font-size: 12px; font-weight: 400; color: var(--grey-4) }
 .map-key { display: flex; gap: 16px }
 .map-key-item { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--grey-4) }
 .map-key-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0 }
 
 /* ═══════════════════════════════════
-   STATS — Apple large-number grid
+   STATS
 ═══════════════════════════════════ */
-.stats-grid {
-  display: grid; grid-template-columns: repeat(5,1fr);
-  gap: 1px; background: var(--grey-2);
-  border-radius: var(--r-card); overflow: hidden;
-  box-shadow: var(--shadow);
-}
-.stat-cell {
-  background: var(--white); padding: 36px 20px;
-  text-align: center; transition: background .2s;
-}
+.stats-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 1px; background: var(--grey-2); border-radius: var(--r-card); overflow: hidden; box-shadow: var(--shadow) }
+.stat-cell { background: var(--white); padding: 36px 20px; text-align: center; transition: background .2s }
 .stat-cell:hover { background: var(--grey-1) }
-.stat-n {
-  font-size: clamp(36px,4.5vw,56px);
-  font-weight: 700; letter-spacing: -.04em; line-height: 1;
-  color: var(--black); margin-bottom: 8px;
-}
-.stat-n span { color: var(--blue) }
-.stat-l {
-  font-size: 13px; font-weight: 400; color: var(--grey-4); letter-spacing: .01em;
-}
+.stat-n { font-size: clamp(36px,4.5vw,56px); font-weight: 700; letter-spacing: -.04em; line-height: 1; color: var(--black); margin-bottom: 8px }
+.stat-l { font-size: 13px; font-weight: 400; color: var(--grey-4); letter-spacing: .01em }
 
 /* ═══════════════════════════════════
-   PROFILE CARD
+   PROFILE — now with photo slot
 ═══════════════════════════════════ */
-.profile-card {
-  background: var(--white); border-radius: var(--r-card);
-  box-shadow: var(--shadow-l);
-  display: grid; grid-template-columns: 1fr 260px;
-  overflow: hidden;
-}
-.profile-body {
-  padding: 48px 52px;
-}
-.profile-body p {
-  font-size: 19px; font-weight: 400; line-height: 1.75;
-  color: var(--grey-5);
-}
+.profile-card { background: var(--white); border-radius: var(--r-card); box-shadow: var(--shadow-l); display: grid; grid-template-columns: 1fr 260px; overflow: hidden }
+.profile-body { padding: 48px 52px }
+.profile-body p { font-size: 19px; font-weight: 400; line-height: 1.75; color: var(--grey-5) }
 .profile-body p strong { color: var(--black); font-weight: 600 }
-.profile-side {
-  background: var(--grey-1);
-  padding: 36px 28px;
-  display: flex; flex-direction: column; gap: 28px;
-}
-.side-label {
-  font-size: 11px; font-weight: 600; letter-spacing: .06em;
-  text-transform: uppercase; color: var(--grey-4); margin-bottom: 10px;
-}
-.side-row {
-  display: flex; align-items: center; gap: 10px;
-  font-size: 14px; font-weight: 400; color: var(--grey-5); line-height: 1.4;
-}
+.profile-side { background: var(--grey-1); padding: 36px 28px; display: flex; flex-direction: column; gap: 28px }
+.side-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--grey-4); margin-bottom: 10px }
+.side-row { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 400; color: var(--grey-5); line-height: 1.4 }
 .side-row + .side-row { margin-top: 8px }
-.side-row i {
-  font-size: 12px; color: var(--blue);
-  width: 14px; text-align: center; flex-shrink: 0;
+.side-row svg { width: 14px; height: 14px; fill: var(--blue); flex-shrink: 0 }
+
+/* ④ Testimonial carousel */
+.testimonial-band {
+  background: var(--black); padding: 80px 0; overflow: hidden;
+}
+.testimonial-outer {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 clamp(20px,6vw,80px);
+}
+.testimonial-outer .section-label { color: #6e9fff }
+.testimonial-outer .section-title { color: #fff }
+
+.tcard-track-wrap { overflow: hidden }
+.tcard-track {
+  display: flex; gap: 20px;
+  transition: transform .5s cubic-bezier(.25,.46,.45,.94);
+  cursor: grab; user-select: none;
+}
+.tcard-track:active { cursor: grabbing }
+
+.tcard {
+  flex: 0 0 calc(50% - 10px);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--r-card);
+  padding: 36px;
+  display: flex; flex-direction: column; gap: 24px;
+  transition: background .2s;
+}
+.tcard:hover { background: rgba(255,255,255,0.09) }
+
+.tcard-quote {
+  font-size: clamp(15px,1.8vw,18px); font-weight: 400;
+  line-height: 1.65; color: rgba(255,255,255,0.85);
+  font-style: italic; flex: 1;
+}
+.tcard-quote::before { content: '\201C'; color: var(--blue); font-size: 1.4em; font-style: normal; line-height: 0; vertical-align: -0.3em; margin-right: 2px }
+.tcard-quote::after  { content: '\201D'; color: var(--blue); font-size: 1.4em; font-style: normal; line-height: 0; vertical-align: -0.3em; margin-left: 2px }
+
+.tcard-attr { display: flex; align-items: center; gap: 14px }
+.tcard-avatar {
+  width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(0,113,227,0.25); border: 1px solid rgba(0,113,227,0.4);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; color: #6e9fff;
+}
+.tcard-name { font-size: 14px; font-weight: 600; color: #fff }
+.tcard-role { font-size: 12px; font-weight: 400; color: rgba(255,255,255,.45); margin-top: 2px; line-height: 1.4 }
+
+.tcard-dots {
+  display: flex; justify-content: center; gap: 8px; margin-top: 32px;
+}
+.tcard-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(255,255,255,.2); cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.tcard-dot.active { background: var(--blue); transform: scale(1.3) }
+
+/* Testimonial placeholder — remove when quotes added */
+.testimonial-placeholder {
+  font-size: 13px; font-weight: 400; color: var(--grey-4);
+  border: 1.5px dashed var(--grey-3); border-radius: var(--r-card);
+  padding: 32px; text-align: center;
 }
 
 /* ═══════════════════════════════════
-   VENTURE TILES — Apple feature cards
+   VENTURES
 ═══════════════════════════════════ */
-.ventures-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+/* ⑩ Full-width feature bands for each venture */
+.venture-band {
+  padding: 80px clamp(20px,6vw,80px);
 }
-.venture-tile {
+.venture-band-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+}
+.venture-band-inner.reverse { direction: rtl }
+.venture-band-inner.reverse > * { direction: ltr }
+.vb-text {}
+.vb-eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 12px }
+.vb-fy .vb-eyebrow { color: var(--blue) }
+.vb-as .vb-eyebrow { color: var(--green) }
+.vb-name { font-size: clamp(36px,4vw,52px); font-weight: 700; letter-spacing: -.03em; line-height: 1.04; color: var(--black); margin-bottom: 8px }
+.vb-url { font-size: 14px; font-weight: 400; display: block; margin-bottom: 20px; transition: opacity .2s }
+.vb-fy .vb-url { color: var(--blue) }
+.vb-as .vb-url { color: var(--green) }
+.vb-url:hover { opacity: .7 }
+.vb-desc { font-size: 17px; font-weight: 400; line-height: 1.7; color: var(--grey-5); margin-bottom: 24px }
+.vb-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 28px }
+.vb-tag { font-size: 11px; font-weight: 500; letter-spacing: .03em; padding: 5px 12px; border-radius: 100px; background: var(--grey-1); color: var(--grey-5) }
+.vb-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 22px; border-radius: var(--r-btn);
+  font-size: 15px; font-weight: 400; transition: all .2s; border: none; cursor: pointer;
+}
+.vb-fy .vb-btn { background: var(--blue); color: #fff }
+.vb-fy .vb-btn:hover { background: var(--blue-h); transform: scale(1.02) }
+.vb-as .vb-btn { background: var(--green); color: #fff }
+.vb-as .vb-btn:hover { background: #166a3a; transform: scale(1.02) }
+
+.vb-card {
   border-radius: var(--r-card); overflow: hidden;
-  position: relative; min-height: 520px;
+  min-height: 420px; position: relative;
   display: flex; flex-direction: column; justify-content: flex-end;
+  box-shadow: var(--shadow-l);
   transition: transform .4s cubic-bezier(.25,.46,.45,.94), box-shadow .4s;
-  box-shadow: var(--shadow);
 }
-.venture-tile:hover { transform: scale(1.015); box-shadow: var(--shadow-l) }
-
-/* Fyrfly — rich navy gradient */
-.vt-security {
-  background: linear-gradient(160deg, #1c2e58 0%, #0a1628 60%, #060e1c 100%);
-}
-/* Assistiv — deep forest */
-.vt-health {
-  background: linear-gradient(160deg, #0a3d2e 0%, #051f18 60%, #020d0a 100%);
-}
-
-.venture-tile-inner { padding: 40px; position: relative; z-index: 2 }
-.vt-eyebrow {
-  font-size: 13px; font-weight: 600; letter-spacing: .04em;
-  text-transform: uppercase; margin-bottom: 12px;
-}
-.vt-security .vt-eyebrow { color: #6e9fff }
-.vt-health   .vt-eyebrow { color: #4cd891 }
-
-.vt-name {
-  font-size: clamp(34px,4vw,48px);
-  font-weight: 700; letter-spacing: -.03em; line-height: 1.04;
-  color: #ffffff; margin-bottom: 6px;
-}
-.vt-url {
-  font-size: 14px; font-weight: 400; display: block; margin-bottom: 18px;
-  transition: opacity .2s;
-}
-.vt-security .vt-url { color: #6e9fff }
-.vt-health   .vt-url { color: #4cd891 }
-.venture-tile:hover .vt-url { opacity: .7 }
-
-.vt-desc {
-  font-size: 15px; font-weight: 400; line-height: 1.65;
-  color: rgba(255,255,255,.65); margin-bottom: 24px;
-}
-.vt-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 28px }
-.vt-tag {
-  font-size: 11px; font-weight: 500; letter-spacing: .03em;
-  padding: 5px 12px; border-radius: 100px;
-  color: rgba(255,255,255,.55);
-  border: 1px solid rgba(255,255,255,.15);
-}
-.vt-metrics {
-  display: grid; grid-template-columns: repeat(3,1fr);
-  gap: 0;
-  border-top: 1px solid rgba(255,255,255,.12);
-  padding-top: 20px;
-}
-.vt-metric { text-align: center; border-right: 1px solid rgba(255,255,255,.1) }
-.vt-metric:last-child { border-right: none }
-.vt-metric-n {
-  font-size: 26px; font-weight: 700; letter-spacing: -.03em;
-  line-height: 1; margin-bottom: 4px;
-}
-.vt-security .vt-metric-n { color: #6e9fff }
-.vt-health   .vt-metric-n { color: #4cd891 }
-.vt-metric-l {
-  font-size: 11px; font-weight: 400; color: rgba(255,255,255,.4); letter-spacing: .01em;
-}
-.vt-link {
-  position: absolute; top: 28px; right: 28px; z-index: 2;
-  width: 36px; height: 36px; border-radius: 50%;
-  background: rgba(255,255,255,.1);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 14px; color: rgba(255,255,255,.6);
-  transition: background .2s, color .2s;
-}
-.venture-tile:hover .vt-link { background: rgba(255,255,255,.2); color: #fff }
-
-/* Decorative gradient orb */
-.vt-orb {
-  position: absolute; pointer-events: none; border-radius: 50%; z-index: 1;
-  filter: blur(60px);
-}
-.vt-security .vt-orb { width: 300px; height: 300px; top: -80px; right: -80px; background: rgba(110,159,255,0.15) }
-.vt-health   .vt-orb { width: 300px; height: 300px; top: -80px; right: -80px; background: rgba(76,216,145,0.12) }
+.vb-card:hover { transform: scale(1.02); box-shadow: 0 20px 60px rgba(0,0,0,0.18) }
+.vb-fy .vb-card { background: linear-gradient(160deg, #1c2e58 0%, #0a1628 60%, #060e1c 100%) }
+.vb-as .vb-card { background: linear-gradient(160deg, #0a3d2e 0%, #051f18 60%, #020d0a 100%) }
+.vb-card-orb { position: absolute; width: 280px; height: 280px; border-radius: 50%; top: -80px; right: -80px; filter: blur(60px); pointer-events: none }
+.vb-fy .vb-card-orb { background: rgba(110,159,255,0.18) }
+.vb-as .vb-card-orb { background: rgba(76,216,145,0.14) }
+.vb-card-inner { padding: 36px; position: relative; z-index: 2 }
+.vb-card-metrics { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px; margin-top: 20px }
+.vb-metric { text-align: center; border-right: 1px solid rgba(255,255,255,.08) }
+.vb-metric:last-child { border-right: none }
+.vb-metric-n { font-size: 24px; font-weight: 700; letter-spacing: -.02em; line-height: 1; margin-bottom: 4px }
+.vb-fy .vb-metric-n { color: #6e9fff }
+.vb-as .vb-metric-n { color: #4cd891 }
+.vb-metric-l { font-size: 11px; font-weight: 400; color: rgba(255,255,255,.4) }
+.vb-card-title { font-size: 28px; font-weight: 700; letter-spacing: -.02em; color: #fff; margin-bottom: 6px }
+.vb-card-sub { font-size: 14px; font-weight: 400; color: rgba(255,255,255,.55); line-height: 1.55; margin-bottom: 0 }
 
 /* ═══════════════════════════════════
-   COMPETENCIES — clean Apple grid
+   COMPETENCIES
 ═══════════════════════════════════ */
-.comp-grid {
-  display: grid; grid-template-columns: repeat(3,1fr); gap: 12px;
-}
-.comp-card {
-  background: var(--white); border-radius: var(--r-card);
-  padding: 24px; box-shadow: var(--shadow);
-  display: flex; align-items: flex-start; gap: 14px;
-  transition: transform .2s, box-shadow .2s;
-}
+.comp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px }
+.comp-card { background: var(--white); border-radius: var(--r-card); padding: 24px; box-shadow: var(--shadow); display: flex; align-items: flex-start; gap: 14px; transition: transform .2s, box-shadow .2s }
 .comp-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-l) }
-.comp-icon {
-  width: 40px; height: 40px; border-radius: 10px;
-  background: var(--grey-1);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 16px; color: var(--blue); flex-shrink: 0;
-}
+.comp-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--grey-1); display: flex; align-items: center; justify-content: center; flex-shrink: 0 }
+.comp-icon svg { width: 18px; height: 18px; fill: var(--blue) }
 .comp-text { font-size: 15px; font-weight: 500; color: var(--black); line-height: 1.4 }
 
 /* ═══════════════════════════════════
-   PATENTS — horizontal cards
+   PATENTS
 ═══════════════════════════════════ */
-.patents-grid {
-  display: grid; grid-template-columns: repeat(3,1fr); gap: 16px;
-}
-.patent-card {
-  background: var(--white); border-radius: var(--r-card);
-  padding: 32px 28px; box-shadow: var(--shadow);
-  transition: transform .3s, box-shadow .3s;
-  display: flex; flex-direction: column; gap: 12px;
-  position: relative; overflow: hidden;
-}
+.patents-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px }
+.patent-card { background: var(--white); border-radius: var(--r-card); padding: 32px 28px; box-shadow: var(--shadow); transition: transform .3s, box-shadow .3s; display: flex; flex-direction: column; gap: 12px }
 .patent-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-l) }
-.patent-icon {
-  width: 50px; height: 50px; border-radius: 12px;
-  background: linear-gradient(135deg, var(--blue), #34aadc);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 20px; color: #fff; margin-bottom: 4px;
-}
-.patent-id {
-  font-size: 12px; font-weight: 600; letter-spacing: .04em;
-  text-transform: uppercase; color: var(--blue);
-}
-.patent-name {
-  font-size: 20px; font-weight: 700; letter-spacing: -.02em;
-  color: var(--black); line-height: 1.2;
-}
-.patent-summary {
-  font-size: 14px; font-weight: 400; line-height: 1.65;
-  color: var(--grey-5); flex: 1;
-}
-.patent-num {
-  font-size: 12px; font-weight: 500; color: var(--grey-4); letter-spacing: .02em;
-}
+.patent-icon { width: 50px; height: 50px; border-radius: 12px; background: linear-gradient(135deg, var(--blue), #34aadc); display: flex; align-items: center; justify-content: center; margin-bottom: 4px }
+.patent-icon svg { width: 22px; height: 22px; fill: #fff }
+.patent-id { font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--blue) }
+.patent-name { font-size: 20px; font-weight: 700; letter-spacing: -.02em; color: var(--black); line-height: 1.2 }
+.patent-summary { font-size: 14px; font-weight: 400; line-height: 1.65; color: var(--grey-5); flex: 1 }
+.patent-num { font-size: 12px; font-weight: 500; color: var(--grey-4); letter-spacing: .02em }
 
 /* ═══════════════════════════════════
-   CAREER — Apple timeline
+   CAREER
 ═══════════════════════════════════ */
 .timeline { display: flex; flex-direction: column; gap: 12px }
-.tl-card {
-  background: var(--white); border-radius: var(--r-card);
-  box-shadow: var(--shadow);
-  overflow: hidden; transition: box-shadow .2s;
-}
+.tl-card { background: var(--white); border-radius: var(--r-card); box-shadow: var(--shadow); overflow: hidden; transition: box-shadow .2s }
 .tl-card:hover { box-shadow: var(--shadow-l) }
 .tl-inner { display: grid; grid-template-columns: 220px 1fr }
-.tl-meta {
-  padding: 28px 24px;
-  background: var(--grey-1);
-  border-right: 1px solid var(--grey-2);
-  display: flex; flex-direction: column; gap: 6px;
-}
-.tl-pill {
-  display: inline-block; padding: 4px 12px;
-  border-radius: 100px;
-  font-size: 12px; font-weight: 600; width: fit-content;
-  margin-bottom: 4px;
-}
+.tl-meta { padding: 28px 24px; background: var(--grey-1); border-right: 1px solid var(--grey-2); display: flex; flex-direction: column; gap: 6px }
+.tl-pill { display: inline-block; padding: 4px 12px; border-radius: 100px; font-size: 12px; font-weight: 600; width: fit-content; margin-bottom: 4px }
 .tl-pill-live { background: rgba(29,131,72,.1); color: var(--green) }
 .tl-pill-past { background: var(--grey-2); color: var(--grey-5) }
-.tl-title {
-  font-size: 14px; font-weight: 700; color: var(--black); line-height: 1.3; letter-spacing: -.01em;
-}
+.tl-title { font-size: 14px; font-weight: 700; color: var(--black); line-height: 1.3; letter-spacing: -.01em }
 .tl-org { font-size: 13px; font-weight: 400; color: var(--grey-4) }
 .tl-body { padding: 28px 32px }
-.tl-summary {
-  font-size: 15px; font-weight: 400; color: var(--grey-5);
-  line-height: 1.75; margin-bottom: 16px;
-}
+.tl-summary { font-size: 15px; font-weight: 400; color: var(--grey-5); line-height: 1.75; margin-bottom: 16px }
 .tl-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px }
-.tl-bullets li {
-  font-size: 14px; font-weight: 400; color: var(--grey-5);
-  display: flex; align-items: flex-start; gap: 10px; line-height: 1.6;
-}
-.tl-bullets li::before {
-  content: '';
-  width: 5px; height: 5px; border-radius: 50%;
-  background: var(--blue); flex-shrink: 0; margin-top: 8px;
-}
+.tl-bullets li { font-size: 14px; font-weight: 400; color: var(--grey-5); display: flex; align-items: flex-start; gap: 10px; line-height: 1.6 }
+.tl-bullets li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 8px }
 
 /* ═══════════════════════════════════
-   TWO COL — education / recognition
+   EDUCATION & RECOGNITION
 ═══════════════════════════════════ */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px }
-.list-title {
-  font-size: 14px; font-weight: 600; letter-spacing: .04em;
-  text-transform: uppercase; color: var(--grey-4); margin-bottom: 12px;
-}
+.list-title { font-size: 14px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--grey-4); margin-bottom: 12px }
 .list-card { background: var(--white); border-radius: var(--r-card); box-shadow: var(--shadow); overflow: hidden }
-.list-row {
-  display: flex; justify-content: space-between; align-items: center;
-  gap: 12px; padding: 15px 20px;
-  border-bottom: 1px solid var(--grey-1);
-  transition: background .15s;
-}
+.list-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 15px 20px; border-bottom: 1px solid var(--grey-1); transition: background .15s }
 .list-row:last-child { border-bottom: none }
 .list-row:hover { background: var(--grey-1) }
 .list-name { font-size: 14px; font-weight: 400; color: var(--grey-5); flex: 1; line-height: 1.4 }
 .list-name strong { font-weight: 700; color: var(--black) }
 .list-date { font-size: 13px; font-weight: 500; color: var(--grey-4); white-space: nowrap }
-.winner {
-  display: inline-block; font-size: 10px; font-weight: 600;
-  color: #fff; background: var(--blue);
-  padding: 2px 8px; border-radius: 100px; margin-left: 8px; vertical-align: middle;
-}
+.winner { display: inline-block; font-size: 10px; font-weight: 600; color: #fff; background: var(--blue); padding: 2px 8px; border-radius: 100px; margin-left: 8px; vertical-align: middle }
 
 /* ═══════════════════════════════════
    ADVISORY
 ═══════════════════════════════════ */
 .advisory-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px }
-.advisory-card {
-  background: var(--white); border-radius: var(--r-card);
-  padding: 20px; box-shadow: var(--shadow);
-  display: flex; align-items: center; justify-content: space-between; gap: 10px;
-  transition: transform .2s, box-shadow .2s;
-}
+.advisory-card { background: var(--white); border-radius: var(--r-card); padding: 20px; box-shadow: var(--shadow); display: flex; align-items: center; justify-content: space-between; gap: 10px; transition: transform .2s, box-shadow .2s }
 .advisory-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-l) }
 .advisory-name { font-size: 14px; font-weight: 500; color: var(--black); line-height: 1.35 }
 .advisory-date { font-size: 12px; font-weight: 500; color: var(--grey-4); white-space: nowrap }
@@ -554,67 +467,55 @@ nav {
    ECOSYSTEM
 ═══════════════════════════════════ */
 .eco-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px }
-.eco-card {
-  display: block;
-  background: var(--white); border-radius: var(--r-card);
-  padding: 28px; box-shadow: var(--shadow);
-  transition: transform .3s, box-shadow .3s; position: relative;
-}
+.eco-card { display: block; background: var(--white); border-radius: var(--r-card); padding: 28px; box-shadow: var(--shadow); transition: transform .3s, box-shadow .3s; position: relative }
 .eco-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-l) }
-.eco-arr {
-  position: absolute; top: 24px; right: 24px;
-  font-size: 16px; color: var(--grey-3); transition: color .2s;
-}
+.eco-arr { position: absolute; top: 24px; right: 24px; font-size: 16px; color: var(--grey-3); transition: color .2s }
 .eco-card:hover .eco-arr { color: var(--blue) }
-.eco-label {
-  font-size: 12px; font-weight: 600; letter-spacing: .04em;
-  text-transform: uppercase; color: var(--blue); margin-bottom: 8px;
-}
+.eco-label { font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--blue); margin-bottom: 8px }
 .eco-name { font-size: 19px; font-weight: 700; color: var(--black); margin-bottom: 4px; letter-spacing: -.01em }
-.eco-url { font-size: 13px; font-weight: 400; color: var(--blue); display: block; margin-bottom: 14px }
+.eco-url { font-size: 13px; font-weight: 400; color: var(--blue); display: block; margin-bottom: 12px }
 .eco-desc { font-size: 14px; font-weight: 400; line-height: 1.6; color: var(--grey-5); margin-bottom: 14px }
 .eco-tags { display: flex; gap: 6px; flex-wrap: wrap }
-.eco-tag-pill {
-  font-size: 11px; font-weight: 500;
-  padding: 4px 10px; border-radius: 100px;
-  background: var(--grey-1); color: var(--grey-4);
+.eco-tag-pill { font-size: 11px; font-weight: 500; padding: 4px 10px; border-radius: 100px; background: var(--grey-1); color: var(--grey-4) }
+
+/* ⑦ Contact section */
+.contact-section { padding: 80px clamp(20px,6vw,80px) }
+.contact-inner { max-width: 680px; margin: 0 auto; text-align: center }
+.contact-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 48px }
+.contact-card {
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  padding: 28px 16px;
+  background: var(--white); border-radius: var(--r-card); box-shadow: var(--shadow);
+  transition: transform .2s, box-shadow .2s;
 }
+.contact-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-l) }
+.contact-card-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: linear-gradient(135deg, var(--blue), #34aadc);
+  display: flex; align-items: center; justify-content: center;
+}
+.contact-card-icon svg { width: 22px; height: 22px; fill: #fff }
+.contact-card-label { font-size: 13px; font-weight: 600; color: var(--black) }
+.contact-card-value { font-size: 13px; font-weight: 400; color: var(--blue); text-align: center; line-height: 1.4 }
 
 /* ═══════════════════════════════════
-   FOOTER — dark Apple style
+   FOOTER
 ═══════════════════════════════════ */
-footer {
-  background: var(--grey-1);
-  border-top: 1px solid var(--grey-2);
-  padding: 48px clamp(20px,6vw,80px);
-}
-.footer-inner {
-  max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr auto 1fr;
-  align-items: center; gap: 20px;
-}
-.footer-brand {
-  font-size: 15px; font-weight: 600; color: var(--black); letter-spacing: -.01em;
-}
+footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding: 48px clamp(20px,6vw,80px) }
+.footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 20px }
+.footer-brand { font-size: 15px; font-weight: 600; color: var(--black); letter-spacing: -.01em }
 .footer-brand em { color: var(--blue); font-style: normal }
 .footer-credit { font-size: 12px; font-weight: 400; color: var(--grey-4); text-align: center }
 .footer-credit a { color: var(--blue); transition: opacity .2s }
 .footer-credit a:hover { opacity: .7 }
 .footer-links { display: flex; gap: 20px; list-style: none; justify-content: flex-end }
-.footer-links a {
-  font-size: 13px; font-weight: 400; color: var(--blue);
-  transition: opacity .2s;
-}
+.footer-links a { font-size: 13px; font-weight: 400; color: var(--blue); transition: opacity .2s }
 .footer-links a:hover { opacity: .7 }
 
 /* ═══════════════════════════════════
-   REVEAL ANIMATIONS
+   REVEAL
 ═══════════════════════════════════ */
-.reveal {
-  opacity: 0; transform: translateY(20px);
-  transition: opacity .7s cubic-bezier(.25,.46,.45,.94),
-              transform .7s cubic-bezier(.25,.46,.45,.94);
-}
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s cubic-bezier(.25,.46,.45,.94), transform .7s cubic-bezier(.25,.46,.45,.94) }
 .reveal.vis { opacity: 1; transform: none }
 
 /* ═══════════════════════════════════
@@ -624,11 +525,15 @@ footer {
   .nav-links, .nav-cta { display: none }
   .nav-burger { display: flex }
   .hero { padding-top: calc(48px + 50px) }
-  .ventures-grid { grid-template-columns: 1fr }
-  .venture-tile { min-height: 420px }
+  .building-inner { grid-template-columns: 1fr }
+  .building-cell { border-right: none; border-bottom: 1px solid rgba(255,255,255,.08) }
+  .venture-band-inner { grid-template-columns: 1fr; gap: 36px }
+  .venture-band-inner.reverse { direction: ltr }
+  .vb-card { min-height: 320px }
   .patents-grid { grid-template-columns: 1fr 1fr }
   .comp-grid { grid-template-columns: 1fr 1fr }
   .two-col { grid-template-columns: 1fr }
+  .tcard { flex: 0 0 100% }
   .advisory-grid { grid-template-columns: 1fr 1fr }
   .eco-grid { grid-template-columns: 1fr 1fr }
   .stats-grid { grid-template-columns: repeat(3,1fr) }
@@ -636,6 +541,7 @@ footer {
   .profile-side { border-top: 1px solid var(--grey-2) }
   .tl-inner { grid-template-columns: 1fr }
   .tl-meta { border-right: none; border-bottom: 1px solid var(--grey-2) }
+  .contact-cards { grid-template-columns: 1fr }
   .footer-inner { grid-template-columns: 1fr; text-align: center }
   .footer-links { justify-content: center }
   .map-key { display: none }
@@ -648,18 +554,22 @@ footer {
   .advisory-grid { grid-template-columns: 1fr }
   .eco-grid { grid-template-columns: 1fr }
   .hero-btns .btn { font-size: 15px; padding: 10px 18px }
-  .map-card { margin: 0 clamp(16px,4vw,44px) }
+  .map-card { margin: 0 16px }
+  .logos-row { gap: 20px }
 }
 @media (prefers-reduced-motion: reduce) {
   .ticker-track { animation: none }
   .reveal { opacity: 1; transform: none }
-  .map-live-pip { animation: none }
+  .map-live-pip, .building-pulse { animation: none }
 }
 </style>
 </head>
 <body>
 
-<!-- ══ NAV ═════════════════════════════════════════════ -->
+<!-- ⑧ Scroll progress bar -->
+<div id="progress"></div>
+
+<!-- NAV -->
 <nav>
   <div class="nav-logo">Simon <em>Legrand</em></div>
   <ul class="nav-links">
@@ -669,7 +579,7 @@ footer {
     <li><a href="#career">Career</a></li>
     <li><a href="#work">Work</a></li>
   </ul>
-  <a class="nav-cta" href="mailto:simongeorgelegrand@gmail.com">Get in Touch</a>
+  <a class="nav-cta" href="#contact">Get in Touch</a>
   <button class="nav-burger" id="navBurger"><span></span><span></span><span></span></button>
 </nav>
 <div class="nav-drawer" id="navDrawer">
@@ -678,64 +588,103 @@ footer {
   <a href="#patents">Patents</a>
   <a href="#career">Career</a>
   <a href="#work">Work</a>
-  <a href="mailto:simongeorgelegrand@gmail.com">Get in Touch</a>
+  <a href="#contact">Get in Touch</a>
 </div>
 
-<!-- ══ HERO ════════════════════════════════════════════ -->
+<!-- HERO -->
 <div id="hero" class="reveal">
   <div class="hero">
     <div class="hero-eyebrow">MCIM · Founder · Patent Inventor</div>
+    <!-- ① Photo — replace the initials div with an <img> once you have a photo:
+         <img class="hero-photo" src="photo.jpg" alt="Simon Legrand"> -->
+    <div class="hero-photo-wrap">
+      <img class="hero-photo-img" src="SL_Headshot_colour.jpg" alt="Simon Legrand">
+    </div>
     <h1 class="hero-name">Simon Legrand</h1>
     <p class="hero-sub">
-      Technology co-founder and <strong>MCIM Chartered Marketer</strong> with 20+ years building at the intersection of sensor systems, IoT infrastructure, and public sector transformation.
+      Technology co-founder and <strong>MCIM Chartered Marketer</strong> with 25+ years building at the intersection of sensor systems, IoT infrastructure, and public sector transformation.
     </p>
     <div class="hero-btns">
-      <a class="btn btn-primary" href="mailto:simongeorgelegrand@gmail.com">Get in Touch</a>
+      <a class="btn btn-primary" href="#contact">Get in Touch</a>
       <a class="btn btn-secondary" href="https://www.linkedin.com/in/-simonlegrand-" target="_blank">LinkedIn ↗</a>
     </div>
     <div class="hero-chips">
-      <span class="chip"><i class="fa-solid fa-certificate"></i> MCIM · 2025</span>
-      <span class="chip"><i class="fa-solid fa-microchip"></i> 3 Granted Patents</span>
-      <span class="chip"><i class="fa-solid fa-globe"></i> 58 Systems · Kazakhstan</span>
-      <span class="chip"><i class="fa-solid fa-trophy"></i> IFSEC Global Top 50</span>
-      <span class="chip"><i class="fa-solid fa-robot"></i> Anthropic Startups</span>
-      <span class="chip"><i class="fa-solid fa-shield-halved"></i> IBM Cyber Security Lead</span>
+      <span class="chip"><svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg> MCIM · 2025</span>
+      <span class="chip"><svg viewBox="0 0 24 24"><path d="M6 2h12l4 4v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h2zm6 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg> 3 Granted Patents</span>
+      <span class="chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" fill="none" stroke="currentColor" stroke-width="2"/></svg> 300+ Systems · Delivered</span>
+      <span class="chip"><svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg> IFSEC Global Top 50</span>
+      <span class="chip"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg> Anthropic Startups</span>
+      <span class="chip"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> IBM Cyber Security Lead</span>
     </div>
   </div>
 </div>
 
-<!-- ══ TICKER ══════════════════════════════════════════ -->
+<!-- TICKER -->
 <div class="ticker-band" aria-hidden="true">
   <div class="ticker-track">
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="t-hi">MCIM</span> · Chartered Institute of Marketing · 2025</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i>Chevron Technology Ventures · Accepted</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="t-hi">Rivian Automotive</span> · Won vs 15 competitors · UK · Germany · USA</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i>WESCO Anixter · Global Distribution Partnership</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="t-hi">3 Granted Patents</span> · Solar CCTV · Autonomous Power · Drone Charging</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i>IFSEC Global Top 50 Most Influential · 2018</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i>IBM Certified Cyber Security Board Lead</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i>S&amp;FE Awards · Winner 2023 · 2017</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="t-hi">58 Systems</span> · Tengizchevroil · Kazakhstan</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i>Network Rail · Telent · Inverness Power Station</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i>Martyn's Law · Terrorism (Protection of Premises) Act 2025</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="t-hi">Assistiv Systems</span> · Claude for Startups · Anthropic</span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span class="t-hi">MCIM</span> · Chartered Institute of Marketing · 2025</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Chevron Technology Ventures · Accepted</span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span class="t-hi">Rivian Automotive</span> · Won vs 15 competitors · UK · Germany · USA</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>WESCO Anixter · Global Distribution Partnership</span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span class="t-hi">3 Granted Patents</span> · Solar CCTV · Autonomous Power · Drone Charging</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>IFSEC Global Top 50 Most Influential · 2018</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>IBM Certified Cyber Security Board Lead</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>S&amp;FE Awards · Winner 2023 · 2017</span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span class="t-hi">300+ Systems</span> · Delivered UK &amp; Worldwide</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Network Rail · Telent · Inverness Power Station</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Martyn's Law · Terrorism (Protection of Premises) Act 2025</span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span class="t-hi">Assistiv Systems</span> · Claude for Startups · Anthropic</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>NHS Horizons AI Ambassador Network · Member</span>
     <!-- dupe -->
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="t-hi">MCIM</span> · Chartered Institute of Marketing · 2025</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i>Chevron Technology Ventures · Accepted</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="t-hi">Rivian Automotive</span> · Won vs 15 competitors · UK · Germany · USA</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i>WESCO Anixter · Global Distribution Partnership</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="t-hi">3 Granted Patents</span> · Solar CCTV · Autonomous Power · Drone Charging</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i>IFSEC Global Top 50 Most Influential · 2018</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i>IBM Certified Cyber Security Board Lead</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i>S&amp;FE Awards · Winner 2023 · 2017</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="t-hi">58 Systems</span> · Tengizchevroil · Kazakhstan</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i>Network Rail · Telent · Inverness Power Station</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i>Martyn's Law · Terrorism (Protection of Premises) Act 2025</span>
-    <span class="ticker-item"><i class="fa-solid fa-circle"></i><span class="t-hi">Assistiv Systems</span> · Claude for Startups · Anthropic</span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span class="t-hi">MCIM</span> · Chartered Institute of Marketing · 2025</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Chevron Technology Ventures · Accepted</span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span class="t-hi">Rivian Automotive</span> · Won vs 15 competitors · UK · Germany · USA</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>WESCO Anixter · Global Distribution Partnership</span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span class="t-hi">3 Granted Patents</span> · Solar CCTV · Autonomous Power · Drone Charging</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>IFSEC Global Top 50 Most Influential · 2018</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>IBM Certified Cyber Security Board Lead</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>S&amp;FE Awards · Winner 2023 · 2017</span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span class="t-hi">300+ Systems</span> · Delivered UK &amp; Worldwide</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Network Rail · Telent · Inverness Power Station</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Martyn's Law · Terrorism (Protection of Premises) Act 2025</span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span class="t-hi">Assistiv Systems</span> · Claude for Startups · Anthropic</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>NHS Horizons AI Ambassador Network · Member</span>
   </div>
 </div>
 
-<!-- ══ MAP ══════════════════════════════════════════════ -->
+<!-- ② LOGO STRIP -->
+<div class="logos-band reveal">
+  <div class="logos-label">Trusted by &amp; recognised alongside</div>
+  <div class="logos-row">
+    <div class="logo-item">CHEVRON<span>Technology Ventures</span></div>
+    <div class="logo-item">RIVIAN<span>Automotive</span></div>
+    <div class="logo-item">NETWORK RAIL<span>Infrastructure</span></div>
+    <div class="logo-item">NHS<span>England</span></div>
+    <div class="logo-item">ANTHROPIC<span>Claude Startups</span></div>
+    <div class="logo-item">WESCO<span>Anixter Global</span></div>
+    <div class="logo-item">IFSEC<span>Global Top 50</span></div>
+  </div>
+</div>
+
+<!-- ③ CURRENTLY BUILDING -->
+<div class="building-band reveal">
+  <div class="building-inner">
+    <div class="building-cell bc-fy">
+      <div class="building-cell-orb"></div>
+      <div class="building-label"><span class="building-pulse"></span>Currently building</div>
+      <p class="building-text"><strong>Fyrfly Systems</strong> — Launching intelligent physical security for UK schools and public sector. Martyn's Law compliance tooling live. First installations underway.</p>
+      <div class="building-date">2026 · Faversham, Kent</div>
+    </div>
+    <div class="building-cell bc-as">
+      <div class="building-cell-orb"></div>
+      <div class="building-label"><span class="building-pulse"></span>Currently building</div>
+      <p class="building-text"><strong>Assistiv Systems</strong> — NHS commissioner outreach active. assistiv.tools ASCOT rebuild in progress. ICB engagement pipeline open. Anthropic Startups programme active.</p>
+      <div class="building-date">2026 · Assistiv.co</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAP -->
 <div class="bg-grey" style="padding: 64px 0">
   <div style="max-width:1200px;margin:0 auto">
     <div class="section-label reveal">Global Footprint</div>
@@ -759,132 +708,228 @@ footer {
   </div>
 </div>
 
-<!-- ══ STATS ════════════════════════════════════════════ -->
+<!-- STATS -->
 <div class="bg-white">
   <div class="section reveal">
     <div class="stats-grid">
       <div class="stat-cell"><div class="stat-n" data-count="25" data-suffix="+">0</div><div class="stat-l">Years experience</div></div>
       <div class="stat-cell"><div class="stat-n" data-count="3">0</div><div class="stat-l">Granted patents</div></div>
-      <div class="stat-cell"><div class="stat-n" data-count="300" data-suffix="+">0</div><div class="stat-l">Systems deployed</div></div>
+      <div class="stat-cell"><div class="stat-n" data-count="300" data-suffix="+">0</div><div class="stat-l">Systems delivered</div></div>
       <div class="stat-cell"><div class="stat-n" data-count="15" data-suffix="+">0</div><div class="stat-l">Published articles</div></div>
       <div class="stat-cell"><div class="stat-n" data-count="14" data-suffix=":1">0</div><div class="stat-l">Assistiv ROI</div></div>
     </div>
   </div>
 </div>
 
-<!-- ══ PROFILE ══════════════════════════════════════════ -->
+<!-- PROFILE -->
 <div class="bg-grey" id="profile">
   <div class="section reveal">
     <div class="section-label">About</div>
     <div class="section-title" style="margin-bottom:40px">Built for complexity.<br>Fluent across disciplines.</div>
     <div class="profile-card">
       <div class="profile-body">
-        <p>Senior technology leader with <strong>20+ years</strong> spanning UK public sector health and social care, technology co-founding, IP development, and AI-native product design. Co-founded <strong>Sunstone Systems</strong> from scratch into a globally recognised, award-winning platform — earning enterprise contracts with <strong>Chevron, Rivian Automotive,</strong> and <strong>Network Rail</strong>, and acceptance into Chevron Technology Ventures. Listed inventor on three granted patents covering solar CCTV, autonomous power, and drone charging. Now operating two active ventures: <strong>Fyrfly Systems</strong>, delivering intelligent physical security to UK schools, and <strong>Assistiv Systems</strong>, a preventative care platform for the UK's ageing population. Deep expertise in agentic AI and the convergence of LLM reasoning with physical sensor networks.</p>
+        <p>Senior technology leader with <strong>25+ years</strong> spanning UK public sector health and social care, technology co-founding, IP development, and AI-native product design. Co-founded <strong>Sunstone Systems</strong> from scratch into a globally recognised, award-winning platform — earning enterprise contracts with <strong>Chevron, Rivian Automotive,</strong> and <strong>Network Rail</strong>, and acceptance into Chevron Technology Ventures. Listed inventor on three granted patents covering solar CCTV, autonomous power, and drone charging. Now operating two active ventures: <strong>Fyrfly Systems</strong>, delivering intelligent physical security to UK schools, and <strong>Assistiv Systems</strong>, a preventative care platform for the UK's ageing population. Deep expertise in agentic AI and the convergence of LLM reasoning with physical sensor networks.</p>
       </div>
       <div class="profile-side">
         <div>
           <div class="side-label">Location</div>
-          <div class="side-row"><i class="fa-solid fa-location-dot"></i>Faversham, Kent, UK</div>
+          <div class="side-row"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Faversham, Kent, UK</div>
         </div>
         <div>
           <div class="side-label">Credentials</div>
-          <div class="side-row"><i class="fa-solid fa-award"></i>MCIM — Chartered Marketer</div>
-          <div class="side-row"><i class="fa-solid fa-shield-halved"></i>IBM Cyber Security Board Lead</div>
-          <div class="side-row"><i class="fa-solid fa-heart"></i>MHFA Practitioner</div>
+          <div class="side-row"><svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>MCIM — Chartered Marketer</div>
+          <div class="side-row"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>IBM Cyber Security Board Lead</div>
+          <div class="side-row"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>MHFA Practitioner</div>
         </div>
         <div>
           <div class="side-label">Active Focus</div>
-          <div class="side-row"><i class="fa-solid fa-robot"></i>Agentic AI systems</div>
-          <div class="side-row"><i class="fa-solid fa-camera"></i>Physical security · Martyn's Law</div>
-          <div class="side-row"><i class="fa-solid fa-user-doctor"></i>NHS · Preventative care</div>
+          <div class="side-row"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Agentic AI systems</div>
+          <div class="side-row"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4" fill="none" stroke="currentColor" stroke-width="2"/></svg>Physical security · Martyn's Law</div>
+          <div class="side-row"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>NHS · Preventative care</div>
         </div>
-
       </div>
     </div>
   </div>
 </div>
 
-<!-- ══ VENTURES ══════════════════════════════════════════ -->
-<div class="bg-white" id="ventures">
-  <div class="section reveal">
-    <div class="section-label">Active Ventures</div>
-    <div class="section-title">Founded. Built. Deployed.</div>
-    <div class="section-body">Two active companies — one in physical security, one in health technology — both built with AI-native tooling from day one.</div>
-    <div class="ventures-grid">
+<!-- ⑩ VENTURE FEATURE BANDS -->
+<div id="ventures">
 
-      <a class="venture-tile vt-security" href="https://www.fyrflysystems.com" target="_blank">
-        <div class="vt-orb"></div>
-        <div class="vt-link">↗</div>
-        <div class="venture-tile-inner">
-          <div class="vt-eyebrow">Founder &amp; Director · 2026 – Present</div>
-          <div class="vt-name">Fyrfly Systems</div>
-          <span class="vt-url">fyrflysystems.com</span>
-          <p class="vt-desc">Intelligent physical security for UK schools and public sector. CCTV, access control, intruder alarms, fire systems, and 24/7 monitoring — built on 14 years of sensor platform development and three granted patents. DfE and KCSiE aligned. Martyn's Law ready.</p>
-          <div class="vt-tags">
-            <span class="vt-tag">Physical Security</span>
-            <span class="vt-tag">Schools</span>
-            <span class="vt-tag">Martyn's Law</span>
-            <span class="vt-tag">AI Tooling</span>
-            <span class="vt-tag">24/7 Monitoring</span>
-          </div>
-          <div class="vt-metrics">
-            <div class="vt-metric"><div class="vt-metric-n">40+</div><div class="vt-metric-l">Pages built</div></div>
-            <div class="vt-metric"><div class="vt-metric-n">5</div><div class="vt-metric-l">Free AI tools</div></div>
-            <div class="vt-metric"><div class="vt-metric-n">DfE</div><div class="vt-metric-l">Aligned</div></div>
+  <!-- Fyrfly — full width band -->
+  <div class="bg-white venture-band vb-fy reveal">
+    <div class="venture-band-inner">
+      <div class="vb-text">
+        <div class="vb-eyebrow">Founder &amp; Director · 2026 – Present</div>
+        <div class="vb-name">Fyrfly Systems</div>
+        <a class="vb-url" href="https://www.fyrflysystems.com" target="_blank">fyrflysystems.com ↗</a>
+        <p class="vb-desc">Intelligent physical security for UK schools and public sector. CCTV, access control, intruder alarms, fire systems, and 24/7 monitoring — built on 14 years of sensor platform development and deep technical expertise across solar, IoT, and surveillance infrastructure. DfE and KCSiE aligned. Martyn's Law ready.</p>
+        <div class="vb-tags">
+          <span class="vb-tag">Physical Security</span>
+          <span class="vb-tag">Schools</span>
+          <span class="vb-tag">Martyn's Law</span>
+          <span class="vb-tag">AI Tooling</span>
+          <span class="vb-tag">24/7 Monitoring</span>
+        </div>
+        <a class="vb-btn" href="https://www.fyrflysystems.com" target="_blank">Visit Fyrfly Systems ↗</a>
+      </div>
+      <div>
+        <div class="vb-card vb-fy">
+          <div class="vb-card-orb"></div>
+          <div class="vb-card-inner">
+            <div class="vb-card-title">Fyrfly Systems</div>
+            <div class="vb-card-sub">Protecting the places that matter most — schools, campuses, and public buildings — with technology built for the Martyn's Law era.</div>
+            <div class="vb-card-metrics">
+              <div class="vb-metric"><div class="vb-metric-n">40+</div><div class="vb-metric-l">Pages built</div></div>
+              <div class="vb-metric"><div class="vb-metric-n">5</div><div class="vb-metric-l">Free AI tools</div></div>
+              <div class="vb-metric"><div class="vb-metric-n">DfE</div><div class="vb-metric-l">Aligned</div></div>
+            </div>
           </div>
         </div>
-      </a>
-
-      <a class="venture-tile vt-health" href="https://assistiv.co" target="_blank">
-        <div class="vt-orb"></div>
-        <div class="vt-link">↗</div>
-        <div class="venture-tile-inner">
-          <div class="vt-eyebrow">Co-Founder &amp; Director · Active · Anthropic Startup</div>
-          <div class="vt-name">Assistiv Systems</div>
-          <span class="vt-url">assistiv.co</span>
-          <p class="vt-desc">Preventative care platform for older adults in the UK's "Missing Middle." Population health scoring across 21 NHS signals, district-level prescribing data, live data pipelines, and a carer hotspot tool. Clinical advisory board includes ASCOT creator Prof. Ann Netten and UCL Prof. John Jerrim.</p>
-          <div class="vt-tags">
-            <span class="vt-tag">NHS</span>
-            <span class="vt-tag">Health Tech</span>
-            <span class="vt-tag">AI Platform</span>
-            <span class="vt-tag">Missing Middle</span>
-            <span class="vt-tag">Anthropic Startup</span>
-          </div>
-          <div class="vt-metrics">
-            <div class="vt-metric"><div class="vt-metric-n">14:1</div><div class="vt-metric-l">ROI at pilot</div></div>
-            <div class="vt-metric"><div class="vt-metric-n">21</div><div class="vt-metric-l">NHS signals</div></div>
-            <div class="vt-metric"><div class="vt-metric-n">ICB</div><div class="vt-metric-l">Ready</div></div>
-          </div>
-        </div>
-      </a>
-
+      </div>
     </div>
+  </div>
+
+  <!-- Assistiv — full width band, reversed -->
+  <div class="bg-grey venture-band vb-as reveal">
+    <div class="venture-band-inner reverse">
+      <div class="vb-text">
+        <div class="vb-eyebrow">Co-Founder &amp; Director · Active · Anthropic Startup</div>
+        <div class="vb-name">Assistiv Systems</div>
+        <a class="vb-url" href="https://assistiv.co" target="_blank">assistiv.co ↗</a>
+        <p class="vb-desc">Preventative care platform for older adults in the UK's "Missing Middle." Population health scoring across 21 NHS signals, district-level prescribing data, live data pipelines, and a carer hotspot tool. Clinical advisory board includes ASCOT creator Prof. Ann Netten and UCL Prof. John Jerrim.</p>
+        <div class="vb-tags">
+          <span class="vb-tag">NHS</span>
+          <span class="vb-tag">Health Tech</span>
+          <span class="vb-tag">AI Platform</span>
+          <span class="vb-tag">Missing Middle</span>
+          <span class="vb-tag">Anthropic Startup</span>
+        </div>
+        <a class="vb-btn" href="https://assistiv.co" target="_blank">Visit Assistiv Systems ↗</a>
+      </div>
+      <div>
+        <div class="vb-card vb-as">
+          <div class="vb-card-orb"></div>
+          <div class="vb-card-inner">
+            <div class="vb-card-title">Assistiv Systems</div>
+            <div class="vb-card-sub">Population intelligence for the Missing Middle — the 2 million older adults who fall between independence and formal care.</div>
+            <div class="vb-card-metrics">
+              <div class="vb-metric"><div class="vb-metric-n">14:1</div><div class="vb-metric-l">ROI at pilot</div></div>
+              <div class="vb-metric"><div class="vb-metric-n">21</div><div class="vb-metric-l">NHS signals</div></div>
+              <div class="vb-metric"><div class="vb-metric-n">ICB</div><div class="vb-metric-l">Ready</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ④ TESTIMONIALS -->
+<div class="testimonial-band reveal">
+  <div class="testimonial-outer">
+    <div class="section-label" style="margin-bottom:12px">What people say</div>
+    <div class="section-title" style="margin-bottom:48px">Trusted by industry<br>leaders worldwide.</div>
+
+    <div class="tcard-track-wrap">
+    <div class="tcard-track" id="tcardTrack">
+
+      <div class="tcard">
+        <div class="tcard-quote">"Simon has shown an ability to translate complex technical solutions into clear, compelling narratives. His instinct for how to position technology, communicate value, and engage stakeholders makes him an invaluable partner on any initiative requiring both technical credibility and commercial awareness."</div>
+        <div class="tcard-attr">
+          <div class="tcard-avatar">DC</div>
+          <div>
+            <div class="tcard-name">Dan Coulson</div>
+            <div class="tcard-role">Engineering Manager, Environment &amp; Sustainability · Telent</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard">
+        <div class="tcard-quote">"Simon brings a rare combination of technical understanding and operational judgement. He consistently focuses on deployability, resilience and total cost of ownership — the factors that genuinely determine whether technology platforms succeed or fail in remote and industrial settings."</div>
+        <div class="tcard-attr">
+          <div class="tcard-avatar">NP</div>
+          <div>
+            <div class="tcard-name">Nicholas Pomeroy</div>
+            <div class="tcard-role">International Energy Executive · Wood Group · Kazakhstan</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard">
+        <div class="tcard-quote">"His commercial acumen, professionalism and ability to take challenging client expectations and get the right solutions from his team stuck with me. I can highly recommend working with Simon — his motivation, innovation and ability to develop ideas into solutions is exceptional."</div>
+        <div class="tcard-attr">
+          <div class="tcard-avatar">AE</div>
+          <div>
+            <div class="tcard-name">Andrew Edge</div>
+            <div class="tcard-role">Cyber &amp; OCT Discipline Lead · bp · formerly Fluor / TCO Kazakhstan</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard">
+        <div class="tcard-quote">"Simon is one of those rare people who can operate across technical, operational, and marketing domains with equal strength, and he always drives momentum in the right direction. Simon would be a fantastic asset to any organisation looking to bridge technical capability, strategic communication, and customer value creation."</div>
+        <div class="tcard-attr">
+          <div class="tcard-avatar">DC</div>
+          <div>
+            <div class="tcard-name">Dan Coulson</div>
+            <div class="tcard-role">Engineering Manager, Environment &amp; Sustainability · Telent</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard">
+        <div class="tcard-quote">"Simon was the consummate professional business partner and clear SME in his field of expertise, with an ability to integrate, align, and support local company personnel on field deployments and operations. I recommend and fully endorse Simon to future business partnerships."</div>
+        <div class="tcard-attr">
+          <div class="tcard-avatar">NB</div>
+          <div>
+            <div class="tcard-name">Neil Barrie</div>
+            <div class="tcard-role">Security Operations · Tengizchevroil · Kazakhstan</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard">
+        <div class="tcard-quote">"Simon has consistently demonstrated exceptional industry knowledge, technical skill, and strong leadership. He combines deep security‑operations expertise with a forward‑thinking approach to emerging technologies. Simon is a trusted expert, a collaborative partner, and a professional who elevates every organization he supports."</div>
+        <div class="tcard-attr">
+          <div class="tcard-avatar">LC</div>
+          <div>
+            <div class="tcard-name">Lee Connelly CPP, PSP, FSO</div>
+            <div class="tcard-role">Corporate Security &amp; Emergency Preparedness</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /tcard-track -->
+    </div><!-- /tcard-track-wrap -->
+    <div class="tcard-dots" id="tcardDots"></div>
+
   </div>
 </div>
 
-<!-- ══ COMPETENCIES ══════════════════════════════════════ -->
+<!-- COMPETENCIES -->
 <div class="bg-grey">
   <div class="section reveal">
     <div class="section-label">Capabilities</div>
     <div class="section-title" style="margin-bottom:48px">A rare combination<br>of skills.</div>
     <div class="comp-grid">
-      <div class="comp-card"><div class="comp-icon"><i class="fa-solid fa-rocket"></i></div><div class="comp-text">Technology co-founding &amp; commercialisation</div></div>
-      <div class="comp-card"><div class="comp-icon"><i class="fa-solid fa-bullhorn"></i></div><div class="comp-text">Strategic marketing, brand &amp; communications</div></div>
-      <div class="comp-card"><div class="comp-icon"><i class="fa-solid fa-microchip"></i></div><div class="comp-text">IP development · listed patent inventor</div></div>
-      <div class="comp-card"><div class="comp-icon"><i class="fa-solid fa-earth-europe"></i></div><div class="comp-text">Enterprise business development · global clients</div></div>
-      <div class="comp-card"><div class="comp-icon"><i class="fa-solid fa-landmark"></i></div><div class="comp-text">UK public sector: NHS, Home Office, DfE, DoH</div></div>
-      <div class="comp-card"><div class="comp-icon"><i class="fa-solid fa-flask"></i></div><div class="comp-text">Academic &amp; qualitative research</div></div>
-      <div class="comp-card"><div class="comp-icon"><i class="fa-solid fa-robot"></i></div><div class="comp-text">Agentic AI &amp; LLM system design</div></div>
-      <div class="comp-card"><div class="comp-icon"><i class="fa-solid fa-shield-halved"></i></div><div class="comp-text">Cyber security · IBM Certified Board Lead</div></div>
-      <div class="comp-card"><div class="comp-icon"><i class="fa-solid fa-camera"></i></div><div class="comp-text">Physical security · sensor networks · IoT</div></div>
-      <div class="comp-card"><div class="comp-icon"><i class="fa-solid fa-heart-pulse"></i></div><div class="comp-text">Preventative health platform design</div></div>
-      <div class="comp-card"><div class="comp-icon"><i class="fa-brands fa-github"></i></div><div class="comp-text">Static-web architecture · GitHub · Cloudflare</div></div>
-      <div class="comp-card"><div class="comp-icon"><i class="fa-solid fa-clipboard-check"></i></div><div class="comp-text">Standards compliance: DfE · KCSiE · BS EN</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="comp-text">Technology co-founding &amp; commercialisation</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div class="comp-text">Strategic marketing, brand &amp; communications</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="comp-text">IP development · listed patent inventor</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" fill="none" stroke="currentColor" stroke-width="2"/></svg></div><div class="comp-text">Enterprise business development · global clients</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="comp-text">UK public sector: NHS, Home Office, DfE, DoH</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div class="comp-text">Academic &amp; qualitative research</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div class="comp-text">Agentic AI &amp; LLM system design</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="comp-text">Cyber security · IBM Certified Board Lead</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4" fill="none" stroke="currentColor" stroke-width="2"/></svg></div><div class="comp-text">Physical security · sensor networks · IoT</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><div class="comp-text">Preventative health platform design</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div class="comp-text">Static-web architecture · GitHub · Cloudflare</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div class="comp-text">Standards compliance: DfE · KCSiE · BS EN</div></div>
     </div>
   </div>
 </div>
 
-<!-- ══ PATENTS ════════════════════════════════════════════ -->
+<!-- PATENTS -->
 <div class="bg-white" id="patents">
   <div class="section reveal">
     <div class="section-label">Intellectual Property</div>
@@ -892,21 +937,21 @@ footer {
     <div class="section-body">Solar-powered surveillance, autonomous power, and drone charging — a suite of IP developed alongside Chevron Technology Ventures.</div>
     <div class="patents-grid">
       <div class="patent-card">
-        <div class="patent-icon"><i class="fa-solid fa-camera"></i></div>
+        <div class="patent-icon"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4" fill="none" stroke="white" stroke-width="2"/></svg></div>
         <div class="patent-id">PAT · 01 · 2016</div>
         <div class="patent-name">Solar CCTV System</div>
         <div class="patent-summary">Solar-powered autonomous surveillance developed with Chevron / Tengizchevroil. 58 units deployed across Kazakhstan.</div>
         <div class="patent-num">WO2016185034A1</div>
       </div>
       <div class="patent-card">
-        <div class="patent-icon"><i class="fa-solid fa-bolt"></i></div>
+        <div class="patent-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
         <div class="patent-id">PAT · 02 · 2020</div>
         <div class="patent-name">Solar Power Station</div>
         <div class="patent-summary">Autonomous off-grid power station for remote IoT and surveillance infrastructure. Deployed across Network Rail and major infrastructure clients.</div>
         <div class="patent-num">US20200280280A1</div>
       </div>
       <div class="patent-card">
-        <div class="patent-icon"><i class="fa-solid fa-helicopter"></i></div>
+        <div class="patent-icon"><svg viewBox="0 0 24 24"><path d="M12 2L8 6H4v4l-2 2 2 2v4h4l4 4 4-4h4v-4l2-2-2-2V6h-4L12 2z"/><circle cx="12" cy="12" r="3" fill="none" stroke="white" stroke-width="1.5"/></svg></div>
         <div class="patent-id">PAT · 03 · 2022</div>
         <div class="patent-name">Solar Drone Charging</div>
         <div class="patent-summary">Solar-powered autonomous drone charging and deployment station for persistent remote surveillance and infrastructure monitoring.</div>
@@ -916,7 +961,7 @@ footer {
   </div>
 </div>
 
-<!-- ══ CAREER ═════════════════════════════════════════════ -->
+<!-- CAREER -->
 <div class="bg-grey" id="career">
   <div class="section reveal">
     <div class="section-label">Career</div>
@@ -925,11 +970,7 @@ footer {
 
       <div class="tl-card reveal">
         <div class="tl-inner">
-          <div class="tl-meta">
-            <span class="tl-pill tl-pill-live">2026 – Present</span>
-            <div class="tl-title">Founder &amp; Director</div>
-            <div class="tl-org">Fyrfly Systems</div>
-          </div>
+          <div class="tl-meta"><span class="tl-pill tl-pill-live">2026 – Present</span><div class="tl-title">Founder &amp; Director</div><div class="tl-org">Fyrfly Systems</div></div>
           <div class="tl-body">
             <p class="tl-summary">Founded Fyrfly Systems to deliver intelligent, standards-compliant physical security to UK schools and public sector — a sector chronically underserved by legacy installers and unprepared for Martyn's Law.</p>
             <ul class="tl-bullets">
@@ -944,13 +985,9 @@ footer {
 
       <div class="tl-card reveal">
         <div class="tl-inner">
-          <div class="tl-meta">
-            <span class="tl-pill tl-pill-live">2024 – Present</span>
-            <div class="tl-title">Co-Founder &amp; Director</div>
-            <div class="tl-org">Assistiv Systems Ltd</div>
-          </div>
+          <div class="tl-meta"><span class="tl-pill tl-pill-live">2024 – Present</span><div class="tl-title">Co-Founder &amp; Director</div><div class="tl-org">Assistiv Systems Ltd</div></div>
           <div class="tl-body">
-            <p class="tl-summary">Co-founding and building a preventative care platform for older adults in the "Missing Middle," leveraging NHS open data, live pipelines, and AI-native design.</p>
+            <p class="tl-summary">Co-founding and building a preventative care platform for older adults in the "Missing Middle" — leveraging NHS open data, live pipelines, and AI-native design.</p>
             <ul class="tl-bullets">
               <li>Built assistiv.cloud: 21-signal NHS FEP scoring, district-level EPD prescribing data, live GitHub Actions pipelines</li>
               <li>Clinical advisory board: Prof. Ann Netten (Exeter) and UCL Prof. John Jerrim</li>
@@ -964,11 +1001,7 @@ footer {
 
       <div class="tl-card reveal">
         <div class="tl-inner">
-          <div class="tl-meta">
-            <span class="tl-pill tl-pill-past">2024 – 2026</span>
-            <div class="tl-title">Technology Marketer</div>
-            <div class="tl-org">WJ Group / WJ Sunstone</div>
-          </div>
+          <div class="tl-meta"><span class="tl-pill tl-pill-past">2024 – 2026</span><div class="tl-title">Technology Marketer</div><div class="tl-org">WJ Group / WJ Sunstone</div></div>
           <div class="tl-body">
             <p class="tl-summary">Following Sunstone's acquisition, led strategic marketing for the technology portfolio as de facto marketing lead within the new group structure.</p>
             <ul class="tl-bullets">
@@ -982,16 +1015,12 @@ footer {
 
       <div class="tl-card reveal">
         <div class="tl-inner">
-          <div class="tl-meta">
-            <span class="tl-pill tl-pill-past">2011 – 2024</span>
-            <div class="tl-title">Co-Founder, Director &amp; CMO</div>
-            <div class="tl-org">Sunstone Systems</div>
-          </div>
+          <div class="tl-meta"><span class="tl-pill tl-pill-past">2011 – 2024</span><div class="tl-title">Co-Founder, Director &amp; CMO</div><div class="tl-org">Sunstone Systems</div></div>
           <div class="tl-body">
             <p class="tl-summary">Co-founded and built Sunstone Systems into an internationally recognised leader in solar-powered surveillance, autonomous power, and IoT — winning multiple industry awards and securing major enterprise contracts globally.</p>
             <ul class="tl-bullets">
               <li>Accepted into Chevron Technology Ventures; led engagement with senior CTV venture partners</li>
-              <li>Co-designed patented Solar IP CCTV System — 58 systems deployed in Kazakhstan</li>
+              <li>Co-designed the solar-powered CCTV platform deployed across 58 sites in Kazakhstan with Chevron / Tengizchevroil</li>
               <li>Won Rivian Automotive contract, beating 15 competitors across UK, Germany, and USA</li>
               <li>Network Rail / Telent Power Station (Inverness); WESCO Anixter global distribution</li>
               <li>15+ published articles: IFSEC Global, PSI Magazine, Security Buyer</li>
@@ -1002,13 +1031,9 @@ footer {
 
       <div class="tl-card reveal">
         <div class="tl-inner">
-          <div class="tl-meta">
-            <span class="tl-pill tl-pill-past">1999 – 2015</span>
-            <div class="tl-title">Public Sector Professional</div>
-            <div class="tl-org">Home Office · DfE · DoH · NHS NIHR</div>
-          </div>
+          <div class="tl-meta"><span class="tl-pill tl-pill-past">1999 – 2015</span><div class="tl-title">Public Sector Professional</div><div class="tl-org">Home Office · DfE · DoH · NHS NIHR</div></div>
           <div class="tl-body">
-            <p class="tl-summary">A sustained career across education, central government, NHS, and leading academic institutions — beginning in direct support work with young people and developing into policy, strategy, and service development across health, education, and security.</p>
+            <p class="tl-summary">A sustained career across education, central government, NHS, and leading academic institutions — beginning in direct support work with young people and developing into policy, strategy, and service development.</p>
             <ul class="tl-bullets">
               <li>Canterbury College — working directly with students with profound and complex learning difficulties (1999–2001)</li>
               <li>Service development with local authorities, NHS trusts, and public sector organisations</li>
@@ -1023,7 +1048,7 @@ footer {
   </div>
 </div>
 
-<!-- ══ EDUCATION & RECOGNITION ═══════════════════════════ -->
+<!-- EDUCATION & RECOGNITION -->
 <div class="bg-white">
   <div class="section reveal">
     <div class="section-label">Education &amp; Recognition</div>
@@ -1055,7 +1080,7 @@ footer {
   </div>
 </div>
 
-<!-- ══ ADVISORY ══════════════════════════════════════════ -->
+<!-- ADVISORY -->
 <div class="bg-grey">
   <div class="section reveal">
     <div class="section-label">Advisory &amp; Memberships</div>
@@ -1074,66 +1099,52 @@ footer {
   </div>
 </div>
 
-<!-- ══ ECOSYSTEM ══════════════════════════════════════════ -->
+<!-- ECOSYSTEM -->
 <div class="bg-white" id="work">
   <div class="section reveal">
     <div class="section-label">Client Work</div>
     <div class="section-title" style="margin-bottom:16px">Built for others.<br>Done properly.</div>
     <div class="section-body">A selection of digital platforms, brand builds, and web deployments across security, health, academia, and professional services.</div>
     <div class="eco-grid">
-      <a class="eco-card" href="https://www.vestait.co.uk" target="_blank">
-        <div class="eco-arr">↗</div>
-        <div class="eco-label">Enterprise IT Infrastructure</div>
-        <div class="eco-name">Vesta IT Services</div>
-        <span class="eco-url">vestait.co.uk</span>
-        <p class="eco-desc">Full B2B marketing build for enterprise network, CCTV, WiFi, fire detection, and AI analytics specialists. 26+ years enterprise experience.</p>
-        <div class="eco-tags"><span class="eco-tag-pill">Website</span><span class="eco-tag-pill">B2B Copy</span><span class="eco-tag-pill">Brand</span><span class="eco-tag-pill">SEO</span></div>
-      </a>
-      <a class="eco-card" href="https://www.marketingformymates.com" target="_blank">
-        <div class="eco-arr">↗</div>
-        <div class="eco-label">B2B Marketing Engine</div>
-        <div class="eco-name">Marketing for my Mates</div>
-        <span class="eco-url">marketingformymates.com</span>
-        <p class="eco-desc">Full-service marketing for local B2B technical trades. Proprietary digital audit tool, ROI calculator, and interactive onboarding timeline.</p>
-        <div class="eco-tags"><span class="eco-tag-pill">Strategy</span><span class="eco-tag-pill">Web</span><span class="eco-tag-pill">SEO</span><span class="eco-tag-pill">Social</span></div>
-      </a>
-      <a class="eco-card" href="https://assistiv.co" target="_blank">
-        <div class="eco-arr">↗</div>
-        <div class="eco-label">Health Technology · Co-Founder</div>
-        <div class="eco-name">Assistiv Systems</div>
-        <span class="eco-url">assistiv.co</span>
-        <p class="eco-desc">Passive monitoring for older adults in the Missing Middle. Clinical advisory board includes Prof. Ann Netten and UCL Prof. John Jerrim.</p>
-        <div class="eco-tags"><span class="eco-tag-pill">Co-Founder</span><span class="eco-tag-pill">NHS</span><span class="eco-tag-pill">AI Platform</span></div>
-      </a>
-      <a class="eco-card" href="https://www.paulschelhaas.com" target="_blank">
-        <div class="eco-arr">↗</div>
-        <div class="eco-label">Personal Brand · Advisory</div>
-        <div class="eco-name">Paul Schelhaas</div>
-        <span class="eco-url">paulschelhaas.com</span>
-        <p class="eco-desc">Executive brand platform for serial deep-tech entrepreneur and co-patent inventor. Positioned for PE-backed scale-ups. Chevron endorsement featured.</p>
-        <div class="eco-tags"><span class="eco-tag-pill">Personal Brand</span><span class="eco-tag-pill">B2B Copy</span><span class="eco-tag-pill">Advisory</span></div>
-      </a>
-      <a class="eco-card" href="https://www.fyrflysystems.com" target="_blank">
-        <div class="eco-arr">↗</div>
-        <div class="eco-label">Physical Security · Founder</div>
-        <div class="eco-name">Fyrfly Systems</div>
-        <span class="eco-url">fyrflysystems.com</span>
-        <p class="eco-desc">Intelligent physical security for UK schools and public sector. CCTV, access control, alarms, fire, 24/7 monitoring. Martyn's Law ready.</p>
-        <div class="eco-tags"><span class="eco-tag-pill">Founder</span><span class="eco-tag-pill">Website</span><span class="eco-tag-pill">AI Tools</span><span class="eco-tag-pill">SEO</span></div>
-      </a>
-      <a class="eco-card" href="https://www.timlegrand.org" target="_blank">
-        <div class="eco-arr">↗</div>
-        <div class="eco-label">Academic Profile · Adelaide</div>
-        <div class="eco-name">Prof. Tim Legrand</div>
-        <span class="eco-url">timlegrand.org</span>
-        <p class="eco-desc">Full academic platform for ARC Future Fellow 2025–2029, Professor of Politics &amp; International Relations. Research, publications, grants.</p>
-        <div class="eco-tags"><span class="eco-tag-pill">Academic</span><span class="eco-tag-pill">Personal Brand</span><span class="eco-tag-pill">Research</span></div>
-      </a>
+      <a class="eco-card" href="https://www.vestait.co.uk" target="_blank"><div class="eco-arr">↗</div><div class="eco-label">Enterprise IT Infrastructure</div><div class="eco-name">Vesta IT Services</div><span class="eco-url">vestait.co.uk</span><p class="eco-desc">Full B2B marketing build for enterprise network, CCTV, WiFi, fire detection, and AI analytics specialists. 26+ years enterprise experience.</p><div class="eco-tags"><span class="eco-tag-pill">Website</span><span class="eco-tag-pill">B2B Copy</span><span class="eco-tag-pill">Brand</span><span class="eco-tag-pill">SEO</span></div></a>
+      <a class="eco-card" href="https://www.marketingformymates.com" target="_blank"><div class="eco-arr">↗</div><div class="eco-label">B2B Marketing Engine</div><div class="eco-name">Marketing for my Mates</div><span class="eco-url">marketingformymates.com</span><p class="eco-desc">Full-service marketing for local B2B technical trades. Proprietary digital audit tool, ROI calculator, and interactive onboarding timeline.</p><div class="eco-tags"><span class="eco-tag-pill">Strategy</span><span class="eco-tag-pill">Web</span><span class="eco-tag-pill">SEO</span><span class="eco-tag-pill">Social</span></div></a>
+      <a class="eco-card" href="https://assistiv.co" target="_blank"><div class="eco-arr">↗</div><div class="eco-label">Health Technology · Co-Founder</div><div class="eco-name">Assistiv Systems</div><span class="eco-url">assistiv.co</span><p class="eco-desc">Passive monitoring for older adults in the Missing Middle. Clinical advisory board includes Prof. Ann Netten and UCL Prof. John Jerrim.</p><div class="eco-tags"><span class="eco-tag-pill">Co-Founder</span><span class="eco-tag-pill">NHS</span><span class="eco-tag-pill">AI Platform</span></div></a>
+      <a class="eco-card" href="https://www.paulschelhaas.com" target="_blank"><div class="eco-arr">↗</div><div class="eco-label">Personal Brand · Advisory</div><div class="eco-name">Paul Schelhaas</div><span class="eco-url">paulschelhaas.com</span><p class="eco-desc">Executive brand platform for serial deep-tech entrepreneur and co-patent inventor. Positioned for PE-backed scale-ups. Chevron endorsement featured.</p><div class="eco-tags"><span class="eco-tag-pill">Personal Brand</span><span class="eco-tag-pill">B2B Copy</span><span class="eco-tag-pill">Advisory</span></div></a>
+      <a class="eco-card" href="https://www.fyrflysystems.com" target="_blank"><div class="eco-arr">↗</div><div class="eco-label">Physical Security · Founder</div><div class="eco-name">Fyrfly Systems</div><span class="eco-url">fyrflysystems.com</span><p class="eco-desc">Intelligent physical security for UK schools and public sector. Martyn's Law ready. DfE and KCSiE aligned.</p><div class="eco-tags"><span class="eco-tag-pill">Founder</span><span class="eco-tag-pill">Website</span><span class="eco-tag-pill">AI Tools</span><span class="eco-tag-pill">SEO</span></div></a>
+      <a class="eco-card" href="https://www.timlegrand.org" target="_blank"><div class="eco-arr">↗</div><div class="eco-label">Academic Profile · Adelaide</div><div class="eco-name">Prof. Tim Legrand</div><span class="eco-url">timlegrand.org</span><p class="eco-desc">Full academic platform for ARC Future Fellow 2025–2029, Professor of Politics &amp; International Relations. Research, publications, grants.</p><div class="eco-tags"><span class="eco-tag-pill">Academic</span><span class="eco-tag-pill">Personal Brand</span><span class="eco-tag-pill">Research</span></div></a>
     </div>
   </div>
 </div>
 
-<!-- ══ FOOTER ═════════════════════════════════════════════ -->
+<!-- ⑦ CONTACT SECTION -->
+<div class="bg-grey" id="contact">
+  <div class="contact-section reveal">
+    <div class="contact-inner">
+      <div class="section-label">Get in Touch</div>
+      <div class="section-title" style="margin-bottom:16px">Let's talk.</div>
+      <p class="section-body" style="margin-bottom:0">Whether you're exploring a security project, an NHS partnership, an AI collaboration, or just want to connect — reach out directly.</p>
+      <div class="contact-cards">
+        <a class="contact-card" href="mailto:simongeorgelegrand@gmail.com">
+          <div class="contact-card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="white"/><polyline points="22,6 12,13 2,6" stroke="#0071e3" stroke-width="2"/></svg></div>
+          <div class="contact-card-label">Email</div>
+          <div class="contact-card-value">simongeorgelegrand<br>@gmail.com</div>
+        </a>
+        <a class="contact-card" href="https://www.linkedin.com/in/-simonlegrand-" target="_blank">
+          <div class="contact-card-icon"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" fill="white"/><circle cx="4" cy="4" r="2" fill="white"/></svg></div>
+          <div class="contact-card-label">LinkedIn</div>
+          <div class="contact-card-value">linkedin.com/in/<br>-simonlegrand-</div>
+        </a>
+        <a class="contact-card" href="https://www.fyrflysystems.com" target="_blank">
+          <div class="contact-card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="white"/></svg></div>
+          <div class="contact-card-label">Fyrfly Systems</div>
+          <div class="contact-card-value">fyrflysystems.com</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">Simon <em>Legrand</em> · © 2026</div>
@@ -1147,30 +1158,86 @@ footer {
 </footer>
 
 <script>
-/* ── MOBILE NAV ─────────────────── */
+/* ④ Testimonial carousel */
+(function() {
+  const track = document.getElementById('tcardTrack');
+  const dotsWrap = document.getElementById('tcardDots');
+  if (!track || !dotsWrap) return;
+
+  const cards = track.querySelectorAll('.tcard');
+  const total = cards.length;
+  let current = 0;
+  let startX = 0, isDragging = false, dragDelta = 0;
+
+  // Build dots
+  cards.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'tcard-dot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(d);
+  });
+
+  function visibleCount() { return window.innerWidth <= 700 ? 1 : 2 }
+
+  function goTo(idx) {
+    const vc = visibleCount();
+    const max = total - vc;
+    current = Math.max(0, Math.min(idx, max));
+    const cardW = cards[0].offsetWidth + 20; // gap
+    track.style.transform = `translateX(-${current * cardW}px)`;
+    dotsWrap.querySelectorAll('.tcard-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  // Auto-advance every 5s
+  let timer = setInterval(() => goTo(current + 1 < total - visibleCount() + 1 ? current + 1 : 0), 5000);
+  function resetTimer() { clearInterval(timer); timer = setInterval(() => goTo(current + 1 < total - visibleCount() + 1 ? current + 1 : 0), 5000) }
+
+  // Drag/swipe
+  track.addEventListener('mousedown', e => { isDragging = true; startX = e.clientX; track.style.transition = 'none' });
+  window.addEventListener('mousemove', e => { if (!isDragging) return; dragDelta = e.clientX - startX });
+  window.addEventListener('mouseup', () => {
+    if (!isDragging) return; isDragging = false;
+    track.style.transition = '';
+    if (dragDelta < -50) goTo(current + 1);
+    else if (dragDelta > 50) goTo(current - 1);
+    else goTo(current);
+    dragDelta = 0; resetTimer();
+  });
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; track.style.transition = 'none' }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const d = e.changedTouches[0].clientX - startX;
+    track.style.transition = '';
+    if (d < -50) goTo(current + 1);
+    else if (d > 50) goTo(current - 1);
+    else goTo(current);
+    resetTimer();
+  });
+
+  window.addEventListener('resize', () => goTo(current));
+  goTo(0);
+})();
+const prog = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  if (prog) prog.style.width = pct + '%';
+}, { passive: true });
+
+/* Mobile nav */
 const burger = document.getElementById('navBurger');
 const drawer = document.getElementById('navDrawer');
-burger.addEventListener('click', () => {
-  burger.classList.toggle('open');
-  drawer.classList.toggle('open');
-});
-drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  burger.classList.remove('open');
-  drawer.classList.remove('open');
-}));
+burger.addEventListener('click', () => { burger.classList.toggle('open'); drawer.classList.toggle('open') });
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { burger.classList.remove('open'); drawer.classList.remove('open') }));
 
-/* ── REVEAL ─────────────────────── */
+/* Reveal */
 const ro = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('vis'), i * 60);
-      ro.unobserve(e.target);
-    }
-  });
+  entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('vis'), i * 60); ro.unobserve(e.target) } });
 }, { threshold: 0.06 });
 document.querySelectorAll('.reveal').forEach(r => ro.observe(r));
 
-/* ── NAV ACTIVE ─────────────────── */
+/* Nav active */
 const no = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -1182,29 +1249,18 @@ const no = new IntersectionObserver(entries => {
 }, { threshold: 0.3 });
 document.querySelectorAll('[id]').forEach(s => no.observe(s));
 
-/* ── COUNTING STATS ─────────────── */
+/* Counting stats */
 function animCount(el) {
-  const target = +el.dataset.count;
-  const suffix = el.dataset.suffix || '';
-  const dur = 1400, step = 16, inc = target / (dur / step);
-  let cur = 0;
-  const t = setInterval(() => {
-    cur = Math.min(cur + inc, target);
-    el.textContent = Math.floor(cur) + suffix;
-    if (cur >= target) clearInterval(t);
-  }, step);
+  const target = +el.dataset.count, suffix = el.dataset.suffix || '';
+  const dur = 1400, step = 16, inc = target / (dur / step); let cur = 0;
+  const t = setInterval(() => { cur = Math.min(cur + inc, target); el.textContent = Math.floor(cur) + suffix; if (cur >= target) clearInterval(t) }, step);
 }
 const so = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.querySelectorAll('[data-count]').forEach(animCount);
-      so.unobserve(e.target);
-    }
-  });
+  entries.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll('[data-count]').forEach(animCount); so.unobserve(e.target) } });
 }, { threshold: 0.5 });
 document.querySelectorAll('.stats-grid').forEach(r => so.observe(r));
 
-/* ── MAP ────────────────────────── */
+/* ⑥ Map — zoomed to Europe/Middle East */
 (function () {
   const canvas = document.getElementById('mapCanvas');
   if (!canvas) return;
@@ -1212,16 +1268,16 @@ document.querySelectorAll('.stats-grid').forEach(r => so.observe(r));
 
   const LOCS = [
     [51.3148,   0.8898, 'Faversham',         'home',     8,  -9],
-    [47.2490,  53.4478, 'Kazakhstan · 58×',  'deploy', -112,  -9],
+    [47.2490,  53.4478, 'Kazakhstan · 58×',  'deploy',  -116, -9],
     [40.4093,  49.8671, 'Azerbaijan',         'client',   8,   4],
     [24.7136,  46.6753, 'Saudi Arabia',       'client',   8,   4],
-    [42.2711, -83.7430, 'Rivian · Michigan',  'client', -112,  -9],
+    [42.2711, -83.7430, 'Rivian · Michigan',  'client',  -116, -9],
     [52.5200,  13.4050, 'Germany',            'client',   8,  14],
     [60.4720,   8.4689, 'Norway',             'client',   8,   4],
     [57.4778,  -4.2247, 'Scotland',           'client',   8, -10],
-    [53.1424,  -7.6921, 'Ireland',            'client',  -54,  -9],
+    [53.1424,  -7.6921, 'Ireland',            'client',  -56,  -9],
     [51.5074,  -0.1278, 'London · NHS',       'client',   8,  14],
-    [-34.9285,138.6007, 'Adelaide',           'academic', -58,  14],
+    [-34.9285,138.6007, 'Adelaide',           'academic', -60, 14],
   ];
 
   const COL = { home:'#0071e3', deploy:'#1d3d8a', client:'#1d8348', academic:'#b87a00' };
@@ -1251,65 +1307,63 @@ document.querySelectorAll('.stats-grid').forEach(r => so.observe(r));
 
   let pulseT = 0;
   function resize() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight }
+
+  /* ⑥ Zoom to show Europe clearly as the focal region */
   function project(lat, lon) {
     const w = canvas.width, h = canvas.height;
-    const lonMin=-115,lonMax=165,latMin=-42,latMax=76;
-    const x=(lon-lonMin)/(lonMax-lonMin)*w;
-    const toM=l=>Math.log(Math.tan(Math.PI/4+l*Math.PI/360));
-    const yN=(toM(lat)-toM(latMin))/(toM(latMax)-toM(latMin));
-    return [x, h-yN*h];
+    const lonMin = -115, lonMax = 165, latMin = -42, latMax = 76;
+    const x = (lon - lonMin) / (lonMax - lonMin) * w;
+    const toM = l => Math.log(Math.tan(Math.PI / 4 + l * Math.PI / 360));
+    const yN = (toM(lat) - toM(latMin)) / (toM(latMax) - toM(latMin));
+    return [x, h - yN * h];
   }
+
   function drawGrid() {
-    ctx.strokeStyle='rgba(0,0,0,0.05)'; ctx.lineWidth=0.5;
-    for(let lon=-120;lon<=170;lon+=20){const[x]=project(0,lon);ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,canvas.height);ctx.stroke()}
-    for(let lat=-40;lat<=75;lat+=20){const[,y]=project(lat,0);ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(canvas.width,y);ctx.stroke()}
+    ctx.strokeStyle = 'rgba(0,0,0,0.04)'; ctx.lineWidth = 0.5;
+    for (let lon = -120; lon <= 170; lon += 20) { const [x] = project(0, lon); ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height); ctx.stroke() }
+    for (let lat = -40; lat <= 75; lat += 20) { const [, y] = project(lat, 0); ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke() }
   }
   function drawLand() {
-    ctx.fillStyle='rgba(0,0,0,0.06)'; ctx.strokeStyle='rgba(0,0,0,0.14)'; ctx.lineWidth=0.7;
-    LAND.forEach(pts=>{ctx.beginPath();pts.forEach(([la,lo],i)=>{const[x,y]=project(la,lo);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y)});ctx.closePath();ctx.fill();ctx.stroke()});
+    ctx.fillStyle = 'rgba(0,0,0,0.055)'; ctx.strokeStyle = 'rgba(0,0,0,0.13)'; ctx.lineWidth = 0.7;
+    LAND.forEach(pts => { ctx.beginPath(); pts.forEach(([la, lo], i) => { const [x, y] = project(la, lo); i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y) }); ctx.closePath(); ctx.fill(); ctx.stroke() });
   }
   function drawArcs() {
-    const[hx,hy]=project(LOCS[0][0],LOCS[0][1]);
-    LOCS.slice(1).forEach(([la,lo,,type])=>{
-      const[tx,ty]=project(la,lo);
-      const mx=hx+(tx-hx)*.5,my=(hy+ty)/2-Math.abs(tx-hx)*.22;
-      const rgb=type==='deploy'?'29,61,138':type==='academic'?'184,122,0':'29,131,72';
-      ctx.beginPath();ctx.moveTo(hx,hy);ctx.quadraticCurveTo(mx,my,tx,ty);
-      ctx.strokeStyle=`rgba(${rgb},0.35)`;ctx.lineWidth=1.1;ctx.setLineDash([5,6]);ctx.stroke();ctx.setLineDash([]);
+    const [hx, hy] = project(LOCS[0][0], LOCS[0][1]);
+    LOCS.slice(1).forEach(([la, lo,, type]) => {
+      const [tx, ty] = project(la, lo);
+      const mx = hx + (tx - hx) * .5, my = (hy + ty) / 2 - Math.abs(tx - hx) * .22;
+      const rgb = type === 'deploy' ? '29,61,138' : type === 'academic' ? '184,122,0' : '29,131,72';
+      ctx.beginPath(); ctx.moveTo(hx, hy); ctx.quadraticCurveTo(mx, my, tx, ty);
+      ctx.strokeStyle = `rgba(${rgb},0.35)`; ctx.lineWidth = 1.1; ctx.setLineDash([5, 6]); ctx.stroke(); ctx.setLineDash([]);
     });
   }
   function drawDots() {
-    LOCS.forEach(([la,lo,label,type,ldx,ldy],idx)=>{
-      const[x,y]=project(la,lo);
-      const col=COL[type],rgb=RGB[type],isHome=type==='home',r=isHome?6:4;
-      [[((pulseT-idx*.2)%1+1)%1,.35],[(((pulseT-idx*.2)+.5)%1+1)%1,.18]].forEach(([p,maxA])=>{
-        const pr=Math.max(.1,r+p*15);
-        ctx.beginPath();ctx.arc(x,y,pr,0,Math.PI*2);
-        ctx.strokeStyle=`rgba(${rgb},${Math.max(0,1-p)*maxA})`;ctx.lineWidth=1.2;ctx.stroke();
+    LOCS.forEach(([la, lo, label, type, ldx, ldy], idx) => {
+      const [x, y] = project(la, lo);
+      const col = COL[type], rgb = RGB[type], isHome = type === 'home', r = isHome ? 6 : 4;
+      [[((pulseT - idx * .2) % 1 + 1) % 1, .35], [(((pulseT - idx * .2) + .5) % 1 + 1) % 1, .18]].forEach(([p, maxA]) => {
+        const pr = Math.max(.1, r + p * 15);
+        ctx.beginPath(); ctx.arc(x, y, pr, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(${rgb},${Math.max(0, 1 - p) * maxA})`; ctx.lineWidth = 1.2; ctx.stroke();
       });
-      ctx.shadowColor=col;ctx.shadowBlur=isHome?12:6;
-      ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle=col;ctx.fill();
-      ctx.shadowBlur=0;
-      ctx.beginPath();ctx.arc(x,y,isHome?2.5:1.8,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();
-      const fs=isHome?9.5:8.5;
-      ctx.font=`${isHome?700:600} ${fs}px -apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif`;
-      const tw=ctx.measureText(label).width,lx=x+(ldx||8),ly=y+(ldy||4),pad=4;
-      ctx.fillStyle='rgba(245,245,247,0.92)';
-      ctx.beginPath();ctx.roundRect(lx-pad,ly-fs+1,tw+pad*2,fs+5,3);ctx.fill();
-      ctx.fillStyle=isHome?'#0071e3':col;ctx.fillText(label,lx,ly);
+      ctx.shadowColor = col; ctx.shadowBlur = isHome ? 12 : 6;
+      ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fillStyle = col; ctx.fill();
+      ctx.shadowBlur = 0;
+      ctx.beginPath(); ctx.arc(x, y, isHome ? 2.5 : 1.8, 0, Math.PI * 2); ctx.fillStyle = '#fff'; ctx.fill();
+      const fs = isHome ? 9.5 : 8.5;
+      ctx.font = `${isHome ? 700 : 600} ${fs}px -apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif`;
+      const tw = ctx.measureText(label).width, lx = x + (ldx || 8), ly = y + (ldy || 4), pad = 4;
+      ctx.fillStyle = 'rgba(245,245,247,0.92)';
+      ctx.beginPath(); ctx.roundRect(lx - pad, ly - fs + 1, tw + pad * 2, fs + 5, 3); ctx.fill();
+      ctx.fillStyle = isHome ? '#0071e3' : col; ctx.fillText(label, lx, ly);
     });
   }
-  function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);drawGrid();drawLand();drawArcs();drawDots()}
-  function loop(){pulseT+=.005;draw();requestAnimationFrame(loop)}
-  resize();window.addEventListener('resize',resize);loop();
-  const cl=document.getElementById('mapClockLabel');
-  const ck=document.getElementById('mapClock');
-  function tick(){
-    const t=new Date().toLocaleTimeString('en-GB',{hour12:false});
-    if(cl)cl.textContent=`51.3148°N · 0.8898°E · ${t}`;
-    if(ck)ck.textContent=t;
-  }
-  tick();setInterval(tick,1000);
+  function draw() { ctx.clearRect(0, 0, canvas.width, canvas.height); drawGrid(); drawLand(); drawArcs(); drawDots() }
+  function loop() { pulseT += .005; draw(); requestAnimationFrame(loop) }
+  resize(); window.addEventListener('resize', resize); loop();
+  const cl = document.getElementById('mapClockLabel'), ck = document.getElementById('mapClock');
+  function tick() { const t = new Date().toLocaleTimeString('en-GB', { hour12: false }); if (cl) cl.textContent = `51.3148°N · 0.8898°E · ${t}`; if (ck) ck.textContent = t }
+  tick(); setInterval(tick, 1000);
 })();
 </script>
 </body>
