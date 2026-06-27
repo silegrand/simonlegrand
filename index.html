@@ -59,10 +59,13 @@ nav {
 }
 .nav-logo {
   font-size: 21px; font-weight: 600; letter-spacing: -0.5px;
-  color: var(--black);
+  color: var(--black); flex-shrink: 0;
 }
 .nav-logo em { color: var(--blue); font-style: normal }
-.nav-links { display: flex; gap: 0; list-style: none }
+.nav-links {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 0; list-style: none;
+}
 .nav-links a {
   font-size: 12px; font-weight: 400; letter-spacing: 0;
   color: var(--grey-5);
@@ -73,7 +76,7 @@ nav {
 .nav-cta {
   font-size: 12px; font-weight: 400;
   color: var(--blue); letter-spacing: 0;
-  transition: opacity .2s; white-space: nowrap;
+  transition: opacity .2s; white-space: nowrap; flex-shrink: 0;
 }
 .nav-cta:hover { opacity: .7 }
 .nav-burger {
