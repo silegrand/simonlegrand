@@ -148,14 +148,6 @@ nav {
 .btn-primary:hover { background: var(--blue-h); transform: scale(1.02) }
 .btn-secondary { background: var(--grey-1); color: var(--blue) }
 .btn-secondary:hover { background: var(--grey-2); transform: scale(1.02) }
-.hero-chips { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap }
-.chip {
-  display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px;
-  background: var(--grey-1); border-radius: var(--r-btn);
-  font-size: 13px; font-weight: 500; color: var(--grey-5); transition: background .2s;
-}
-.chip:hover { background: var(--grey-2) }
-.chip svg { width: 12px; height: 12px; flex-shrink: 0; fill: var(--blue) }
 
 /* ③ Currently Building spotlight */
 .building-band {
@@ -596,20 +588,13 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
     </div>
     <h1 class="hero-name">Simon Legrand</h1>
     <p class="hero-sub">
-      Technology co-founder and <strong>MCIM Chartered Marketer</strong> with 25+ years building at the intersection of sensor systems, IoT infrastructure, and public sector transformation.
+      I build technology platforms that outlast the organisations that fund them — from <strong>solar surveillance across Kazakhstan</strong> with Chevron, to <strong>NHS preventative care</strong> for two million overlooked older adults.
     </p>
     <div class="hero-btns">
       <a class="btn btn-primary" href="#contact">Get in Touch</a>
       <a class="btn btn-secondary" href="https://www.linkedin.com/in/-simonlegrand-" target="_blank">LinkedIn ↗</a>
     </div>
-    <div class="hero-chips">
-      <span class="chip"><svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg> MCIM · 2025</span>
-      <span class="chip"><svg viewBox="0 0 24 24"><path d="M6 2h12l4 4v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h2zm6 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg> 3 Granted Patents</span>
-      <span class="chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" fill="none" stroke="currentColor" stroke-width="2"/></svg> 300+ Systems · Delivered</span>
-      <span class="chip"><svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg> IFSEC Global Top 50</span>
-      <span class="chip"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg> Anthropic Startups</span>
-      <span class="chip"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> IBM Cyber Security Lead</span>
-    </div>
+
   </div>
 </div>
 
@@ -627,23 +612,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
   </div>
 </div>
 
-<!-- ③ CURRENTLY BUILDING -->
-<div class="building-band reveal">
-  <div class="building-inner">
-    <div class="building-cell bc-fy">
-      <div class="building-cell-orb"></div>
-      <div class="building-label"><span class="building-pulse"></span>Currently building</div>
-      <p class="building-text"><strong>Fyrfly Systems</strong> — Launching intelligent physical security for UK schools and public sector. Martyn's Law compliance tooling live. First installations underway.</p>
-      <div class="building-date">2026 · Faversham, Kent</div>
-    </div>
-    <div class="building-cell bc-as">
-      <div class="building-cell-orb"></div>
-      <div class="building-label"><span class="building-pulse"></span>Currently building</div>
-      <p class="building-text"><strong>Assistiv Systems</strong> — NHS commissioner outreach active. assistiv.tools ASCOT rebuild in progress. ICB engagement pipeline open. Anthropic Startups programme active.</p>
-      <div class="building-date">2026 · Assistiv.co</div>
-    </div>
-  </div>
-</div>
+
 
 <!-- MAP -->
 <div class="bg-grey" style="padding: 64px 0">
@@ -689,7 +658,8 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
     <div class="section-title" style="margin-bottom:40px">Built for complexity.<br>Fluent across disciplines.</div>
     <div class="profile-card">
       <div class="profile-body">
-        <p>Senior technology leader with <strong>25+ years</strong> spanning UK public sector health and social care, technology co-founding, IP development, and AI-native product design. Co-founded <strong>Sunstone Systems</strong> from scratch into a globally recognised, award-winning platform — earning enterprise contracts with <strong>Chevron, Rivian Automotive,</strong> and <strong>Network Rail</strong>, and acceptance into Chevron Technology Ventures. Listed inventor on three granted patents covering solar CCTV, autonomous power, and drone charging. Now operating two active ventures: <strong>Fyrfly Systems</strong>, delivering intelligent physical security to UK schools, and <strong>Assistiv Systems</strong>, a preventative care platform for the UK's ageing population. Deep expertise in agentic AI and the convergence of LLM reasoning with physical sensor networks.</p>
+        <p>I started in front-line public sector work — supporting young people, shaping health policy, securing £9m in government funding — then co-founded <strong>Sunstone Systems</strong> and spent thirteen years turning sensor hardware and solar infrastructure into a globally recognised platform. Two patents became three. Chevron and Rivian became clients. The platform became a framework for thinking about how physical systems and software compound over time.</p>
+        <p style="margin-top:24px">Now I apply that same compounding logic to two problems worth solving: <strong>Assistiv Systems</strong>, a preventative care platform for the UK's two million older adults who fall between independence and formal care eligibility; and <strong>Fyrfly Systems</strong>, bringing Martyn's Law-ready intelligent security to schools and public sector buildings that legacy installers have chronically underserved.</p>
       </div>
       <div class="profile-side">
         <div>
@@ -1125,10 +1095,10 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
       <div class="section-title" style="margin-bottom:16px">Let's talk.</div>
       <p class="section-body" style="margin-bottom:0">NHS commissioners and health innovators interested in Assistiv, or schools and public sector organisations exploring Martyn's Law compliance — reach out directly.</p>
       <div class="contact-cards">
-        <a class="contact-card" href="mailto:simongeorgelegrand@gmail.com">
+        <a class="contact-card" href="mailto:hello@simonlegrand.co.uk">
           <div class="contact-card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="white"/><polyline points="22,6 12,13 2,6" stroke="#0071e3" stroke-width="2"/></svg></div>
           <div class="contact-card-label">Email</div>
-          <div class="contact-card-value">simongeorgelegrand<br>@gmail.com</div>
+          <div class="contact-card-value">hello@simonlegrand.co.uk</div>
         </a>
         <a class="contact-card" href="https://www.linkedin.com/in/-simonlegrand-" target="_blank">
           <div class="contact-card-icon"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" fill="white"/><circle cx="4" cy="4" r="2" fill="white"/></svg></div>
@@ -1149,10 +1119,10 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">Simon <em>Legrand</em> · © 2026</div>
-    <div class="footer-credit">Built by <a href="https://www.marketingformymates.com" target="_blank">marketingformymates.com</a></div>
+    <div class="footer-credit">Faversham, Kent · UK</div>
     <ul class="footer-links">
       <li><a href="#hero">Top</a></li>
-      <li><a href="mailto:simongeorgelegrand@gmail.com">Email</a></li>
+      <li><a href="mailto:hello@simonlegrand.co.uk">Email</a></li>
       <li><a href="https://www.linkedin.com/in/-simonlegrand-" target="_blank">LinkedIn</a></li>
     </ul>
   </div>
