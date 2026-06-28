@@ -42,8 +42,9 @@
   --grey-4:  #86868b;
   --grey-5:  #6e6e73;
   --black:   #1d1d1f;
-  --blue:    #0071e3;
-  --blue-h:  #0077ed;
+  --blue:    #5b7cf7;
+  --blue-h:  #4a6cf5;
+  --blue-glow: rgba(91,124,247,0.22);
   --green:   #1d8348;
   --r-card:  18px;
   --r-btn:   980px;
@@ -360,7 +361,7 @@ nav {
 .vb-as .vb-btn:hover { background: #166a3a; transform: scale(1.02) }
 
 .vb-card {
-  border-radius: var(--r-card); overflow: hidden;
+  border-radius: var(--r-card); overflow: visible;
   min-height: 420px; position: relative;
   display: flex; flex-direction: column; justify-content: flex-end;
   box-shadow: var(--shadow-l);
@@ -372,7 +373,7 @@ nav {
 .vb-card-orb { position: absolute; width: 280px; height: 280px; border-radius: 50%; top: -80px; right: -80px; filter: blur(60px); pointer-events: none }
 .vb-fy .vb-card-orb { background: rgba(110,159,255,0.18) }
 .vb-as .vb-card-orb { background: rgba(76,216,145,0.14) }
-.vb-card-inner { padding: 36px; position: relative; z-index: 2 }
+.vb-card-inner { padding: 36px; position: relative; z-index: 2; border-radius: var(--r-card); overflow: hidden }
 .vb-card-metrics { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px; margin-top: 20px }
 .vb-metric { text-align: center; border-right: 1px solid rgba(255,255,255,.08) }
 .vb-metric:last-child { border-right: none }
@@ -399,7 +400,7 @@ nav {
 .patents-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px }
 .patent-card { background: var(--white); border-radius: var(--r-card); padding: 32px 28px; box-shadow: var(--shadow); transition: transform .3s, box-shadow .3s; display: flex; flex-direction: column; gap: 12px }
 .patent-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-l) }
-.patent-icon { width: 50px; height: 50px; border-radius: 12px; background: linear-gradient(135deg, var(--blue), #34aadc); display: flex; align-items: center; justify-content: center; margin-bottom: 4px }
+.patent-icon { width: 50px; height: 50px; border-radius: 12px; background: linear-gradient(135deg, var(--blue), #a5b8fc); display: flex; align-items: center; justify-content: center; margin-bottom: 4px }
 .patent-icon svg { width: 22px; height: 22px; fill: #fff }
 .patent-id { font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--blue) }
 .patent-name { font-size: 20px; font-weight: 700; letter-spacing: -.02em; color: var(--black); line-height: 1.2 }
@@ -546,6 +547,167 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
   .reveal { opacity: 1; transform: none }
   .map-live-pip, .building-pulse { animation: none }
 }
+
+/* ═══════════════════════════════════
+   HERO STAGGERED ENTRANCE
+═══════════════════════════════════ */
+.hero-stagger {
+  opacity: 0;
+  transform: translateY(28px);
+  animation: heroRise 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.hero-s1 { animation-delay: 0.05s }
+.hero-s2 { animation-delay: 0.18s }
+.hero-s3 { animation-delay: 0.30s }
+.hero-s4 { animation-delay: 0.46s }
+.hero-s5 { animation-delay: 0.60s }
+
+@keyframes heroRise {
+  to { opacity: 1; transform: translateY(0) }
+}
+
+/* Photo gets a subtle scale-in on top of the rise */
+.hero-photo-wrap.hero-stagger {
+  transform: translateY(20px) scale(0.92);
+  animation: heroPhoto 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.18s;
+}
+@keyframes heroPhoto {
+  to { opacity: 1; transform: translateY(0) scale(1) }
+}
+
+/* Name gets a letter-spacing collapse for drama */
+.hero-name.hero-stagger {
+  letter-spacing: 0.02em;
+  animation: heroName 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.30s;
+}
+@keyframes heroName {
+  to { opacity: 1; transform: translateY(0); letter-spacing: -0.035em }
+}
+
+/* ═══════════════════════════════════
+   STAT CELLS STAGGER
+═══════════════════════════════════ */
+.stat-stagger {
+  opacity: 0;
+  transform: translateY(16px) scale(0.97);
+  transition: none;
+}
+.stats-grid.vis .stat-stagger {
+  animation: statPop 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.stats-grid.vis .stat-s1 { animation-delay: 0.00s }
+.stats-grid.vis .stat-s2 { animation-delay: 0.07s }
+.stats-grid.vis .stat-s3 { animation-delay: 0.14s }
+.stats-grid.vis .stat-s4 { animation-delay: 0.21s }
+.stats-grid.vis .stat-s5 { animation-delay: 0.28s }
+@keyframes statPop {
+  to { opacity: 1; transform: translateY(0) scale(1) }
+}
+
+/* Stat numbers get a colour wash on enter */
+.stats-grid.vis .stat-n {
+  animation: statGlow 1.2s ease forwards;
+  animation-delay: 0.4s;
+}
+@keyframes statGlow {
+  0%   { color: var(--black) }
+  40%  { color: var(--blue) }
+  100% { color: var(--black) }
+}
+
+/* ═══════════════════════════════════
+   VENTURE CARD ORB GLOW ON HOVER
+═══════════════════════════════════ */
+.vb-card {
+  isolation: isolate;
+}
+.vb-card-orb {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity   0.6s ease,
+              filter    0.6s ease;
+}
+.vb-card:hover .vb-card-orb {
+  transform: scale(1.5) translate(-10%, 10%);
+  opacity: 0.75;
+  filter: blur(45px);
+}
+/* Secondary orb — appears on hover at bottom-left for depth */
+.vb-card::after {
+  content: '';
+  position: absolute;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  bottom: -60px; left: -60px;
+  pointer-events: none;
+  opacity: 0;
+  filter: blur(50px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 0;
+}
+.vb-fy .vb-card::after { background: rgba(91,124,247,0.2) }
+.vb-as .vb-card::after { background: rgba(76,216,145,0.15) }
+.vb-card:hover::after {
+  opacity: 1;
+  transform: scale(1.3) translate(8%, -8%);
+}
+
+/* Card lift gets more dramatic */
+.vb-card:hover {
+  transform: scale(1.025) translateY(-4px);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.28);
+}
+
+/* ═══════════════════════════════════
+   LOGO STRIP — hover shimmer
+═══════════════════════════════════ */
+.logo-item {
+  position: relative;
+  transition: color .3s ease, transform .3s ease;
+}
+.logo-item:hover {
+  color: rgba(255,255,255,0.85);
+  transform: translateY(-2px);
+}
+
+/* ═══════════════════════════════════
+   BUTTON GLOW — primary CTA
+═══════════════════════════════════ */
+.btn-primary {
+  box-shadow: 0 0 0 0 var(--blue-glow);
+  transition: all .25s, box-shadow .4s;
+}
+.btn-primary:hover {
+  background: var(--blue-h);
+  transform: scale(1.02) translateY(-1px);
+  box-shadow: 0 8px 30px var(--blue-glow);
+}
+
+/* ═══════════════════════════════════
+   SECTION LABEL — blue accent consistent
+═══════════════════════════════════ */
+.section-label {
+  background: linear-gradient(90deg, var(--blue), #a5b8fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+/* Override for dark backgrounds where gradient clip breaks */
+.testimonial-outer .section-label,
+.bg-black .section-label {
+  background: none;
+  -webkit-text-fill-color: #6e9fff;
+  color: #6e9fff;
+}
+
+/* ═══════════════════════════════════
+   SECTION WARM TINT (alternating white sections)
+═══════════════════════════════════ */
+.bg-warm { background: #fafaf8 }
+
 </style>
 </head>
 <body>
@@ -578,19 +740,19 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
 </div>
 
 <!-- HERO -->
-<div id="hero" class="reveal">
+<div id="hero">
   <div class="hero">
-    <div class="hero-eyebrow">MCIM · Founder · Patent Inventor</div>
+    <div class="hero-eyebrow hero-stagger hero-s1">MCIM · Founder · Patent Inventor</div>
     <!-- ① Photo — replace the initials div with an <img> once you have a photo:
          <img class="hero-photo" src="photo.jpg" alt="Simon Legrand"> -->
-    <div class="hero-photo-wrap">
+    <div class="hero-photo-wrap hero-stagger hero-s2">
       <img class="hero-photo-img" src="SL_Headshot_colour.jpg" alt="Simon Legrand">
     </div>
-    <h1 class="hero-name">Simon Legrand</h1>
-    <p class="hero-sub">
+    <h1 class="hero-name hero-stagger hero-s3">Simon Legrand</h1>
+    <p class="hero-sub hero-stagger hero-s4">
       I build technology platforms that outlast the organisations that fund them — from <strong>solar surveillance across Kazakhstan</strong> with Chevron, to <strong>NHS preventative care</strong> for two million overlooked older adults.
     </p>
-    <div class="hero-btns">
+    <div class="hero-btns hero-stagger hero-s5">
       <a class="btn btn-primary" href="#contact">Get in Touch</a>
       <a class="btn btn-secondary" href="https://www.linkedin.com/in/-simonlegrand-" target="_blank">LinkedIn ↗</a>
     </div>
@@ -641,12 +803,12 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
 <!-- STATS -->
 <div class="bg-white">
   <div class="section reveal">
-    <div class="stats-grid">
-      <div class="stat-cell"><div class="stat-n">25+</div><div class="stat-l">Years experience</div></div>
-      <div class="stat-cell"><div class="stat-n">3</div><div class="stat-l">Granted patents</div></div>
-      <div class="stat-cell"><div class="stat-n">300+</div><div class="stat-l">Systems delivered</div></div>
-      <div class="stat-cell"><div class="stat-n">£9m+</div><div class="stat-l">Public funding secured</div></div>
-      <div class="stat-cell"><div class="stat-n">14:1</div><div class="stat-l">Assistiv ROI</div></div>
+    <div class="stats-grid reveal">
+      <div class="stat-cell stat-stagger stat-s1"><div class="stat-n">25+</div><div class="stat-l">Years experience</div></div>
+      <div class="stat-cell stat-stagger stat-s2"><div class="stat-n">3</div><div class="stat-l">Granted patents</div></div>
+      <div class="stat-cell stat-stagger stat-s3"><div class="stat-n">300+</div><div class="stat-l">Systems delivered</div></div>
+      <div class="stat-cell stat-stagger stat-s4"><div class="stat-n">£9m+</div><div class="stat-l">Public funding secured</div></div>
+      <div class="stat-cell stat-stagger stat-s5"><div class="stat-n">14:1</div><div class="stat-l">Assistiv ROI</div></div>
     </div>
   </div>
 </div>
@@ -1071,7 +1233,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
 </div>
 
 <!-- ECOSYSTEM -->
-<div class="bg-white" id="work">
+<div class="bg-warm" id="work">
   <div class="section reveal">
     <div class="section-label">Client Work</div>
     <div class="section-title" style="margin-bottom:16px">Built for others.<br>Done properly.</div>
