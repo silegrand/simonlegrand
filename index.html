@@ -811,6 +811,22 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
   .sn-pub { left: 5%   }
 }
 
+
+/* ═══════════════════════════════════
+   VENTURE CARD BACKGROUND CANVAS
+═══════════════════════════════════ */
+.vb-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: var(--r-card);
+  opacity: 0.9;
+}
+
 </style>
 </head>
 <body>
@@ -966,6 +982,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
       </div>
       <div>
         <div class="vb-card vb-as">
+          <canvas class="vb-canvas" id="cvAs"></canvas>
           <div class="vb-card-orb"></div>
           <div class="vb-card-inner">
             <div class="vb-card-title">Assistiv Systems</div>
@@ -1000,6 +1017,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
       </div>
       <div>
         <div class="vb-card vb-fy">
+          <canvas class="vb-canvas" id="cvFy"></canvas>
           <div class="vb-card-orb"></div>
           <div class="vb-card-inner">
             <div class="vb-card-title">Fyrfly Systems</div>
@@ -1634,6 +1652,189 @@ document.querySelectorAll('[id]').forEach(s => no.observe(s));
   initParticles();
   window.addEventListener('resize', () => { resize(); initParticles() });
   requestAnimationFrame(draw);
+})();
+
+
+/* ── Venture card background animations ───────────────────────── */
+(function () {
+
+  /* ── ASSISTIV: slow breathing aurora ── */
+  const cvAs = document.getElementById('cvAs');
+  if (cvAs) {
+    const ctx = cvAs.getContext('2d');
+    let t = 0;
+
+    // Three slow orbs drifting in green/teal palette
+    const orbs = [
+      { x: 0.75, y: 0.20, r: 0.55, hue: 152, speed: 0.0007, amp: 0.08 },
+      { x: 0.20, y: 0.75, r: 0.45, hue: 170, speed: 0.0005, amp: 0.06 },
+      { x: 0.55, y: 0.50, r: 0.35, hue: 140, speed: 0.0009, amp: 0.05 },
+    ];
+
+    function resizeAs() {
+      cvAs.width  = cvAs.offsetWidth;
+      cvAs.height = cvAs.offsetHeight;
+    }
+
+    function drawAs() {
+      const w = cvAs.width, h = cvAs.height;
+      ctx.clearRect(0, 0, w, h);
+
+      orbs.forEach((o, i) => {
+        const drift = Math.sin(t * o.speed * 6000 + i * 1.9) * o.amp;
+        const pulse = 0.85 + Math.sin(t * o.speed * 4000 + i) * 0.15;
+        const cx = (o.x + drift) * w;
+        const cy = (o.y + Math.cos(t * o.speed * 5000 + i) * o.amp * 0.7) * h;
+        const radius = o.r * Math.min(w, h) * pulse;
+
+        const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius);
+        grad.addColorStop(0,   `hsla(${o.hue}, 72%, 42%, 0.22)`);
+        grad.addColorStop(0.5, `hsla(${o.hue}, 60%, 35%, 0.10)`);
+        grad.addColorStop(1,   `hsla(${o.hue}, 50%, 25%, 0)`);
+
+        ctx.beginPath();
+        ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+        ctx.fillStyle = grad;
+        ctx.fill();
+      });
+
+      // Subtle grid of tiny dots — references the data/sensor theme
+      ctx.fillStyle = 'rgba(76,216,145,0.055)';
+      const gap = 28;
+      for (let gx = gap; gx < w; gx += gap) {
+        for (let gy = gap; gy < h; gy += gap) {
+          const pulse = 0.5 + 0.5 * Math.sin(t * 0.0015 + gx * 0.04 + gy * 0.03);
+          ctx.globalAlpha = pulse * 0.35;
+          ctx.beginPath();
+          ctx.arc(gx, gy, 0.9, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+      ctx.globalAlpha = 1;
+
+      t++;
+      requestAnimationFrame(drawAs);
+    }
+
+    resizeAs();
+    window.addEventListener('resize', resizeAs);
+    requestAnimationFrame(drawAs);
+  }
+
+  /* ── FYRFLY: radar sweep ── */
+  const cvFy = document.getElementById('cvFy');
+  if (cvFy) {
+    const ctx = cvFy.getContext('2d');
+    let angle = 0;
+
+    // Blips — fixed positions that light up as sweep passes
+    const blips = [
+      { ax: 0.62, ay: 0.28, r: 1.8 },
+      { ax: 0.80, ay: 0.55, r: 1.4 },
+      { ax: 0.45, ay: 0.70, r: 1.6 },
+      { ax: 0.72, ay: 0.78, r: 1.2 },
+      { ax: 0.30, ay: 0.40, r: 1.5 },
+      { ax: 0.88, ay: 0.32, r: 1.3 },
+      { ax: 0.55, ay: 0.20, r: 1.4 },
+    ];
+    // Track how recently the sweep passed each blip
+    const blipAge = new Array(blips.length).fill(999);
+
+    function resizeFy() {
+      cvFy.width  = cvFy.offsetWidth;
+      cvFy.height = cvFy.offsetHeight;
+    }
+
+    function drawFy() {
+      const w = cvFy.width, h = cvFy.height;
+      // Origin: upper-right quadrant — feels like a security monitoring station
+      const ox = w * 0.82, oy = h * 0.22;
+      const maxR = Math.sqrt(w * w + h * h) * 0.85;
+
+      ctx.clearRect(0, 0, w, h);
+
+      // Concentric range rings
+      [0.28, 0.52, 0.76, 1.0].forEach(frac => {
+        const rr = maxR * frac;
+        ctx.beginPath();
+        ctx.arc(ox, oy, rr, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(91,124,247,${0.07 * (1 - frac * 0.5)})`;
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+      });
+
+      // Crosshair lines through origin
+      ctx.strokeStyle = 'rgba(91,124,247,0.05)';
+      ctx.lineWidth = 0.6;
+      ctx.beginPath(); ctx.moveTo(ox - maxR, oy); ctx.lineTo(ox + maxR, oy); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(ox, oy - maxR); ctx.lineTo(ox, oy + maxR); ctx.stroke();
+
+      // Sweep gradient — trailing glow behind the arm
+      const sweepWidth = Math.PI * 0.42;
+      const grad = ctx.createConicalGradient
+        ? null  // not widely supported — use manual arc sector
+        : null;
+
+      // Manual sweep sector using arc + clip
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(ox, oy);
+      ctx.arc(ox, oy, maxR, angle - sweepWidth, angle, false);
+      ctx.closePath();
+      // Fill with a radial grad that fades out
+      const sweepGrad = ctx.createRadialGradient(ox, oy, 0, ox, oy, maxR);
+      sweepGrad.addColorStop(0,   'rgba(91,124,247,0.18)');
+      sweepGrad.addColorStop(0.6, 'rgba(91,124,247,0.06)');
+      sweepGrad.addColorStop(1,   'rgba(91,124,247,0)');
+      ctx.fillStyle = sweepGrad;
+      ctx.fill();
+      ctx.restore();
+
+      // Sweep arm
+      ctx.beginPath();
+      ctx.moveTo(ox, oy);
+      ctx.lineTo(ox + Math.cos(angle) * maxR, oy + Math.sin(angle) * maxR);
+      ctx.strokeStyle = 'rgba(91,124,247,0.55)';
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+
+      // Origin dot
+      ctx.beginPath();
+      ctx.arc(ox, oy, 3.5, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(91,124,247,0.8)';
+      ctx.fill();
+
+      // Blips — check if sweep arm is passing over each one
+      blips.forEach((b, i) => {
+        const bx = b.ax * w, by = b.ay * h;
+        const bAngle = Math.atan2(by - oy, bx - ox);
+        // Normalise angle diff
+        let diff = ((angle - bAngle) % (Math.PI * 2) + Math.PI * 2) % (Math.PI * 2);
+        if (diff < 0.08) blipAge[i] = 0;
+        blipAge[i]++;
+
+        const fade = Math.max(0, 1 - blipAge[i] / 90);
+        if (fade > 0) {
+          ctx.beginPath();
+          ctx.arc(bx, by, b.r + 2.5 * fade, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(91,124,247,${fade * 0.85})`;
+          ctx.shadowColor = 'rgba(91,124,247,0.9)';
+          ctx.shadowBlur = 8 * fade;
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        }
+      });
+
+      angle += 0.008;
+      if (angle > Math.PI * 2) angle -= Math.PI * 2;
+      requestAnimationFrame(drawFy);
+    }
+
+    resizeFy();
+    window.addEventListener('resize', resizeFy);
+    requestAnimationFrame(drawFy);
+  }
+
 })();
 
 </script>
