@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
 <meta name="theme-color" content="#ffffff">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Simon Legrand · Founder · MCIM · Patent Inventor</title>
@@ -31,6 +34,7 @@
 ═══════════════════════════════════ */
 :root {
   --f: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+  --f-display: 'Fraunces', Georgia, serif;
   --white:   #ffffff;
   --grey-1:  #f5f5f7;
   --grey-2:  #e8e8ed;
@@ -121,17 +125,17 @@ nav {
 
 /* ① Photo placeholder — swap src for real photo */
 .hero-photo-wrap {
-  display: flex; justify-content: center; margin-bottom: 32px;
+  display: flex; justify-content: center; margin-bottom: 36px;
 }
 .hero-photo-img {
-  width: 120px; height: 120px; border-radius: 50%;
+  width: 160px; height: 160px; border-radius: 50%;
   object-fit: cover; object-position: center top;
-  border: 3px solid var(--grey-2);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  border: 4px solid var(--white);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18), 0 0 0 1px var(--grey-2);
   display: block;
 }
 
-.hero-name { font-size: clamp(52px, 9vw, 96px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.04; color: var(--black); margin-bottom: 20px }
+.hero-name { font-size: clamp(52px, 9vw, 96px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.04; color: var(--black); margin-bottom: 20px; font-family: var(--f-display) }
 .hero-sub { font-size: clamp(19px, 2.5vw, 24px); font-weight: 400; line-height: 1.5; color: var(--grey-5); max-width: 620px; margin: 0 auto 36px }
 .hero-sub strong { color: var(--black); font-weight: 600 }
 .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 56px }
@@ -196,45 +200,34 @@ nav {
 ═══════════════════════════════════ */
 .section { padding: 80px clamp(20px,6vw,80px); max-width: 1200px; margin: 0 auto }
 .section-label { font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; text-align: center }
-.section-title { font-size: clamp(32px,4.5vw,52px); font-weight: 700; letter-spacing: -.03em; line-height: 1.06; color: var(--black); margin-bottom: 16px; text-align: center }
+.section-title { font-size: clamp(32px,4.5vw,52px); font-weight: 700; letter-spacing: -.03em; line-height: 1.06; color: var(--black); margin-bottom: 16px; text-align: center; font-family: var(--f-display) }
 .section-body { font-size: 19px; font-weight: 400; line-height: 1.6; color: var(--grey-5); max-width: 680px; margin: 0 auto 56px; text-align: center }
 .bg-grey { background: var(--grey-1) }
 .bg-white { background: var(--white) }
 .bg-black { background: var(--black) }
 
-/* ═══════════════════════════════════
-   TICKER
-═══════════════════════════════════ */
-.ticker-band { background: #000; padding: 14px 0; overflow: hidden }
-.ticker-track { display: inline-flex; white-space: nowrap; animation: marquee 55s linear infinite }
-.ticker-track:hover { animation-play-state: paused }
-@keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-.ticker-item { font-size: 12px; font-weight: 500; letter-spacing: .02em; color: rgba(255,255,255,.65); padding: 0 32px; display: inline-flex; align-items: center; gap: 8px }
-.ticker-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--blue); flex-shrink: 0 }
-.t-hi { color: #fff; font-weight: 600 }
-
 /* ② Logo strip */
 .logos-band {
-  background: var(--white); padding: 32px clamp(20px,6vw,80px);
-  border-bottom: 1px solid var(--grey-2);
+  background: var(--black); padding: 36px clamp(20px,6vw,80px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 .logos-label {
   font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
-  color: var(--grey-4); text-align: center; margin-bottom: 24px;
+  color: rgba(255,255,255,0.3); text-align: center; margin-bottom: 28px;
 }
 .logos-row {
   display: flex; align-items: center; justify-content: center;
-  gap: clamp(24px,5vw,56px); flex-wrap: wrap;
-  max-width: 1000px; margin: 0 auto;
+  gap: clamp(28px,5vw,64px); flex-wrap: wrap;
+  max-width: 1100px; margin: 0 auto;
 }
 .logo-item {
-  font-size: 14px; font-weight: 700; letter-spacing: -.01em;
-  color: var(--grey-3); transition: color .25s;
+  font-size: 15px; font-weight: 700; letter-spacing: .04em;
+  color: rgba(255,255,255,0.35); transition: color .25s;
   white-space: nowrap; user-select: none;
-  text-transform: uppercase;
+  text-transform: uppercase; cursor: default;
 }
-.logo-item:hover { color: var(--grey-4) }
-.logo-item span { display: block; font-size: 9px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--grey-3); margin-top: 2px; text-align: center }
+.logo-item:hover { color: rgba(255,255,255,0.7) }
+.logo-item span { display: block; font-size: 9px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,0.2); margin-top: 3px; text-align: center }
 
 /* ═══════════════════════════════════
    MAP
@@ -558,7 +551,6 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
   .logos-row { gap: 20px }
 }
 @media (prefers-reduced-motion: reduce) {
-  .ticker-track { animation: none }
   .reveal { opacity: 1; transform: none }
   .map-live-pip, .building-pulse { animation: none }
 }
@@ -618,39 +610,6 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
       <span class="chip"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg> Anthropic Startups</span>
       <span class="chip"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> IBM Cyber Security Lead</span>
     </div>
-  </div>
-</div>
-
-<!-- TICKER -->
-<div class="ticker-band" aria-hidden="true">
-  <div class="ticker-track">
-    <span class="ticker-item"><span class="ticker-dot"></span><span class="t-hi">MCIM</span> · Chartered Institute of Marketing · 2025</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Chevron Technology Ventures · Accepted</span>
-    <span class="ticker-item"><span class="ticker-dot"></span><span class="t-hi">Rivian Automotive</span> · Won vs 15 competitors · UK · Germany · USA</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>WESCO Anixter · Global Distribution Partnership</span>
-    <span class="ticker-item"><span class="ticker-dot"></span><span class="t-hi">3 Granted Patents</span> · Solar CCTV · Autonomous Power · Drone Charging</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>IFSEC Global Top 50 Most Influential · 2018</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>IBM Certified Cyber Security Board Lead</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>S&amp;FE Awards · Winner 2023 · 2017</span>
-    <span class="ticker-item"><span class="ticker-dot"></span><span class="t-hi">300+ Systems</span> · Delivered UK &amp; Worldwide</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Network Rail · Telent · Inverness Power Station</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Martyn's Law · Terrorism (Protection of Premises) Act 2025</span>
-    <span class="ticker-item"><span class="ticker-dot"></span><span class="t-hi">Assistiv Systems</span> · Claude for Startups · Anthropic</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>NHS Horizons AI Ambassador Network · Member</span>
-    <!-- dupe -->
-    <span class="ticker-item"><span class="ticker-dot"></span><span class="t-hi">MCIM</span> · Chartered Institute of Marketing · 2025</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Chevron Technology Ventures · Accepted</span>
-    <span class="ticker-item"><span class="ticker-dot"></span><span class="t-hi">Rivian Automotive</span> · Won vs 15 competitors · UK · Germany · USA</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>WESCO Anixter · Global Distribution Partnership</span>
-    <span class="ticker-item"><span class="ticker-dot"></span><span class="t-hi">3 Granted Patents</span> · Solar CCTV · Autonomous Power · Drone Charging</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>IFSEC Global Top 50 Most Influential · 2018</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>IBM Certified Cyber Security Board Lead</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>S&amp;FE Awards · Winner 2023 · 2017</span>
-    <span class="ticker-item"><span class="ticker-dot"></span><span class="t-hi">300+ Systems</span> · Delivered UK &amp; Worldwide</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Network Rail · Telent · Inverness Power Station</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Martyn's Law · Terrorism (Protection of Premises) Act 2025</span>
-    <span class="ticker-item"><span class="ticker-dot"></span><span class="t-hi">Assistiv Systems</span> · Claude for Startups · Anthropic</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>NHS Horizons AI Ambassador Network · Member</span>
   </div>
 </div>
 
@@ -714,11 +673,11 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
 <div class="bg-white">
   <div class="section reveal">
     <div class="stats-grid">
-      <div class="stat-cell"><div class="stat-n" data-count="25" data-suffix="+">0</div><div class="stat-l">Years experience</div></div>
-      <div class="stat-cell"><div class="stat-n" data-count="3">0</div><div class="stat-l">Granted patents</div></div>
-      <div class="stat-cell"><div class="stat-n" data-count="300" data-suffix="+">0</div><div class="stat-l">Systems delivered</div></div>
-      <div class="stat-cell"><div class="stat-n" data-count="9" data-prefix="£" data-suffix="m+">£0m+</div><div class="stat-l">Public funding secured</div></div>
-      <div class="stat-cell"><div class="stat-n" data-count="14" data-suffix=":1">0</div><div class="stat-l">Assistiv ROI</div></div>
+      <div class="stat-cell"><div class="stat-n">25+</div><div class="stat-l">Years experience</div></div>
+      <div class="stat-cell"><div class="stat-n">3</div><div class="stat-l">Granted patents</div></div>
+      <div class="stat-cell"><div class="stat-n">300+</div><div class="stat-l">Systems delivered</div></div>
+      <div class="stat-cell"><div class="stat-n">£9m+</div><div class="stat-l">Public funding secured</div></div>
+      <div class="stat-cell"><div class="stat-n">14:1</div><div class="stat-l">Assistiv ROI</div></div>
     </div>
   </div>
 </div>
@@ -757,43 +716,9 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
 <!-- ⑩ VENTURE FEATURE BANDS -->
 <div id="ventures">
 
-  <!-- Fyrfly — full width band -->
-  <div class="bg-white venture-band vb-fy reveal">
+  <!-- Assistiv — full width band, PRIMARY venture -->
+  <div class="bg-white venture-band vb-as reveal">
     <div class="venture-band-inner">
-      <div class="vb-text">
-        <div class="vb-eyebrow">Founder &amp; Director · 2026 – Present</div>
-        <div class="vb-name">Fyrfly Systems</div>
-        <a class="vb-url" href="https://www.fyrflysystems.com" target="_blank">fyrflysystems.com ↗</a>
-        <p class="vb-desc">Intelligent physical security for UK schools and public sector. CCTV, access control, intruder alarms, fire systems, and 24/7 monitoring — built on 14 years of sensor platform development and deep technical expertise across solar, IoT, and surveillance infrastructure. DfE and KCSiE aligned. Martyn's Law ready.</p>
-        <div class="vb-tags">
-          <span class="vb-tag">Physical Security</span>
-          <span class="vb-tag">Schools</span>
-          <span class="vb-tag">Martyn's Law</span>
-          <span class="vb-tag">AI Tooling</span>
-          <span class="vb-tag">24/7 Monitoring</span>
-        </div>
-        <a class="vb-btn" href="https://www.fyrflysystems.com" target="_blank">Visit Fyrfly Systems ↗</a>
-      </div>
-      <div>
-        <div class="vb-card vb-fy">
-          <div class="vb-card-orb"></div>
-          <div class="vb-card-inner">
-            <div class="vb-card-title">Fyrfly Systems</div>
-            <div class="vb-card-sub">Protecting the places that matter most — schools, campuses, and public buildings — with technology built for the Martyn's Law era.</div>
-            <div class="vb-card-metrics">
-              <div class="vb-metric"><div class="vb-metric-n">40+</div><div class="vb-metric-l">Pages built</div></div>
-              <div class="vb-metric"><div class="vb-metric-n">5</div><div class="vb-metric-l">Free AI tools</div></div>
-              <div class="vb-metric"><div class="vb-metric-n">DfE</div><div class="vb-metric-l">Aligned</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Assistiv — full width band, reversed -->
-  <div class="bg-grey venture-band vb-as reveal">
-    <div class="venture-band-inner reverse">
       <div class="vb-text">
         <div class="vb-eyebrow">Co-Founder &amp; Director · Active · Anthropic Startup</div>
         <div class="vb-name">Assistiv Systems</div>
@@ -825,6 +750,40 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
     </div>
   </div>
 
+  <!-- Fyrfly — full width band, reversed -->
+  <div class="bg-grey venture-band vb-fy reveal">
+    <div class="venture-band-inner reverse">
+      <div class="vb-text">
+        <div class="vb-eyebrow">Founder &amp; Director · 2026 – Present</div>
+        <div class="vb-name">Fyrfly Systems</div>
+        <a class="vb-url" href="https://www.fyrflysystems.com" target="_blank">fyrflysystems.com ↗</a>
+        <p class="vb-desc">Intelligent physical security for UK schools and public sector. CCTV, access control, intruder alarms, fire systems, and 24/7 monitoring — built on 14 years of sensor platform development and deep technical expertise across solar, IoT, and surveillance infrastructure. DfE and KCSiE aligned. Martyn's Law ready.</p>
+        <div class="vb-tags">
+          <span class="vb-tag">Physical Security</span>
+          <span class="vb-tag">Schools</span>
+          <span class="vb-tag">Martyn's Law</span>
+          <span class="vb-tag">AI Tooling</span>
+          <span class="vb-tag">24/7 Monitoring</span>
+        </div>
+        <a class="vb-btn" href="https://www.fyrflysystems.com" target="_blank">Visit Fyrfly Systems ↗</a>
+      </div>
+      <div>
+        <div class="vb-card vb-fy">
+          <div class="vb-card-orb"></div>
+          <div class="vb-card-inner">
+            <div class="vb-card-title">Fyrfly Systems</div>
+            <div class="vb-card-sub">Protecting the places that matter most — schools, campuses, and public buildings — with technology built for the Martyn's Law era.</div>
+            <div class="vb-card-metrics">
+              <div class="vb-metric"><div class="vb-metric-n">40+</div><div class="vb-metric-l">Pages built</div></div>
+              <div class="vb-metric"><div class="vb-metric-n">5</div><div class="vb-metric-l">Free AI tools</div></div>
+              <div class="vb-metric"><div class="vb-metric-n">DfE</div><div class="vb-metric-l">Aligned</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <!-- ④ TESTIMONIALS -->
@@ -837,23 +796,12 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
     <div class="tcard-track" id="tcardTrack">
 
       <div class="tcard">
-        <div class="tcard-quote">"Simon has shown an ability to translate complex technical solutions into clear, compelling narratives. His instinct for how to position technology, communicate value, and engage stakeholders makes him an invaluable partner on any initiative requiring both technical credibility and commercial awareness."</div>
+        <div class="tcard-quote">"Simon was the consummate professional business partner and clear SME in his field of expertise, with an ability to integrate, align, and support local company personnel on field deployments and operations. I recommend and fully endorse Simon to future business partnerships."</div>
         <div class="tcard-attr">
-          <div class="tcard-avatar">DC</div>
+          <div class="tcard-avatar">NB</div>
           <div>
-            <div class="tcard-name">Dan Coulson</div>
-            <div class="tcard-role">Engineering Manager, Environment &amp; Sustainability · Telent</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tcard">
-        <div class="tcard-quote">"Simon brings a rare combination of technical understanding and operational judgement. He consistently focuses on deployability, resilience and total cost of ownership — the factors that genuinely determine whether technology platforms succeed or fail in remote and industrial settings."</div>
-        <div class="tcard-attr">
-          <div class="tcard-avatar">NP</div>
-          <div>
-            <div class="tcard-name">Nicholas Pomeroy</div>
-            <div class="tcard-role">International Energy Executive · Wood Group · Kazakhstan</div>
+            <div class="tcard-name">Neil Barrie</div>
+            <div class="tcard-role">Security Operations · Tengizchevroil · Kazakhstan</div>
           </div>
         </div>
       </div>
@@ -870,45 +818,12 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
       </div>
 
       <div class="tcard">
-        <div class="tcard-quote">"Simon is one of those rare people who can operate across technical, operational, and marketing domains with equal strength, and he always drives momentum in the right direction. Simon would be a fantastic asset to any organisation looking to bridge technical capability, strategic communication, and customer value creation."</div>
+        <div class="tcard-quote">"Simon has shown an ability to translate complex technical solutions into clear, compelling narratives. His instinct for how to position technology, communicate value, and engage stakeholders makes him an invaluable partner on any initiative requiring both technical credibility and commercial awareness."</div>
         <div class="tcard-attr">
           <div class="tcard-avatar">DC</div>
           <div>
             <div class="tcard-name">Dan Coulson</div>
             <div class="tcard-role">Engineering Manager, Environment &amp; Sustainability · Telent</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tcard">
-        <div class="tcard-quote">"Simon was the consummate professional business partner and clear SME in his field of expertise, with an ability to integrate, align, and support local company personnel on field deployments and operations. I recommend and fully endorse Simon to future business partnerships."</div>
-        <div class="tcard-attr">
-          <div class="tcard-avatar">NB</div>
-          <div>
-            <div class="tcard-name">Neil Barrie</div>
-            <div class="tcard-role">Security Operations · Tengizchevroil · Kazakhstan</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tcard">
-        <div class="tcard-quote">"Simon has consistently demonstrated exceptional industry knowledge, technical skill, and strong leadership. He combines deep security‑operations expertise with a forward‑thinking approach to emerging technologies. Simon is a trusted expert, a collaborative partner, and a professional who elevates every organization he supports."</div>
-        <div class="tcard-attr">
-          <div class="tcard-avatar">LC</div>
-          <div>
-            <div class="tcard-name">Lee Connelly CPP, PSP, FSO</div>
-            <div class="tcard-role">Corporate Security &amp; Emergency Preparedness</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tcard">
-        <div class="tcard-quote">"A creative, innovative thinker is Simon. We designed and marketed a unique power solution using Bladon microturbines that led to the delivery of a power plant with ultra low maintenance and better performance than fuel cells."</div>
-        <div class="tcard-attr">
-          <div class="tcard-avatar">SK</div>
-          <div>
-            <div class="tcard-name">Stuart Kelly</div>
-            <div class="tcard-role">Commercial Director · Hybrid Renewable Energy Solutions</div>
           </div>
         </div>
       </div>
@@ -1208,7 +1123,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
     <div class="contact-inner">
       <div class="section-label">Get in Touch</div>
       <div class="section-title" style="margin-bottom:16px">Let's talk.</div>
-      <p class="section-body" style="margin-bottom:0">Whether you're exploring a security project, an NHS partnership, an AI collaboration, or just want to connect — reach out directly.</p>
+      <p class="section-body" style="margin-bottom:0">NHS commissioners and health innovators interested in Assistiv, or schools and public sector organisations exploring Martyn's Law compliance — reach out directly.</p>
       <div class="contact-cards">
         <a class="contact-card" href="mailto:simongeorgelegrand@gmail.com">
           <div class="contact-card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="white"/><polyline points="22,6 12,13 2,6" stroke="#0071e3" stroke-width="2"/></svg></div>
@@ -1335,18 +1250,7 @@ const no = new IntersectionObserver(entries => {
 }, { threshold: 0.3 });
 document.querySelectorAll('[id]').forEach(s => no.observe(s));
 
-/* Counting stats */
-function animCount(el) {
-  const target = +el.dataset.count, suffix = el.dataset.suffix || '', prefix = el.dataset.prefix || '';
-  const dur = 1400, step = 16, inc = target / (dur / step); let cur = 0;
-  const t = setInterval(() => { cur = Math.min(cur + inc, target); el.textContent = prefix + Math.floor(cur) + suffix; if (cur >= target) clearInterval(t) }, step);
-}
-const so = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll('[data-count]').forEach(animCount); so.unobserve(e.target) } });
-}, { threshold: 0.5 });
-document.querySelectorAll('.stats-grid').forEach(r => so.observe(r));
-
-/* ⑥ Map — zoomed to Europe/Middle East */
+/* Map clock */
 (function () {
   const canvas = document.getElementById('mapCanvas');
   if (!canvas) return;
