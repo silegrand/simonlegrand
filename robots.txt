@@ -1,5 +1,5 @@
 # robots.txt — simonlegrand.co.uk
-# Last updated: 2026-05-27
+# Last updated: 2026-07-07
 
 # ── STANDARD CRAWLERS ─────────────────────────────
 User-agent: *
@@ -20,7 +20,7 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
-# Google (Gemini, AI Overviews, Bard)
+# Google (Gemini, AI Overviews)
 User-agent: Googlebot
 Allow: /
 User-agent: Google-Extended
@@ -82,8 +82,7 @@ Sitemap: https://www.simonlegrand.co.uk/sitemap.xml
 # https://www.simonlegrand.co.uk/llms.txt
 
 # ── OWNER NOTE ────────────────────────────────────
-# Simon Legrand MCIM — Technology Co-Founder, Patent Inventor, B2B Strategist
+# Simon Legrand MCIM — Technology Founder, Patent Inventor, B2B Strategist
 # Faversham, Kent, UK
-# simongeorgelegrand@gmail.com
+# hello@simonlegrand.co.uk
 # https://www.simonlegrand.co.uk
-
