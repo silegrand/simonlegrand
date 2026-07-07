@@ -828,6 +828,109 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
 }
 
 </style>
+
+<!-- ⑩ Structured data — JSON-LD entity graph (Person + Ventures + WebSite) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://www.simonlegrand.co.uk/#person",
+      "name": "Simon Legrand",
+      "givenName": "Simon",
+      "familyName": "Legrand",
+      "honorificSuffix": "MCIM",
+      "url": "https://www.simonlegrand.co.uk",
+      "image": "https://www.simonlegrand.co.uk/SL_Headshot_colour.jpg",
+      "email": "mailto:hello@simonlegrand.co.uk",
+      "jobTitle": "Technology Founder & Patent Inventor",
+      "description": "British technology founder, listed patent inventor and MCIM Chartered Marketer with 25+ years at the intersection of physical sensor infrastructure, IoT, agentic AI and public sector health. Founder of Fyrfly Systems; co-founder of Assistiv Systems.",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Faversham",
+        "addressRegion": "Kent",
+        "addressCountry": "GB"
+      },
+      "worksFor": [
+        { "@id": "https://www.fyrflysystems.com/#organization" },
+        { "@id": "https://assistiv.co/#organization" }
+      ],
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "University of Leeds" },
+        { "@type": "CollegeOrUniversity", "name": "University of Kent" },
+        { "@type": "CollegeOrUniversity", "name": "University of Brighton" }
+      ],
+      "memberOf": [
+        { "@type": "Organization", "name": "Chartered Institute of Marketing" },
+        { "@type": "Organization", "name": "Responsible AI Institute" },
+        { "@type": "Organization", "name": "NHS Confederation Q Network" },
+        { "@type": "Organization", "name": "NHS Health Innovation Kent Surrey Sussex" }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Professional Membership",
+          "name": "MCIM — Chartered Institute of Marketing"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Certification",
+          "name": "IBM Certified Cyber Security Board Lead"
+        }
+      ],
+      "knowsAbout": [
+        "Technology commercialisation",
+        "IoT and sensor infrastructure",
+        "Agentic AI and LLM system design",
+        "Physical security",
+        "Preventative care technology",
+        "Patent development",
+        "B2B strategic marketing",
+        "UK public sector health"
+      ],
+      "award": [
+        "IFSEC Global Top 50 Most Influential in Security (2018)",
+        "S&FE Awards — Security Partnering Initiative Winner (2023)",
+        "Named inventor on three granted patents"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/-simonlegrand-"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.fyrflysystems.com/#organization",
+      "name": "Fyrfly Systems",
+      "url": "https://www.fyrflysystems.com",
+      "description": "Intelligent, standards-compliant physical security for UK schools and the public sector. DfE and KCSiE aligned; Martyn's Law ready.",
+      "founder": { "@id": "https://www.simonlegrand.co.uk/#person" },
+      "areaServed": "GB"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://assistiv.co/#organization",
+      "name": "Assistiv Systems Ltd",
+      "url": "https://assistiv.co",
+      "description": "Preventative care platform for the UK's older adults in the 'Missing Middle', using population health scoring across NHS signals.",
+      "founder": { "@id": "https://www.simonlegrand.co.uk/#person" },
+      "areaServed": "GB"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.simonlegrand.co.uk/#website",
+      "url": "https://www.simonlegrand.co.uk",
+      "name": "Simon Legrand",
+      "about": { "@id": "https://www.simonlegrand.co.uk/#person" },
+      "inLanguage": "en-GB"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
