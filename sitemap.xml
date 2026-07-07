@@ -1,66 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
     http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
   <!--
     Sitemap for https://www.simonlegrand.co.uk
-    Generated: 2026-05-27
+    Last updated: 2026-07-07
     Owner: Simon Legrand MCIM
+    Note: single-page site. Section anchors (#hero, #ventures, etc.)
+    are intentionally omitted — search engines strip URL fragments and
+    treat them as the homepage, so listing them adds no value.
   -->
 
-  <!-- PRIMARY PAGE -->
+  <!-- HOMEPAGE -->
   <url>
     <loc>https://www.simonlegrand.co.uk/</loc>
-    <lastmod>2026-05-27</lastmod>
+    <lastmod>2026-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.simonlegrand.co.uk/SL_Headshot_colour.jpg</image:loc>
+      <image:title>Simon Legrand — Founder, MCIM Chartered Marketer, Patent Inventor</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.simonlegrand.co.uk/og-image.jpg</image:loc>
+      <image:title>Simon Legrand</image:title>
+    </image:image>
   </url>
 
-  <!-- SECTION ANCHORS — for AI crawler awareness of page structure -->
+  <!-- CV (separate indexable document) -->
   <url>
-    <loc>https://www.simonlegrand.co.uk/#profile</loc>
-    <lastmod>2026-05-27</lastmod>
+    <loc>https://www.simonlegrand.co.uk/Simon_Legrand_CV.pdf</loc>
+    <lastmod>2026-07-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.6</priority>
   </url>
 
-  <url>
-    <loc>https://www.simonlegrand.co.uk/#patents</loc>
-    <lastmod>2026-05-27</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.simonlegrand.co.uk/#career</loc>
-    <lastmod>2026-05-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.simonlegrand.co.uk/#ecosystem</loc>
-    <lastmod>2026-05-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- STRUCTURED CONTEXT FILES -->
+  <!-- LLM CONTEXT FILE (optional; aids AI discoverability) -->
   <url>
     <loc>https://www.simonlegrand.co.uk/llms.txt</loc>
-    <lastmod>2026-05-27</lastmod>
+    <lastmod>2026-07-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.simonlegrand.co.uk/robots.txt</loc>
-    <lastmod>2026-05-27</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.5</priority>
   </url>
 
 </urlset>
