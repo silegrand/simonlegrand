@@ -899,7 +899,8 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
         "Named inventor on three granted patents"
       ],
       "sameAs": [
-        "https://www.linkedin.com/in/-simonlegrand-"
+        "https://www.linkedin.com/in/-simonlegrand-",
+        "https://github.com/silegrand"
       ]
     },
     {
@@ -938,7 +939,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
 <div id="progress"></div>
 
 <!-- NAV -->
-<nav>
+<nav aria-label="Primary">
   <div class="nav-logo">Simon <em>Legrand</em></div>
   <ul class="nav-links">
     <li><a href="#hero" class="active">Home</a></li>
@@ -961,14 +962,13 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
   <a href="#contact">Get in Touch</a>
 </div>
 
+<main id="main">
 <!-- HERO -->
 <div id="hero">
   <div class="hero">
     <div class="hero-eyebrow hero-stagger hero-s1">MCIM · Founder · Patent Inventor</div>
-    <!-- ① Photo — replace the initials div with an <img> once you have a photo:
-         <img class="hero-photo" src="photo.jpg" alt="Simon Legrand"> -->
     <div class="hero-photo-wrap hero-stagger hero-s2">
-      <img class="hero-photo-img" src="SL_Headshot_colour.jpg" alt="Simon Legrand">
+      <img class="hero-photo-img" src="SL_Headshot_colour.jpg" alt="Simon Legrand" width="3187" height="3187" decoding="async">
     </div>
     <h1 class="hero-name hero-stagger hero-s3">Simon Legrand</h1>
     <p class="hero-sub hero-stagger hero-s4">
@@ -976,7 +976,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
     </p>
     <div class="hero-btns hero-stagger hero-s5">
       <a class="btn btn-primary" href="#contact">Get in Touch</a>
-      <a class="btn btn-secondary" href="https://www.linkedin.com/in/-simonlegrand-" target="_blank">LinkedIn ↗</a>
+      <a class="btn btn-secondary" href="https://www.linkedin.com/in/-simonlegrand-" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
     </div>
 
   </div>
@@ -1035,7 +1035,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
 <div class="bg-grey" id="profile">
   <div class="section reveal">
     <div class="section-label">About</div>
-    <div class="section-title" style="margin-bottom:40px">Built for complexity.<br>Fluent across disciplines.</div>
+    <h2 class="section-title" style="margin-bottom:40px">Built for complexity.<br>Fluent across disciplines.</h2>
     <div class="profile-card">
       <div class="profile-body">
         <p>I started in front-line public sector work, supporting young people, shaping health policy, securing £9m in government funding, then co-founded <strong>Sunstone Systems</strong> and spent thirteen years turning sensor hardware and solar infrastructure into a globally recognised platform. Two patents became three. Chevron and Rivian became clients. The platform became a framework for thinking about how physical systems and software compound over time.</p>
@@ -1072,7 +1072,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
       <div class="vb-text">
         <div class="vb-eyebrow">Co-Founder &amp; Director · Active · Anthropic Startup</div>
         <div class="vb-name">Assistiv Systems</div>
-        <a class="vb-url" href="https://assistiv.co" target="_blank">assistiv.co ↗</a>
+        <a class="vb-url" href="https://assistiv.co" target="_blank" rel="noopener noreferrer">assistiv.co ↗</a>
         <p class="vb-desc">Preventative care platform for older adults in the UK's "Missing Middle." Population health scoring across 21 NHS signals, district-level prescribing data, live data pipelines, and a carer hotspot tool. Clinical advisory board includes ASCOT creator Prof. Ann Netten and UCL Prof. John Jerrim.</p>
         <div class="vb-tags">
           <span class="vb-tag">NHS</span>
@@ -1081,7 +1081,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
           <span class="vb-tag">Missing Middle</span>
           <span class="vb-tag">Anthropic Startup</span>
         </div>
-        <a class="vb-btn" href="https://assistiv.co" target="_blank">Visit Assistiv Systems ↗</a>
+        <a class="vb-btn" href="https://assistiv.co" target="_blank" rel="noopener noreferrer">Visit Assistiv Systems ↗</a>
       </div>
       <div>
         <div class="vb-card vb-as">
@@ -1089,7 +1089,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
           <div class="vb-card-orb"></div>
           <div class="vb-card-inner">
             <div class="vb-card-title">Assistiv Systems</div>
-            <div class="vb-card-sub">Population intelligence for the Missing Middle — the 2 million older adults who fall between independence and formal care.</div>
+            <div class="vb-card-sub">Population intelligence for the Missing Middle — the two million older adults who fall between independence and formal care.</div>
             <div class="vb-card-metrics">
               <div class="vb-metric"><div class="vb-metric-n">14:1</div><div class="vb-metric-l">ROI at pilot</div></div>
               <div class="vb-metric"><div class="vb-metric-n">21</div><div class="vb-metric-l">NHS signals</div></div>
@@ -1107,7 +1107,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
       <div class="vb-text">
         <div class="vb-eyebrow">Founder &amp; Director · 2026 – Present</div>
         <div class="vb-name">Fyrfly Systems</div>
-        <a class="vb-url" href="https://www.fyrflysystems.com" target="_blank">fyrflysystems.com ↗</a>
+        <a class="vb-url" href="https://www.fyrflysystems.com" target="_blank" rel="noopener noreferrer">fyrflysystems.com ↗</a>
         <p class="vb-desc">Intelligent physical security for UK schools and public sector. CCTV, access control, intruder alarms, fire systems, and 24/7 monitoring, built on 14 years of sensor platform development and deep technical expertise across solar, IoT, and surveillance infrastructure. DfE and KCSiE aligned. Martyn's Law ready.</p>
         <div class="vb-tags">
           <span class="vb-tag">Physical Security</span>
@@ -1116,7 +1116,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
           <span class="vb-tag">AI Tooling</span>
           <span class="vb-tag">24/7 Monitoring</span>
         </div>
-        <a class="vb-btn" href="https://www.fyrflysystems.com" target="_blank">Visit Fyrfly Systems ↗</a>
+        <a class="vb-btn" href="https://www.fyrflysystems.com" target="_blank" rel="noopener noreferrer">Visit Fyrfly Systems ↗</a>
       </div>
       <div>
         <div class="vb-card vb-fy">
@@ -1142,7 +1142,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
 <div class="testimonial-band reveal">
   <div class="testimonial-outer">
     <div class="section-label" style="margin-bottom:12px">What people say</div>
-    <div class="section-title" style="margin-bottom:48px">Trusted by industry<br>leaders worldwide.</div>
+    <h2 class="section-title" style="margin-bottom:48px">Trusted by industry<br>leaders worldwide.</h2>
 
     <div class="tcard-track-wrap">
     <div class="tcard-track" id="tcardTrack">
@@ -1191,7 +1191,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
 <div class="bg-grey">
   <div class="section reveal">
     <div class="section-label">Capabilities</div>
-    <div class="section-title" style="margin-bottom:48px">A solid combination<br>of skills.</div>
+    <h2 class="section-title" style="margin-bottom:48px">A solid combination<br>of skills.</h2>
     <div class="comp-grid">
       <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="comp-text">Technology co-founding &amp; commercialisation</div></div>
       <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div class="comp-text">Strategic marketing, brand &amp; communications</div></div>
@@ -1213,7 +1213,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
 <div class="bg-white" id="patents">
   <div class="section reveal">
     <div class="section-label">Intellectual Property</div>
-    <div class="section-title">Three granted patents.<br>Co-inventor.</div>
+    <h2 class="section-title">Three granted patents.<br>Co-inventor.</h2>
     <div class="section-body">Solar-powered surveillance, autonomous power, and drone charging, a suite of IP developed alongside Chevron Technology Ventures.</div>
     <div class="patents-grid">
       <div class="patent-card">
@@ -1245,7 +1245,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
 <div class="bg-grey" id="career">
   <div class="section reveal">
     <div class="section-label">Career</div>
-    <div class="section-title" style="margin-bottom:48px">Twenty-five years<br>of building.</div>
+    <h2 class="section-title" style="margin-bottom:48px">Twenty-five years<br>of building.</h2>
     <div class="timeline">
 
       <div class="tl-card reveal">
@@ -1269,8 +1269,8 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
           <div class="tl-body">
             <p class="tl-summary">Co-founding and building a preventative care platform for older adults in the "Missing Middle" — leveraging NHS open data, live pipelines, and AI-native design.</p>
             <ul class="tl-bullets">
-              <li>Built assistiv.cloud: 21-signal NHS FEP scoring, district-level EPD prescribing data, live GitHub Actions pipelines</li>
-              <li>Clinical advisory board: Prof. Ann Netten (Exeter) and UCL Prof. John Jerrim</li>
+              <li>Built assistiv.co: 21-signal NHS FEP scoring, district-level EPD prescribing data, live GitHub Actions pipelines</li>
+              <li>Clinical advisory board: ASCOT creator Prof. Ann Netten and UCL Prof. John Jerrim</li>
               <li>Accepted into Anthropic's Claude for Startups programme</li>
               <li>Parliamentary engagement via Sir Roger Gale MP; ICB commissioner targeting</li>
               <li>14:1 ROI demonstrated at pilot scale vs residential care comparators</li>
@@ -1342,7 +1342,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
 <div class="bg-white">
   <div class="section reveal">
     <div class="section-label">Education &amp; Recognition</div>
-    <div class="section-title" style="margin-bottom:48px">Qualified. Recognised.<br>Awarded.</div>
+    <h2 class="section-title" style="margin-bottom:48px">Qualified. Recognised.<br>Awarded.</h2>
     <div class="two-col">
       <div>
         <div class="list-title">Qualifications</div>
@@ -1379,7 +1379,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
 <div class="bg-grey">
   <div class="section reveal">
     <div class="section-label">Advisory &amp; Memberships</div>
-    <div class="section-title" style="margin-bottom:48px">Contributing to<br>the conversation.</div>
+    <h2 class="section-title" style="margin-bottom:48px">Contributing to<br>the conversation.</h2>
     <div class="advisory-grid">
       <div class="advisory-card"><span class="advisory-name">Responsible AI Institute · Member</span><span class="advisory-date">2025 –</span></div>
       <div class="advisory-card"><span class="advisory-name">PSI Magazine · Content Advisory Panel</span><span class="advisory-date">2025 –</span></div>
@@ -1397,10 +1397,10 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
 <div class="bg-grey" id="writing">
   <div class="section reveal">
     <div class="section-label">Published Work</div>
-    <div class="section-title" style="margin-bottom:16px">Thought leadership<br>in print and online.</div>
+    <h2 class="section-title" style="margin-bottom:16px">Thought leadership<br>in print and online.</h2>
     <div class="section-body">Articles published across leading security, energy, and technology publications, setting standards, shaping debate, and positioning the sector.</div>
     <div class="eco-grid">
-      <a class="eco-card" href="https://www.ifsecglobal.com/cctv-2/setting-standards-for-solar-cctv-systems-ensuring-safety-cybersecurity-and-reliability/" target="_blank">
+      <a class="eco-card" href="https://www.ifsecglobal.com/cctv-2/setting-standards-for-solar-cctv-systems-ensuring-safety-cybersecurity-and-reliability/" target="_blank" rel="noopener noreferrer">
         <div class="eco-arr">↗</div>
         <div class="eco-label">IFSEC Global</div>
         <div class="eco-name" style="font-size:16px">Setting Standards for Solar CCTV Systems</div>
@@ -1408,7 +1408,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
         <p class="eco-desc">Ensuring safety, cybersecurity, and reliability across solar-powered surveillance deployments.</p>
         <div class="eco-tags"><span class="eco-tag-pill">Solar CCTV</span><span class="eco-tag-pill">Cyber Security</span><span class="eco-tag-pill">Standards</span></div>
       </a>
-      <a class="eco-card" href="https://www.ifsecglobal.com/integrated-security/securing-the-digital-frontier-the-critical-role-of-cyber-security-in-off-grid-technologies/" target="_blank">
+      <a class="eco-card" href="https://www.ifsecglobal.com/integrated-security/securing-the-digital-frontier-the-critical-role-of-cyber-security-in-off-grid-technologies/" target="_blank" rel="noopener noreferrer">
         <div class="eco-arr">↗</div>
         <div class="eco-label">IFSEC Global</div>
         <div class="eco-name" style="font-size:16px">Securing the Digital Frontier</div>
@@ -1416,7 +1416,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
         <p class="eco-desc">The critical role of cyber security in off-grid technologies and autonomous surveillance platforms.</p>
         <div class="eco-tags"><span class="eco-tag-pill">Cyber Security</span><span class="eco-tag-pill">Off-Grid</span><span class="eco-tag-pill">IoT</span></div>
       </a>
-      <a class="eco-card" href="https://securitybuyer.com/guiding-principles-in-solar-cctv" target="_blank">
+      <a class="eco-card" href="https://securitybuyer.com/guiding-principles-in-solar-cctv" target="_blank" rel="noopener noreferrer">
         <div class="eco-arr">↗</div>
         <div class="eco-label">Security Buyer</div>
         <div class="eco-name" style="font-size:16px">Guiding Principles in Designing Solar CCTV Systems</div>
@@ -1424,7 +1424,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
         <p class="eco-desc">Unveiling the blueprint for specifying, designing, and deploying solar-powered surveillance.</p>
         <div class="eco-tags"><span class="eco-tag-pill">Solar CCTV</span><span class="eco-tag-pill">Design</span><span class="eco-tag-pill">Specification</span></div>
       </a>
-      <a class="eco-card" href="https://professionalsecurity.co.uk/news/interviews/defining-capability-of-atonomous-surveillance-and-telecommunications-platforms-in-cni" target="_blank">
+      <a class="eco-card" href="https://professionalsecurity.co.uk/news/interviews/defining-capability-of-atonomous-surveillance-and-telecommunications-platforms-in-cni" target="_blank" rel="noopener noreferrer">
         <div class="eco-arr">↗</div>
         <div class="eco-label">Professional Security Magazine</div>
         <div class="eco-name" style="font-size:16px">Autonomous Surveillance in CNI Environments</div>
@@ -1432,7 +1432,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
         <p class="eco-desc">Defining the future capability of autonomous surveillance and telecommunications platforms in critical national infrastructure.</p>
         <div class="eco-tags"><span class="eco-tag-pill">CNI</span><span class="eco-tag-pill">Autonomous</span><span class="eco-tag-pill">Telecoms</span></div>
       </a>
-      <a class="eco-card" href="https://www.border-security-report.com/beyond-borders-revolutionising-cross-border-security-with-solar-powered-surveillance" target="_blank">
+      <a class="eco-card" href="https://www.border-security-report.com/beyond-borders-revolutionising-cross-border-security-with-solar-powered-surveillance" target="_blank" rel="noopener noreferrer">
         <div class="eco-arr">↗</div>
         <div class="eco-label">Border Security Report</div>
         <div class="eco-name" style="font-size:16px">Beyond Borders</div>
@@ -1440,7 +1440,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
         <p class="eco-desc">Revolutionising cross-border security with solar-powered surveillance — international deployments and lessons learned.</p>
         <div class="eco-tags"><span class="eco-tag-pill">Border Security</span><span class="eco-tag-pill">Solar</span><span class="eco-tag-pill">International</span></div>
       </a>
-      <a class="eco-card" href="https://securityjournaluk.com/informed-choice-solar-powered-surveillance" target="_blank">
+      <a class="eco-card" href="https://securityjournaluk.com/informed-choice-solar-powered-surveillance" target="_blank" rel="noopener noreferrer">
         <div class="eco-arr">↗</div>
         <div class="eco-label">Security Journal UK</div>
         <div class="eco-name" style="font-size:16px">Informed Choices: Solar Powered Surveillance</div>
@@ -1456,15 +1456,15 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
 <div class="bg-warm" id="work">
   <div class="section reveal">
     <div class="section-label">Client Work</div>
-    <div class="section-title" style="margin-bottom:16px">Built for others.<br>Done properly.</div>
+    <h2 class="section-title" style="margin-bottom:16px">Built for others.<br>Done properly.</h2>
     <div class="section-body">A selection of digital platforms, brand builds, and web deployments across security, health, academia, and professional services.</div>
     <div class="eco-grid">
-      <a class="eco-card" href="https://www.vestait.co.uk" target="_blank"><div class="eco-arr">↗</div><div class="eco-label">Enterprise IT Infrastructure</div><div class="eco-name">Vesta IT Services</div><span class="eco-url">vestait.co.uk</span><p class="eco-desc">Full B2B marketing build for enterprise network, CCTV, WiFi, fire detection, and AI analytics specialists. 26+ years enterprise experience.</p><div class="eco-tags"><span class="eco-tag-pill">Website</span><span class="eco-tag-pill">B2B Copy</span><span class="eco-tag-pill">Brand</span><span class="eco-tag-pill">SEO</span></div></a>
-      <a class="eco-card" href="https://www.marketingformymates.com" target="_blank"><div class="eco-arr">↗</div><div class="eco-label">B2B Marketing Engine</div><div class="eco-name">Marketing for my Mates</div><span class="eco-url">marketingformymates.com</span><p class="eco-desc">Full-service marketing for local B2B technical trades. Proprietary digital audit tool, ROI calculator, and interactive onboarding timeline.</p><div class="eco-tags"><span class="eco-tag-pill">Strategy</span><span class="eco-tag-pill">Web</span><span class="eco-tag-pill">SEO</span><span class="eco-tag-pill">Social</span></div></a>
-      <a class="eco-card" href="https://assistiv.co" target="_blank"><div class="eco-arr">↗</div><div class="eco-label">Health Technology · Co-Founder</div><div class="eco-name">Assistiv Systems</div><span class="eco-url">assistiv.co</span><p class="eco-desc">Passive monitoring for older adults in the Missing Middle. Clinical advisory board includes Prof. Ann Netten and UCL Prof. John Jerrim.</p><div class="eco-tags"><span class="eco-tag-pill">Co-Founder</span><span class="eco-tag-pill">NHS</span><span class="eco-tag-pill">AI Platform</span></div></a>
-      <a class="eco-card" href="https://www.paulschelhaas.com" target="_blank"><div class="eco-arr">↗</div><div class="eco-label">Personal Brand · Advisory</div><div class="eco-name">Paul Schelhaas</div><span class="eco-url">paulschelhaas.com</span><p class="eco-desc">Executive brand platform for serial deep-tech entrepreneur and co-patent inventor. Positioned for PE-backed scale-ups. Chevron endorsement featured.</p><div class="eco-tags"><span class="eco-tag-pill">Personal Brand</span><span class="eco-tag-pill">B2B Copy</span><span class="eco-tag-pill">Advisory</span></div></a>
-      <a class="eco-card" href="https://www.fyrflysystems.com" target="_blank"><div class="eco-arr">↗</div><div class="eco-label">Physical Security · Founder</div><div class="eco-name">Fyrfly Systems</div><span class="eco-url">fyrflysystems.com</span><p class="eco-desc">Intelligent physical security for UK schools and public sector. Martyn's Law ready. DfE and KCSiE aligned.</p><div class="eco-tags"><span class="eco-tag-pill">Founder</span><span class="eco-tag-pill">Website</span><span class="eco-tag-pill">AI Tools</span><span class="eco-tag-pill">SEO</span></div></a>
-      <a class="eco-card" href="https://www.timlegrand.org" target="_blank"><div class="eco-arr">↗</div><div class="eco-label">Academic Profile · Adelaide</div><div class="eco-name">Prof. Tim Legrand</div><span class="eco-url">timlegrand.org</span><p class="eco-desc">Full academic platform for ARC Future Fellow 2025–2029, Professor of Politics &amp; International Relations. Research, publications, grants.</p><div class="eco-tags"><span class="eco-tag-pill">Academic</span><span class="eco-tag-pill">Personal Brand</span><span class="eco-tag-pill">Research</span></div></a>
+      <a class="eco-card" href="https://www.vestait.co.uk" target="_blank" rel="noopener noreferrer"><div class="eco-arr">↗</div><div class="eco-label">Enterprise IT Infrastructure</div><div class="eco-name">Vesta IT Services</div><span class="eco-url">vestait.co.uk</span><p class="eco-desc">Full B2B marketing build for enterprise network, CCTV, WiFi, fire detection, and AI analytics specialists. 26+ years enterprise experience.</p><div class="eco-tags"><span class="eco-tag-pill">Website</span><span class="eco-tag-pill">B2B Copy</span><span class="eco-tag-pill">Brand</span><span class="eco-tag-pill">SEO</span></div></a>
+      <a class="eco-card" href="https://www.marketingformymates.com" target="_blank" rel="noopener noreferrer"><div class="eco-arr">↗</div><div class="eco-label">B2B Marketing Engine</div><div class="eco-name">Marketing for my Mates</div><span class="eco-url">marketingformymates.com</span><p class="eco-desc">Full-service marketing for local B2B technical trades. Proprietary digital audit tool, ROI calculator, and interactive onboarding timeline.</p><div class="eco-tags"><span class="eco-tag-pill">Strategy</span><span class="eco-tag-pill">Web</span><span class="eco-tag-pill">SEO</span><span class="eco-tag-pill">Social</span></div></a>
+      <a class="eco-card" href="https://assistiv.co" target="_blank" rel="noopener noreferrer"><div class="eco-arr">↗</div><div class="eco-label">Health Technology · Co-Founder</div><div class="eco-name">Assistiv Systems</div><span class="eco-url">assistiv.co</span><p class="eco-desc">Passive monitoring for older adults in the Missing Middle. Clinical advisory board includes Prof. Ann Netten and UCL Prof. John Jerrim.</p><div class="eco-tags"><span class="eco-tag-pill">Co-Founder</span><span class="eco-tag-pill">NHS</span><span class="eco-tag-pill">AI Platform</span></div></a>
+      <a class="eco-card" href="https://www.paulschelhaas.com" target="_blank" rel="noopener noreferrer"><div class="eco-arr">↗</div><div class="eco-label">Personal Brand · Advisory</div><div class="eco-name">Paul Schelhaas</div><span class="eco-url">paulschelhaas.com</span><p class="eco-desc">Executive brand platform for serial deep-tech entrepreneur and co-patent inventor. Positioned for PE-backed scale-ups. Chevron endorsement featured.</p><div class="eco-tags"><span class="eco-tag-pill">Personal Brand</span><span class="eco-tag-pill">B2B Copy</span><span class="eco-tag-pill">Advisory</span></div></a>
+      <a class="eco-card" href="https://www.fyrflysystems.com" target="_blank" rel="noopener noreferrer"><div class="eco-arr">↗</div><div class="eco-label">Physical Security · Founder</div><div class="eco-name">Fyrfly Systems</div><span class="eco-url">fyrflysystems.com</span><p class="eco-desc">Intelligent physical security for UK schools and public sector. Martyn's Law ready. DfE and KCSiE aligned.</p><div class="eco-tags"><span class="eco-tag-pill">Founder</span><span class="eco-tag-pill">Website</span><span class="eco-tag-pill">AI Tools</span><span class="eco-tag-pill">SEO</span></div></a>
+      <a class="eco-card" href="https://www.timlegrand.org" target="_blank" rel="noopener noreferrer"><div class="eco-arr">↗</div><div class="eco-label">Academic Profile · Adelaide</div><div class="eco-name">Prof. Tim Legrand</div><span class="eco-url">timlegrand.org</span><p class="eco-desc">Full academic platform for ARC Future Fellow 2025–2029, Professor of Politics &amp; International Relations. Research, publications, grants.</p><div class="eco-tags"><span class="eco-tag-pill">Academic</span><span class="eco-tag-pill">Personal Brand</span><span class="eco-tag-pill">Research</span></div></a>
     </div>
   </div>
 </div>
@@ -1474,7 +1474,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
   <div class="contact-section reveal">
     <div class="contact-inner">
       <div class="section-label">Get in Touch</div>
-      <div class="section-title" style="margin-bottom:16px">Let's talk.</div>
+      <h2 class="section-title" style="margin-bottom:16px">Let's talk.</h2>
       <p class="section-body" style="margin-bottom:0">NHS commissioners and health innovators interested in Assistiv, or schools and public sector organisations exploring Martyn's Law compliance, reach out directly.</p>
       <div class="contact-cards">
         <a class="contact-card" href="mailto:hello@simonlegrand.co.uk">
@@ -1482,7 +1482,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
           <div class="contact-card-label">Email</div>
           <div class="contact-card-value">hello@simonlegrand.co.uk</div>
         </a>
-        <a class="contact-card" href="https://www.linkedin.com/in/-simonlegrand-" target="_blank">
+        <a class="contact-card" href="https://www.linkedin.com/in/-simonlegrand-" target="_blank" rel="noopener noreferrer">
           <div class="contact-card-icon"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" fill="white"/><circle cx="4" cy="4" r="2" fill="white"/></svg></div>
           <div class="contact-card-label">LinkedIn</div>
           <div class="contact-card-value">linkedin.com/in/<br>-simonlegrand-</div>
@@ -1498,6 +1498,8 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
 </div>
 
 <!-- FOOTER -->
+</main>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">Simon <em>Legrand</em> · © 2026</div>
@@ -1505,7 +1507,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
     <ul class="footer-links">
       <li><a href="#hero">Top</a></li>
       <li><a href="mailto:hello@simonlegrand.co.uk">Email</a></li>
-      <li><a href="https://www.linkedin.com/in/-simonlegrand-" target="_blank">LinkedIn</a></li>
+      <li><a href="https://www.linkedin.com/in/-simonlegrand-" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
     </ul>
   </div>
 </footer>
