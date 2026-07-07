@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Legrand;Simon;;;
+FN:Simon Legrand
+TITLE:Technology Founder & Patent Inventor
+ORG:Fyrfly Systems & Assistiv Systems
+EMAIL;TYPE=INTERNET,PREF:hello@simonlegrand.co.uk
+URL:https://www.simonlegrand.co.uk
+URL;TYPE=LinkedIn:https://www.linkedin.com/in/-simonlegrand-
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/-simonlegrand-
+ADR;TYPE=WORK:;;;Faversham;Kent;;United Kingdom
+NOTE:MCIM Chartered Marketer. Founder of Fyrfly Systems and co-founder of Assistiv Systems.
+REV:2026-07-07T00:00:00Z
+END:VCARD
