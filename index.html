@@ -390,6 +390,8 @@ nav {
 .patent-name { font-size: 20px; font-weight: 700; letter-spacing: -.02em; color: var(--black); line-height: 1.2 }
 .patent-summary { font-size: 14px; font-weight: 400; line-height: 1.65; color: var(--grey-5); flex: 1 }
 .patent-num { font-size: 12px; font-weight: 500; color: var(--grey-4); letter-spacing: .02em }
+.patent-num a { color: var(--blue); font-weight: 600; transition: color .2s }
+.patent-num a:hover { text-decoration: underline }
 
 /* ═══════════════════════════════════
    CAREER
@@ -451,7 +453,7 @@ nav {
 /* ⑦ Contact section */
 .contact-section { padding: 80px clamp(20px,6vw,80px) }
 .contact-inner { max-width: 680px; margin: 0 auto; text-align: center }
-.contact-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 48px }
+.contact-cards { display: grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap: 12px; margin-top: 48px }
 .contact-card {
   display: flex; flex-direction: column; align-items: center; gap: 12px;
   padding: 28px 16px;
@@ -1216,21 +1218,21 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
         <div class="patent-id">PAT · 01 · 2016</div>
         <div class="patent-name">Solar CCTV System</div>
         <div class="patent-summary">Solar-powered autonomous surveillance developed with Chevron / Tengizchevroil. 58 units deployed across Kazakhstan.</div>
-        <div class="patent-num">WO2016185034A1</div>
+        <div class="patent-num"><a href="https://patents.google.com/patent/WO2016185034A1/en?oq=WO2016185034A1" target="_blank" rel="noopener noreferrer" aria-label="View patent WO2016185034A1 on Google Patents, opens in a new tab">WO2016185034A1 <span aria-hidden="true">↗</span></a></div>
       </div>
       <div class="patent-card">
         <div class="patent-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
         <div class="patent-id">PAT · 02 · 2020</div>
         <div class="patent-name">Solar Power Station</div>
         <div class="patent-summary">Autonomous off-grid power station for remote IoT and surveillance infrastructure. Deployed across Network Rail and major infrastructure clients.</div>
-        <div class="patent-num">US20200280280A1</div>
+        <div class="patent-num"><a href="https://patents.google.com/patent/US20200280280A1/en?oq=US20200280280A1" target="_blank" rel="noopener noreferrer" aria-label="View patent US20200280280A1 on Google Patents, opens in a new tab">US20200280280A1 <span aria-hidden="true">↗</span></a></div>
       </div>
       <div class="patent-card">
         <div class="patent-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 2L8 6H4v4l-2 2 2 2v4h4l4 4 4-4h4v-4l2-2-2-2V6h-4L12 2z"/><circle cx="12" cy="12" r="3" fill="none" stroke="white" stroke-width="1.5"/></svg></div>
         <div class="patent-id">PAT · 03 · 2022</div>
         <div class="patent-name">Solar Drone Charging</div>
         <div class="patent-summary">Solar-powered autonomous drone charging and deployment station for persistent remote surveillance and infrastructure monitoring.</div>
-        <div class="patent-num">US20220052538A1</div>
+        <div class="patent-num"><a href="https://patents.google.com/patent/US20220052538A1/en?oq=US20220052538A1" target="_blank" rel="noopener noreferrer" aria-label="View patent US20220052538A1 on Google Patents, opens in a new tab">US20220052538A1 <span aria-hidden="true">↗</span></a></div>
       </div>
     </div>
   </div>
@@ -1486,6 +1488,11 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
           <div class="contact-card-icon" style="background:linear-gradient(135deg,#1d1d1f,#3a3a3f)"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="white" stroke-width="2" stroke-linecap="round"/><polyline points="7 10 12 15 17 10" stroke="white" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="15" x2="12" y2="3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
           <div class="contact-card-label">Download CV</div>
           <div class="contact-card-value">PDF · 2 pages<br>2026 edition</div>
+        </a>
+        <a class="contact-card" href="simon_legrand.vcf" download>
+          <div class="contact-card-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="white" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="7" r="4" fill="white"/><line x1="19" y1="8" x2="19" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/><line x1="22" y1="11" x2="16" y2="11" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <div class="contact-card-label">Save Contact</div>
+          <div class="contact-card-value">vCard · .vcf<br>One tap to save</div>
         </a>
       </div>
     </div>
