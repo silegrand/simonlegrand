@@ -64,6 +64,7 @@ body {
 }
 a { text-decoration: none; color: inherit }
 img { display: block; max-width: 100% }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 4px }
 
 /* ⑧ Scroll progress bar */
 #progress {
@@ -308,12 +309,6 @@ nav {
 .tcard-dot.active { background: var(--blue); transform: scale(1.3) }
 
 /* Testimonial placeholder — remove when quotes added */
-.testimonial-placeholder {
-  font-size: 13px; font-weight: 400; color: var(--grey-4);
-  border: 1.5px dashed var(--grey-3); border-radius: var(--r-card);
-  padding: 32px; text-align: center;
-}
-
 /* ═══════════════════════════════════
    VENTURES
 ═══════════════════════════════════ */
@@ -950,7 +945,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
     <li><a href="#work">Work</a></li>
   </ul>
   <a class="nav-cta" href="#contact">Get in Touch</a>
-  <button class="nav-burger" id="navBurger"><span></span><span></span><span></span></button>
+  <button class="nav-burger" id="navBurger" aria-label="Open navigation menu" aria-controls="navDrawer" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 <div class="nav-drawer" id="navDrawer">
   <a href="#hero">Home</a>
@@ -1044,19 +1039,19 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
       <div class="profile-side">
         <div>
           <div class="side-label">Location</div>
-          <div class="side-row"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Faversham, Kent, UK</div>
+          <div class="side-row"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Faversham, Kent, UK</div>
         </div>
         <div>
           <div class="side-label">Credentials</div>
-          <div class="side-row"><svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>MCIM — Chartered Marketer</div>
-          <div class="side-row"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>IBM Cyber Security Board Lead</div>
-          <div class="side-row"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>MHFA Practitioner</div>
+          <div class="side-row"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>MCIM — Chartered Marketer</div>
+          <div class="side-row"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>IBM Cyber Security Board Lead</div>
+          <div class="side-row"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>MHFA Practitioner</div>
         </div>
         <div>
           <div class="side-label">Active Focus</div>
-          <div class="side-row"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Agentic AI systems</div>
-          <div class="side-row"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4" fill="none" stroke="currentColor" stroke-width="2"/></svg>Physical security · Martyn's Law</div>
-          <div class="side-row"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>NHS · Preventative care</div>
+          <div class="side-row"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Agentic AI systems</div>
+          <div class="side-row"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4" fill="none" stroke="currentColor" stroke-width="2"/></svg>Physical security · Martyn's Law</div>
+          <div class="side-row"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>NHS · Preventative care</div>
         </div>
       </div>
     </div>
@@ -1193,18 +1188,18 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
     <div class="section-label">Capabilities</div>
     <h2 class="section-title" style="margin-bottom:48px">A solid combination<br>of skills.</h2>
     <div class="comp-grid">
-      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="comp-text">Technology co-founding &amp; commercialisation</div></div>
-      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div class="comp-text">Strategic marketing, brand &amp; communications</div></div>
-      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="comp-text">IP development · listed patent inventor</div></div>
-      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" fill="none" stroke="currentColor" stroke-width="2"/></svg></div><div class="comp-text">Enterprise business development · global clients</div></div>
-      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="comp-text">UK public sector: NHS, Home Office, DfE, DoH</div></div>
-      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div class="comp-text">Academic &amp; qualitative research</div></div>
-      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div class="comp-text">Agentic AI &amp; LLM system design</div></div>
-      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="comp-text">Cyber security · IBM Certified Board Lead</div></div>
-      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4" fill="none" stroke="currentColor" stroke-width="2"/></svg></div><div class="comp-text">Physical security · sensor networks · IoT</div></div>
-      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><div class="comp-text">Preventative health platform design</div></div>
-      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div class="comp-text">Static-web architecture · GitHub · Cloudflare</div></div>
-      <div class="comp-card"><div class="comp-icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div class="comp-text">Standards compliance: DfE · KCSiE · BS EN</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="comp-text">Technology co-founding &amp; commercialisation</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div class="comp-text">Strategic marketing, brand &amp; communications</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="comp-text">IP development · listed patent inventor</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" fill="none" stroke="currentColor" stroke-width="2"/></svg></div><div class="comp-text">Enterprise business development · global clients</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="comp-text">UK public sector: NHS, Home Office, DfE, DoH</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div class="comp-text">Academic &amp; qualitative research</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div class="comp-text">Agentic AI &amp; LLM system design</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="comp-text">Cyber security · IBM Certified Board Lead</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4" fill="none" stroke="currentColor" stroke-width="2"/></svg></div><div class="comp-text">Physical security · sensor networks · IoT</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><div class="comp-text">Preventative health platform design</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div class="comp-text">Static-web architecture · GitHub · Cloudflare</div></div>
+      <div class="comp-card"><div class="comp-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div class="comp-text">Standards compliance: DfE · KCSiE · BS EN</div></div>
     </div>
   </div>
 </div>
@@ -1217,21 +1212,21 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
     <div class="section-body">Solar-powered surveillance, autonomous power, and drone charging, a suite of IP developed alongside Chevron Technology Ventures.</div>
     <div class="patents-grid">
       <div class="patent-card">
-        <div class="patent-icon"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4" fill="none" stroke="white" stroke-width="2"/></svg></div>
+        <div class="patent-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4" fill="none" stroke="white" stroke-width="2"/></svg></div>
         <div class="patent-id">PAT · 01 · 2016</div>
         <div class="patent-name">Solar CCTV System</div>
         <div class="patent-summary">Solar-powered autonomous surveillance developed with Chevron / Tengizchevroil. 58 units deployed across Kazakhstan.</div>
         <div class="patent-num">WO2016185034A1</div>
       </div>
       <div class="patent-card">
-        <div class="patent-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <div class="patent-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
         <div class="patent-id">PAT · 02 · 2020</div>
         <div class="patent-name">Solar Power Station</div>
         <div class="patent-summary">Autonomous off-grid power station for remote IoT and surveillance infrastructure. Deployed across Network Rail and major infrastructure clients.</div>
         <div class="patent-num">US20200280280A1</div>
       </div>
       <div class="patent-card">
-        <div class="patent-icon"><svg viewBox="0 0 24 24"><path d="M12 2L8 6H4v4l-2 2 2 2v4h4l4 4 4-4h4v-4l2-2-2-2V6h-4L12 2z"/><circle cx="12" cy="12" r="3" fill="none" stroke="white" stroke-width="1.5"/></svg></div>
+        <div class="patent-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 2L8 6H4v4l-2 2 2 2v4h4l4 4 4-4h4v-4l2-2-2-2V6h-4L12 2z"/><circle cx="12" cy="12" r="3" fill="none" stroke="white" stroke-width="1.5"/></svg></div>
         <div class="patent-id">PAT · 03 · 2022</div>
         <div class="patent-name">Solar Drone Charging</div>
         <div class="patent-summary">Solar-powered autonomous drone charging and deployment station for persistent remote surveillance and infrastructure monitoring.</div>
@@ -1478,17 +1473,17 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
       <p class="section-body" style="margin-bottom:0">NHS commissioners and health innovators interested in Assistiv, or schools and public sector organisations exploring Martyn's Law compliance, reach out directly.</p>
       <div class="contact-cards">
         <a class="contact-card" href="mailto:hello@simonlegrand.co.uk">
-          <div class="contact-card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="white"/><polyline points="22,6 12,13 2,6" stroke="#0071e3" stroke-width="2"/></svg></div>
+          <div class="contact-card-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="white"/><polyline points="22,6 12,13 2,6" stroke="#0071e3" stroke-width="2"/></svg></div>
           <div class="contact-card-label">Email</div>
           <div class="contact-card-value">hello@simonlegrand.co.uk</div>
         </a>
         <a class="contact-card" href="https://www.linkedin.com/in/-simonlegrand-" target="_blank" rel="noopener noreferrer">
-          <div class="contact-card-icon"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" fill="white"/><circle cx="4" cy="4" r="2" fill="white"/></svg></div>
+          <div class="contact-card-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" fill="white"/><circle cx="4" cy="4" r="2" fill="white"/></svg></div>
           <div class="contact-card-label">LinkedIn</div>
           <div class="contact-card-value">linkedin.com/in/<br>-simonlegrand-</div>
         </a>
         <a class="contact-card" href="Simon_Legrand_CV.pdf" download>
-          <div class="contact-card-icon" style="background:linear-gradient(135deg,#1d1d1f,#3a3a3f)"><svg viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="white" stroke-width="2" stroke-linecap="round"/><polyline points="7 10 12 15 17 10" stroke="white" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="15" x2="12" y2="3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <div class="contact-card-icon" style="background:linear-gradient(135deg,#1d1d1f,#3a3a3f)"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="white" stroke-width="2" stroke-linecap="round"/><polyline points="7 10 12 15 17 10" stroke="white" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="15" x2="12" y2="3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
           <div class="contact-card-label">Download CV</div>
           <div class="contact-card-value">PDF · 2 pages<br>2026 edition</div>
         </a>
@@ -1513,6 +1508,16 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
 </footer>
 
 <script>
+/* Pause canvas render loops when off-screen; honour reduced-motion */
+function runWhenVisible(el, step){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){ step(); return; }
+  let running = false, visible = false;
+  function loop(){ step(); if (visible) requestAnimationFrame(loop); else running = false; }
+  new IntersectionObserver(function(entries){
+    visible = entries[0].isIntersecting;
+    if (visible && !running){ running = true; requestAnimationFrame(loop); }
+  }, { threshold: 0 }).observe(el);
+}
 /* ④ Testimonial carousel */
 (function() {
   const track = document.getElementById('tcardTrack');
@@ -1583,8 +1588,8 @@ window.addEventListener('scroll', () => {
 /* Mobile nav */
 const burger = document.getElementById('navBurger');
 const drawer = document.getElementById('navDrawer');
-burger.addEventListener('click', () => { burger.classList.toggle('open'); drawer.classList.toggle('open') });
-drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { burger.classList.remove('open'); drawer.classList.remove('open') }));
+burger.addEventListener('click', () => { const open = burger.classList.toggle('open'); drawer.classList.toggle('open'); burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu'); });
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { burger.classList.remove('open'); drawer.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); burger.setAttribute('aria-label', 'Open navigation menu'); }));
 
 /* Reveal */
 const ro = new IntersectionObserver((entries) => {
@@ -1750,13 +1755,12 @@ document.querySelectorAll('[id]').forEach(s => no.observe(s));
     });
 
     t++;
-    requestAnimationFrame(draw);
   }
 
   resize();
   initParticles();
   window.addEventListener('resize', () => { resize(); initParticles() });
-  requestAnimationFrame(draw);
+  runWhenVisible(canvas, draw);
 })();
 
 
@@ -1818,12 +1822,11 @@ document.querySelectorAll('[id]').forEach(s => no.observe(s));
       ctx.globalAlpha = 1;
 
       t++;
-      requestAnimationFrame(drawAs);
     }
 
     resizeAs();
     window.addEventListener('resize', resizeAs);
-    requestAnimationFrame(drawAs);
+    runWhenVisible(cvAs, drawAs);
   }
 
   /* ── FYRFLY: radar sweep ── */
@@ -1932,12 +1935,11 @@ document.querySelectorAll('[id]').forEach(s => no.observe(s));
 
       angle += 0.008;
       if (angle > Math.PI * 2) angle -= Math.PI * 2;
-      requestAnimationFrame(drawFy);
     }
 
     resizeFy();
     window.addEventListener('resize', resizeFy);
-    requestAnimationFrame(drawFy);
+    runWhenVisible(cvFy, drawFy);
   }
 
 })();
