@@ -697,7 +697,7 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
    SIGNAL FIELD
 ═══════════════════════════════════ */
 .signal-band {
-  background: var(--black);
+  background: radial-gradient(circle at 50% 45%, #eef2fd 0%, #f4f6fb 55%, #ebeef6 100%);
   position: relative;
   height: clamp(320px, 42vw, 520px);
   overflow: hidden;
@@ -735,12 +735,12 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
 .signal-centre-ring {
   position: absolute;
   width: 100px; height: 100px; border-radius: 50%;
-  border: 1px solid rgba(91,124,247,0.25);
+  border: 1px solid rgba(91,124,247,0.4);
   animation: ringExpand 3s ease-out infinite;
 }
 .signal-centre-ring.r2 {
   width: 160px; height: 160px;
-  border-color: rgba(91,124,247,0.12);
+  border-color: rgba(91,124,247,0.2);
   animation-delay: 1.2s;
 }
 @keyframes ringExpand {
@@ -757,14 +757,14 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
   position: absolute;
   display: flex; flex-direction: column; align-items: center; gap: 4px;
   font-size: 12px; font-weight: 700; letter-spacing: .06em;
-  text-transform: uppercase; color: rgba(255,255,255,0.5);
+  text-transform: uppercase; color: rgba(29,29,31,0.55);
   text-align: center;
   transition: color .4s, opacity .4s;
   animation: nodeFloat 0s ease-in-out infinite alternate;
 }
 .signal-node span {
   font-size: 9px; font-weight: 400; letter-spacing: .08em;
-  color: rgba(255,255,255,0.22); text-transform: uppercase;
+  color: rgba(29,29,31,0.4); text-transform: uppercase;
 }
 
 /* Positions — radial around centre */
@@ -792,12 +792,12 @@ footer { background: var(--grey-1); border-top: 1px solid var(--grey-2); padding
 @keyframes nodeFloat6 { from { transform: translateY(0)    } to { transform: translateY(-7px)  } }
 
 /* Node colour accent per domain */
-.sn-nhs  { color: rgba(76,216,145,0.7)  } .sn-nhs span  { color: rgba(76,216,145,0.35)  }
-.sn-ai   { color: rgba(165,184,252,0.7) } .sn-ai span   { color: rgba(165,184,252,0.35) }
-.sn-iot  { color: rgba(91,124,247,0.7)  } .sn-iot span  { color: rgba(91,124,247,0.35)  }
-.sn-sec  { color: rgba(255,179,71,0.7)  } .sn-sec span  { color: rgba(255,179,71,0.35)  }
-.sn-ip   { color: rgba(255,255,255,0.55)} .sn-ip span   { color: rgba(255,255,255,0.25) }
-.sn-pub  { color: rgba(134,134,139,0.7) } .sn-pub span  { color: rgba(134,134,139,0.35) }
+.sn-nhs  { color: rgba(29,131,72,0.9)   } .sn-nhs span  { color: rgba(29,131,72,0.5)   }
+.sn-ai   { color: rgba(79,70,229,0.9)   } .sn-ai span   { color: rgba(79,70,229,0.5)   }
+.sn-iot  { color: rgba(74,108,245,0.9)  } .sn-iot span  { color: rgba(74,108,245,0.5)  }
+.sn-sec  { color: rgba(217,119,6,0.95)  } .sn-sec span  { color: rgba(217,119,6,0.55)  }
+.sn-ip   { color: rgba(60,60,67,0.85)   } .sn-ip span   { color: rgba(60,60,67,0.45)   }
+.sn-pub  { color: rgba(110,110,115,0.9) } .sn-pub span  { color: rgba(110,110,115,0.5) }
 
 @media (max-width: 600px) {
   .signal-band { height: 300px }
@@ -1628,12 +1628,12 @@ document.querySelectorAll('[id]').forEach(s => no.observe(s));
   // We'll compute these dynamically from the overlay elements
   const nodeIds   = ['sn-nhs','sn-ai','sn-iot','sn-sec','sn-ip','sn-pub'];
   const nodeColours = [
-    'rgba(76,216,145,',
-    'rgba(165,184,252,',
-    'rgba(91,124,247,',
-    'rgba(255,179,71,',
-    'rgba(255,255,255,',
-    'rgba(134,134,139,',
+    'rgba(29,131,72,',
+    'rgba(79,70,229,',
+    'rgba(74,108,245,',
+    'rgba(217,119,6,',
+    'rgba(60,60,67,',
+    'rgba(110,110,115,',
   ];
 
   // Floating particles
@@ -1654,7 +1654,7 @@ document.querySelectorAll('[id]').forEach(s => no.observe(s));
         vx:  (Math.random() - 0.5) * 0.35,
         vy:  (Math.random() - 0.5) * 0.35,
         r:   Math.random() * 1.5 + 0.5,
-        a:   Math.random() * 0.4 + 0.08,
+        a:   Math.random() * 0.45 + 0.14,
       });
     }
   }
@@ -1695,9 +1695,9 @@ document.querySelectorAll('[id]').forEach(s => no.observe(s));
       // Animated dash offset for travelling signal effect
       const dashOffset = -(t * 1.2 + i * 18) % 28;
       const grad = ctx.createLinearGradient(cx.x, cx.y, n.x, n.y);
-      grad.addColorStop(0,   col + '0.45)');
-      grad.addColorStop(0.5, col + '0.25)');
-      grad.addColorStop(1,   col + '0.08)');
+      grad.addColorStop(0,   col + '0.55)');
+      grad.addColorStop(0.5, col + '0.3)');
+      grad.addColorStop(1,   col + '0.12)');
       ctx.beginPath();
       ctx.moveTo(cx.x, cx.y);
       ctx.lineTo(n.x, n.y);
@@ -1728,7 +1728,7 @@ document.querySelectorAll('[id]').forEach(s => no.observe(s));
       ctx.beginPath();
       ctx.moveTo(a.x, a.y);
       ctx.lineTo(b.x, b.y);
-      ctx.strokeStyle = 'rgba(255,255,255,0.03)';
+      ctx.strokeStyle = 'rgba(60,60,67,0.06)';
       ctx.lineWidth = 0.8;
       ctx.setLineDash([]);
       ctx.stroke();
@@ -1744,7 +1744,7 @@ document.querySelectorAll('[id]').forEach(s => no.observe(s));
 
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(91,124,247,${p.a})`;
+      ctx.fillStyle = `rgba(74,108,245,${p.a})`;
       ctx.fill();
 
       // Connect nearby particles
@@ -1754,7 +1754,7 @@ document.querySelectorAll('[id]').forEach(s => no.observe(s));
         if (dist < 90 && dist > 0) {
           ctx.beginPath();
           ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y);
-          ctx.strokeStyle = `rgba(91,124,247,${(1 - dist/90) * 0.07})`;
+          ctx.strokeStyle = `rgba(74,108,245,${(1 - dist/90) * 0.12})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
