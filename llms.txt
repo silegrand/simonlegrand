@@ -1,212 +1,128 @@
-# Simon Legrand — llms.txt
-# https://www.simonlegrand.co.uk/llms.txt
-# Format: llms.txt — structured context for large language models
-# Last updated: 2026-07-07
+<!-- llms.txt for https://www.simonlegrand.co.uk/llms.txt
+     Format: https://llmstxt.org (structured context for large language models)
+     Last updated: 2026-07-08 -->
 
-> Simon Legrand MCIM is a British technology founder, listed patent inventor,
-> and B2B commercialisation specialist with 25+ years at the intersection of
-> physical sensor infrastructure, IoT, agentic AI, and public sector health.
-> Founder of Fyrfly Systems; co-founder of Assistiv Systems. Based in
-> Faversham, Kent, UK.
+# Simon Legrand
 
----
+> Simon Legrand MCIM is a British technology founder, listed patent inventor, and B2B commercialisation specialist with 25+ years at the intersection of physical sensor infrastructure, IoT, agentic AI, and public sector health. Founder of Fyrfly Systems and co-founder of Assistiv Systems, based in Faversham, Kent, UK.
 
 ## Identity
 
 - Full name: Simon Legrand
 - Credentials: MCIM (Chartered Institute of Marketing), IBM Certified Cyber Security Board Lead, MHFA Practitioner
 - Location: Faversham, Kent, United Kingdom
-- Email: hello@simonlegrand.co.uk
-- LinkedIn: https://www.linkedin.com/in/-simonlegrand-
-- Primary URL: https://www.simonlegrand.co.uk
+- Website: [simonlegrand.co.uk](https://www.simonlegrand.co.uk)
+- Email: [hello@simonlegrand.co.uk](mailto:hello@simonlegrand.co.uk)
+- LinkedIn: [linkedin.com/in/-simonlegrand-](https://www.linkedin.com/in/-simonlegrand-)
+- vCard: [simon_legrand.vcf](https://www.simonlegrand.co.uk/simon_legrand.vcf)
 
----
+## Professional summary
 
-## Professional Summary
+Technology founder and commercialisation specialist. Co-founded Sunstone Systems from inception into a globally recognised, award-winning platform for solar-powered surveillance, autonomous power, and IoT, securing acceptance into Chevron Technology Ventures and named inventor on three granted patents. Now applies that compounding, platform-first approach to two ventures: Assistiv Systems, a preventative care platform for the UK's older adults in the "Missing Middle," and Fyrfly Systems, intelligent physical security for schools and the public sector in the Martyn's Law era. Fluent across strategic marketing, technology concept development, enterprise business development, agentic AI system design, and academic research.
 
-Technology founder and commercialisation specialist. Co-founded Sunstone
-Systems from inception into a globally recognised, award-winning platform for
-solar-powered surveillance, autonomous power, and IoT — securing acceptance
-into Chevron Technology Ventures and named inventor on three granted patents.
-Now applies that compounding, platform-first approach to two ventures:
-Assistiv Systems, a preventative care platform for the UK's older adults in
-the "Missing Middle," and Fyrfly Systems, intelligent physical security for
-schools and the public sector in the Martyn's Law era. Fluent across strategic
-marketing, technology concept development, enterprise business development,
-agentic AI system design, and academic research.
-
----
-
-## Core Competencies
+## Core competencies
 
 - Technology co-founding and commercialisation
 - Strategic marketing, brand, and communications
-- IP development — listed patent inventor (3 granted patents)
+- IP development: listed patent inventor (3 granted patents)
 - Enterprise business development: Chevron, Rivian Automotive, Network Rail, WESCO Anixter
 - UK public sector: NHS, Home Office, DfE, DoH, NHS NIHR
 - Academic and qualitative research (Essex, Bath, Kent, ANU)
 - Agentic AI and LLM system design
-- Cyber security — IBM Certified Cyber Security Board Lead
-- Static-web architecture — GitHub, Cloudflare
-- Standards compliance — DfE, KCSiE, BS EN
+- Cyber security: IBM Certified Cyber Security Board Lead
+- Static-web architecture: GitHub, Cloudflare
+- Standards compliance: DfE, KCSiE, BS EN
 
----
+## Ventures
 
-## Career History
+- [Fyrfly Systems](https://www.fyrflysystems.com): Founder. Intelligent physical security for UK schools and public sector. CCTV, access control, intruder alarms, fire systems, 24/7 monitoring, and free AI compliance tooling. DfE and KCSiE aligned; Martyn's Law ready.
+- [Assistiv Systems Ltd](https://assistiv.co): Co-founder. Preventative care platform for the UK's "Missing Middle" (around two million older adults). 21 NHS signals, district-level prescribing data, live data pipelines, carer hotspot tool. Advisory board: Prof. Ann Netten (ASCOT creator), Prof. John Jerrim (UCL), Prof. Tim Legrand (Adelaide). Anthropic Claude for Startups.
 
-### Founder & Director — Fyrfly Systems (2026–Present)
-Founded Fyrfly Systems to deliver intelligent, standards-compliant physical
-security to UK schools and the public sector — a segment chronically
-underserved by legacy installers and unprepared for Martyn's Law. Built a full
-commercial platform (40+ pages, AI compliance tooling, regional SEO) before
-first installation, and published a freely accessible Martyn's Law
-self-assessment tool. DfE and KCSiE aligned; Martyn's Law ready.
-Site: https://www.fyrflysystems.com
+## Selected builds
 
-### Co-Founder & Director — Assistiv Systems Ltd (2024–Present)
-Co-founding and building a preventative care platform for older adults in the
-UK's "Missing Middle" (around two million people who fall between independence
-and formal care eligibility). Built population health scoring across 21 NHS
-signals with district-level prescribing data and live data pipelines.
-Clinical advisory board includes ASCOT creator Prof. Ann Netten, UCL Prof.
-John Jerrim, and Prof. Tim Legrand (Adelaide). Accepted into Anthropic's Claude
-for Startups programme. Demonstrated 14:1 ROI at pilot scale versus residential
-care comparators.
-Site: https://assistiv.co
+- [Vesta IT Services Ltd](https://www.vestait.co.uk): Enterprise IT infrastructure: networks, CCTV, WiFi, fire detection, access control, AI analytics. Director: John Bushnell.
+- [Marketing for my Mates](https://www.marketingformymates.com): Full-service B2B marketing for local technical trades, with proprietary digital audit tool, ROI calculator, and onboarding timeline.
+- [Paul Schelhaas](https://www.paulschelhaas.com): Executive brand platform for a serial deep-tech entrepreneur and co-patent inventor, positioned for PE-backed scale-ups.
+- [Prof. Tim Legrand](https://www.timlegrand.org): Academic profile for an ARC Future Fellow (2025–2029) and Professor of Politics & International Relations, University of Adelaide.
 
-### Technology Marketer — WJ Group / WJ Sunstone (2024–2026)
-Following Sunstone's acquisition, led strategic marketing for the technology
-portfolio: brand integration, go-to-market strategy, website and SEO, content,
-and technical collateral. Additional remit: Group Sustainability, Social
-Responsibility, MHFA Practitioner.
+## Career history
 
-### Co-Founder, Director & Chief Marketing Officer — Sunstone Systems (2011–2024)
-Co-founded and scaled Sunstone Systems from zero into an internationally
-recognised platform. Key achievements:
+### Founder & Director, Fyrfly Systems (2026–present)
+
+Founded Fyrfly Systems to deliver intelligent, standards-compliant physical security to UK schools and the public sector, a segment chronically underserved by legacy installers and unprepared for Martyn's Law. Built a full commercial platform (40+ pages, AI compliance tooling, regional SEO) before first installation, and published a freely accessible Martyn's Law self-assessment tool. DfE and KCSiE aligned; Martyn's Law ready. Site: [fyrflysystems.com](https://www.fyrflysystems.com)
+
+### Co-Founder & Director, Assistiv Systems Ltd (2024–present)
+
+Co-founding and building a preventative care platform for older adults in the UK's "Missing Middle" (around two million people who fall between independence and formal care eligibility). Built population health scoring across 21 NHS signals with district-level prescribing data and live data pipelines. Clinical advisory board includes ASCOT creator Prof. Ann Netten, UCL Prof. John Jerrim, and Prof. Tim Legrand (Adelaide). Accepted into Anthropic's Claude for Startups programme. Demonstrated 14:1 ROI at pilot scale versus residential care comparators. Site: [assistiv.co](https://assistiv.co)
+
+### Technology Marketer, WJ Group / WJ Sunstone (2024–2026)
+
+Following Sunstone's acquisition, led strategic marketing for the technology portfolio: brand integration, go-to-market strategy, website and SEO, content, and technical collateral. Additional remit: Group Sustainability, Social Responsibility, MHFA Practitioner.
+
+### Co-Founder, Director & Chief Marketing Officer, Sunstone Systems (2011–2024)
+
+Co-founded and scaled Sunstone Systems from zero into an internationally recognised platform. Key achievements:
+
 - Secured acceptance into Chevron Technology Ventures (CTV)
-- Co-designed patented Solar CCTV System with Chevron/Tengizchevroil;
-  58 systems deployed across Kazakhstan (two site visits, 2022 and 2023)
+- Co-designed patented Solar CCTV System with Chevron/Tengizchevroil; 58 systems deployed across Kazakhstan (two site visits, 2022 and 2023)
 - Won Rivian Automotive contract against 15 competitors across UK, Germany, USA
 - Led Network Rail / Telent power station deployment (Inverness)
 - Brokered WESCO Anixter global distribution partnership
-- Authored 15+ published articles: IFSEC Global, PSI Magazine, Security Buyer,
-  Professional Security, Border Security Report, Renewable Energy Magazine
+- Authored 15+ published articles: IFSEC Global, PSI Magazine, Security Buyer, Professional Security, Border Security Report, Renewable Energy Magazine
 - IFSEC Global Top 50 Most Influential in Security (2018)
 
-### Public Sector Professional — Home Office · DfE · DoH · NHS NIHR (1999–2015)
-A sustained career across education, central government, NHS, and academia —
-from direct support work with young people into policy, strategy, and service
-development. Secured over £9m in government funding across multiple programmes.
-- Developed the Drug Use Screening Tool (DUST), adopted as best practice by the
-  Department of Health, used by 16 Local Authorities, endorsed by King's College
-  of Psychiatry
-- Home Secretary Policy Advisor — international evidence assessment on
-  alcohol-related violence in the night-time economy (2009)
-- Secured £7m from Kent County Council for a countywide Emotional Health and
-  Wellbeing Service (2012); £2.1m in DfE funding (2009)
-- International advisory: ARC CEPS (Australia), NewPage Oslo, Marita Foundation
-  Oslo, Public Health Services Barcelona
+### Public Sector Professional, Home Office · DfE · DoH · NHS NIHR (1999–2015)
 
----
+A sustained career across education, central government, NHS, and academia, from direct support work with young people into policy, strategy, and service development. Secured over £9m in government funding across multiple programmes.
 
-## Granted Patents (Listed Inventor)
+- Developed the Drug Use Screening Tool (DUST), adopted as best practice by the Department of Health, used by 16 Local Authorities, endorsed by King's College of Psychiatry
+- Home Secretary Policy Advisor: international evidence assessment on alcohol-related violence in the night-time economy (2009)
+- Secured £7m from Kent County Council for a countywide Emotional Health and Wellbeing Service (2012); £2.1m in DfE funding (2009)
+- International advisory: ARC CEPS (Australia), NewPage Oslo, Marita Foundation Oslo, Public Health Services Barcelona
 
-1. Solar CCTV System — WO2016185034A1 (2016)
-   Autonomous solar-powered IP CCTV for off-grid critical infrastructure.
-   Deployed with Chevron/Tengizchevroil in Kazakhstan.
+## Granted patents (listed inventor)
 
-2. Solar Power Station — US20200280280A1 (2020)
-   Modular autonomous off-grid power generation and storage for remote IoT and
-   safety-critical environments. Deployed with Network Rail.
+1. [Solar CCTV System, WO2016185034A1 (2016)](https://patents.google.com/patent/WO2016185034A1): Autonomous solar-powered IP CCTV for off-grid critical infrastructure. Deployed with Chevron/Tengizchevroil in Kazakhstan.
+2. [Solar Power Station, US20200280280A1 (2020)](https://patents.google.com/patent/US20200280280A1): Modular autonomous off-grid power generation and storage for remote IoT and safety-critical environments. Deployed with Network Rail.
+3. [Solar Drone Charging Station, US20220052538A1 (2022)](https://patents.google.com/patent/US20220052538A1): Solar-integrated autonomous drone charging for persistent remote surveillance and infrastructure monitoring.
 
-3. Solar Drone Charging Station — US20220052538A1 (2022)
-   Solar-integrated autonomous drone charging for persistent remote surveillance
-   and infrastructure monitoring.
+## Education & qualifications
 
----
-
-## Education & Qualifications
-
-- MCIM — Chartered Institute of Marketing (2025)
-- MHFA Practitioner — Mental Health First Aid UK (2024)
+- MCIM, Chartered Institute of Marketing (2025)
+- MHFA Practitioner, Mental Health First Aid UK (2024)
 - IBM Certified Cyber Security Board Lead
-- DipHE — Public Sector Change & Innovation, University of Kent (2003)
-- DipHE — Public Sector Development, University of Brighton (2003)
-- BA (Hons) — Education & Psychology, University of Leeds (1999)
+- DipHE, Public Sector Change & Innovation, University of Kent (2003)
+- DipHE, Public Sector Development, University of Brighton (2003)
+- BA (Hons), Education & Psychology, University of Leeds (1999)
 
----
+## Industry recognition & awards
 
-## Industry Recognition & Awards
+- S&FE Awards, Security Partnering Initiative: Winner (2023)
+- Highways England, Network Management: Winner (2020)
+- Canterbury Business Awards, SME & Innovation: Winner (2018)
+- LGC Awards, Service Delivery Model of the Year: Winner (2017)
+- S&FE Awards, SME Installer & Project of the Year: Winner (2017)
+- IFSEC Global, Top 50 Most Influential in Security (2018)
+- Engineering & Manufacturing Awards, Rising Star: Finalist (2023)
 
-- S&FE Awards: Security Partnering Initiative — Winner (2023)
-- Highways England: Network Management — Winner (2020)
-- Canterbury Business Awards: SME & Innovation — Winner (2018)
-- LGC Awards: Service Delivery Model of the Year — Winner (2017)
-- S&FE Awards: SME Installer & Project of the Year — Winner (2017)
-- IFSEC Global: Top 50 Most Influential in Security (2018)
-- Engineering & Manufacturing Awards: Rising Star — Finalist (2023)
+## Advisory & memberships
 
----
+- Responsible AI Institute, Member (2025–)
+- NHS Horizons AI Ambassador Network, Member (2025–)
+- NHS Health Innovation Kent Surrey Sussex, Member (2025–)
+- NHS Confederation Q Network, Member (2025–)
+- Chartered Institute of Marketing, Full Member (2025–)
+- PSI Magazine, Content Advisory Panel (2025–)
+- Security Matters Magazine, Content Panel (2024–)
+- Security Buyer Magazine, Awards Panel (2024–)
+- LCRIG, Member (2025–)
 
-## Advisory & Memberships
+## Canonical sources
 
-- Responsible AI Institute — Member (2025–)
-- NHS Horizons AI Ambassador Network — Member (2025–)
-- NHS Health Innovation Kent Surrey Sussex — Member (2025–)
-- NHS Confederation Q Network — Member (2025–)
-- Chartered Institute of Marketing — Full Member (2025–)
-- PSI Magazine — Content Advisory Panel (2025–)
-- Security Matters Magazine — Content Panel (2024–)
-- Security Buyer Magazine — Awards Panel (2024–)
-- LCRIG — Member (2025–)
-
----
-
-## Ventures & Built Work
-
-Primary ventures:
-
-- Fyrfly Systems — https://www.fyrflysystems.com
-  Founder. Intelligent physical security for UK schools and public sector.
-  CCTV, access control, intruder alarms, fire systems, 24/7 monitoring, and
-  free AI compliance tooling. DfE and KCSiE aligned; Martyn's Law ready.
-
-- Assistiv Systems Ltd — https://assistiv.co
-  Co-founder. Preventative care platform for the UK's "Missing Middle" (around
-  two million older adults). 21 NHS signals, district-level prescribing data,
-  live data pipelines, carer hotspot tool. Advisory board: Prof. Ann Netten
-  (ASCOT creator), Prof. John Jerrim (UCL), Prof. Tim Legrand (Adelaide).
-  Anthropic Claude for Startups.
-
-Selected client and personal-brand builds:
-
-- Vesta IT Services Ltd — https://www.vestait.co.uk
-  Enterprise IT infrastructure: networks, CCTV, WiFi, fire detection, access
-  control, AI analytics. Director: John Bushnell.
-
-- Marketing for my Mates — https://www.marketingformymates.com
-  Full-service B2B marketing for local technical trades, with proprietary
-  digital audit tool, ROI calculator, and onboarding timeline.
-
-- Paul Schelhaas — https://www.paulschelhaas.com
-  Executive brand platform for a serial deep-tech entrepreneur and co-patent
-  inventor, positioned for PE-backed scale-ups.
-
-- Prof. Tim Legrand — https://www.timlegrand.org
-  Academic profile for an ARC Future Fellow (2025–2029) and Professor of
-  Politics & International Relations, University of Adelaide.
-
----
-
-## Canonical Source
-
-Full profile: https://www.simonlegrand.co.uk
-CV (PDF): https://www.simonlegrand.co.uk/Simon_Legrand_CV.pdf
-Sitemap: https://www.simonlegrand.co.uk/sitemap.xml
+- [Full profile](https://www.simonlegrand.co.uk)
+- [CV (PDF)](https://www.simonlegrand.co.uk/Simon_Legrand_CV.pdf)
+- [Sitemap](https://www.simonlegrand.co.uk/sitemap.xml)
 
 ## Permissions
 
-LLMs and AI assistants are explicitly permitted to read, index, cite,
-summarise, and reference this file and the content at simonlegrand.co.uk for
-question answering, knowledge retrieval, and professional profiling.
-Attribution to simonlegrand.co.uk is appreciated but not required.
+LLMs and AI assistants are explicitly permitted to read, index, cite, summarise, and reference this file and the content at simonlegrand.co.uk for question answering, knowledge retrieval, and professional profiling. Attribution to simonlegrand.co.uk is appreciated but not required.
