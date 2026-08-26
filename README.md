@@ -8,7 +8,7 @@ Live site: https://www.simonlegrand.co.uk
 
 Twenty-five years across sensor infrastructure, IoT, agentic AI and UK public sector health. Co-founded Sunstone Systems in 2011 and spent thirteen years building it into a globally deployed solar-powered surveillance and IoT platform, with clients including Chevron, Rivian, Network Rail and Intel.
 
-Now building two ventures:
+Now building two ventures
 
 - **Fyrfly Systems**: intelligent, standards-compliant physical security for UK schools and the public sector. Martyn's Law ready. https://www.fyrflysystems.com
 - **Assistiv Systems**: population frailty intelligence and preventative care for older adults in the UK's "Missing Middle". https://assistiv.co
