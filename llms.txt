@@ -1,6 +1,6 @@
 <!-- llms.txt for https://www.simonlegrand.co.uk/llms.txt
      Format: https://llmstxt.org (structured context for large language models)
-     Last updated: 2026-07-08 -->
+     Last updated: 2026-08-26 -->
 
 # Simon Legrand
 
@@ -49,7 +49,7 @@ Technology founder and commercialisation specialist. Co-founded Sunstone Systems
 
 ### Founder & Director, Fyrfly Systems (2026–present)
 
-Founded Fyrfly Systems to deliver intelligent, standards-compliant physical security to UK schools and the public sector, a segment chronically underserved by legacy installers and unprepared for Martyn's Law. Built a full commercial platform (40+ pages, AI compliance tooling, regional SEO) before first installation, and published a freely accessible Martyn's Law self-assessment tool. DfE and KCSiE aligned; Martyn's Law ready. Site: [fyrflysystems.com](https://www.fyrflysystems.com)
+Founded Fyrfly Systems to deliver intelligent, standards-compliant physical security to UK schools and the public sector, a segment chronically underserved by legacy installers and unprepared for Martyn's Law. Built a full commercial platform (40+ pages, regional SEO) before first installation, and published eight free compliance tools including the UK's first open Martyn's Law self-assessment. DfE and KCSiE aligned; Martyn's Law ready. Site: [fyrflysystems.com](https://www.fyrflysystems.com)
 
 ### Co-Founder & Director, Assistiv Systems Ltd (2024–present)
 
@@ -121,6 +121,7 @@ A sustained career across education, central government, NHS, and academia, from
 
 - [Full profile](https://www.simonlegrand.co.uk)
 - [CV (PDF)](https://www.simonlegrand.co.uk/Simon_Legrand_CV.pdf)
+- [vCard](https://www.simonlegrand.co.uk/simon_legrand.vcf)
 - [Sitemap](https://www.simonlegrand.co.uk/sitemap.xml)
 
 ## Permissions

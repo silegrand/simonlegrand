@@ -8,7 +8,7 @@
 
   <!--
     Sitemap for https://www.simonlegrand.co.uk
-    Last updated: 2026-07-07
+    Last updated: 2026-08-26
     Owner: Simon Legrand MCIM
     Note: single-page site. Section anchors (#hero, #ventures, etc.)
     are intentionally omitted — search engines strip URL fragments and
@@ -18,11 +18,11 @@
   <!-- HOMEPAGE -->
   <url>
     <loc>https://www.simonlegrand.co.uk/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://www.simonlegrand.co.uk/SL_Headshot_colour.jpg</image:loc>
+      <image:loc>https://www.simonlegrand.co.uk/SL_Headshot_colour.webp</image:loc>
       <image:title>Simon Legrand — Founder, MCIM Chartered Marketer, Patent Inventor</image:title>
     </image:image>
     <image:image>
@@ -34,7 +34,7 @@
   <!-- CV (separate indexable document) -->
   <url>
     <loc>https://www.simonlegrand.co.uk/Simon_Legrand_CV.pdf</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -42,7 +42,7 @@
   <!-- LLM CONTEXT FILE (optional; aids AI discoverability) -->
   <url>
     <loc>https://www.simonlegrand.co.uk/llms.txt</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
