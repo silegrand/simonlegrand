@@ -122,7 +122,7 @@ a { color: inherit; }
   transition: background-color var(--fast), color var(--fast), border-color var(--fast);
 }
 .site-header.is-scrolled { border-color: var(--rule); }
-.site-header.is-menu-open { background: var(--ink); color: var(--paper); border-color: var(--rule-on-ink); }
+.site-header.is-menu-open { border-color: var(--ink); }
 .wordmark { font-family: var(--display); font-weight: 500; font-size: 1.25rem; line-height: 1; text-decoration: none; letter-spacing: -0.02em; }
 .menu-toggle, .menu-fallback { display: inline-flex; align-items: center; gap: 0.75rem; min-height: 2.75rem; padding-inline: 0.25rem; font-family: var(--mono); font-size: var(--t-meta); text-decoration: none; }
 .menu-toggle__bars { position: relative; width: 1.75rem; height: 0.5rem; }
@@ -137,19 +137,20 @@ html:not(.js) .menu-toggle, .js .menu-fallback { display: none; }
 
 .menu {
   position: fixed; inset: 0; z-index: 40; overflow-y: auto;
-  padding: calc(var(--header-h) + clamp(1.5rem, 6vh, 5rem)) var(--gutter) 2rem;
-  background: var(--ink); color: var(--paper);
+  padding: calc(var(--header-h) + clamp(1.5rem, 5vh, 3.5rem)) var(--gutter) 2rem;
+  background: var(--paper); color: var(--ink);
   display: flex; flex-direction: column; justify-content: space-between; gap: 3rem;
   visibility: hidden; opacity: 0; transition: opacity 280ms var(--ease), visibility 0s linear 280ms;
 }
 .menu.is-open { visibility: visible; opacity: 1; transition-delay: 0s; }
 html:not(.js) .menu { display: none; }
 .menu-open { overflow: hidden; }
-.menu__list { border-top: 1px solid var(--rule-on-ink); }
-.menu__item { border-bottom: 1px solid var(--rule-on-ink); }
-.menu__link { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.25rem; align-items: baseline; padding-block: clamp(0.9rem, 2.2vh, 1.6rem); text-decoration: none; }
-.menu__name { font-family: var(--display); font-size: clamp(2.75rem, 1.5rem + 6vw, 6rem); line-height: 1; letter-spacing: -0.015em; transition: transform 320ms var(--ease); }
-.menu__note { font-family: var(--mono); font-size: var(--t-meta); color: var(--sage); }
+/* The menu is one more ledger: the page's sections, in page order */
+.menu__list { border-top: 1px solid var(--ink); }
+.menu__item { border-bottom: 1px solid var(--rule); }
+.menu__link { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.25rem; align-items: baseline; padding-block: clamp(0.7rem, 1.8vh, 1.25rem); text-decoration: none; }
+.menu__name { font-family: var(--display); font-size: clamp(2rem, 1.3rem + 3vw, 3.75rem); line-height: 1.05; letter-spacing: -0.03em; transition: transform 320ms var(--ease); }
+.menu__note { font-family: var(--mono); font-size: var(--t-meta); color: var(--graphite); }
 .menu__link:hover .menu__name, .menu__link:focus-visible .menu__name { transform: translateX(0.75rem); }
 .menu__foot { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; font-family: var(--mono); font-size: var(--t-meta); }
 .menu__foot a { text-underline-offset: 0.28em; }
