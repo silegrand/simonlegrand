@@ -21,7 +21,7 @@
   <meta property="og:image:alt" content="Simon Legrand">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2311151B'/%3E%3Ctext x='16' y='23' font-family='Georgia, serif' font-size='19' text-anchor='middle' fill='%23C7D77C'%3ESL%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2311151B'/%3E%3Ctext x='16' y='23' font-family='Georgia, serif' font-size='19' text-anchor='middle' fill='%23F3F0E8'%3ESL%3C/text%3E%3C/svg%3E">
   <link rel="preload" href="/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/dm-sans-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/site.css">
@@ -100,7 +100,7 @@
       <div class="wrap grid hero__grid">
         <div class="hero__top">
           <p class="meta hero__role" data-rise style="--i:0">Founder, technologist, independent thinker</p>
-          <h1 class="display" id="hero-title" data-rise style="--i:1">I build for the places other people&rsquo;s plans leave out.</h1>
+          <h1 class="display voice" id="hero-title" data-rise style="--i:1">I build for the places other people&rsquo;s plans leave out.</h1>
         </div>
         <div class="hero__text">
           <p class="lede hero__lede" data-rise style="--i:2">An oilfield in Kazakhstan with no grid to plug into. Schools that need security designed around them. Older people who fall between health and social care. Before any of it, fifteen years inside the UK public sector, where I learned how gaps like these open up.</p>
@@ -127,7 +127,8 @@
     <!-- How I think -->
     <section class="band band--paper think" aria-labelledby="think-title">
       <div class="wrap grid">
-        <h2 class="h2 think__statement" id="think-title">I&rsquo;ve never been particularly interested in doing things simply because that&rsquo;s how they&rsquo;ve always been done.</h2>
+        <p class="meta side">How I think</p>
+        <h2 class="h2 voice think__statement" id="think-title">I&rsquo;ve never been particularly interested in doing things simply because that&rsquo;s how they&rsquo;ve always been done.</h2>
         <div class="think__body prose">
           <p>My career has taken me across some rather different worlds, from health and social care to technology, entrepreneurship and innovation.</p>
           <p>What connects them is a fascination with problems that don&rsquo;t have straightforward answers. I want to know why things work the way they do, where conventional thinking falls short and what might happen if we approached them differently.</p>
@@ -138,55 +139,87 @@
     </section>
 
     <!-- Idea Observatory -->
-    <section class="band band--ink obs" id="observatory" aria-labelledby="obs-title" data-observatory>
+    <section class="band band--ink obs" id="observatory" aria-labelledby="obs-title">
       <div class="wrap">
         <div class="grid obs__head">
+          <p class="meta side">Idea Observatory</p>
           <h2 class="h2 obs__title" id="obs-title">Ideas don&rsquo;t respect boundaries.</h2>
-          <p class="lede obs__intro">Some of the most interesting questions emerge where different disciplines collide. These are the ones I keep returning to.</p>
+          <p class="lede obs__intro">Some of the most interesting questions emerge where different disciplines collide. Each one here sits where two of them meet.</p>
         </div>
 
         <div class="grid obs__tool">
-          <div class="obs__side">
-            <p class="meta" id="obs-themes-label">Choose a theme to see what crosses it</p>
-            <div class="obs__themes" role="group" aria-labelledby="obs-themes-label">
-              <button class="obs__theme" type="button" aria-pressed="false" data-theme="behaviour">Human behaviour</button>
-              <button class="obs__theme" type="button" aria-pressed="false" data-theme="technology">Technology</button>
-              <button class="obs__theme" type="button" aria-pressed="false" data-theme="enterprise">Entrepreneurship</button>
-              <button class="obs__theme" type="button" aria-pressed="false" data-theme="security">Security and resilience</button>
-              <button class="obs__theme" type="button" aria-pressed="false" data-theme="systems">Systems</button>
-            </div>
-            <p class="meta obs__status" data-status aria-live="polite">Six open questions, each sitting across two themes.</p>
-          </div>
+          <p class="meta side obs__key"><span>Filled cells hold a question.</span><span>Dashed cells are crossings I have not explored yet.</span></p>
+          <div class="main">
+            <div class="matrix" data-matrix role="group" aria-label="Questions arranged by the two themes each one crosses">
+              <p class="matrix__theme is-crossed" data-theme="behaviour" style="grid-area:1/1">Human behaviour</p>
+              <p class="matrix__theme is-crossed" data-theme="technology" style="grid-area:2/2">Technology</p>
+              <p class="matrix__theme" data-theme="enterprise" style="grid-area:3/3">Entrepreneurship</p>
+              <p class="matrix__theme" data-theme="security" style="grid-area:4/4">Security and resilience</p>
+              <p class="matrix__theme" data-theme="systems" style="grid-area:5/5">Systems</p>
 
-          <div class="obs__main">
+              <button class="matrix__cell" type="button" aria-pressed="true" style="grid-area:2/1" data-pair="behaviour technology"
+                data-cross-text="Human behaviour &times; Technology"
+                data-question-text="What changes when care is something a home notices, and not something a person has to ask for?">
+                <span class="matrix__mark" aria-hidden="true"></span><span class="matrix__name">A home that notices</span></button>
+              <p class="matrix__void" style="grid-area:3/1">Unexplored</p>
+              <button class="matrix__cell" type="button" aria-pressed="false" style="grid-area:3/2" data-pair="technology enterprise"
+                data-cross-text="Technology &times; Entrepreneurship"
+                data-question-text="Who writes the standard for a product that did not exist ten years ago?">
+                <span class="matrix__mark" aria-hidden="true"></span><span class="matrix__name">Who writes the standard</span></button>
+              <p class="matrix__void" style="grid-area:4/1">Unexplored</p>
+              <button class="matrix__cell" type="button" aria-pressed="false" style="grid-area:4/2" data-pair="technology security"
+                data-cross-text="Technology &times; Security and resilience"
+                data-question-text="What does reliable mean when there is no grid, no engineer on site and no second attempt?">
+                <span class="matrix__mark" aria-hidden="true"></span><span class="matrix__name">No second attempt</span></button>
+              <p class="matrix__void" style="grid-area:4/3">Unexplored</p>
+              <button class="matrix__cell" type="button" aria-pressed="false" style="grid-area:5/1" data-pair="behaviour systems"
+                data-cross-text="Human behaviour &times; Systems"
+                data-question-text="Why do the people who most need support so often qualify for none of it?">
+                <span class="matrix__mark" aria-hidden="true"></span><span class="matrix__name">Eligible for none</span></button>
+              <p class="matrix__void" style="grid-area:5/2">Unexplored</p>
+              <button class="matrix__cell" type="button" aria-pressed="false" style="grid-area:5/3" data-pair="enterprise systems"
+                data-cross-text="Entrepreneurship &times; Systems"
+                data-question-text="What does fifteen years in the public sector teach a founder that a business plan never will?">
+                <span class="matrix__mark" aria-hidden="true"></span><span class="matrix__name">What the public sector teaches</span></button>
+              <button class="matrix__cell" type="button" aria-pressed="false" style="grid-area:5/4" data-pair="security systems"
+                data-cross-text="Security and resilience &times; Systems"
+                data-question-text="How do you secure a machine that nobody visits?">
+                <span class="matrix__mark" aria-hidden="true"></span><span class="matrix__name">A machine nobody visits</span></button>
+
+              <div class="matrix__panel" style="grid-area:1/3/3/6" aria-live="polite">
+                <p class="matrix__question" data-question>What changes when care is something a home notices, and not something a person has to ask for?</p>
+                <p class="meta" data-cross>Human behaviour &times; Technology</p>
+              </div>
+            </div>
+
             <ul class="obs__list">
-              <li class="obs__item" data-themes="technology security">
-                <p class="obs__question">What does reliable mean when there is no grid, no engineer on site and no second attempt?</p>
-                <p class="meta obs__cross">Technology &times; Security and resilience</p>
-              </li>
-              <li class="obs__item" data-themes="behaviour systems">
-                <p class="obs__question">Why do the people who most need support so often qualify for none of it?</p>
-                <p class="meta obs__cross">Human behaviour &times; Systems</p>
-              </li>
-              <li class="obs__item" data-themes="security technology">
-                <p class="obs__question">How do you secure a machine that nobody visits?</p>
-                <p class="meta obs__cross">Security and resilience &times; Technology</p>
-              </li>
-              <li class="obs__item" data-themes="enterprise systems">
-                <p class="obs__question">What does fifteen years in the public sector teach a founder that a business plan never will?</p>
-                <p class="meta obs__cross">Entrepreneurship &times; Systems</p>
-              </li>
-              <li class="obs__item" data-themes="enterprise technology">
-                <p class="obs__question">Who writes the standard for a product that did not exist ten years ago?</p>
-                <p class="meta obs__cross">Entrepreneurship &times; Technology</p>
-              </li>
-              <li class="obs__item" data-themes="behaviour technology">
+              <li class="obs__item">
                 <p class="obs__question">What changes when care is something a home notices, and not something a person has to ask for?</p>
                 <p class="meta obs__cross">Human behaviour &times; Technology</p>
               </li>
+              <li class="obs__item">
+                <p class="obs__question">Who writes the standard for a product that did not exist ten years ago?</p>
+                <p class="meta obs__cross">Technology &times; Entrepreneurship</p>
+              </li>
+              <li class="obs__item">
+                <p class="obs__question">What does reliable mean when there is no grid, no engineer on site and no second attempt?</p>
+                <p class="meta obs__cross">Technology &times; Security and resilience</p>
+              </li>
+              <li class="obs__item">
+                <p class="obs__question">Why do the people who most need support so often qualify for none of it?</p>
+                <p class="meta obs__cross">Human behaviour &times; Systems</p>
+              </li>
+              <li class="obs__item">
+                <p class="obs__question">What does fifteen years in the public sector teach a founder that a business plan never will?</p>
+                <p class="meta obs__cross">Entrepreneurship &times; Systems</p>
+              </li>
+              <li class="obs__item">
+                <p class="obs__question">How do you secure a machine that nobody visits?</p>
+                <p class="meta obs__cross">Security and resilience &times; Systems</p>
+              </li>
             </ul>
             <div class="obs__note">
-              <p class="meta">Open questions, not finished essays. Published work is further down.</p>
+              <p class="meta">Open questions, not finished essays.</p>
               <a class="link" href="#journal">Published work</a>
             </div>
           </div>
@@ -196,106 +229,105 @@
 
     <!-- Ventures -->
     <section class="band band--paper build" id="building" aria-labelledby="build-title">
-      <div class="wrap">
+      <div class="wrap build__top">
         <div class="grid build__head">
+          <p class="meta side">Ventures</p>
           <h2 class="h2 build__title" id="build-title">Some ideas are worth building.</h2>
           <p class="lede build__intro">Thinking is important. But I&rsquo;m equally interested in what happens when an idea leaves the drawing board and enters the real world.</p>
         </div>
+      </div>
 
-        <!-- Sunstone -->
-        <article class="grid story story--sunstone" aria-labelledby="sunstone-title">
-          <figure class="story__figure field">
-            <svg viewBox="0 0 700 440" role="img" aria-label="Fifty-eight points scattered in loose clusters across an empty field, one for each system deployed at Tengiz.">
-            <g fill="none" stroke="#63788C" stroke-width="1">
-            <path d="M100 0V440" stroke-dasharray="1 7"/>
-            <path d="M200 0V440" stroke-dasharray="1 7"/>
-            <path d="M300 0V440" stroke-dasharray="1 7"/>
-            <path d="M400 0V440" stroke-dasharray="1 7"/>
-            <path d="M500 0V440" stroke-dasharray="1 7"/>
-            <path d="M600 0V440" stroke-dasharray="1 7"/>
-            <path d="M0 110H700" stroke-dasharray="1 7"/>
-            <path d="M0 220H700" stroke-dasharray="1 7"/>
-            <path d="M0 330H700" stroke-dasharray="1 7"/>
-            </g><g fill="#C7D77C">
-            <circle cx="102" cy="107" r="3.5"/>
-            <circle cx="57" cy="48" r="3.5"/>
-            <circle cx="181" cy="131" r="3.5"/>
-            <circle cx="106" cy="145" r="3.5"/>
-            <circle cx="220" cy="51" r="3.5"/>
-            <circle cx="147" cy="83" r="3.5"/>
-            <circle cx="146" cy="107" r="3.5"/>
-            <circle cx="76" cy="123" r="3.5"/>
-            <circle cx="187" cy="153" r="3.5"/>
-            <circle cx="308" cy="98" r="3.5"/>
-            <circle cx="328" cy="66" r="3.5"/>
-            <circle cx="241" cy="50" r="3.5"/>
-            <circle cx="328" cy="125" r="3.5"/>
-            <circle cx="352" cy="134" r="3.5"/>
-            <circle cx="305" cy="119" r="3.5"/>
-            <circle cx="300" cy="151" r="3.5"/>
-            <circle cx="431" cy="140" r="3.5"/>
-            <circle cx="466" cy="103" r="3.5"/>
-            <circle cx="499" cy="100" r="3.5"/>
-            <circle cx="488" cy="148" r="3.5"/>
-            <circle cx="549" cy="209" r="3.5"/>
-            <circle cx="561" cy="100" r="3.5"/>
-            <circle cx="498" cy="186" r="3.5"/>
-            <circle cx="604" cy="198" r="3.5"/>
-            <circle cx="539" cy="117" r="3.5"/>
-            <circle cx="507" cy="129" r="3.5"/>
-            <circle cx="550" cy="139" r="3.5"/>
-            <circle cx="318" cy="330" r="3.5"/>
-            <circle cx="149" cy="293" r="3.5"/>
-            <circle cx="202" cy="260" r="3.5"/>
-            <circle cx="176" cy="271" r="3.5"/>
-            <circle cx="344" cy="281" r="3.5"/>
-            <circle cx="232" cy="309" r="3.5"/>
-            <circle cx="236" cy="359" r="3.5"/>
-            <circle cx="142" cy="323" r="3.5"/>
-            <circle cx="255" cy="408" r="3.5"/>
-            <circle cx="137" cy="262" r="3.5"/>
-            <circle cx="480" cy="313" r="3.5"/>
-            <circle cx="426" cy="264" r="3.5"/>
-            <circle cx="338" cy="336" r="3.5"/>
-            <circle cx="351" cy="300" r="3.5"/>
-            <circle cx="409" cy="309" r="3.5"/>
-            <circle cx="451" cy="235" r="3.5"/>
-            <circle cx="441" cy="310" r="3.5"/>
-            <circle cx="454" cy="347" r="3.5"/>
-            <circle cx="417" cy="290" r="3.5"/>
-            <circle cx="507" cy="328" r="3.5"/>
-            <circle cx="402" cy="337" r="3.5"/>
-            <circle cx="329" cy="304" r="3.5"/>
-            <circle cx="583" cy="345" r="3.5"/>
-            <circle cx="602" cy="408" r="3.5"/>
-            <circle cx="634" cy="358" r="3.5"/>
-            <circle cx="551" cy="404" r="3.5"/>
-            <circle cx="566" cy="299" r="3.5"/>
-            <circle cx="537" cy="300" r="3.5"/>
-            <circle cx="523" cy="406" r="3.5"/>
-            <circle cx="586" cy="208" r="3.5"/>
-            <circle cx="627" cy="316" r="3.5"/>
-            </g></svg>
-            <figcaption class="meta">58 systems, no grid connection. A schematic, not a map.</figcaption>
-          </figure>
-          <div class="story__text">
-            <p class="meta story__meta">Sunstone Systems. Co-founder, 2011 to 2024</p>
+      <!-- Sunstone: full bleed -->
+      <article class="tengiz" aria-labelledby="sunstone-title" data-seen>
+        <div class="tengiz__field">
+          <p class="tengiz__num" aria-hidden="true">58</p>
+          <svg viewBox="0 0 1000 600" preserveAspectRatio="none" role="img" aria-label="Fifty-eight points scattered in loose clusters across an empty field, one for each system deployed at Tengiz.">
+          <g fill="none" stroke="#F3F0E8" stroke-width="9" stroke-linecap="round">
+          <path class="dot" style="--d:0" vector-effect="non-scaling-stroke" d="M91 80h0"/>
+          <path class="dot" style="--d:1" vector-effect="non-scaling-stroke" d="M116 69h0"/>
+          <path class="dot" style="--d:2" vector-effect="non-scaling-stroke" d="M160 82h0"/>
+          <path class="dot" style="--d:3" vector-effect="non-scaling-stroke" d="M197 49h0"/>
+          <path class="dot" style="--d:4" vector-effect="non-scaling-stroke" d="M117 162h0"/>
+          <path class="dot" style="--d:5" vector-effect="non-scaling-stroke" d="M165 119h0"/>
+          <path class="dot" style="--d:6" vector-effect="non-scaling-stroke" d="M140 197h0"/>
+          <path class="dot" style="--d:7" vector-effect="non-scaling-stroke" d="M194 189h0"/>
+          <path class="dot" style="--d:8" vector-effect="non-scaling-stroke" d="M250 138h0"/>
+          <path class="dot" style="--d:9" vector-effect="non-scaling-stroke" d="M32 373h0"/>
+          <path class="dot" style="--d:10" vector-effect="non-scaling-stroke" d="M278 143h0"/>
+          <path class="dot" style="--d:11" vector-effect="non-scaling-stroke" d="M237 192h0"/>
+          <path class="dot" style="--d:12" vector-effect="non-scaling-stroke" d="M274 176h0"/>
+          <path class="dot" style="--d:13" vector-effect="non-scaling-stroke" d="M88 384h0"/>
+          <path class="dot" style="--d:14" vector-effect="non-scaling-stroke" d="M364 109h0"/>
+          <path class="dot" style="--d:15" vector-effect="non-scaling-stroke" d="M285 205h0"/>
+          <path class="dot" style="--d:16" vector-effect="non-scaling-stroke" d="M392 100h0"/>
+          <path class="dot" style="--d:17" vector-effect="non-scaling-stroke" d="M266 229h0"/>
+          <path class="dot" style="--d:18" vector-effect="non-scaling-stroke" d="M326 193h0"/>
+          <path class="dot" style="--d:19" vector-effect="non-scaling-stroke" d="M500 32h0"/>
+          <path class="dot" style="--d:20" vector-effect="non-scaling-stroke" d="M167 370h0"/>
+          <path class="dot" style="--d:21" vector-effect="non-scaling-stroke" d="M217 327h0"/>
+          <path class="dot" style="--d:22" vector-effect="non-scaling-stroke" d="M58 489h0"/>
+          <path class="dot" style="--d:23" vector-effect="non-scaling-stroke" d="M195 363h0"/>
+          <path class="dot" style="--d:24" vector-effect="non-scaling-stroke" d="M312 247h0"/>
+          <path class="dot" style="--d:25" vector-effect="non-scaling-stroke" d="M375 184h0"/>
+          <path class="dot" style="--d:26" vector-effect="non-scaling-stroke" d="M490 86h0"/>
+          <path class="dot" style="--d:27" vector-effect="non-scaling-stroke" d="M538 39h0"/>
+          <path class="dot" style="--d:28" vector-effect="non-scaling-stroke" d="M490 125h0"/>
+          <path class="dot" style="--d:29" vector-effect="non-scaling-stroke" d="M253 377h0"/>
+          <path class="dot" style="--d:30" vector-effect="non-scaling-stroke" d="M453 182h0"/>
+          <path class="dot" style="--d:31" vector-effect="non-scaling-stroke" d="M572 65h0"/>
+          <path class="dot" style="--d:32" vector-effect="non-scaling-stroke" d="M402 262h0"/>
+          <path class="dot" style="--d:33" vector-effect="non-scaling-stroke" d="M302 373h0"/>
+          <path class="dot" style="--d:34" vector-effect="non-scaling-stroke" d="M278 406h0"/>
+          <path class="dot" style="--d:35" vector-effect="non-scaling-stroke" d="M596 96h0"/>
+          <path class="dot" style="--d:36" vector-effect="non-scaling-stroke" d="M534 161h0"/>
+          <path class="dot" style="--d:37" vector-effect="non-scaling-stroke" d="M399 326h0"/>
+          <path class="dot" style="--d:38" vector-effect="non-scaling-stroke" d="M481 256h0"/>
+          <path class="dot" style="--d:39" vector-effect="non-scaling-stroke" d="M426 335h0"/>
+          <path class="dot" style="--d:40" vector-effect="non-scaling-stroke" d="M400 367h0"/>
+          <path class="dot" style="--d:41" vector-effect="non-scaling-stroke" d="M728 96h0"/>
+          <path class="dot" style="--d:42" vector-effect="non-scaling-stroke" d="M753 82h0"/>
+          <path class="dot" style="--d:43" vector-effect="non-scaling-stroke" d="M426 423h0"/>
+          <path class="dot" style="--d:44" vector-effect="non-scaling-stroke" d="M694 157h0"/>
+          <path class="dot" style="--d:45" vector-effect="non-scaling-stroke" d="M451 414h0"/>
+          <path class="dot" style="--d:46" vector-effect="non-scaling-stroke" d="M795 81h0"/>
+          <path class="dot" style="--d:47" vector-effect="non-scaling-stroke" d="M766 115h0"/>
+          <path class="dot" style="--d:48" vector-effect="non-scaling-stroke" d="M491 394h0"/>
+          <path class="dot" style="--d:49" vector-effect="non-scaling-stroke" d="M765 185h0"/>
+          <path class="dot" style="--d:50" vector-effect="non-scaling-stroke" d="M815 151h0"/>
+          <path class="dot" style="--d:51" vector-effect="non-scaling-stroke" d="M822 181h0"/>
+          <path class="dot" style="--d:52" vector-effect="non-scaling-stroke" d="M930 79h0"/>
+          <path class="dot" style="--d:53" vector-effect="non-scaling-stroke" d="M886 130h0"/>
+          <path class="dot" style="--d:54" vector-effect="non-scaling-stroke" d="M966 85h0"/>
+          <path class="dot" style="--d:55" vector-effect="non-scaling-stroke" d="M899 170h0"/>
+          <path class="dot" style="--d:56" vector-effect="non-scaling-stroke" d="M950 129h0"/>
+          <path class="dot" style="--d:57" vector-effect="non-scaling-stroke" d="M967 188h0"/>
+          </g></svg>
+        </div>
+        <div class="wrap grid tengiz__body">
+          <div class="tengiz__text">
+            <p class="meta">Sunstone Systems. Co-founder, 2011 to 2024</p>
             <h3 class="h3" id="sunstone-title">Building technology for the places others couldn&rsquo;t easily reach.</h3>
             <div class="prose">
               <p>I co-founded Sunstone in 2011 to put surveillance and communications where there was no power and no network. Over thirteen years that became a family of solar-powered systems for remote industrial sites.</p>
               <p>The work took me to Tengiz in Kazakhstan, where 58 systems were deployed with Chevron and Tengizchevroil. It also led to work with Rivian Automotive and Network Rail, and to three granted patents.</p>
             </div>
+            <p class="meta tengiz__note">One point for each system. No grid connection to any of them. A schematic, not a map.</p>
           </div>
-          <blockquote class="quote">
+        </div>
+      </article>
+
+      <div class="wrap build__rest">
+        <div class="grid quote">
+          <p class="meta side"><span>Neil Barrie</span><span>Security Operations</span><span>Tengizchevroil, Kazakhstan</span></p>
+          <blockquote>
             <p>&ldquo;Simon was the consummate professional business partner and clear SME in his field of expertise, with an ability to integrate, align, and support local company personnel on field deployments and operations.&rdquo;</p>
-            <footer class="meta">Neil Barrie, Security Operations, Tengizchevroil, Kazakhstan</footer>
           </blockquote>
-        </article>
+        </div>
 
         <!-- Fyrfly -->
         <article class="grid story story--fyrfly" aria-labelledby="fyrfly-title">
+          <p class="meta side"><span>Fyrfly Systems</span><span>Founder</span><span>Current</span></p>
           <div class="story__text">
-            <p class="meta story__meta">Fyrfly Systems. Founder, current</p>
             <h3 class="h3" id="fyrfly-title">Rethinking physical security.</h3>
             <div class="prose">
               <p>Fyrfly is a physical security specialist based in Whitstable. It works with schools, the public sector and commercial premises as a single accountable partner, from design through to maintenance.</p>
@@ -304,7 +336,7 @@
             <a class="link" href="https://www.fyrflysystems.com" rel="noopener">Visit fyrflysystems.com</a>
           </div>
           <div class="story__figure ledger">
-            <p class="meta ledger__model">Prevent, detect, verify, respond, recover</p>
+            <p class="meta">Prevent, detect, verify, respond, recover</p>
             <ul class="ledger__list">
               <li>CCTV</li>
               <li>Access control</li>
@@ -317,17 +349,15 @@
         </article>
 
         <!-- Assistiv -->
-        <article class="story story--assistiv middle" aria-labelledby="assistiv-title">
-          <div class="middle__bar" role="img" aria-label="Diagram. Three stages side by side: living independently, the missing middle, and formal care. The missing middle is highlighted.">
+        <article class="grid story story--assistiv" aria-labelledby="assistiv-title">
+          <p class="meta side"><span>Assistiv</span><span>Co-founder</span><span>In development</span></p>
+          <div class="story__figure middle__bar" role="img" aria-label="Diagram. Three stages side by side: living independently, the missing middle, and formal care. The missing middle is highlighted.">
             <div><span class="meta">Managing without support</span><strong>Living independently</strong></div>
             <div class="middle__gap"><span class="meta">Needing help, eligible for none</span><strong>The missing middle</strong></div>
             <div><span class="meta">Eligible for services</span><strong>Formal care</strong></div>
           </div>
           <div class="grid middle__text">
-            <div class="middle__title">
-              <p class="meta story__meta">Assistiv. Co-founder, in development</p>
-              <h3 class="h3" id="assistiv-title">Exploring the missing middle.</h3>
-            </div>
+            <h3 class="h3 middle__title" id="assistiv-title">Exploring the missing middle.</h3>
             <div class="middle__copy">
               <div class="prose">
                 <p>Assistiv is an initiative in development. It asks how older adults can be better supported when they fall between living independently and qualifying for formal care, the space existing health and social-care provision tends to miss.</p>
@@ -342,52 +372,127 @@
 
     <!-- Journey -->
     <section class="band band--ink journey" id="journey" aria-labelledby="journey-title">
+      <div class="wrap grid">
+        <p class="meta side">Journey</p>
+        <h2 class="h2 journey__title" id="journey-title">The interesting journeys rarely follow a straight line.</h2>
+        <div class="journey__figure" data-seen>
+          <ol class="journey__list">
+            <li class="journey__line-wrap" aria-hidden="true" role="presentation"><svg class="journey__line" viewBox="0 0 100 800" preserveAspectRatio="none"><path d="M34 12 C34 67 62 57 62 112 C62 167 40 157 40 212 C40 267 68 257 68 312 C68 367 46 357 46 412 C46 467 32 457 32 512 C32 567 58 557 58 612 C58 667 38 657 38 712"/></svg></li>
+            <li class="chapter chapter--left" style="--n:0;--x:34">
+              <p class="meta">1999</p>
+              <h3 class="chapter__name">Canterbury College</h3>
+              <p class="chapter__text">Direct work with students with profound and complex learning difficulties.</p>
+            </li>
+            <li class="chapter" style="--n:1;--x:62">
+              <p class="meta">2003</p>
+              <h3 class="chapter__name">A screening tool</h3>
+              <p class="chapter__text">Developed the Drug Use Screening Tool, adopted as best practice by the Department of Health and used by 16 local authorities.</p>
+            </li>
+            <li class="chapter chapter--left" style="--n:2;--x:40">
+              <p class="meta">2009</p>
+              <h3 class="chapter__name">The Home Office</h3>
+              <p class="chapter__text">Policy adviser to the Home Secretary, assessing international evidence on alcohol-related violence in the night-time economy.</p>
+            </li>
+            <li class="chapter" style="--n:3;--x:68">
+              <p class="meta">2011</p>
+              <h3 class="chapter__name">Sunstone Systems</h3>
+              <p class="chapter__text">Co-founded a company to put surveillance and communications where there was no power.</p>
+            </li>
+            <li class="chapter" style="--n:4;--x:46">
+              <p class="meta">2016</p>
+              <h3 class="chapter__name">A first patent</h3>
+              <p class="chapter__text">Solar CCTV System, WO2016185034A1, developed with Chevron and Tengizchevroil.</p>
+            </li>
+            <li class="chapter chapter--left" style="--n:5;--x:32">
+              <p class="meta">2022</p>
+              <h3 class="chapter__name">Tengiz, Kazakhstan</h3>
+              <p class="chapter__text">The first of two site visits to 58 systems running with no grid connection.</p>
+            </li>
+            <li class="chapter" style="--n:6;--x:58">
+              <p class="meta">2024</p>
+              <h3 class="chapter__name">Assistiv</h3>
+              <p class="chapter__text">Co-founded to explore better support for older adults in the missing middle.</p>
+            </li>
+            <li class="chapter" style="--n:7;--x:38">
+              <p class="meta">2026</p>
+              <h3 class="chapter__name">Fyrfly Systems</h3>
+              <p class="chapter__text">Founded a physical security business for schools and the public sector.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Record -->
+    <section class="band band--soft record" id="record" aria-labelledby="record-title">
       <div class="wrap">
         <div class="grid">
-          <h2 class="h2 journey__title" id="journey-title">The interesting journeys rarely follow a straight line.</h2>
+          <p class="meta side">Record</p>
+          <h2 class="h2 record__title" id="record-title">For the record.</h2>
         </div>
-        <ol class="journey__list">
-          <li class="chapter">
-            <p class="meta chapter__year">1999</p>
-            <h3 class="chapter__name">Canterbury College</h3>
-            <p class="chapter__text">Direct work with students with profound and complex learning difficulties.</p>
-          </li>
-          <li class="chapter">
-            <p class="meta chapter__year">2003</p>
-            <h3 class="chapter__name">A screening tool</h3>
-            <p class="chapter__text">Developed the Drug Use Screening Tool, adopted as best practice by the Department of Health and used by 16 local authorities.</p>
-          </li>
-          <li class="chapter">
-            <p class="meta chapter__year">2009</p>
-            <h3 class="chapter__name">The Home Office</h3>
-            <p class="chapter__text">Policy adviser to the Home Secretary, assessing international evidence on alcohol-related violence in the night-time economy.</p>
-          </li>
-          <li class="chapter">
-            <p class="meta chapter__year">2011</p>
-            <h3 class="chapter__name">Sunstone Systems</h3>
-            <p class="chapter__text">Co-founded a company to put surveillance and communications where there was no power.</p>
-          </li>
-          <li class="chapter">
-            <p class="meta chapter__year">2016</p>
-            <h3 class="chapter__name">A first patent</h3>
-            <p class="chapter__text">Solar CCTV System, WO2016185034A1, developed with Chevron and Tengizchevroil.</p>
-          </li>
-          <li class="chapter">
-            <p class="meta chapter__year">2022</p>
-            <h3 class="chapter__name">Tengiz, Kazakhstan</h3>
-            <p class="chapter__text">The first of two site visits to 58 systems running with no grid connection.</p>
-          </li>
-          <li class="chapter">
-            <p class="meta chapter__year">2024</p>
-            <h3 class="chapter__name">Assistiv</h3>
-            <p class="chapter__text">Co-founded to explore better support for older adults in the missing middle.</p>
-          </li>
-          <li class="chapter">
-            <p class="meta chapter__year">2026</p>
-            <h3 class="chapter__name">Fyrfly Systems</h3>
-            <p class="chapter__text">Founded a physical security business for schools and the public sector.</p>
-          </li>
-        </ol>
+
+        <div class="grid record__group">
+          <h3 class="meta side">Patents</h3>
+          <ul class="record__rows record__rows--large">
+            <li><span class="record__what"><a class="link" href="https://patents.google.com/patent/WO2016185034A1/en" rel="noopener">Solar CCTV System</a><small>Solar-powered autonomous surveillance, developed with Chevron and Tengizchevroil. WO2016185034A1</small></span><span class="meta record__when">2016</span></li>
+            <li><span class="record__what"><a class="link" href="https://patents.google.com/patent/US20200280280A1/en" rel="noopener">Solar Power Station</a><small>Autonomous off-grid power for remote IoT and surveillance infrastructure. US20200280280A1</small></span><span class="meta record__when">2020</span></li>
+            <li><span class="record__what"><a class="link" href="https://patents.google.com/patent/US20220052538A1/en" rel="noopener">Solar Drone Charging Station</a><small>Autonomous drone charging for persistent remote surveillance and monitoring. US20220052538A1</small></span><span class="meta record__when">2022</span></li>
+          </ul>
+        </div>
+
+        <div class="grid record__group">
+          <h3 class="meta side">Recognition</h3>
+          <ul class="record__rows record__rows--cols">
+            <li><span class="record__what">IFSEC Global Top 50 Most Influential in Security</span><span class="meta record__when">2018</span></li>
+            <li><span class="record__what">S&amp;FE Awards, Security Partnering Initiative<small>Winner</small></span><span class="meta record__when">2023</span></li>
+            <li><span class="record__what">Engineering &amp; Manufacturing Awards, Rising Star<small>Finalist</small></span><span class="meta record__when">2023</span></li>
+            <li><span class="record__what">National Sustainability Awards, Sustainable Transport<small>Shortlisted</small></span><span class="meta record__when">2023</span></li>
+            <li><span class="record__what">S&amp;FE Awards, Security Company of the Year<small>Finalist</small></span><span class="meta record__when">2021</span></li>
+            <li><span class="record__what">S&amp;FE Awards, Champion of Champions<small>Finalist</small></span><span class="meta record__when">2021</span></li>
+            <li><span class="record__what">Highways England, Network Management<small>Winner</small></span><span class="meta record__when">2020</span></li>
+            <li><span class="record__what">Canterbury Business Awards, SME &amp; Innovation<small>Winner</small></span><span class="meta record__when">2018</span></li>
+            <li><span class="record__what">CIHT Awards, Innovation<small>Highly commended</small></span><span class="meta record__when">2018</span></li>
+            <li><span class="record__what">S&amp;FE Awards, SME Installer &amp; Project of the Year<small>Winner</small></span><span class="meta record__when">2017</span></li>
+            <li><span class="record__what">LGC Awards, Service Delivery Model of the Year<small>Winner</small></span><span class="meta record__when">2017</span></li>
+            <li><span class="record__what">ADS Security Innovation Awards, Wireless HD CCTV<small>Highly commended</small></span><span class="meta record__when">2014</span></li>
+          </ul>
+        </div>
+
+        <div class="grid record__group">
+          <h3 class="meta side">Public sector</h3>
+          <ul class="record__rows">
+            <li><span class="record__what">&pound;7m secured from Kent County Council for a countywide Emotional Health and Wellbeing Service</span><span class="meta record__when">2012</span></li>
+            <li><span class="record__what">&pound;2.1m in Department for Education funding across child poverty, emotional health and substance-misusing parents</span><span class="meta record__when">2009</span></li>
+            <li><span class="record__what">Policy adviser to the Home Secretary on alcohol-related violence in the night-time economy</span><span class="meta record__when">2009</span></li>
+            <li><span class="record__what">Drug Use Screening Tool adopted as best practice by the Department of Health and used by 16 local authorities</span><span class="meta record__when">2003</span></li>
+          </ul>
+        </div>
+
+        <div class="grid record__group">
+          <h3 class="meta side">Qualifications</h3>
+          <ul class="record__rows record__rows--cols">
+            <li><span class="record__what">MCIM, Chartered Institute of Marketing</span><span class="meta record__when">2025</span></li>
+            <li><span class="record__what">MHFA Practitioner, Mental Health First Aid UK</span><span class="meta record__when">2024</span></li>
+            <li><span class="record__what">DipHE Public Sector Change &amp; Innovation, University of Kent</span><span class="meta record__when">2003</span></li>
+            <li><span class="record__what">DipHE Public Sector Development, University of Brighton</span><span class="meta record__when">2003</span></li>
+            <li><span class="record__what">BA (Hons) Education &amp; Psychology, University of Leeds</span><span class="meta record__when">1999</span></li>
+          </ul>
+        </div>
+
+        <div class="grid record__group">
+          <h3 class="meta side">Panels and memberships</h3>
+          <ul class="record__rows record__rows--cols">
+            <li><span class="record__what">PSI Magazine, Content Advisory Panel</span><span class="meta record__when">2025</span></li>
+            <li><span class="record__what">Security Matters, Content Panel</span><span class="meta record__when">2024</span></li>
+            <li><span class="record__what">Security Buyer, Awards Panel</span><span class="meta record__when">2024</span></li>
+            <li><span class="record__what">Responsible AI Institute</span><span class="meta record__when">2025</span></li>
+            <li><span class="record__what">NHS Horizons, AI Ambassador Network</span><span class="meta record__when">2025</span></li>
+            <li><span class="record__what">NHS Health Innovation Kent Surrey Sussex</span><span class="meta record__when">2025</span></li>
+            <li><span class="record__what">NHS Confederation Q Network</span><span class="meta record__when">2025</span></li>
+            <li><span class="record__what">Chartered Institute of Marketing, Full Member</span><span class="meta record__when">2025</span></li>
+            <li><span class="record__what">LCRIG</span><span class="meta record__when">2025</span></li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -395,6 +500,7 @@
     <section class="band band--paper journal" id="journal" aria-labelledby="journal-title">
       <div class="wrap">
         <div class="grid">
+          <p class="meta side">Published work</p>
           <h2 class="h2 journal__title" id="journal-title">Notes from the intersection of things.</h2>
         </div>
         <div class="grid journal__grid">
@@ -435,8 +541,9 @@
     </section>
 
     <!-- Closing -->
-    <section class="band band--ink close" id="contact" aria-labelledby="close-title">
+    <section class="band band--slate close" id="contact" aria-labelledby="close-title">
       <div class="wrap grid">
+        <p class="meta side">Contact</p>
         <h2 class="h2 close__title" id="close-title">Interesting things rarely happen without interesting conversations.</h2>
         <div class="close__body">
           <p class="lede">Whether it&rsquo;s an idea worth exploring, a problem worth solving, an opportunity to collaborate or simply a different perspective to exchange, I&rsquo;m always interested in a good conversation.</p>
