@@ -148,8 +148,8 @@ html:not(.js) .menu { display: none; }
 /* The menu is one more ledger: the page's sections, in page order */
 .menu__list { border-top: 1px solid var(--ink); }
 .menu__item { border-bottom: 1px solid var(--rule); }
-.menu__link { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.25rem; align-items: baseline; padding-block: clamp(0.7rem, 1.8vh, 1.25rem); text-decoration: none; }
-.menu__name { font-family: var(--display); font-size: clamp(2rem, 1.3rem + 3vw, 3.75rem); line-height: 1.05; letter-spacing: -0.03em; transition: transform 320ms var(--ease); }
+.menu__link { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.25rem; align-items: baseline; padding-block: clamp(0.8rem, 1.8vh, 1.1rem); text-decoration: none; }
+.menu__name { font-family: var(--display); font-size: var(--t-h3); line-height: 1.12; letter-spacing: -0.025em; transition: transform 320ms var(--ease); }
 .menu__note { font-family: var(--mono); font-size: var(--t-meta); color: var(--graphite); }
 .menu__link:hover .menu__name, .menu__link:focus-visible .menu__name { transform: translateX(0.75rem); }
 .menu__foot { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; font-family: var(--mono); font-size: var(--t-meta); }
