@@ -22,9 +22,9 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2311151B'/%3E%3Ctext x='16' y='23' font-family='Georgia, serif' font-size='19' text-anchor='middle' fill='%23C7D77C'%3ESL%3C/text%3E%3C/svg%3E">
-  <link rel="preload" href="/assets/fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/dm-sans-variable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="preload" href="/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/dm-sans-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/site.css">
   <script>document.documentElement.classList.add('js');</script>
 
   <script type="application/ld+json">
@@ -44,7 +44,7 @@
         "@id": "https://www.simonlegrand.co.uk/#person",
         "name": "Simon Legrand",
         "url": "https://www.simonlegrand.co.uk/",
-        "image": "https://www.simonlegrand.co.uk/assets/img/simon-legrand-1003.webp",
+        "image": "https://www.simonlegrand.co.uk/simon-legrand-1003.webp",
         "jobTitle": "Founder",
         "email": "hello@simonlegrand.co.uk",
         "address": {
@@ -80,10 +80,10 @@
   <div class="menu" id="menu">
     <nav aria-label="Main">
       <ul class="menu__list">
-        <li class="menu__item"><a class="menu__link" href="/thinking/"><span class="menu__name">Thinking</span><span class="menu__note">Open questions and published work</span></a></li>
-        <li class="menu__item"><a class="menu__link" href="/ventures/"><span class="menu__name">Ventures</span><span class="menu__note">Sunstone, Fyrfly and Assistiv</span></a></li>
-        <li class="menu__item"><a class="menu__link" href="/about/"><span class="menu__name">About</span><span class="menu__note">Career, patents and recognition</span></a></li>
-        <li class="menu__item"><a class="menu__link" href="/contact/"><span class="menu__name">Contact</span><span class="menu__note">Start a conversation</span></a></li>
+        <li class="menu__item"><a class="menu__link" href="#observatory"><span class="menu__name">Thinking</span><span class="menu__note">Open questions and published work</span></a></li>
+        <li class="menu__item"><a class="menu__link" href="#building"><span class="menu__name">Ventures</span><span class="menu__note">Sunstone, Fyrfly and Assistiv</span></a></li>
+        <li class="menu__item"><a class="menu__link" href="#journey"><span class="menu__name">About</span><span class="menu__note">Career, patents and recognition</span></a></li>
+        <li class="menu__item"><a class="menu__link" href="#contact"><span class="menu__name">Contact</span><span class="menu__note">Start a conversation</span></a></li>
       </ul>
     </nav>
     <p class="menu__foot">
@@ -116,8 +116,8 @@
           </ul>
         </div>
         <figure class="hero__portrait" data-rise style="--i:2">
-          <img src="/assets/img/simon-legrand-800.webp"
-               srcset="/assets/img/simon-legrand-480.webp 480w, /assets/img/simon-legrand-800.webp 800w, /assets/img/simon-legrand-1003.webp 1003w"
+          <img src="/simon-legrand-800.webp"
+               srcset="/simon-legrand-480.webp 480w, /simon-legrand-800.webp 800w, /simon-legrand-1003.webp 1003w"
                sizes="(min-width: 56rem) 30vw, 92vw"
                width="800" height="1000" alt="Simon Legrand" fetchpriority="high">
         </figure>
@@ -132,7 +132,7 @@
           <p>My career has taken me across some rather different worlds, from health and social care to technology, entrepreneurship and innovation.</p>
           <p>What connects them is a fascination with problems that don&rsquo;t have straightforward answers. I want to know why things work the way they do, where conventional thinking falls short and what might happen if we approached them differently.</p>
           <p>Sometimes that leads to an idea. Sometimes to an entirely new business. Occasionally it leads somewhere unexpected.</p>
-          <p><a class="link" href="/about/">More about me</a></p>
+          <p><a class="link" href="#journey">How I got here</a></p>
         </div>
       </div>
     </section>
@@ -187,7 +187,7 @@
             </ul>
             <div class="obs__note">
               <p class="meta">Open questions, not finished essays. Published work is further down.</p>
-              <a class="link" href="/thinking/">All thinking</a>
+              <a class="link" href="#journal">Published work</a>
             </div>
           </div>
         </div>
@@ -285,7 +285,6 @@
               <p>I co-founded Sunstone in 2011 to put surveillance and communications where there was no power and no network. Over thirteen years that became a family of solar-powered systems for remote industrial sites.</p>
               <p>The work took me to Tengiz in Kazakhstan, where 58 systems were deployed with Chevron and Tengizchevroil. It also led to work with Rivian Automotive and Network Rail, and to three granted patents.</p>
             </div>
-            <a class="link" href="/ventures/#sunstone">The Sunstone story</a>
           </div>
           <blockquote class="quote">
             <p>&ldquo;Simon was the consummate professional business partner and clear SME in his field of expertise, with an ability to integrate, align, and support local company personnel on field deployments and operations.&rdquo;</p>
@@ -342,7 +341,7 @@
     </section>
 
     <!-- Journey -->
-    <section class="band band--ink journey" aria-labelledby="journey-title">
+    <section class="band band--ink journey" id="journey" aria-labelledby="journey-title">
       <div class="wrap">
         <div class="grid">
           <h2 class="h2 journey__title" id="journey-title">The interesting journeys rarely follow a straight line.</h2>
@@ -389,7 +388,6 @@
             <p class="chapter__text">Founded a physical security business for schools and the public sector.</p>
           </li>
         </ol>
-        <p class="journey__more"><a class="link" href="/about/">The full story</a></p>
       </div>
     </section>
 
@@ -416,14 +414,28 @@
               <h3><a class="piece__title" href="https://www.border-security-report.com/beyond-borders-revolutionising-cross-border-security-with-solar-powered-surveillance" rel="noopener"><span>Beyond borders</span></a></h3>
               <p class="piece__summary">Cross-border security with solar-powered surveillance.</p>
             </article>
-            <p class="journal__more"><a class="link" href="/thinking/#published">All published work</a></p>
+            <article class="piece piece--minor">
+              <p class="meta piece__meta">Security Buyer. Technology</p>
+              <h3><a class="piece__title" href="https://securitybuyer.com/guiding-principles-in-solar-cctv" rel="noopener"><span>Guiding principles in designing solar CCTV</span></a></h3>
+              <p class="piece__summary">Specifying, designing and deploying solar-powered surveillance.</p>
+            </article>
+            <article class="piece piece--minor">
+              <p class="meta piece__meta">Professional Security. Security and resilience</p>
+              <h3><a class="piece__title" href="https://professionalsecurity.co.uk/news/interviews/defining-capability-of-atonomous-surveillance-and-telecommunications-platforms-in-cni" rel="noopener"><span>Autonomous surveillance in critical national infrastructure</span></a></h3>
+              <p class="piece__summary">Defining what autonomous surveillance and telecoms platforms should be capable of.</p>
+            </article>
+            <article class="piece piece--minor">
+              <p class="meta piece__meta">Security Journal UK. Technology</p>
+              <h3><a class="piece__title" href="https://securityjournaluk.com/informed-choice-solar-powered-surveillance" rel="noopener"><span>Informed choices</span></a></h3>
+              <p class="piece__summary">A guide to choosing solar-powered surveillance and telecommunications systems.</p>
+            </article>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Closing -->
-    <section class="band band--ink close" aria-labelledby="close-title">
+    <section class="band band--ink close" id="contact" aria-labelledby="close-title">
       <div class="wrap grid">
         <h2 class="h2 close__title" id="close-title">Interesting things rarely happen without interesting conversations.</h2>
         <div class="close__body">
@@ -431,7 +443,6 @@
           <ul class="close__links">
             <li><a href="mailto:hello@simonlegrand.co.uk"><span class="name">Email</span><span class="meta">hello@simonlegrand.co.uk</span></a></li>
             <li><a href="https://www.linkedin.com/in/-simonlegrand-" rel="noopener"><span class="name">LinkedIn</span><span class="meta">/in/-simonlegrand-</span></a></li>
-            <li><a href="/contact/"><span class="name">Contact page</span><span class="meta">Enquiries and collaboration</span></a></li>
           </ul>
         </div>
       </div>
@@ -443,15 +454,15 @@
       <p>&copy; 2026 Simon Legrand. Faversham, Kent.</p>
       <nav id="footer-nav" aria-label="Footer">
         <ul>
-          <li><a href="/thinking/">Thinking</a></li>
-          <li><a href="/ventures/">Ventures</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/contact/">Contact</a></li>
+          <li><a href="#observatory">Thinking</a></li>
+          <li><a href="#building">Ventures</a></li>
+          <li><a href="#journey">About</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
   </footer>
 
-  <script src="/assets/js/site.js" defer></script>
+  <script src="/site.js" defer></script>
 </body>
 </html>
