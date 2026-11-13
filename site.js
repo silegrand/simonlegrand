@@ -1,10 +1,10 @@
 /* simonlegrand.co.uk
-   Three small behaviours, no dependencies:
-   1 header state on scroll  2 full-screen menu  3 Idea Observatory themes */
+   Two small behaviours, no dependencies:
+   1 header rule on scroll  2 full-screen menu */
 (function () {
   'use strict';
 
-  /* 1 Header: clear over the hero, solid once the page has moved */
+  /* 1 Header: gains a hairline once the page has moved */
   var header = document.querySelector('.site-header');
   if (header) {
     var setScrolled = function () {
@@ -57,38 +57,4 @@
     });
   }
 
-  /* 3 Idea Observatory: choose a theme to see which questions cross it.
-     Nothing is removed from the page, so it reads the same with scripts off. */
-  var obs = document.querySelector('[data-observatory]');
-  if (obs) {
-    var buttons = obs.querySelectorAll('[data-theme]');
-    var items = obs.querySelectorAll('[data-themes]');
-    var status = obs.querySelector('[data-status]');
-    var idle = status ? status.textContent : '';
-
-    var apply = function (theme, name) {
-      var count = 0;
-      items.forEach(function (item) {
-        var match = !!theme && item.getAttribute('data-themes').split(' ').indexOf(theme) !== -1;
-        item.classList.toggle('is-match', match);
-        item.classList.toggle('is-dim', !!theme && !match);
-        if (match) { count += 1; }
-      });
-      buttons.forEach(function (b) {
-        b.setAttribute('aria-pressed', String(b.getAttribute('data-theme') === theme));
-      });
-      if (status) {
-        status.textContent = theme
-          ? count + ' of ' + items.length + ' questions cross ' + name + '. Select it again to clear.'
-          : idle;
-      }
-    };
-
-    buttons.forEach(function (b) {
-      b.addEventListener('click', function () {
-        var on = b.getAttribute('aria-pressed') === 'true';
-        apply(on ? '' : b.getAttribute('data-theme'), b.textContent.trim().toLowerCase());
-      });
-    });
-  }
 })();
