@@ -1,50 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!--
     Sitemap for https://www.simonlegrand.co.uk
-    Last updated: 2026-08-26
-    Owner: Simon Legrand MCIM
-    Note: single-page site. Section anchors (#hero, #ventures, etc.)
-    are intentionally omitted — search engines strip URL fragments and
-    treat them as the homepage, so listing them adds no value.
+    Last updated: 2026-11-16
+    Single-page site. Section anchors (#building, #record etc.) are
+    omitted because search engines treat fragments as the homepage.
   -->
 
-  <!-- HOMEPAGE -->
   <url>
     <loc>https://www.simonlegrand.co.uk/</loc>
-    <lastmod>2026-08-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-11-16</lastmod>
     <image:image>
-      <image:loc>https://www.simonlegrand.co.uk/SL_Headshot_colour.webp</image:loc>
-      <image:title>Simon Legrand — Founder, MCIM Chartered Marketer, Patent Inventor</image:title>
+      <image:loc>https://www.simonlegrand.co.uk/simon-legrand-1003.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://www.simonlegrand.co.uk/og-image.jpg</image:loc>
-      <image:title>Simon Legrand</image:title>
     </image:image>
   </url>
 
-  <!-- CV (separate indexable document) -->
   <url>
     <loc>https://www.simonlegrand.co.uk/Simon_Legrand_CV.pdf</loc>
-    <lastmod>2026-08-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-11-16</lastmod>
   </url>
 
-  <!-- LLM CONTEXT FILE (optional; aids AI discoverability) -->
   <url>
     <loc>https://www.simonlegrand.co.uk/llms.txt</loc>
-    <lastmod>2026-08-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-11-16</lastmod>
   </url>
 
 </urlset>
