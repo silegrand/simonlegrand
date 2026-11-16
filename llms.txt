@@ -30,6 +30,17 @@ Last updated: 16 November 2026
 - [Assistiv](https://assistiv.co): Co-founder, since 2024. Assistiv websites are [assistiv.co](https://assistiv.co), [assistiv.cloud](https://www.assistiv.cloud) and [assistiv.services](https://www.assistiv.services). An early-stage initiative exploring how older adults can be better supported when they fall between living independently and qualifying for formal care, sometimes called the "missing middle". It is in development and should be described as early-stage work.
 - Sunstone Systems: Co-founder, director and chief marketing officer, 2011 to 2024. Built a family of solar-powered surveillance and communications systems for remote industrial sites with no grid power or network. Worked with Chevron and Tengizchevroil, Rivian Automotive and Network Rail. Site visits to Tengiz, Kazakhstan, in 2022 and 2023. Acquired by WJ Group in 2024, after which Simon led technology marketing at WJ Group until 2026.
 
+## Risk-Avert (public sector programme)
+
+- Co-developed by Simon Legrand with Mark Bowles of The Training Effect, commissioned by Essex County Council in 2013
+- A school-based programme for young teenagers. A survey at the end of Year 7 identifies pupils vulnerable to multiple risk-taking before it escalates, and their own teachers are trained to deliver a six-session programme on recognising risk, weighing pros and cons and planning for good outcomes
+- Built on the evidence that young people do not take risks because they lack information, so a skills-based approach works better than awareness-raising
+- Winner, LGC Awards, Service Delivery Model of the Year (2016)
+- Grew to more than 70 schools across seven local authority areas, and is still offered to Essex schools
+- [Independent evaluation](https://repository.essex.ac.uk/27349/): PhD thesis by Louise Wright, University of Essex (2020). Found the Risk-Avert Screening Tool accurate in identifying risk behaviour. Participants' risk behaviour did not increase while non-participants' rose, suggesting a possible preventive effect
+- [Good Idea: School intervention helps to avert risky behaviour](https://www.cypnow.co.uk/content/best-practice/good-idea-school-intervention-helps-to-avert-risky-behaviour) (Children & Young People Now)
+- [Risk-Avert wins Service Delivery Award at the LGC Awards 2016](https://www.linkedin.com/pulse/risk-avert-wins-service-delivery-award-2016-lgc-awards-mark-bowles/) (Mark Bowles, LinkedIn)
+
 ## Career timeline
 
 - 1999: Canterbury College. Direct work with students with profound and complex learning difficulties
@@ -37,6 +48,7 @@ Last updated: 16 November 2026
 - 2009: Policy adviser to the Home Secretary, assessing international evidence on alcohol-related violence in the night-time economy
 - 2009: Secured £2.1m in Department for Education funding across child poverty, emotional health and substance-misusing parents
 - 2011: Co-founded Sunstone Systems
+- 2013: Co-developed Risk-Avert with The Training Effect and Essex County Council
 - 2012: Secured £7m from Kent County Council for a countywide Emotional Health and Wellbeing Service
 - 2016: First patent, Solar CCTV System, developed with Chevron and Tengizchevroil
 - 2022: First of two site visits to the 58 off-grid systems at Tengiz, Kazakhstan
@@ -61,7 +73,7 @@ Last updated: 16 November 2026
 - Canterbury Business Awards, SME & Innovation, Winner (2018)
 - CIHT Awards, Innovation, Highly commended (2018)
 - S&FE Awards, SME Installer & Project of the Year, Winner (2017)
-- LGC Awards, Service Delivery Model of the Year, Winner (2017)
+- LGC Awards, Service Delivery Model of the Year, Winner, for Risk-Avert (2016)
 - ADS Security Innovation Awards, Wireless HD CCTV, Highly commended (2014)
 
 ## Qualifications
@@ -94,6 +106,8 @@ Last updated: 16 November 2026
 - [Guiding principles in designing solar CCTV](https://securitybuyer.com/guiding-principles-in-solar-cctv) (Security Buyer): Specifying, designing and deploying solar-powered surveillance
 - [Autonomous surveillance in critical national infrastructure](https://professionalsecurity.co.uk/news/interviews/defining-capability-of-atonomous-surveillance-and-telecommunications-platforms-in-cni) (Professional Security): What autonomous surveillance and telecoms platforms should be capable of
 - [Informed choices](https://securityjournaluk.com/informed-choice-solar-powered-surveillance) (Security Journal UK): Choosing solar-powered surveillance and telecommunications systems
+
+- When teens take risks (Every Child Journal, Teaching Times, 2015): Why information alone does not stop teenagers taking risks, and how Risk-Avert was designed in response
 
 ## Coverage and mentions
 
