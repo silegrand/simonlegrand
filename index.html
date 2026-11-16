@@ -21,7 +21,10 @@
   <meta property="og:image:alt" content="Simon Legrand">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2311151B'/%3E%3Ctext x='16' y='23' font-family='Arial, sans-serif' font-weight='700' font-size='16' text-anchor='middle' fill='%23F3F0E8'%3ESL%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preload" href="/bricolage-grotesque-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/dm-sans-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/site.css">
@@ -37,16 +40,49 @@
         "url": "https://www.simonlegrand.co.uk/",
         "name": "Simon Legrand",
         "inLanguage": "en-GB",
-        "publisher": { "@id": "https://www.simonlegrand.co.uk/#person" }
+        "publisher": {
+          "@id": "https://www.simonlegrand.co.uk/#person"
+        }
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://www.simonlegrand.co.uk/#profilepage",
+        "url": "https://www.simonlegrand.co.uk/",
+        "name": "Simon Legrand | Founder, technologist and independent thinker",
+        "inLanguage": "en-GB",
+        "dateModified": "2026-11-16",
+        "isPartOf": {
+          "@id": "https://www.simonlegrand.co.uk/#website"
+        },
+        "mainEntity": {
+          "@id": "https://www.simonlegrand.co.uk/#person"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://www.simonlegrand.co.uk/#portrait"
+        }
       },
       {
         "@type": "Person",
         "@id": "https://www.simonlegrand.co.uk/#person",
         "name": "Simon Legrand",
+        "givenName": "Simon",
+        "familyName": "Legrand",
+        "honorificSuffix": "MCIM",
         "url": "https://www.simonlegrand.co.uk/",
-        "image": "https://www.simonlegrand.co.uk/simon-legrand-1003.webp",
+        "mainEntityOfPage": {
+          "@id": "https://www.simonlegrand.co.uk/#profilepage"
+        },
+        "image": {
+          "@type": "ImageObject",
+          "@id": "https://www.simonlegrand.co.uk/#portrait",
+          "url": "https://www.simonlegrand.co.uk/simon-legrand-1003.webp",
+          "width": 1003,
+          "height": 1254,
+          "caption": "Simon Legrand"
+        },
         "jobTitle": "Founder",
-        "email": "hello@simonlegrand.co.uk",
+        "description": "British technology founder and MCIM Chartered Marketer based in Faversham, Kent. Fifteen years in the UK public sector, thirteen years co-founding Sunstone Systems (solar-powered surveillance and off-grid power), now founder of Fyrfly Systems and co-founder of Assistiv. Named inventor on three patents.",
+        "email": "mailto:hello@simonlegrand.co.uk",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Faversham",
@@ -54,12 +90,300 @@
           "addressCountry": "GB"
         },
         "worksFor": [
-          { "@type": "Organization", "name": "Fyrfly Systems", "url": "https://www.fyrflysystems.com" },
-          { "@type": "Organization", "name": "Assistiv Systems", "url": "https://assistiv.co" }
+          {
+            "@id": "https://www.simonlegrand.co.uk/#fyrfly"
+          },
+          {
+            "@id": "https://www.simonlegrand.co.uk/#assistiv"
+          }
+        ],
+        "alumniOf": [
+          {
+            "@id": "https://www.simonlegrand.co.uk/#sunstone"
+          },
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Leeds"
+          },
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Kent"
+          },
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Brighton"
+          }
+        ],
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "MCIM, Chartered Institute of Marketing",
+            "credentialCategory": "Professional membership",
+            "dateCreated": "2025"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "MHFA Practitioner, Mental Health First Aid UK",
+            "credentialCategory": "Certificate",
+            "dateCreated": "2024"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "DipHE Public Sector Change and Innovation, University of Kent",
+            "credentialCategory": "Diploma",
+            "dateCreated": "2003"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "DipHE Public Sector Development, University of Brighton",
+            "credentialCategory": "Diploma",
+            "dateCreated": "2003"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "BA (Hons) Education and Psychology, University of Leeds",
+            "credentialCategory": "Degree",
+            "dateCreated": "1999"
+          }
+        ],
+        "memberOf": [
+          {
+            "@type": "Organization",
+            "name": "Chartered Institute of Marketing"
+          },
+          {
+            "@type": "Organization",
+            "name": "Responsible AI Institute"
+          },
+          {
+            "@type": "Organization",
+            "name": "NHS Confederation Q Network"
+          },
+          {
+            "@type": "Organization",
+            "name": "NHS Health Innovation Kent Surrey Sussex"
+          },
+          {
+            "@type": "Organization",
+            "name": "NHS Horizons AI Ambassador Network"
+          },
+          {
+            "@type": "Organization",
+            "name": "LCRIG"
+          }
+        ],
+        "award": [
+          "IFSEC Global Top 50 Most Influential in Security (2018)",
+          "S&FE Awards, Security Partnering Initiative, Winner (2023)",
+          "Engineering & Manufacturing Awards, Rising Star, Finalist (2023)",
+          "Highways England, Network Management, Winner (2020)",
+          "Canterbury Business Awards, SME & Innovation, Winner (2018)",
+          "S&FE Awards, SME Installer & Project of the Year, Winner (2017)",
+          "LGC Awards, Service Delivery Model of the Year, Winner (2017)"
+        ],
+        "knowsAbout": [
+          "Physical security",
+          "Solar-powered CCTV",
+          "Off-grid power",
+          "Critical national infrastructure",
+          "Martyn's Law",
+          "School security",
+          "Technology commercialisation",
+          "Strategic marketing",
+          "UK public sector",
+          "Health and social care",
+          "Older adults' care",
+          "Agentic AI"
         ],
         "sameAs": [
           "https://www.linkedin.com/in/-simonlegrand-"
+        ],
+        "subjectOf": [
+          {
+            "@type": "NewsArticle",
+            "headline": "Simon Legrand launches Fyrfly Systems",
+            "url": "https://psimagazine.co.uk/simon-legrand-launches-fyrfly-systems/",
+            "datePublished": "2026-06-24",
+            "publisher": {
+              "@type": "Organization",
+              "name": "PSI Magazine"
+            },
+            "about": {
+              "@id": "https://www.simonlegrand.co.uk/#person"
+            }
+          },
+          {
+            "@type": "Article",
+            "headline": "IFSEC Global influencers 2018: System design, installation & integration",
+            "url": "https://www.ifsecglobal.com/global/ifsec-global-influencers-2018-system-design-installation-integration/",
+            "datePublished": "2018-06-15",
+            "publisher": {
+              "@type": "Organization",
+              "name": "IFSEC Global"
+            }
+          },
+          {
+            "@type": "Article",
+            "headline": "Into the cloud: Simon Legrand",
+            "url": "https://securitybuyer.com/into-the-cloud-simon-legrand/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Security Buyer"
+            },
+            "about": {
+              "@id": "https://www.simonlegrand.co.uk/#person"
+            }
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Sunstone Systems customer story",
+            "url": "https://www.axis.com/dam/public/37/fe/1e/uk%3A-sunstone-systems-en-US-117094.pdf",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Axis Communications"
+            }
+          }
         ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://www.simonlegrand.co.uk/#fyrfly",
+        "name": "Fyrfly Systems",
+        "url": "https://www.fyrflysystems.com",
+        "foundingDate": "2026",
+        "founder": {
+          "@id": "https://www.simonlegrand.co.uk/#person"
+        },
+        "description": "Physical security specialist for schools, the public sector and commercial premises.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Whitstable",
+          "addressRegion": "Kent",
+          "addressCountry": "GB"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://www.simonlegrand.co.uk/#assistiv",
+        "name": "Assistiv Systems",
+        "url": "https://assistiv.co",
+        "foundingDate": "2024",
+        "founder": {
+          "@id": "https://www.simonlegrand.co.uk/#person"
+        },
+        "description": "Early-stage initiative exploring support for older adults who fall between living independently and qualifying for formal care.",
+        "sameAs": [
+          "https://www.assistiv.cloud",
+          "https://www.assistiv.services"
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://www.simonlegrand.co.uk/#sunstone",
+        "name": "Sunstone Systems",
+        "foundingDate": "2011",
+        "founder": {
+          "@id": "https://www.simonlegrand.co.uk/#person"
+        },
+        "description": "Solar-powered surveillance and off-grid power systems for remote industrial sites. Acquired by WJ Group in 2024."
+      },
+      {
+        "@type": "Article",
+        "headline": "Setting standards for solar CCTV systems",
+        "url": "https://www.ifsecglobal.com/cctv-2/setting-standards-for-solar-cctv-systems-ensuring-safety-cybersecurity-and-reliability/",
+        "author": {
+          "@id": "https://www.simonlegrand.co.uk/#person"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "IFSEC Global"
+        }
+      },
+      {
+        "@type": "Article",
+        "headline": "Securing the digital frontier",
+        "url": "https://www.ifsecglobal.com/integrated-security/securing-the-digital-frontier-the-critical-role-of-cyber-security-in-off-grid-technologies/",
+        "author": {
+          "@id": "https://www.simonlegrand.co.uk/#person"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "IFSEC Global"
+        }
+      },
+      {
+        "@type": "Article",
+        "headline": "Beyond borders",
+        "url": "https://www.border-security-report.com/beyond-borders-revolutionising-cross-border-security-with-solar-powered-surveillance",
+        "author": {
+          "@id": "https://www.simonlegrand.co.uk/#person"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Border Security Report"
+        }
+      },
+      {
+        "@type": "Article",
+        "headline": "Guiding principles in designing solar CCTV",
+        "url": "https://securitybuyer.com/guiding-principles-in-solar-cctv",
+        "author": {
+          "@id": "https://www.simonlegrand.co.uk/#person"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Security Buyer"
+        }
+      },
+      {
+        "@type": "Article",
+        "headline": "Autonomous surveillance in critical national infrastructure",
+        "url": "https://professionalsecurity.co.uk/news/interviews/defining-capability-of-atonomous-surveillance-and-telecommunications-platforms-in-cni",
+        "author": {
+          "@id": "https://www.simonlegrand.co.uk/#person"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Professional Security"
+        }
+      },
+      {
+        "@type": "Article",
+        "headline": "Informed choices",
+        "url": "https://securityjournaluk.com/informed-choice-solar-powered-surveillance",
+        "author": {
+          "@id": "https://www.simonlegrand.co.uk/#person"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Security Journal UK"
+        }
+      },
+      {
+        "@type": "Article",
+        "headline": "Martyn's Law: The 'Responsible Person' Nobody Has Named",
+        "url": "https://securitymattersmagazine.com/martyns-law-the-responsible-person-nobody-has-named",
+        "datePublished": "2026-08-13",
+        "author": {
+          "@id": "https://www.simonlegrand.co.uk/#person"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Security Matters"
+        }
+      },
+      {
+        "@type": "Article",
+        "headline": "Fuelling innovation: Solar-powered surveillance",
+        "url": "https://www.ifsecglobal.com/innovation/fueling-innovation-solar-powered-surveillance/",
+        "datePublished": "2024-01-22",
+        "author": {
+          "@id": "https://www.simonlegrand.co.uk/#person"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "IFSEC Global"
+        }
       }
     ]
   }
@@ -384,6 +708,7 @@
           <ul class="close__links">
             <li><a href="mailto:hello@simonlegrand.co.uk"><span class="name">Email</span><span class="meta">hello@simonlegrand.co.uk</span></a></li>
             <li><a href="https://www.linkedin.com/in/-simonlegrand-" rel="noopener"><span class="name">LinkedIn</span><span class="meta">/in/-simonlegrand-</span></a></li>
+            <li><a href="/Simon_Legrand_CV.pdf"><span class="name">CV</span><span class="meta">PDF, two pages</span></a></li>
           </ul>
         </div>
       </div>
